@@ -192,18 +192,18 @@
           </div>
         </div>
 
-        <div class="form">
+        <form class="form" id="quickForm">
           <div class="pill">Quick inquiry</div>
-          <label>Name</label><input placeholder="Your name" />
-          <label>Email</label><input placeholder="you@company.com" />
+          <label>Name</label><input name="name" placeholder="Your name" />
+          <label>Email</label><input name="email" placeholder="you@company.com" />
           <div class="form-row">
-            <div><label># of Locations</label><input placeholder="1" /></div>
-            <div><label>Avg. annual sales</label><input id="avgRevenue" placeholder="$" inputmode="numeric" /></div>
+            <div><label># of Locations</label><input name="locations" placeholder="1" /></div>
+            <div><label>Avg. annual sales</label><input id="avgRevenue" name="annualSales" placeholder="$" inputmode="numeric" /></div>
           </div>
           <label>Notes</label>
-          <textarea placeholder="Tell us what you're running and what you want to improve…"></textarea>
-          <a class="btn btn-primary" style="width:100%;text-align:center;margin-top:14px" href="#contact">Submit</a>
-        </div>
+          <textarea name="notes" placeholder="Tell us what you're running and what you want to improve…"></textarea>
+          <button class="btn btn-primary" style="width:100%;text-align:center;margin-top:14px;border:0;cursor:pointer" type="submit">Submit</button>
+        </form>
       </div>
     </div></section>
 
@@ -413,20 +413,20 @@
             </div>
           </div>
 
-          <div class="form">
+          <form class="form" id="contactForm">
             <div class="pill">Contact form</div>
-            <label>Name</label><input placeholder="Your name" />
-            <label>Email</label><input placeholder="you@company.com" />
+            <label>Name</label><input name="name" placeholder="Your name" />
+            <label>Email</label><input name="email" placeholder="you@company.com" />
             <div class="form-row">
-              <div><label>Avg. annual sales</label><input placeholder="$" /></div>
-              <div><label># of Locations</label><input placeholder="1" /></div>
+              <div><label>Avg. annual sales</label><input name="annualSales" placeholder="$" /></div>
+              <div><label># of Locations</label><input name="locations" placeholder="1" /></div>
             </div>
             <label>What do you want to improve?</label>
-            <textarea placeholder="More orders, better AOV, better rating, less ad waste…"></textarea>
+            <textarea name="notes" placeholder="More orders, better AOV, better rating, less ad waste…"></textarea>
             <div style="height:12px"></div>
-            <a class="btn btn-primary" style="width:100%;text-align:center" href="#">Submit</a>
+            <button class="btn btn-primary" style="width:100%;text-align:center;border:0;cursor:pointer" type="submit">Submit</button>
             <p class="small" style="margin:10px 0 0">Or email: <b>hello@blenderdigital.co</b> </p>
-          </div>
+          </form>
         </div>
       </div>
     </section>
@@ -528,7 +528,61 @@
         input.value = '$' + Number(raw).toLocaleString();
       });
     })();
+async function postLead(formEl, source) {
+  const fd = new FormData(formEl);
+  const payload = Object.fromEntries(fd.entries());
+  payload.source = source;
+
+  const res = await fetch("/api/lead", {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify(payload),
+  });
+
+  const data = await res.json().catch(() => ({}));
+  if (!res.ok || !data.ok) throw new Error("submit_failed");
+}
+
+(function () {
+  const quick = document.getElementById("quickForm");
+  const contact = document.getElementById("contactForm");
+
+  if (quick) {
+    quick.addEventListener("submit", async (e) => {
+      e.preventDefault();
+      const btn = quick.querySelector('button[type="submit"]');
+      const prev = btn ? btn.textContent : "";
+      if (btn) btn.textContent = "Sending...";
+      try {
+        await postLead(quick, "quick-inquiry");
+        if (btn) btn.textContent = "Submitted ✓";
+        quick.reset();
+      } catch {
+        if (btn) btn.textContent = prev || "Submit";
+        alert("Couldn’t submit. Please try again.");
+      }
+    });
+  }
+
+  if (contact) {
+    contact.addEventListener("submit", async (e) => {
+      e.preventDefault();
+      const btn = contact.querySelector('button[type="submit"]');
+      const prev = btn ? btn.textContent : "";
+      if (btn) btn.textContent = "Sending...";
+      try {
+        await postLead(contact, "contact-form");
+        if (btn) btn.textContent = "Submitted ✓";
+        contact.reset();
+      } catch {
+        if (btn) btn.textContent = prev || "Submit";
+        alert("Couldn’t submit. Please try again.");
+      }
+    });
+  }
+})();
 
 </script>
 </body>
 </html>
+
