@@ -5,6 +5,30 @@
 </head>
 <body>
   <h1>My Blog</h1>
-  <p>Coming soon...</p>
+  <div id="posts"></div>
+
+  <script>
+    const projectId = "liikebau"; // your project ID
+    const dataset = "production";
+
+    const url = `https://${projectId}.api.sanity.io/v2023-01-01/data/query/${dataset}?query=*[_type=="post"]`;
+
+    fetch(url)
+      .then(res => res.json())
+      .then(data => {
+        const postsDiv = document.getElementById("posts");
+
+        if (!data.result || data.result.length === 0) {
+          postsDiv.innerHTML = "<p>No posts yet</p>";
+          return;
+        }
+
+        data.result.forEach(post => {
+          const el = document.createElement("div");
+          el.innerHTML = `<h2>${post.title}</h2><p>${post.body}</p>`;
+          postsDiv.appendChild(el);
+        });
+      });
+  </script>
 </body>
 </html>
