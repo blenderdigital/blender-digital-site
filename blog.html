@@ -1,34 +1,369 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <title>Blog</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Why Your Uber Eats Promotions Are Destroying Your Margins | Blender Digital</title>
+  <meta
+    name="description"
+    content="A practical guide for restaurant owners on how overlapping Uber Eats promotions can quietly destroy margins and lead to unprofitable orders."
+  />
+  <style>
+    :root{--lime:#A7D51E;--mint:#E6F7DB;--cream:#FFF7D6;--blush:#FBE4EA;--text:#2B2B2B;--white:#FFFFFF;--radius:18px;--shadow:0 10px 30px rgba(0,0,0,.08);--max:1120px}
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{margin:0;font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif;color:var(--text);background:var(--mint);line-height:1.6}
+    a{color:inherit;text-decoration:none}
+    .container{max-width:var(--max);margin:0 auto;padding:0 clamp(24px,6vw,72px)}
+
+    .nav{position:sticky;top:0;z-index:20;background:rgba(230,247,219,.85);backdrop-filter:blur(10px);border-bottom:1px solid rgba(43,43,43,.08)}
+    .nav-inner{display:flex;align-items:center;justify-content:space-between;gap:16px;position:relative;padding-top:16px;padding-bottom:16px}
+    .brand{display:flex;align-items:center;gap:12px;text-decoration:none}
+    .brand-badge{width:38px;height:38px;border-radius:12px;display:flex;align-items:center;justify-content:center}
+    .brand-badge img{width:100%;height:100%;object-fit:contain;display:block}
+    .brand-name{font-weight:800;letter-spacing:-.02em}
+    .nav-links{display:flex;flex-wrap:wrap;gap:14px;align-items:center}
+    .nav-links a{text-decoration:none;padding:10px 12px;border-radius:12px}
+    .nav-links a:hover{background:rgba(255,255,255,.7)}
+    .btn{display:inline-block;text-decoration:none;font-weight:700;padding:10px 16px;border-radius:14px}
+    .btn-primary{background:var(--lime)}
+
+    .hero{padding-top:32px;padding-bottom:24px}
+    @media (max-width:560px){.hero{padding-top:20px;padding-bottom:20px}}
+
+    h1{font-size:clamp(2.1rem,4vw,3.25rem);line-height:1.05;margin:0 0 14px;letter-spacing:-.03em}
+    h2{font-size:clamp(1.45rem,2.4vw,2rem);margin:0 0 12px;letter-spacing:-.02em}
+    h3{font-size:1.05rem;margin:0 0 8px}
+
+    .kicker{display:inline-flex;gap:10px;align-items:center;font-weight:700;font-size:.9rem;padding:8px 12px;border-radius:999px;background:rgba(255,255,255,.7);margin-bottom:16px}
+    .kicker-dot{width:10px;height:10px;border-radius:999px;background:var(--lime)}
+    .lead{font-size:1.08rem;margin:0 0 18px;max-width:760px}
+    .section{padding:24px 0 64px}
+    .card{background:var(--white);border-radius:var(--radius);padding:28px;box-shadow:var(--shadow);border:1px solid rgba(43,43,43,.06)}
+    @media (max-width:560px){.card{padding:20px}}
+
+    .pill{display:inline-block;padding:6px 10px;border-radius:999px;background:rgba(167,213,30,.18);font-weight:700;font-size:.85rem}
+    .small{font-size:.9rem;opacity:.85}
+    .blog-shell{max-width:820px}
+    .blog-meta{display:flex;gap:10px;flex-wrap:wrap;margin:12px 0 18px}
+
+    .intro{font-size:1rem;margin-bottom:24px}
+    .intro p{margin:0 0 16px}
+
+    .section-block{margin-top:28px;padding-top:28px;border-top:1px solid rgba(43,43,43,.10)}
+    .section-block:first-child{margin-top:0;padding-top:0;border-top:none}
+
+    .section-head{display:flex;align-items:center;gap:12px;margin-bottom:10px}
+    .icon-badge{
+      width:36px;
+      height:36px;
+      border-radius:12px;
+      background:rgba(167,213,30,.18);
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      font-weight:800;
+      flex-shrink:0;
+    }
+
+    .blog-body p{margin:0 0 16px}
+    .blog-body ul{margin:0 0 18px 0;padding-left:20px}
+    .blog-body li{margin-bottom:10px}
+    .blog-body strong{font-weight:800}
+
+    .blog-body a{
+      text-decoration:underline;
+      text-underline-offset:3px;
+      font-weight:600;
+    }
+    .blog-body a:hover{
+      opacity:.75;
+    }
+
+    .callout{
+      background:var(--cream);
+      border:1px solid rgba(43,43,43,.06);
+      border-radius:16px;
+      padding:18px;
+      margin:18px 0 22px;
+    }
+
+    .warning{
+      background:var(--blush);
+      border:1px solid rgba(43,43,43,.06);
+      border-radius:16px;
+      padding:18px;
+      margin:18px 0 22px;
+    }
+
+    .mini-list{
+      margin:10px 0 0 0;
+      padding-left:18px;
+    }
+
+    footer.footer{background:rgba(255,255,255,.92);border-top:1px solid rgba(43,43,43,.10)}
+    .footer-main{padding:40px 0}
+    .footer-bottom{border-top:1px solid rgba(43,43,43,.08);padding:16px 0}
+  </style>
 </head>
 <body>
-  <h1>My Blog</h1>
-  <div id="posts"></div>
+  <nav class="nav">
+    <div class="container nav-inner">
+      <a class="brand" href="/">
+        <div class="brand-badge">
+          <img src="Blender - Official Logo.svg" alt="Blender Digital logo" />
+        </div>
+        <span class="brand-name">Blender Digital</span>
+      </a>
+      <div class="nav-links">
+        <a href="https://www.blenderdigital.co/#services">Services</a>
+        <a href="https://www.blenderdigital.co/#case-study">Case Study</a>
+        <a href="https://www.blenderdigital.co/#resources">Resources</a>
+        <a href="https://form.jotform.com/261082345751051" target="_blank" rel="noopener noreferrer" class="btn btn-primary">Contact</a>
+      </div>
+    </div>
+  </nav>
 
-  <script>
-    const projectId = "liikebau"; // your project ID
-    const dataset = "production";
+  <header class="hero">
+    <div class="container blog-shell">
+      <div class="kicker">
+        <span class="kicker-dot"></span>
+        Resource
+      </div>
+      <h1>Why Your Uber Eats Promotions Are Destroying Your Margins</h1>
+      <p class="lead">
+        Promotions can drive growth. Poorly structured promotions can quietly destroy margin.
+        On Uber Eats, the real risk is not just discounting — it is overlapping discounts that
+        create much deeper promo exposure than many restaurant owners realize.
+      </p>
+      <div class="blog-meta">
+        <span class="pill">Uber Eats</span>
+        <span class="pill">Promotions</span>
+        <span class="pill">Margin Protection</span>
+      </div>
+    </div>
+  </header>
 
-    const url = `https://${projectId}.api.sanity.io/v2023-01-01/data/query/${dataset}?query=*[_type=="post"]`;
+  <main class="section">
+    <div class="container blog-shell">
+      <article class="card blog-body">
+        <div class="intro">
+          <p>
+            Most restaurant owners do not make mistakes because they are careless. They make
+            mistakes because promo setups often look harmless in isolation. A BOGO can feel like
+            a customer acquisition lever. A first-order discount can feel like a clean growth tool.
+            A delivery incentive can feel like a conversion boost.
+          </p>
+          <p>
+            The problem starts when those offers interact. That is where restaurants can end up
+            giving away far more margin than intended.
+          </p>
+        </div>
 
-    fetch(url)
-      .then(res => res.json())
-      .then(data => {
-        const postsDiv = document.getElementById("posts");
+        <section class="section-block">
+          <div class="section-head">
+            <div class="icon-badge">⚠</div>
+            <h2>The Core Problem</h2>
+          </div>
 
-        if (!data.result || data.result.length === 0) {
-          postsDiv.innerHTML = "<p>No posts yet</p>";
-          return;
-        }
+          <p>
+            The biggest mistake operators make is assuming each promotion behaves independently.
+            In reality, different offer types can overlap in ways that make an order far less
+            profitable than it first appears.
+          </p>
 
-        data.result.forEach(post => {
-          const el = document.createElement("div");
-          el.innerHTML = `<h2>${post.title}</h2><p>${post.body}</p>`;
-          postsDiv.appendChild(el);
-        });
-      });
-  </script>
+          <div class="warning">
+            <h3>Example scenario</h3>
+            <ul class="mini-list">
+              <li>You run a BOGO for all customers</li>
+              <li>Uber runs a 20% off new customer offer</li>
+              <li>A first-time customer qualifies for both effects</li>
+            </ul>
+          </div>
+
+          <p>
+            Uber’s own help documentation explains the key issue: store or merchant promos can be
+            applied first, and then the highest-value account promo can apply next. You can read
+            that directly in
+            <a href="https://help.uber.com/en/ubereats/restaurants/article/how-do-promo-codes-work?nodeId=ad0d2531-ada6-4aa7-9b01-a17187399571" target="_blank" rel="noopener noreferrer">Uber Eats’ promo help article</a>.
+          </p>
+
+          <p>
+            From the customer’s point of view, this feels like a great deal. From the restaurant’s
+            point of view, it can mean a dramatically reduced payout on that order.
+          </p>
+        </section>
+
+        <section class="section-block">
+          <div class="section-head">
+            <div class="icon-badge">$</div>
+            <h2>Why This Hurts So Much</h2>
+          </div>
+
+          <p>
+            The issue is not just that you are discounting. The issue is that you may be
+            <strong>compound discounting</strong>.
+          </p>
+
+          <ul>
+            <li>BOGO already cuts into revenue on the order</li>
+            <li>An added percentage discount pushes the net value down further</li>
+            <li>Food cost still applies</li>
+            <li>Packaging and labor still apply</li>
+            <li>Platform commissions may still apply</li>
+          </ul>
+
+          <p>
+            That means orders can go up while profitability quietly weakens. This is why some
+            operators feel strong promo activity in the dashboard, but do not feel stronger economics
+            in the bank account.
+          </p>
+        </section>
+
+        <section class="section-block">
+          <div class="section-head">
+            <div class="icon-badge">→</div>
+            <h2>A Practical Example</h2>
+          </div>
+
+          <p>
+            Let’s say a customer orders an item eligible for BOGO. They effectively get two units
+            for the price of one. If that same order also receives a percentage discount, what looked
+            like a straightforward new-customer promo can turn into an order where the restaurant is
+            covering more value than intended.
+          </p>
+
+          <div class="callout">
+            <h3>The real issue</h3>
+            <p>
+              It is not simply “discounting to grow.” It is stacking economic pressure onto the same
+              order until the margin profile becomes much weaker than the operator expected.
+            </p>
+          </div>
+        </section>
+
+        <section class="section-block">
+          <div class="section-head">
+            <div class="icon-badge">✓</div>
+            <h2>Why Restaurants Miss It</h2>
+          </div>
+
+          <p>
+            Most operators assess promotions one by one, which is understandable. They usually think
+            in simple buckets like:
+          </p>
+
+          <ul>
+            <li>“BOGO helps increase order volume”</li>
+            <li>“20% off helps acquire new customers”</li>
+            <li>“Delivery incentives improve conversion”</li>
+          </ul>
+
+          <p>
+            Each of those statements can be directionally true. The problem is that the order economics
+            are not experienced one promotion at a time. They are experienced all at once, on the same
+            ticket, against the same food cost structure.
+          </p>
+        </section>
+
+        <section class="section-block">
+          <div class="section-head">
+            <div class="icon-badge">⚠</div>
+            <h2>This Is Not Just Theoretical</h2>
+          </div>
+
+          <p>
+            Customers actively look for the best combinations of deals on delivery apps. You can see
+            that behavior in community threads like
+            <a href="https://www.reddit.com/r/UberEATS/comments/1dh8chu/anyone_else_cant_stack_promos_anymore/" target="_blank" rel="noopener noreferrer">this discussion about stacking promos no longer working the same way</a>,
+            <a href="https://www.reddit.com/r/UberEATS/comments/1c1qemm/no_longer_able_to_stack_bogo_and_40_off_promos/" target="_blank" rel="noopener noreferrer">this thread specifically about BOGO and 40% off stacking</a>,
+            and
+            <a href="https://www.reddit.com/r/UberEATS/comments/1iusyov/i_stacked_so_many_discounts_i_got_paid_for_my/" target="_blank" rel="noopener noreferrer">this example of extreme discount layering</a>.
+          </p>
+
+          <p>
+            In other words, this is not some obscure corner case. It is consumer behavior. Once
+            customers learn which offers work well together, they repeat that behavior.
+          </p>
+        </section>
+
+        <section class="section-block">
+          <div class="section-head">
+            <div class="icon-badge">⚠</div>
+            <h2>What To Watch For</h2>
+          </div>
+
+          <p>
+            If you are running Uber Eats promotions, these are the warning signs worth paying attention to:
+          </p>
+
+          <ul>
+            <li>Strong order volume but underwhelming net payout</li>
+            <li>Promo-heavy orders with weak contribution margin</li>
+            <li>BOGO campaigns paired with first-order offers</li>
+            <li>High redemption activity without clear profit improvement</li>
+            <li>Growth in sales that does not translate into healthy cash generation</li>
+          </ul>
+        </section>
+
+        <section class="section-block">
+          <div class="section-head">
+            <div class="icon-badge">✓</div>
+            <h2>How To Protect Margin</h2>
+          </div>
+
+          <p>
+            The answer is not to stop promoting. The answer is to structure promotions more carefully.
+          </p>
+
+          <ul>
+            <li>Avoid broad overlapping offers that can affect the same customer at the same time</li>
+            <li>Be especially careful with BOGO plus first-order or account-level discounts</li>
+            <li>Use tighter targeting instead of blanket exposure where possible</li>
+            <li>Review net payout and item economics, not just gross sales and redemption counts</li>
+            <li>Use lower-cost hero items for aggressive offers instead of margin-sensitive items</li>
+          </ul>
+
+          <div class="callout">
+            <h3>Better framing</h3>
+            <p>
+              A promotion should not be judged by whether it drives orders alone. It should be judged
+              by whether it drives the right orders at economics that still make sense.
+            </p>
+          </div>
+        </section>
+
+        <section class="section-block">
+          <div class="section-head">
+            <div class="icon-badge">$</div>
+            <h2>Final Takeaway</h2>
+          </div>
+
+          <p>
+            Promotions do not destroy margins on their own. <strong>Poorly structured promotions do.</strong>
+            If you are running overlapping Uber Eats offers without pressure-testing how they interact,
+            you may be subsidizing customer orders far more than you realize.
+          </p>
+
+          <p>
+            The restaurants that win on these platforms are not necessarily the ones that discount the
+            hardest. They are the ones that understand exactly how their offers interact and protect
+            margin while they grow.
+          </p>
+        </section>
+      </article>
+    </div>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer-main">
+      <div class="small">
+        Blender Digital helps restaurants grow smarter across third-party delivery platforms.
+      </div>
+    </div>
+    <div class="container footer-bottom">
+      <div class="small">© Blender Digital</div>
+    </div>
+  </footer>
 </body>
 </html>
