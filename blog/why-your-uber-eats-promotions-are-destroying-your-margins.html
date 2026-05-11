@@ -150,6 +150,79 @@
       padding-left:18px;
     }
 
+    /* Related resources carousel */
+    .related-carousel-wrap{
+      margin-top:14px;
+    }
+
+    .related-carousel{
+      display:flex;
+      gap:14px;
+      overflow-x:auto;
+      scroll-snap-type:x mandatory;
+      -webkit-overflow-scrolling:touch;
+      padding:4px 4px 12px;
+    }
+
+    .related-carousel::-webkit-scrollbar{
+      height:8px;
+    }
+
+    .related-carousel::-webkit-scrollbar-thumb{
+      background:rgba(43,43,43,.18);
+      border-radius:999px;
+    }
+
+    .related-card{
+      flex:0 0 260px;
+      scroll-snap-align:start;
+      display:flex;
+      flex-direction:column;
+      justify-content:space-between;
+      min-height:210px;
+      background:var(--cream);
+      border:1px solid rgba(43,43,43,.06);
+      border-radius:16px;
+      padding:18px;
+      text-decoration:none !important;
+      transition:.2s ease;
+    }
+
+    .related-card:hover{
+      transform:translateY(-3px);
+      background:rgba(167,213,30,.18);
+      opacity:1;
+    }
+
+    .related-card h3{
+      margin:8px 0 8px;
+      font-size:1rem;
+    }
+
+    .related-card p{
+      margin:0;
+      font-size:.9rem;
+      opacity:.85;
+    }
+
+    .related-card-cta{
+      background:var(--lime);
+    }
+
+    .related-link-text{
+      display:inline-block;
+      margin-top:14px;
+      font-weight:800;
+      font-size:.9rem;
+    }
+
+    @media (max-width:560px){
+      .related-card{
+        flex-basis:82%;
+        min-height:220px;
+      }
+    }
+
     footer.footer{background:rgba(255,255,255,.92);border-top:1px solid rgba(43,43,43,.10)}
     .footer-main{padding:40px 0}
     .footer-grid{display:grid;grid-template-columns:1.3fr 1fr 1fr 1fr;gap:32px;align-items:start}
@@ -410,6 +483,61 @@
             margin while they grow.
           </p>
         </section>
+
+        <section class="section-block">
+          <div class="section-head">
+            <div class="icon-badge">→</div>
+            <h2>More Resources</h2>
+          </div>
+
+          <p>
+            Keep exploring practical ways to improve delivery platform performance, margin, and visibility.
+          </p>
+
+          <div class="related-carousel-wrap">
+            <div class="related-carousel">
+
+              <a class="related-card" href="/blog/how-much-delivery-revenue-are-you-actually-keeping.html">
+                <span class="pill">Margins</span>
+                <h3>How Much of Your Delivery Revenue Are You Actually Keeping?</h3>
+                <p>Break down commissions, fees, promo costs, and the real economics of delivery orders.</p>
+              </a>
+
+              <a class="related-card" href="/blog/delivery-ads-and-promos-same-time-killing-profitability.html">
+                <span class="pill">Ads + Promos</span>
+                <h3>Why Running Ads and Promos at the Same Time Is Killing Your Profitability</h3>
+                <p>Learn why stacking paid visibility and discounts can quietly push orders negative.</p>
+              </a>
+
+              <a class="related-card" href="/blog/customer-segmentation-protect-delivery-margin.html">
+                <span class="pill">Segmentation</span>
+                <h3>How to Use Customer Segmentation to Protect Your Delivery Margin</h3>
+                <p>See how different customer groups should receive different offer strategies.</p>
+              </a>
+
+              <a class="related-card" href="/blog/bogo-delivery-promo-margin-protection.html">
+                <span class="pill">Promotions</span>
+                <h3>The Right Way to Run BOGO Promos Without Destroying Your Margin</h3>
+                <p>Structure BOGO offers more carefully so growth does not come at the expense of profit.</p>
+              </a>
+
+              <a class="related-card" href="/blog/profitable-restaurants-spend-less-delivery-ads.html">
+                <span class="pill">Ad Spend</span>
+                <h3>Why the Most Profitable Restaurants Spend Less on Delivery Ads — Not More</h3>
+                <p>Understand why healthier delivery programs rely less on paid traffic over time.</p>
+              </a>
+
+              <a class="related-card related-card-cta" href="/blog.html">
+                <span class="pill">All Resources</span>
+                <h3>See other resources</h3>
+                <p>Browse the full Blender Digital resource library for delivery platform growth guides.</p>
+                <span class="related-link-text">View all blogs →</span>
+              </a>
+
+            </div>
+          </div>
+        </section>
+
       </article>
     </div>
   </main>
