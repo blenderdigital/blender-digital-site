@@ -1,1 +1,505 @@
-hello
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<link rel="icon" href="/Blender%20Digital%20Logo%20Mark%20Favicon.svg">
+  <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-JEJPG0H4HC"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-JEJPG0H4HC');
+</script>
+
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>How Much of Your Delivery Revenue Are You Actually Keeping? | Blender Digital</title>
+  <meta
+    name="description"
+    content="Between commissions, processing fees, marketing fees, and promo costs, most restaurant owners have no idea what their actual delivery margin looks like. Here&#x27;s the full breakdown — and the math on a real order."
+  />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <style>
+    :root{--lime:#A7D51E;--mint:#E6F7DB;--cream:#FFF7D6;--blush:#FBE4EA;--text:#2B2B2B;--white:#FFFFFF;--radius:18px;--shadow:0 10px 30px rgba(0,0,0,.08);--max:1120px}
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{margin:0;font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif;color:var(--text);background:var(--mint);line-height:1.6}
+    a{color:inherit;text-decoration:none}
+    .container{max-width:var(--max);margin:0 auto;padding:0 clamp(24px,6vw,72px)}
+
+    .nav{position:sticky;top:0;z-index:20;background:rgba(230,247,219,.85);backdrop-filter:blur(10px);border-bottom:1px solid rgba(43,43,43,.08)}
+    .nav-inner{display:flex;align-items:center;justify-content:space-between;gap:16px;position:relative;padding-top:16px;padding-bottom:16px}
+    .brand{display:flex;align-items:center;gap:12px;text-decoration:none}
+
+    .brand-badge{
+      width:170px;
+      height:48px;
+      border-radius:0;
+      display:flex;
+      align-items:center;
+      justify-content:flex-start;
+      overflow:visible;
+    }
+
+    .brand-badge img{
+      width:170px;
+      height:auto;
+      max-width:none;
+      object-fit:contain;
+      display:block;
+    }
+
+    .nav-links{display:flex;flex-wrap:wrap;gap:14px;align-items:center}
+    .nav-links a{text-decoration:none;padding:10px 12px;border-radius:12px}
+    .nav-links a:hover{background:rgba(255,255,255,.7)}
+
+    .btn{display:inline-block;text-decoration:none;font-weight:700;padding:10px 16px;border-radius:14px}
+    .btn-primary{background:var(--lime)}
+    .btn-ghost{background:rgba(255,255,255,.7)}
+
+    .nav-toggle{display:none;align-items:center;justify-content:center;width:44px;height:44px;border-radius:12px;border:1px solid rgba(43,43,43,.10);background:rgba(255,255,255,.7);cursor:pointer}
+    .nav-toggle:active{transform:scale(.98)}
+    .nav-toggle-lines{width:18px;height:12px;position:relative}
+    .nav-toggle-lines span{position:absolute;left:0;right:0;height:2px;background:rgba(43,43,43,.85);border-radius:999px}
+    .nav-toggle-lines span:nth-child(1){top:0}
+    .nav-toggle-lines span:nth-child(2){top:5px}
+    .nav-toggle-lines span:nth-child(3){bottom:0}
+
+    @media (max-width:820px){
+      .nav-toggle{display:inline-flex}
+      .nav-links{display:none;position:absolute;left:0;right:0;top:100%;padding:14px clamp(24px,6vw,72px);background:rgba(230,247,219,.97);backdrop-filter:blur(10px);border-bottom:1px solid rgba(43,43,43,.08);flex-direction:column;gap:10px}
+      .nav-links a{padding:12px 12px}
+      .nav-links .btn{width:100%;text-align:center}
+      .nav.is-open .nav-links{display:flex}
+    }
+
+    .hero{padding-top:32px;padding-bottom:24px}
+    @media (max-width:560px){.hero{padding-top:20px;padding-bottom:20px}}
+
+    h1{font-size:clamp(2.1rem,4vw,3.25rem);line-height:1.05;margin:0 0 14px;letter-spacing:-.03em}
+    h2{font-size:clamp(1.45rem,2.4vw,2rem);margin:0 0 12px;letter-spacing:-.02em}
+    h3{font-size:1.05rem;margin:0 0 8px}
+
+    .kicker{display:inline-flex;gap:10px;align-items:center;font-weight:700;font-size:.9rem;padding:8px 12px;border-radius:999px;background:rgba(255,255,255,.7);margin-bottom:16px}
+    .kicker-dot{width:10px;height:10px;border-radius:999px;background:var(--lime)}
+    .lead{font-size:1.08rem;margin:0 0 18px;max-width:760px}
+    .section{padding:24px 0 64px}
+    .card{background:var(--white);border-radius:var(--radius);padding:28px;box-shadow:var(--shadow);border:1px solid rgba(43,43,43,.06)}
+    @media (max-width:560px){.card{padding:20px}}
+
+    .pill{display:inline-block;padding:6px 10px;border-radius:999px;background:rgba(167,213,30,.18);font-weight:700;font-size:.85rem}
+    .small{font-size:.9rem;opacity:.85}
+    .blog-shell{max-width:820px}
+    .blog-meta{display:flex;gap:10px;flex-wrap:wrap;margin:12px 0 18px}
+
+    .intro{font-size:1rem;margin-bottom:24px}
+    .intro p{margin:0 0 16px}
+
+    .section-block{margin-top:28px;padding-top:28px;border-top:1px solid rgba(43,43,43,.10)}
+    .section-block:first-child{margin-top:0;padding-top:0;border-top:none}
+
+    .section-head{display:flex;align-items:center;gap:12px;margin-bottom:10px}
+    .icon-badge{
+      width:36px;
+      height:36px;
+      border-radius:12px;
+      background:rgba(167,213,30,.18);
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      font-weight:800;
+      flex-shrink:0;
+    }
+
+    .blog-body p{margin:0 0 16px}
+    .blog-body ul{margin:0 0 18px 0;padding-left:20px}
+    .blog-body li{margin-bottom:10px}
+    .blog-body strong{font-weight:800}
+
+    .blog-body a{
+      text-decoration:underline;
+      text-underline-offset:3px;
+      font-weight:600;
+    }
+    .blog-body a:hover{
+      opacity:.75;
+    }
+
+    .callout{
+      background:var(--cream);
+      border:1px solid rgba(43,43,43,.06);
+      border-radius:16px;
+      padding:18px;
+      margin:18px 0 22px;
+    }
+
+    .warning{
+      background:var(--blush);
+      border:1px solid rgba(43,43,43,.06);
+      border-radius:16px;
+      padding:18px;
+      margin:18px 0 22px;
+    }
+
+    .mini-list{
+      margin:10px 0 0 0;
+      padding-left:18px;
+    }
+
+
+    .spec-table{
+      width:100%;
+      border-collapse:collapse;
+      margin:16px 0 22px;
+      overflow:hidden;
+      border-radius:14px;
+      font-size:.95rem;
+    }
+    .spec-table th,
+    .spec-table td{
+      text-align:left;
+      vertical-align:top;
+      padding:12px;
+      border-bottom:1px solid rgba(43,43,43,.10);
+    }
+    .spec-table th{
+      background:rgba(167,213,30,.18);
+      font-weight:800;
+    }
+    .spec-table tr:last-child td{border-bottom:none}
+    @media (max-width:720px){
+      .spec-table{display:block;overflow-x:auto;white-space:nowrap}
+    }
+
+    /* Related resources carousel */
+    .related-carousel-wrap{margin-top:14px}
+    .related-carousel{
+      display:flex;
+      gap:14px;
+      overflow-x:auto;
+      scroll-snap-type:x mandatory;
+      -webkit-overflow-scrolling:touch;
+      padding:4px 4px 12px;
+    }
+    .related-carousel::-webkit-scrollbar{height:8px}
+    .related-carousel::-webkit-scrollbar-thumb{background:rgba(43,43,43,.18);border-radius:999px}
+    .related-card{
+      flex:0 0 260px;
+      scroll-snap-align:start;
+      display:flex;
+      flex-direction:column;
+      justify-content:space-between;
+      min-height:210px;
+      background:var(--cream);
+      border:1px solid rgba(43,43,43,.06);
+      border-radius:16px;
+      padding:18px;
+      text-decoration:none !important;
+      transition:.2s ease;
+    }
+    .related-card:hover{transform:translateY(-3px);background:rgba(167,213,30,.18);opacity:1}
+    .related-card h3{margin:8px 0 8px;font-size:1rem}
+    .related-card p{margin:0;font-size:.9rem;opacity:.85}
+    .related-card-cta{background:var(--lime)}
+    .related-link-text{display:inline-block;margin-top:14px;font-weight:800;font-size:.9rem}
+    @media (max-width:560px){
+      .related-card{flex-basis:82%;min-height:220px}
+    }
+
+    footer.footer{background:rgba(255,255,255,.92);border-top:1px solid rgba(43,43,43,.10)}
+    .footer-main{padding:40px 0}
+    .footer-grid{display:grid;grid-template-columns:1.3fr 1fr 1fr 1fr;gap:32px;align-items:start}
+    @media (max-width:900px){.footer-grid{grid-template-columns:1fr 1fr}}
+    @media (max-width:560px){.footer-grid{grid-template-columns:1fr}}
+    footer.footer h4{margin:0 0 10px;font-size:.95rem}
+    .footer-grid ul{list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:8px}
+    .footer-grid a{color:inherit;text-decoration:none}
+    .footer-grid a:hover{text-decoration:underline}
+    .footer-bottom{border-top:1px solid rgba(43,43,43,.08);padding:16px 0}
+  </style>
+</head>
+
+<body id="top">
+  <nav class="nav">
+    <div class="container nav-inner">
+      <a class="brand" href="/">
+        <span class="brand-badge"><img src="/Blender%20Digital%20Full%20Logo.svg" alt="Blender Digital logo" /></span>
+      </a>
+
+      <button class="nav-toggle" id="navToggle" aria-label="Open menu" aria-expanded="false" aria-controls="navMenu">
+        <span class="nav-toggle-lines" aria-hidden="true"><span></span><span></span><span></span></span>
+      </button>
+
+      <div class="nav-links" id="navMenu">
+        <a href="/#services">Services</a>
+        <a href="/results.html">Results</a>
+        <a href="/blog.html">Resources</a>
+        <a href="/#pricing">Pricing</a>
+        <a class="btn btn-ghost" href="https://form.jotform.com/261082345751051" target="_blank" rel="noopener noreferrer">Contact</a>
+      </div>
+    </div>
+  </nav>
+
+  <header class="hero">
+    <div class="container blog-shell">
+      <div class="kicker">
+        <span class="kicker-dot"></span>
+        Resource
+      </div>
+      <h1>How Much of Your Delivery Revenue Are You Actually Keeping?</h1>
+      <p class="lead">
+        Between commissions, processing fees, marketing fees, and promo costs, most restaurant owners have no idea what their actual delivery margin looks like. Here&#x27;s the full breakdown — and the math on a real order.
+      </p>
+      <div class="blog-meta">
+        <span class="pill">Margins</span>
+        <span class="pill">Delivery Economics</span>
+        <span class="pill">Commission</span>
+        <span class="pill">Profitability</span>
+      </div>
+    </div>
+  </header>
+
+  <main class="section">
+    <div class="container blog-shell">
+      <article class="card blog-body">
+        <div class="intro">
+<p>You&#x27;re doing real volume on DoorDash or Uber Eats. The orders are coming in. But when you look at your actual payout and try to reconcile it against what you expected, something doesn&#x27;t add up.</p>
+          <p>You&#x27;re not imagining it. Delivery platforms are genuinely complicated when it comes to what you actually keep — and most operators are working from an incomplete picture of the real cost structure. According to <a href="https://activemenus.com/the-hidden-costs-of-third-party-delivery-what-restaurant-owners-really-pay-and-how-to-calculate-your-true-roi/" target="_blank" rel="noopener noreferrer">ActiveMenus&#x27; analysis of third-party delivery economics</a>, the actual cost of third-party delivery can exceed 40% of your revenue once all hidden fees and indirect costs are factored in. The headline commission rate is just the beginning.</p>
+          <p>Let&#x27;s fix that picture.</p>
+        </div>
+
+        <section class="section-block">
+          <div class="section-head">
+            <div class="icon-badge">$</div>
+            <h2>Start With Commission — But Don&#x27;t Stop There</h2>
+          </div>
+          <p>Most operators know there&#x27;s a commission. What many don&#x27;t fully understand is the range and what&#x27;s layered on top of it.</p>
+          <p>Here&#x27;s the current standard (rack rate) commission structure across the major platforms, as reported by <a href="https://foodondemand.com/04012026/how-the-uber-eats-fees-stack-up-against-3pd-competitors/" target="_blank" rel="noopener noreferrer">Food On Demand</a> and <a href="https://www.trykitchenhub.com/post/what-marketplaces-arent-telling-you-how-commission-models-are-quietly-changing" target="_blank" rel="noopener noreferrer">KitchenHub&#x27;s marketplace breakdown</a>:</p>
+          <h3>DoorDash</h3>
+          <ul>
+            <li>Basic plan: 15%</li>
+            <li>Plus plan: 25%</li>
+            <li>Premier plan: 30%</li>
+            <li>Pickup orders: 6%</li>
+          </ul>
+          <p><strong>Uber Eats</strong> <em>(updated March 2026)</em></p>
+          <ul>
+            <li>Lite plan: 20% (raised from 15% in March 2026)</li>
+            <li>Plus plan: 25% standard, 30% on orders from Uber One members</li>
+            <li>Premium plan: 30%</li>
+            <li>Pickup orders: 7% (with validated in-store pricing)</li>
+          </ul>
+          <p>It&#x27;s worth flagging: Uber Eats <a href="https://www.restaurantbusinessonline.com/technology/uber-eats-raising-delivery-fees-some-restaurants" target="_blank" rel="noopener noreferrer">raised commission rates in March 2026</a> — the first change in approximately 10 years — with the Lite tier rising from 15% to 20%. DoorDash and Grubhub have not matched this increase as of writing. If you&#x27;re on Uber Eats, now is an unusually good time to review your plan tier and renegotiate if you have the volume to support it.</p>
+          <h3>Grubhub</h3>
+          <ul>
+            <li>Starter: 5%</li>
+            <li>Basic: 15%</li>
+            <li>Plus: 20%</li>
+            <li>Pickup: 12% (marketing commission, delivery fee added separately)</li>
+          </ul>
+          <p>These are rack rates — what you pay if you signed the standard agreement or if your negotiated rate has lapsed. The commission comes off the top of every order. On a $30 order at 30%, that&#x27;s $9 gone before you&#x27;ve looked at anything else.</p>
+        </section>
+        <section class="section-block">
+          <div class="section-head">
+            <div class="icon-badge">$</div>
+            <h2>The Hidden Costs That Eat What&#x27;s Left</h2>
+          </div>
+          <h3>Credit Card Processing Fees</h3>
+          <p>Most platforms charge processing fees separately from commission — typically around 2.9–3.5% per transaction according to <a href="https://activemenus.com/the-hidden-costs-of-third-party-delivery-what-restaurant-owners-really-pay-and-how-to-calculate-your-true-roi/" target="_blank" rel="noopener noreferrer">ActiveMenus&#x27; fee breakdown</a>. On that same $30 order, that&#x27;s roughly another $0.90–$1.05. It adds up fast at scale.</p>
+          <h3>Marketing Fees</h3>
+          <p>When you run a promotion through the platform — a percentage-off offer, a BOGO, free delivery — the platform may charge a per-redemption fee on top of commission. DoorDash currently applies a $0.99 marketing fee to all marketing-driven orders, including both ads and promotions. Uber Eats has introduced similar per-redemption fees on promoted offers.</p>
+          <p>Per-order fees look small in isolation. At 200 promotional orders a week, they add $800+/month to your cost structure that many operators never attribute to their delivery P&amp;L.</p>
+          <h3>Integration Tools</h3>
+          <p>If you&#x27;re using middleware to connect your POS to the delivery platforms (tools like Olo, Deliverect, or ItsaCheckmate), that&#x27;s typically $50–$249/month per location, per <a href="https://www.trykitchenhub.com/post/what-marketplaces-arent-telling-you-how-commission-models-are-quietly-changing" target="_blank" rel="noopener noreferrer">KitchenHub&#x27;s marketplace analysis</a>. For multi-location brands, this is a real line item.</p>
+          <h3>Promo Funding</h3>
+          <p>When you run a discount — say, 25% off — you&#x27;re funding part or all of that discount out of your margin. Some campaigns are co-funded (the platform absorbs a portion), but many are fully operator-funded. If you don&#x27;t know which type you&#x27;re running, you should find out immediately.</p>
+        </section>
+        <section class="section-block">
+          <div class="section-head">
+            <div class="icon-badge">⚠</div>
+            <h2>What a Real Order Actually Looks Like</h2>
+          </div>
+          <p>Let&#x27;s put together the full math on a realistic scenario. This is the order that&#x27;s quietly destroying margin for thousands of operators every day.</p>
+          <p><strong>The setup:</strong> $30 ticket. Premier plan at 30% commission. Running a 25% off promo (operator-funded). Customer found you through a paid ad ($6 cost-per-order, a typical mid-performing campaign result).</p>
+          <table class="spec-table">
+            <thead><tr><th>Cost Item</th><th>Amount</th></tr></thead>
+            <tbody>
+              <tr><td>Gross order value</td><td>$30.00</td></tr>
+              <tr><td>Customer pays after 25% promo</td><td>$22.50</td></tr>
+              <tr><td>Platform commission (30% of $22.50)</td><td>-$6.75</td></tr>
+              <tr><td>Processing fee (~3%)</td><td>-$0.90</td></tr>
+              <tr><td>Marketing fee (per-order)</td><td>-$0.99</td></tr>
+              <tr><td>Ad cost per order</td><td>-$6.00</td></tr>
+              <tr><td>Food cost (35%)</td><td>-$10.50</td></tr>
+              <tr><td><strong>Net margin</strong></td><td><strong>-$3.64</strong></td></tr>
+            </tbody>
+          </table>
+          <p>You lost money on that order. Not counting labor, rent, or utilities.</p>
+          <p>This isn&#x27;t a fringe scenario. As <a href="https://cloudkitchens.com/blog/delivery-app-fees" target="_blank" rel="noopener noreferrer">CloudKitchens notes in their delivery fee analysis</a>, if a restaurant operates with a 10–15% profit margin and pays a 30% commission before any promo or ad costs, the math frequently goes negative on promoted orders. The operators who survive this environment are the ones who understand which orders are profitable and structure their campaigns accordingly.</p>
+        </section>
+        <section class="section-block">
+          <div class="section-head">
+            <div class="icon-badge">✓</div>
+            <h2>The Levers You Can Actually Pull</h2>
+          </div>
+          <h3>1. Negotiate your commission rate</h3>
+          <p>If you haven&#x27;t revisited your commission agreement in the last 12 months, or if you&#x27;ve grown meaningfully in volume since you signed, it may be time to renegotiate. This is especially true right now: <a href="https://www.restaurantbusinessonline.com/technology/uber-eats-raising-delivery-fees-some-restaurants" target="_blank" rel="noopener noreferrer">Restaurant Business Online reports</a> that DoorDash and Grubhub have held their rates steady while Uber Eats raised theirs — creating negotiating leverage if you can credibly threaten to shift volume.</p>
+          <h3>2. Know which promos are co-funded and which aren&#x27;t</h3>
+          <p>Before you launch any promotional offer, know exactly who&#x27;s paying for the discount. Run the unit economics before you activate, not after.</p>
+          <h3>3. Stop running ads and aggressive promos to the same customers simultaneously</h3>
+          <p>When a customer finds you through a paid ad <em>and</em> redeems a promotional discount in the same order, you&#x27;re stacking costs on both sides. The math frequently puts you in the red. More on the right segmentation approach in a separate post.</p>
+          <h3>4. Audit your plan tier against your actual usage</h3>
+          <p>If you&#x27;re on a Premium (30%) plan but not actively using the enhanced features, consider whether you&#x27;re paying for capabilities you&#x27;re not extracting value from.</p>
+        </section>
+        <section class="section-block">
+          <div class="section-head">
+            <div class="icon-badge">$</div>
+            <h2>The Number You Should Know Before Anything Else</h2>
+          </div>
+          <p>Your blended cost per order — the total of all delivery-related costs divided by your total delivery orders — is the number that tells you whether your delivery channel is profitable or just busy.</p>
+          <p>Most operators can pull the raw numbers from their platform dashboards. What they often don&#x27;t do is combine them into one clean calculation. If you haven&#x27;t built this view yet — even a simple spreadsheet tracking commission, processing, marketing fees, and promo costs per platform per month — that&#x27;s the first thing worth building. Once you can see that number clearly, every other decision becomes measurably easier to make.</p>
+        </section>
+
+        <section class="section-block">
+          <div class="section-head">
+            <div class="icon-badge">→</div>
+            <h2>More Resources</h2>
+          </div>
+
+          <p>
+            Keep exploring practical ways to improve delivery platform performance, margin, and visibility.
+          </p>
+
+          <div class="related-carousel-wrap">
+            <div class="related-carousel">
+
+              <a class="related-card" href="/blog/why-your-restaurant-is-invisible-on-doordash-uber-eats.html">
+                <span class="pill">Visibility</span>
+                <h3>Why Your Restaurant Is Invisible on DoorDash and Uber Eats</h3>
+                <p>Learn why low platform visibility happens and which levers help improve rank.</p>
+              </a>
+
+              <a class="related-card" href="/blog/delivery-ads-and-promos-same-time-killing-profitability.html">
+                <span class="pill">Ads + Promos</span>
+                <h3>Why Running Ads and Promos at the Same Time Is Killing Your Profitability</h3>
+                <p>See how ad spend and discounts can stack into unprofitable orders.</p>
+              </a>
+
+              <a class="related-card" href="/blog/customer-segmentation-protect-delivery-margin.html">
+                <span class="pill">Segmentation</span>
+                <h3>How to Use Customer Segmentation to Protect Your Delivery Margin</h3>
+                <p>Match offers to customer types instead of discounting every order the same way.</p>
+              </a>
+
+              <a class="related-card" href="/blog/profitable-restaurants-spend-less-delivery-ads.html">
+                <span class="pill">Ad Spend</span>
+                <h3>Why the Most Profitable Restaurants Spend Less on Delivery Ads — Not More</h3>
+                <p>Understand why healthier delivery programs rely less on paid traffic over time.</p>
+              </a>
+
+              <a class="related-card" href="/blog/third-party-vs-first-party-delivery-strategy.html">
+                <span class="pill">Delivery Strategy</span>
+                <h3>Third-Party vs. First-Party Delivery: The Strategy Most Restaurant Owners Get Backwards</h3>
+                <p>See how to use delivery platforms for discovery while protecting long-term margin.</p>
+              </a>
+
+              <a class="related-card related-card-cta" href="/blog.html">
+                <span class="pill">All Resources</span>
+                <h3>See other resources</h3>
+                <p>Browse the full Blender Digital resource library for delivery platform growth guides.</p>
+                <span class="related-link-text">View all blogs →</span>
+              </a>
+
+            </div>
+          </div>
+        </section>
+      </article>
+    </div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-main">
+      <div class="container footer-grid">
+        <div class="footer-brand">
+          <div style="display:flex;align-items:center;gap:10px;margin-bottom:10px">
+            <span class="brand-badge"><img src="/Blender%20Digital%20Full%20Logo.svg" alt="Blender Digital logo" /></span>
+          </div>
+          <p class="small">Fractional growth team for restaurants selling on DoorDash, Uber Eats, Grubhub, and Toast. We focus on disciplined execution—not fluff.</p>
+        </div>
+
+        <div>
+          <h4>Services</h4>
+          <ul class="small">
+            <li><a href="/#services">Platform operations</a></li>
+            <li><a href="/#services">Promotions strategy</a></li>
+            <li><a href="/#services">Sponsored listings</a></li>
+            <li><a href="/#services">Reviews & loyalty</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4>Resources</h4>
+          <ul class="small">
+            <li><a href="/blog.html">Blog</a></li>
+            <li><a href="/blog/why-your-uber-eats-promotions-are-destroying-your-margins.html">Uber Eats promo margins</a></li>
+            <li><a href="/blog/restaurant-delivery-platform-image-size-requirements.html">Image size requirements</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4>Company</h4>
+          <ul class="small">
+            <li><a href="/results.html">Results</a></li>
+            <li><a href="/#pricing">Pricing</a></li>
+            <li><a href="https://form.jotform.com/261082345751051" target="_blank" rel="noopener noreferrer">Contact</a></li>
+            <li><a href="#top">Back to top</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <div class="container" style="display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap">
+        <div class="small" style="text-align:center;width:100%">© 2026 Blender Digital</div>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // Mobile nav toggle
+    (function(){
+      const nav = document.querySelector('.nav');
+      const btn = document.getElementById('navToggle');
+      const menu = document.getElementById('navMenu');
+      if(!nav || !btn || !menu) return;
+
+      const close = () => {
+        nav.classList.remove('is-open');
+        btn.setAttribute('aria-expanded','false');
+      };
+
+      btn.addEventListener('click', () => {
+        const open = nav.classList.toggle('is-open');
+        btn.setAttribute('aria-expanded', open ? 'true' : 'false');
+      });
+
+      menu.addEventListener('click', (e) => {
+        const t = e.target;
+        if(t && t.tagName === 'A') close();
+      });
+
+      document.addEventListener('keydown', (e) => {
+        if(e.key === 'Escape') close();
+      });
+
+      window.addEventListener('resize', () => {
+        if(window.innerWidth > 820) close();
+      });
+    })();
+  </script>
+</body>
+</html>
