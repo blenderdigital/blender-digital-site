@@ -1,1 +1,413 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<link rel="icon" href="/Blender%20Digital%20Logo%20Mark%20Favicon.svg">
+  <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-JEJPG0H4HC"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-JEJPG0H4HC');
+</script>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
+  <title>When Should You Actually Add a Second Delivery Platform? | Blender Digital</title>
+  <meta name="description" content="Every restaurant operator eventually asks this question. The honest answer isn't as soon as possible — it's a specific set of conditions you need to hit first. Here's the decision framework." />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <style>
+    :root{--lime:#A7D51E;--mint:#E6F7DB;--cream:#FFF7D6;--blush:#FBE4EA;--text:#2B2B2B;--white:#FFFFFF;--radius:18px;--shadow:0 10px 30px rgba(0,0,0,.08);--max:1120px}
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{margin:0;font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif;color:var(--text);background:var(--mint);line-height:1.6}
+    a{color:inherit;text-decoration:none}
+    .container{max-width:var(--max);margin:0 auto;padding:0 clamp(24px,6vw,72px)}
+
+    .nav{position:sticky;top:0;z-index:20;background:rgba(230,247,219,.85);backdrop-filter:blur(10px);border-bottom:1px solid rgba(43,43,43,.08)}
+    .nav-inner{display:flex;align-items:center;justify-content:space-between;gap:16px;position:relative;padding-top:16px;padding-bottom:16px}
+    .brand{display:flex;align-items:center;gap:12px;text-decoration:none}
+    .brand-badge{width:170px;height:48px;border-radius:0;display:flex;align-items:center;justify-content:flex-start;overflow:visible}
+    .brand-badge img{width:170px;height:auto;max-width:none;object-fit:contain;display:block}
+    .nav-links{display:flex;flex-wrap:wrap;gap:14px;align-items:center}
+    .nav-links a{text-decoration:none;padding:10px 12px;border-radius:12px}
+    .nav-links a:hover{background:rgba(255,255,255,.7)}
+    .btn{display:inline-block;text-decoration:none;font-weight:700;padding:10px 16px;border-radius:14px}
+    .btn-primary{background:var(--lime)}
+    .btn-ghost{background:rgba(255,255,255,.7)}
+    .nav-toggle{display:none;align-items:center;justify-content:center;width:44px;height:44px;border-radius:12px;border:1px solid rgba(43,43,43,.10);background:rgba(255,255,255,.7);cursor:pointer}
+    .nav-toggle:active{transform:scale(.98)}
+    .nav-toggle-lines{width:18px;height:12px;position:relative}
+    .nav-toggle-lines span{position:absolute;left:0;right:0;height:2px;background:rgba(43,43,43,.85);border-radius:999px}
+    .nav-toggle-lines span:nth-child(1){top:0}
+    .nav-toggle-lines span:nth-child(2){top:5px}
+    .nav-toggle-lines span:nth-child(3){bottom:0}
+    @media (max-width:820px){
+      .nav-toggle{display:inline-flex}
+      .nav-links{display:none;position:absolute;left:0;right:0;top:100%;padding:14px clamp(24px,6vw,72px);background:rgba(230,247,219,.97);backdrop-filter:blur(10px);border-bottom:1px solid rgba(43,43,43,.08);flex-direction:column;gap:10px}
+      .nav-links a{padding:12px 12px}
+      .nav-links .btn{width:100%;text-align:center}
+      .nav.is-open .nav-links{display:flex}
+    }
+
+    .hero{padding-top:32px;padding-bottom:24px}
+    @media (max-width:560px){.hero{padding-top:20px;padding-bottom:20px}}
+    h1{font-size:clamp(2.1rem,4vw,3.25rem);line-height:1.05;margin:0 0 14px;letter-spacing:-.03em}
+    h2{font-size:clamp(1.45rem,2.4vw,2rem);margin:0 0 12px;letter-spacing:-.02em}
+    h3{font-size:1.05rem;margin:0 0 8px}
+    .kicker{display:inline-flex;gap:10px;align-items:center;font-weight:700;font-size:.9rem;padding:8px 12px;border-radius:999px;background:rgba(255,255,255,.7);margin-bottom:16px}
+    .kicker-dot{width:10px;height:10px;border-radius:999px;background:var(--lime)}
+    .lead{font-size:1.08rem;margin:0 0 18px;max-width:760px}
+    .section{padding:24px 0 64px}
+    .card{background:var(--white);border-radius:var(--radius);padding:28px;box-shadow:var(--shadow);border:1px solid rgba(43,43,43,.06)}
+    @media (max-width:560px){.card{padding:20px}}
+    .pill{display:inline-block;padding:6px 10px;border-radius:999px;background:rgba(167,213,30,.18);font-weight:700;font-size:.85rem}
+    .small{font-size:.9rem;opacity:.85}
+    .blog-shell{max-width:820px}
+    .blog-meta{display:flex;gap:10px;flex-wrap:wrap;margin:12px 0 18px}
+    .intro{font-size:1rem;margin-bottom:24px}
+    .intro p{margin:0 0 16px}
+    .section-block{margin-top:28px;padding-top:28px;border-top:1px solid rgba(43,43,43,.10)}
+    .section-block:first-child{margin-top:0;padding-top:0;border-top:none}
+    .section-head{display:flex;align-items:center;gap:12px;margin-bottom:10px}
+    .icon-badge{width:36px;height:36px;border-radius:12px;background:rgba(167,213,30,.18);display:flex;align-items:center;justify-content:center;font-weight:800;flex-shrink:0}
+    .blog-body p{margin:0 0 16px}
+    .blog-body ul,.blog-body ol{margin:0 0 18px 0;padding-left:20px}
+    .blog-body li{margin-bottom:10px}
+    .blog-body strong{font-weight:800}
+    .blog-body a{text-decoration:underline;text-underline-offset:3px;font-weight:600}
+    .blog-body a:hover{opacity:.75}
+    .callout{background:var(--cream);border:1px solid rgba(43,43,43,.06);border-radius:16px;padding:18px;margin:18px 0 22px}
+    .warning{background:var(--blush);border:1px solid rgba(43,43,43,.06);border-radius:16px;padding:18px;margin:18px 0 22px}
+
+    /* Related resources carousel */
+    .related-carousel-wrap{margin-top:14px}
+    .related-carousel{display:flex;gap:14px;overflow-x:auto;scroll-snap-type:x mandatory;-webkit-overflow-scrolling:touch;padding:4px 4px 12px}
+    .related-carousel::-webkit-scrollbar{height:8px}
+    .related-carousel::-webkit-scrollbar-thumb{background:rgba(43,43,43,.18);border-radius:999px}
+    .related-card{flex:0 0 260px;scroll-snap-align:start;display:flex;flex-direction:column;justify-content:space-between;min-height:210px;background:var(--cream);border:1px solid rgba(43,43,43,.06);border-radius:16px;padding:18px;text-decoration:none !important;transition:.2s ease}
+    .related-card:hover{transform:translateY(-3px);background:rgba(167,213,30,.18);opacity:1}
+    .related-card h3{margin:8px 0 8px;font-size:1rem}
+    .related-card p{margin:0;font-size:.9rem;opacity:.85}
+    .related-card-cta{background:var(--lime)}
+    .related-link-text{display:inline-block;margin-top:14px;font-weight:800;font-size:.9rem}
+    @media (max-width:560px){.related-card{flex-basis:82%;min-height:220px}}
+
+    footer.footer{background:rgba(255,255,255,.92);border-top:1px solid rgba(43,43,43,.10)}
+    .footer-main{padding:40px 0}
+    .footer-grid{display:grid;grid-template-columns:1.3fr 1fr 1fr 1fr;gap:32px;align-items:start}
+    @media (max-width:900px){.footer-grid{grid-template-columns:1fr 1fr}}
+    @media (max-width:560px){.footer-grid{grid-template-columns:1fr}}
+    footer.footer h4{margin:0 0 10px;font-size:.95rem}
+    .footer-grid ul{list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:8px}
+    .footer-grid a{color:inherit;text-decoration:none}
+    .footer-grid a:hover{text-decoration:underline}
+    .footer-bottom{border-top:1px solid rgba(43,43,43,.08);padding:16px 0}
+</style>
+</head>
+
+<body id="top">
+  <nav class="nav">
+    <div class="container nav-inner">
+      <a class="brand" href="/">
+        <span class="brand-badge"><img src="/Blender%20Digital%20Full%20Logo.svg" alt="Blender Digital logo" /></span>
+      </a>
+
+      <button class="nav-toggle" id="navToggle" aria-label="Open menu" aria-expanded="false" aria-controls="navMenu">
+        <span class="nav-toggle-lines" aria-hidden="true"><span></span><span></span><span></span></span>
+      </button>
+
+      <div class="nav-links" id="navMenu">
+        <a href="/#services">Services</a>
+        <a href="/results.html">Results</a>
+        <a href="/blog.html">Resources</a>
+        <a href="/#pricing">Pricing</a>
+        <a class="btn btn-ghost" href="https://form.jotform.com/261082345751051" target="_blank" rel="noopener noreferrer">Contact</a>
+      </div>
+    </div>
+  </nav>
+
+  <header class="hero">
+    <div class="container blog-shell">
+      <div class="kicker">
+        <span class="kicker-dot"></span>
+        Platform Strategy
+      </div>
+
+      <h1>When Should You Actually Add a Second Delivery Platform?</h1>
+
+      <p class="lead">
+        Every restaurant operator eventually asks this question. The honest answer is not “as soon as possible” — it depends on whether your first platform is stable enough to expand from.
+      </p>
+
+      <div class="blog-meta">
+        <span class="pill">Platform Strategy</span>
+        <span class="pill">DoorDash</span>
+        <span class="pill">Uber Eats</span>
+        <span class="pill">Expansion</span>
+      </div>
+    </div>
+  </header>
+
+  <main class="section">
+    <div class="container blog-shell">
+      <article class="card blog-body">
+
+        <div class="intro">
+          <p>You are live on DoorDash. Or Uber Eats. Things are going reasonably well. And someone — a partner, a consultant, an ambitious GM — says it is time to get on the other platform too.</p>
+          <p>Maybe they are right. Maybe they are not. This is one of the decisions where moving too early costs significantly more than waiting.</p>
+          <p>Here is the framework for making it correctly.</p>
+        </div>
+
+        
+        <section class="section-block">
+          <div class="section-head">
+            <div class="icon-badge">1</div>
+            <h2>Why “The More Platforms, The More Orders” Is a Trap</h2>
+          </div>
+
+          <p>The intuitive logic is simple: more platforms equals more exposure equals more orders. In practice, it often does not work that way — particularly in the first 12 months of operation.</p>
+
+          <p>Here is what actually happens when you expand to a second platform before you are ready:</p>
+
+          <ul>
+            <li><strong>Your metrics get diluted.</strong> Every operational metric that drives rank — conversion rate, acceptance rate, review velocity, prep time consistency — is now split across two platforms. Progress that would have compounded quickly on one platform now builds slowly on two. You end up mediocre on both instead of strong on one.</li>
+            <li><strong>Your kitchen gets more complex.</strong> Managing tablet chaos — separate tablets for DoorDash, Uber Eats, maybe Grubhub, plus your in-store POS — leads to operational errors. <a href="https://www.spindl.app/en/blog/marketing-strategy-for-online-food-business" target="_blank" rel="noopener noreferrer">Spindl's research on multi-platform management</a> estimates that manual entry errors from managing multiple delivery apps can cost 3–5% of total revenue. That is a real margin hit.</li>
+            <li><strong>Your negotiating leverage disappears.</strong> If you join multiple platforms at once, you lose the ability to use one platform as leverage against another. The time to negotiate is before you join — and you can only use that leverage once.</li>
+          </ul>
+        </section>
+
+        <section class="section-block">
+          <div class="section-head">
+            <div class="icon-badge">2</div>
+            <h2>The Case for Starting on One Platform</h2>
+          </div>
+
+          <p>According to <a href="https://www.earnestanalytics.com/insights/doordash-leads-us-delivery-share-but-some-cities-still-competitive" target="_blank" rel="noopener noreferrer">Earnest Analytics' market share data</a>, DoorDash holds roughly 60% of national US delivery share, with Uber Eats at around 26%. In most US markets, that makes DoorDash the right default starting point — highest customer volume, best shot at building rank quickly.</p>
+
+          <p>The exception is dense urban markets — New York City, Los Angeles, Miami, San Francisco — where Uber Eats' share is much closer to DoorDash's, and in some zip codes higher. In those markets, the platform choice is less obvious and worth investigating locally before committing.</p>
+
+          <div class="callout">
+            <h3>The core principle</h3>
+            <p>Dominate one platform before spreading across two. Build rank, build review velocity, achieve operational consistency. Then use your demonstrated performance as a negotiation point when approaching the second platform.</p>
+          </div>
+        </section>
+
+        <section class="section-block">
+          <div class="section-head">
+            <div class="icon-badge">✓</div>
+            <h2>The Signals That Tell You You’re Ready</h2>
+          </div>
+
+          <p>Before adding a second platform, you should be able to check all of the following:</p>
+
+          <div class="callout">
+            <h3>Operational stability</h3>
+            <ul>
+              <li>Acceptance rate consistently above 95%</li>
+              <li>Prep time hitting within 2 minutes of quoted time, consistently</li>
+              <li>Error rate below 3%</li>
+              <li>Cancel rate below 2%</li>
+            </ul>
+          </div>
+
+          <div class="callout">
+            <h3>Rank and visibility</h3>
+            <ul>
+              <li>You appear in the top 20–30 results for your primary category in your delivery zone</li>
+              <li>You are not relying on constant promotions to maintain order volume; promo dependency should be below 40%</li>
+            </ul>
+          </div>
+
+          <div class="callout">
+            <h3>Review health</h3>
+            <ul>
+              <li>Rating of 4.5 or above with at least 50 reviews</li>
+              <li>New reviews coming in consistently, with 5+ per week as a minimum</li>
+            </ul>
+          </div>
+
+          <div class="callout">
+            <h3>Financial sustainability</h3>
+            <ul>
+              <li>Your blended cost per order on Platform 1 is positive — meaning you are actually making money on delivery, not just doing volume</li>
+            </ul>
+          </div>
+
+          <p>If you cannot check all of these boxes, adding a second platform will split your energy without proportionally splitting your upside. The right move is to double down on current optimization until these conditions are met.</p>
+        </section>
+
+        <section class="section-block">
+          <div class="section-head">
+            <div class="icon-badge">3</div>
+            <h2>The Platform-Specific Case for Grubhub</h2>
+          </div>
+
+          <p>Grubhub's national market share has declined significantly over the past few years, but it maintains strong positions in specific markets — particularly New York City, where <a href="https://www.earnestanalytics.com/insights/doordash-leads-us-delivery-share-but-some-cities-still-competitive" target="_blank" rel="noopener noreferrer">Earnest Analytics' data</a> shows DoorDash and Uber Eats are nearly tied and Grubhub, through the Seamless brand, remains a meaningful third option.</p>
+
+          <p>For most operators outside of NYC and Chicago, Grubhub is genuinely a third priority. For NYC operators specifically, treating Grubhub/Seamless as an afterthought could be a meaningful missed opportunity.</p>
+        </section>
+
+        <section class="section-block">
+          <div class="section-head">
+            <div class="icon-badge">$</div>
+            <h2>How to Negotiate When You Do Expand</h2>
+          </div>
+
+          <p>When you are ready to join Platform 2, your existing performance on Platform 1 is your negotiating asset. Bring:</p>
+
+          <ul>
+            <li>Your average monthly order volume</li>
+            <li>Your current rating and review count</li>
+            <li>Your acceptance rate and operational metrics</li>
+          </ul>
+
+          <p>Use these to negotiate a lower commission tier than rack rate, or to secure marketing credits or co-funded promotional support during your launch window on the new platform. The platforms do negotiate — especially for operators with proven track records — but only before you have signed and gone live. After that, the leverage is gone.</p>
+        </section>
+
+        
+        <section class="section-block">
+          <div class="section-head">
+            <div class="icon-badge">→</div>
+            <h2>More Resources</h2>
+          </div>
+
+          <p>
+            Keep exploring practical ways to improve delivery platform performance, margin, and visibility.
+          </p>
+
+          <div class="related-carousel-wrap">
+            <div class="related-carousel">
+
+              <a class="related-card" href="/blog/why-your-restaurant-is-invisible-on-doordash-uber-eats.html">
+                <span class="pill">Visibility</span>
+                <h3>Why Your Restaurant Is Invisible on DoorDash and Uber Eats</h3>
+                <p>Learn why low platform visibility happens and which levers help improve rank.</p>
+              </a>
+
+              <a class="related-card" href="/blog/new-restaurant-doordash-uber-eats-first-30-days.html">
+                <span class="pill">Launch Plan</span>
+                <h3>New on DoorDash or Uber Eats? Here's Exactly What to Do in Your First 30 Days</h3>
+                <p>Use the first month to build the right algorithmic and operational foundation.</p>
+              </a>
+
+              <a class="related-card" href="/blog/drive-traffic-delivery-storefront-without-algorithm.html">
+                <span class="pill">Traffic</span>
+                <h3>How to Drive Traffic to Your Delivery Storefront Without Relying on the Algorithm</h3>
+                <p>Drive outside traffic to strengthen platform signals and create early momentum.</p>
+              </a>
+
+              <a class="related-card" href="/blog/profitable-restaurants-spend-less-delivery-ads.html">
+                <span class="pill">Ad Spend</span>
+                <h3>Why the Most Profitable Restaurants Spend Less on Delivery Ads — Not More</h3>
+                <p>Understand why healthier delivery programs rely less on paid traffic over time.</p>
+              </a>
+
+              <a class="related-card" href="/blog/third-party-vs-first-party-delivery-strategy.html">
+                <span class="pill">Delivery Strategy</span>
+                <h3>Third-Party vs. First-Party Delivery: The Strategy Most Restaurant Owners Get Backwards</h3>
+                <p>Understand how third-party delivery should fit into a longer-term ordering strategy.</p>
+              </a>
+
+              <a class="related-card related-card-cta" href="/blog.html">
+                <span class="pill">All Resources</span>
+                <h3>See other resources</h3>
+                <p>Browse the full Blender Digital resource library for delivery platform growth guides.</p>
+                <span class="related-link-text">View all blogs →</span>
+              </a>
+
+            </div>
+          </div>
+        </section>
+
+
+      </article>
+    </div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-main">
+      <div class="container footer-grid">
+        <div class="footer-brand">
+          <div style="display:flex;align-items:center;gap:10px;margin-bottom:10px">
+            <span class="brand-badge"><img src="/Blender%20Digital%20Full%20Logo.svg" alt="Blender Digital logo" /></span>
+          </div>
+          <p class="small">Fractional growth team for restaurants selling on DoorDash, Uber Eats, Grubhub, and Toast. We focus on disciplined execution—not fluff.</p>
+        </div>
+
+        <div>
+          <h4>Services</h4>
+          <ul class="small">
+            <li><a href="/#services">Platform operations</a></li>
+            <li><a href="/#services">Promotions strategy</a></li>
+            <li><a href="/#services">Sponsored listings</a></li>
+            <li><a href="/#services">Reviews & loyalty</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4>Resources</h4>
+          <ul class="small">
+            <li><a href="/blog.html">Blog</a></li>
+            <li><a href="/blog/why-your-uber-eats-promotions-are-destroying-your-margins.html">Uber Eats promo margins</a></li>
+            <li><a href="/blog/restaurant-delivery-platform-image-size-requirements.html">Image size requirements</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4>Company</h4>
+          <ul class="small">
+            <li><a href="/results.html">Results</a></li>
+            <li><a href="/#pricing">Pricing</a></li>
+            <li><a href="https://form.jotform.com/261082345751051" target="_blank" rel="noopener noreferrer">Contact</a></li>
+            <li><a href="#top">Back to top</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <div class="container" style="display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap">
+        <div class="small" style="text-align:center;width:100%">© 2026 Blender Digital</div>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // Mobile nav toggle
+    (function(){
+      const nav = document.querySelector('.nav');
+      const btn = document.getElementById('navToggle');
+      const menu = document.getElementById('navMenu');
+      if(!nav || !btn || !menu) return;
+
+      const close = () => {
+        nav.classList.remove('is-open');
+        btn.setAttribute('aria-expanded','false');
+      };
+
+      btn.addEventListener('click', () => {
+        const open = nav.classList.toggle('is-open');
+        btn.setAttribute('aria-expanded', open ? 'true' : 'false');
+      });
+
+      menu.addEventListener('click', (e) => {
+        const t = e.target;
+        if(t && t.tagName === 'A') close();
+      });
+
+      document.addEventListener('keydown', (e) => {
+        if(e.key === 'Escape') close();
+      });
+
+      window.addEventListener('resize', () => {
+        if(window.innerWidth > 820) close();
+      });
+    })();
+  </script>
+</body>
+</html>
