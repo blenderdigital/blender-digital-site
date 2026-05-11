@@ -1,1 +1,350 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<link rel="icon" href="/Blender%20Digital%20Logo%20Mark%20Favicon.svg">
+  <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-JEJPG0H4HC"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
 
+  gtag('config', 'G-JEJPG0H4HC');
+</script>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>The Right Way to Run BOGO Promos Without Destroying Your Margin | Blender Digital</title>
+  <meta name="description" content="BOGO promotions on DoorDash and Uber Eats can drive real order volume — but most restaurants run them in a way that destroys their margin. Here&#x27;s the right way to structure them." />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <style>
+    :root{--lime:#A7D51E;--mint:#E6F7DB;--cream:#FFF7D6;--blush:#FBE4EA;--text:#2B2B2B;--white:#FFFFFF;--radius:18px;--shadow:0 10px 30px rgba(0,0,0,.08);--max:1120px}
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{margin:0;font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif;color:var(--text);background:var(--mint);line-height:1.6}
+    a{color:inherit;text-decoration:none}
+    .container{max-width:var(--max);margin:0 auto;padding:0 clamp(24px,6vw,72px)}
+
+    .nav{position:sticky;top:0;z-index:20;background:rgba(230,247,219,.85);backdrop-filter:blur(10px);border-bottom:1px solid rgba(43,43,43,.08)}
+    .nav-inner{display:flex;align-items:center;justify-content:space-between;gap:16px;position:relative;padding-top:16px;padding-bottom:16px}
+    .brand{display:flex;align-items:center;gap:12px;text-decoration:none}
+    .brand-badge{width:170px;height:48px;border-radius:0;display:flex;align-items:center;justify-content:flex-start;overflow:visible}
+    .brand-badge img{width:170px;height:auto;max-width:none;object-fit:contain;display:block}
+    .nav-links{display:flex;flex-wrap:wrap;gap:14px;align-items:center}
+    .nav-links a{text-decoration:none;padding:10px 12px;border-radius:12px}
+    .nav-links a:hover{background:rgba(255,255,255,.7)}
+    .btn{display:inline-block;text-decoration:none;font-weight:700;padding:10px 16px;border-radius:14px}
+    .btn-primary{background:var(--lime)}
+    .btn-ghost{background:rgba(255,255,255,.7)}
+
+    .nav-toggle{display:none;align-items:center;justify-content:center;width:44px;height:44px;border-radius:12px;border:1px solid rgba(43,43,43,.10);background:rgba(255,255,255,.7);cursor:pointer}
+    .nav-toggle:active{transform:scale(.98)}
+    .nav-toggle-lines{width:18px;height:12px;position:relative}
+    .nav-toggle-lines span{position:absolute;left:0;right:0;height:2px;background:rgba(43,43,43,.85);border-radius:999px}
+    .nav-toggle-lines span:nth-child(1){top:0}
+    .nav-toggle-lines span:nth-child(2){top:5px}
+    .nav-toggle-lines span:nth-child(3){bottom:0}
+    @media (max-width:820px){
+      .nav-toggle{display:inline-flex}
+      .nav-links{display:none;position:absolute;left:0;right:0;top:100%;padding:14px clamp(24px,6vw,72px);background:rgba(230,247,219,.97);backdrop-filter:blur(10px);border-bottom:1px solid rgba(43,43,43,.08);flex-direction:column;gap:10px}
+      .nav-links a{padding:12px 12px}
+      .nav-links .btn{width:100%;text-align:center}
+      .nav.is-open .nav-links{display:flex}
+    }
+
+    .hero{padding-top:32px;padding-bottom:24px}
+    @media (max-width:560px){.hero{padding-top:20px;padding-bottom:20px}}
+    h1{font-size:clamp(2.1rem,4vw,3.25rem);line-height:1.05;margin:0 0 14px;letter-spacing:-.03em}
+    h2{font-size:clamp(1.45rem,2.4vw,2rem);margin:0 0 12px;letter-spacing:-.02em}
+    h3{font-size:1.05rem;margin:0 0 8px}
+    .kicker{display:inline-flex;gap:10px;align-items:center;font-weight:700;font-size:.9rem;padding:8px 12px;border-radius:999px;background:rgba(255,255,255,.7);margin-bottom:16px}
+    .kicker-dot{width:10px;height:10px;border-radius:999px;background:var(--lime)}
+    .lead{font-size:1.08rem;margin:0 0 18px;max-width:760px}
+    .section{padding:24px 0 64px}
+    .card{background:var(--white);border-radius:var(--radius);padding:28px;box-shadow:var(--shadow);border:1px solid rgba(43,43,43,.06)}
+    @media (max-width:560px){.card{padding:20px}}
+    .pill{display:inline-block;padding:6px 10px;border-radius:999px;background:rgba(167,213,30,.18);font-weight:700;font-size:.85rem}
+    .small{font-size:.9rem;opacity:.85}
+    .blog-shell{max-width:820px}
+    .blog-meta{display:flex;gap:10px;flex-wrap:wrap;margin:12px 0 18px}
+    .intro{font-size:1rem;margin-bottom:24px}
+    .intro p{margin:0 0 16px}
+    .section-block{margin-top:28px;padding-top:28px;border-top:1px solid rgba(43,43,43,.10)}
+    .section-block:first-child{margin-top:0;padding-top:0;border-top:none}
+    .section-head{display:flex;align-items:center;gap:12px;margin-bottom:10px}
+    .icon-badge{width:36px;height:36px;border-radius:12px;background:rgba(167,213,30,.18);display:flex;align-items:center;justify-content:center;font-weight:800;flex-shrink:0}
+    .blog-body p{margin:0 0 16px}
+    .blog-body ul{margin:0 0 18px 0;padding-left:20px}
+    .blog-body li{margin-bottom:10px}
+    .blog-body strong{font-weight:800}
+    .blog-body a{text-decoration:underline;text-underline-offset:3px;font-weight:600}
+    .blog-body a:hover{opacity:.75}
+    .callout{background:var(--cream);border:1px solid rgba(43,43,43,.06);border-radius:16px;padding:18px;margin:18px 0 22px}
+    .warning{background:var(--blush);border:1px solid rgba(43,43,43,.06);border-radius:16px;padding:18px;margin:18px 0 22px}
+
+    /* Related resources carousel */
+    .related-carousel-wrap{margin-top:14px}
+    .related-carousel{display:flex;gap:14px;overflow-x:auto;scroll-snap-type:x mandatory;-webkit-overflow-scrolling:touch;padding:4px 4px 12px}
+    .related-carousel::-webkit-scrollbar{height:8px}
+    .related-carousel::-webkit-scrollbar-thumb{background:rgba(43,43,43,.18);border-radius:999px}
+    .related-card{flex:0 0 260px;scroll-snap-align:start;display:flex;flex-direction:column;justify-content:space-between;min-height:210px;background:var(--cream);border:1px solid rgba(43,43,43,.06);border-radius:16px;padding:18px;text-decoration:none !important;transition:.2s ease}
+    .related-card:hover{transform:translateY(-3px);background:rgba(167,213,30,.18);opacity:1}
+    .related-card h3{margin:8px 0 8px;font-size:1rem}
+    .related-card p{margin:0;font-size:.9rem;opacity:.85}
+    .related-card-cta{background:var(--lime)}
+    .related-link-text{display:inline-block;margin-top:14px;font-weight:800;font-size:.9rem}
+    @media (max-width:560px){.related-card{flex-basis:82%;min-height:220px}}
+
+    footer.footer{background:rgba(255,255,255,.92);border-top:1px solid rgba(43,43,43,.10)}
+    .footer-main{padding:40px 0}
+    .footer-grid{display:grid;grid-template-columns:1.3fr 1fr 1fr 1fr;gap:32px;align-items:start}
+    @media (max-width:900px){.footer-grid{grid-template-columns:1fr 1fr}}
+    @media (max-width:560px){.footer-grid{grid-template-columns:1fr}}
+    footer.footer h4{margin:0 0 10px;font-size:.95rem}
+    .footer-grid ul{list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:8px}
+    .footer-grid a{color:inherit;text-decoration:none}
+    .footer-grid a:hover{text-decoration:underline}
+    .footer-bottom{border-top:1px solid rgba(43,43,43,.08);padding:16px 0}
+  
+  </style>
+</head>
+<body id="top">
+  <nav class="nav">
+    <div class="container nav-inner">
+      <a class="brand" href="/">
+        <span class="brand-badge"><img src="/Blender%20Digital%20Full%20Logo.svg" alt="Blender Digital logo" /></span>
+      </a>
+
+      <button class="nav-toggle" id="navToggle" aria-label="Open menu" aria-expanded="false" aria-controls="navMenu">
+        <span class="nav-toggle-lines" aria-hidden="true"><span></span><span></span><span></span></span>
+      </button>
+
+      <div class="nav-links" id="navMenu">
+        <a href="/#services">Services</a>
+        <a href="/results.html">Results</a>
+        <a href="/blog.html">Resources</a>
+        <a href="/#pricing">Pricing</a>
+        <a class="btn btn-ghost" href="https://form.jotform.com/261082345751051" target="_blank" rel="noopener noreferrer">Contact</a>
+      </div>
+    </div>
+  </nav>
+
+  <header class="hero">
+    <div class="container blog-shell">
+      <div class="kicker">
+        <span class="kicker-dot"></span>
+        Resource
+      </div>
+      <h1>The Right Way to Run BOGO Promos Without Destroying Your Margin</h1>
+      <p class="lead">
+        BOGO promotions on DoorDash and Uber Eats can drive real order volume — but most restaurants run them in a way that destroys their margin. Here&#x27;s the right way to structure them.
+      </p>
+      <div class="blog-meta">
+        <span class="pill">BOGO</span>
+        <span class="pill">Promotions</span>
+        <span class="pill">Margin Protection</span>
+      </div>
+    </div>
+  </header>
+
+  <main class="section">
+    <div class="container blog-shell">
+      <article class="card blog-body">
+        <div class="intro">
+<p>BOGO promotions are one of the highest-performing offer types on delivery platforms. Customers love them, platforms push them in curated carousels, and they reliably drive order volume in ways that percentage-off discounts often don&#x27;t match.</p>
+          <p>They also destroy margin faster than almost any other tool — when they&#x27;re set up wrong.</p>
+          <p>Most operators who have run a BOGO either saw margins they can&#x27;t explain afterward, or they&#x27;re running them on autopilot and haven&#x27;t looked closely at what each order is actually costing them. This post is for both groups.</p>
+        </div>
+
+        <section class="section-block">
+          <div class="section-head">
+            <div class="icon-badge">✓</div>
+            <h2>How BOGO Actually Works on Delivery Platforms</h2>
+          </div>
+          <p>When you run a BOGO on DoorDash or Uber Eats, the platform does <em>not</em> absorb the full cost of the free item. The discount is split between you and the platform — but the split varies by campaign type and how the promotion is structured. Many BOGOs are fully operator-funded, meaning you provide the free item entirely out of your own margin.</p>
+          <p>Additionally, BOGO orders still carry your full commission rate. So on a single BOGO order:</p>
+          <ul>
+            <li>The platform takes its commission off the order value</li>
+            <li>You fund part or all of the free item&#x27;s cost</li>
+            <li>Food cost applies to both items — the one the customer paid for and the one that was free</li>
+          </ul>
+          <p>According to <a href="https://www.trykitchenhub.com/post/what-marketplaces-arent-telling-you-how-commission-models-are-quietly-changing" target="_blank" rel="noopener noreferrer">KitchenHub&#x27;s analysis of delivery platform economics</a>, when you stack promo costs with commission, your fully loaded platform cost can approach 30–35%+ on promoted orders before food cost. Layer in a fully funded BOGO and you can see why the math gets precarious fast.</p>
+          <p>When redemption rates are low (below 25% of eligible customers claiming the free item), the offer can still be profitable. When redemption rates hit 40–50%, the math frequently goes negative without a specific protection strategy in place.</p>
+        </section>
+        <section class="section-block">
+          <div class="section-head">
+            <div class="icon-badge">$</div>
+            <h2>The Markup Strategy That Changes the Math</h2>
+          </div>
+          <p>Here&#x27;s what most operators miss — and it&#x27;s the difference between a BOGO that works and one that wipes out margin.</p>
+          <p>Before activating a BOGO offer, raise the price of the item by 25–50%.</p>
+          <p>This isn&#x27;t about deceiving customers. It&#x27;s about structuring the promotion so that when the &quot;free&quot; item is redeemed, the discount cost is absorbed by the price increase on the paid item — rather than coming directly out of your baseline margin.</p>
+          <p>Here&#x27;s how it plays out:</p>
+          <p>Say you have a $14 item with 25% food cost ($3.50) and a 30% platform commission.</p>
+          <p>At baseline: commission = $4.20, food cost = $3.50. Net margin ≈ $6.30.</p>
+          <p>Now raise that item to $19.60 (a 40% markup) and run it as a BOGO.</p>
+          <p>At 25% redemption rate (1 in 4 eligible orders claims the second item), the effective order value stays strong enough that the markup absorbs most of the promo cost and your margin holds.</p>
+          <p>At 50% redemption — where half of your BOGO orders include the free item — the markup means you&#x27;re still in positive territory, even if margin has compressed. Without the markup, at 50% redemption at the original $14 price, you&#x27;re likely at or below breakeven on those orders after commission, food cost, and the discounted item.</p>
+          <p><strong>The markup makes the promo survivable under high-redemption scenarios.</strong> It&#x27;s the single most important mechanic most operators skip.</p>
+        </section>
+        <section class="section-block">
+          <div class="section-head">
+            <div class="icon-badge">✓</div>
+            <h2>Practical Implementation</h2>
+          </div>
+          <h3>Step 1: Choose the right items.</h3>
+          <p>BOGO works best on high-margin, high-NPS items. High margin gives you more room to absorb promo costs even with the markup. High NPS means customers genuinely want the item, which drives real order volume rather than confusion or indifference.</p>
+          <h3>Step 2: Create a separate, dedicated menu item.</h3>
+          <p>Don&#x27;t just mark up your existing item. Create a separate menu listing at the marked-up price, clearly named for the promotion. This keeps your standard menu pricing intact when the BOGO isn&#x27;t running, and prevents confusion if a customer compares prices across visits.</p>
+          <h3>Step 3: Run it periodically, not continuously.</h3>
+          <p>The promotional value of a BOGO comes partly from scarcity. An offer that&#x27;s always running stops feeling like an offer. Run it for 2–3 weeks, pause for 2–3 weeks, repeat. This also gives you clean data comparing order volume during vs. without the promotion.</p>
+          <h3>Step 4: Monitor redemption rates weekly.</h3>
+          <p>Your break-even point shifts with redemption. At 20–25% redemption with the markup, you&#x27;re likely in a healthy range. At 45%+, you need to either increase the markup further or shorten the promo window. Track this, don&#x27;t assume it.</p>
+          <h3>Step 5: Know whether your campaign is co-funded or operator-funded.</h3>
+          <p>If the platform is absorbing part of the discount, your unit economics look different than if you&#x27;re fully funding it. Ask your platform rep explicitly. If the answer is unclear — assume you&#x27;re fully funding it and model accordingly.</p>
+        </section>
+        <section class="section-block">
+          <div class="section-head">
+            <div class="icon-badge">⚠</div>
+            <h2>The Platform Landscape</h2>
+          </div>
+          <p>One notable update: DoorDash added BOGO offer support relatively recently — they were behind Uber Eats on this for some time. As of now, you can run this playbook on both major platforms, which wasn&#x27;t always possible.</p>
+          <p><a href="https://www.trykitchenhub.com/post/what-marketplaces-arent-telling-you-how-commission-models-are-quietly-changing" target="_blank" rel="noopener noreferrer">KitchenHub&#x27;s latest platform breakdown</a> also notes that Uber Eats is now charging $0.99 per redeemed promotional offer on top of commission in many cases. This per-redemption fee should be factored into your BOGO unit economics, particularly at high redemption rates. On a $14 item with 50% redemption, that&#x27;s an additional $0.50/order in effective cost that many operators don&#x27;t account for.</p>
+        </section>
+        <section class="section-block">
+          <div class="section-head">
+            <div class="icon-badge">$</div>
+            <h2>A Quick Decision Framework</h2>
+          </div>
+          <p>Before you activate any BOGO:</p>
+          <ul>
+            <li><strong>What&#x27;s my food cost percentage on this item?</strong> (Above 35%? Be cautious — the margin window is thin.)</li>
+            <li><strong>What&#x27;s my commission rate?</strong> (30% commission + 35% food cost leaves you 35 cents on the dollar before any promo cost.)</li>
+            <li><strong>What markup am I applying?</strong> (25% minimum, 40–50% if your redemption rates historically run high.)</li>
+            <li><strong>At what redemption rate do I break even?</strong> (Calculate this before launch, not after.)</li>
+            <li><strong>Is this campaign co-funded or operator-funded?</strong> (Know before you sign up.)</li>
+            <li><strong>How long will I run it?</strong> (Set a specific end date before you start.)</li>
+          </ul>
+          <p>If you can&#x27;t answer all six before you launch, you&#x27;re not ready to run the promo.</p>
+          <p>Done right, a BOGO can be one of the best tools in your delivery mix: it drives new customer acquisition, boosts visibility in platform carousels, increases order volume during slow periods, and — when structured with markup protection — does it at a margin you can sustain.</p>
+          <p>Done wrong, it&#x27;s one of the fastest ways to train your customer base to never pay full price for anything — while quietly bleeding margin every week.</p>
+          <p><em>Figuring out your delivery platform strategy on your own takes time most restaurant operators don&#x27;t have. Blender Digital manages delivery platform optimization — from menu structure to promo engineering to monthly performance reporting — for restaurant groups who want results without the guesswork. <a href="https://blenderdigital.co" target="_blank" rel="noopener noreferrer">See what we do.</a></em></p>
+        </section>
+
+        <section class="section-block">
+          <div class="section-head">
+            <div class="icon-badge">→</div>
+            <h2>More Resources</h2>
+          </div>
+
+          <p>
+            Keep exploring practical ways to improve delivery platform performance, margin, and visibility.
+          </p>
+
+          <div class="related-carousel-wrap">
+            <div class="related-carousel">
+
+              <a class="related-card" href="/blog/why-your-uber-eats-promotions-are-destroying-your-margins.html">
+                <span class="pill">Uber Eats</span>
+                <h3>Why Your Uber Eats Promotions Are Destroying Your Margins</h3>
+                <p>See how overlapping offers can quietly weaken margin on promoted orders.</p>
+              </a>
+
+              <a class="related-card" href="/blog/how-much-delivery-revenue-are-you-actually-keeping.html">
+                <span class="pill">Margins</span>
+                <h3>How Much of Your Delivery Revenue Are You Actually Keeping?</h3>
+                <p>Break down commissions, fees, promo costs, and the real economics of delivery orders.</p>
+              </a>
+
+              <a class="related-card" href="/blog/delivery-ads-and-promos-same-time-killing-profitability.html">
+                <span class="pill">Ads + Promos</span>
+                <h3>Why Running Ads and Promos at the Same Time Is Killing Your Profitability</h3>
+                <p>Learn why stacking paid visibility and discounts can quietly push orders negative.</p>
+              </a>
+
+              <a class="related-card" href="/blog/customer-segmentation-protect-delivery-margin.html">
+                <span class="pill">Segmentation</span>
+                <h3>How to Use Customer Segmentation to Protect Your Delivery Margin</h3>
+                <p>See how different customer groups should receive different offer strategies.</p>
+              </a>
+
+              <a class="related-card" href="/blog/profitable-restaurants-spend-less-delivery-ads.html">
+                <span class="pill">Ad Spend</span>
+                <h3>Why the Most Profitable Restaurants Spend Less on Delivery Ads — Not More</h3>
+                <p>Understand why healthier delivery programs rely less on paid traffic over time.</p>
+              </a>
+
+              <a class="related-card related-card-cta" href="/blog.html">
+                <span class="pill">All Resources</span>
+                <h3>See other resources</h3>
+                <p>Browse the full Blender Digital resource library for delivery platform growth guides.</p>
+                <span class="related-link-text">View all blogs →</span>
+              </a>
+
+            </div>
+          </div>
+        </section>
+      </article>
+    </div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-main">
+      <div class="container footer-grid">
+        <div class="footer-brand">
+          <div style="display:flex;align-items:center;gap:10px;margin-bottom:10px">
+            <span class="brand-badge"><img src="/Blender%20Digital%20Full%20Logo.svg" alt="Blender Digital logo" /></span>
+          </div>
+          <p class="small">Fractional growth team for restaurants selling on DoorDash, Uber Eats, Grubhub, and Toast. We focus on disciplined execution—not fluff.</p>
+        </div>
+
+        <div>
+          <h4>Services</h4>
+          <ul class="small">
+            <li><a href="/#services">Platform operations</a></li>
+            <li><a href="/#services">Promotions strategy</a></li>
+            <li><a href="/#services">Sponsored listings</a></li>
+            <li><a href="/#services">Reviews & loyalty</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4>Resources</h4>
+          <ul class="small">
+            <li><a href="/blog.html">Blog</a></li>
+            <li><a href="/blog/why-your-uber-eats-promotions-are-destroying-your-margins.html">Uber Eats promo margins</a></li>
+            <li><a href="/blog/restaurant-delivery-platform-image-size-requirements.html">Image size requirements</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4>Company</h4>
+          <ul class="small">
+            <li><a href="/results.html">Results</a></li>
+            <li><a href="/#pricing">Pricing</a></li>
+            <li><a href="https://form.jotform.com/261082345751051" target="_blank" rel="noopener noreferrer">Contact</a></li>
+            <li><a href="#top">Back to top</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <div class="container" style="display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap">
+        <div class="small" style="text-align:center;width:100%">© 2026 Blender Digital</div>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-JEJPG0H4HC');
+</script>
+</body>
+</html>
