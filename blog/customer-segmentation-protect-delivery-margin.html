@@ -1,1 +1,342 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<link rel="icon" href="/Blender%20Digital%20Logo%20Mark%20Favicon.svg">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-JEJPG0H4HC"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-JEJPG0H4HC');
+</script>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
+  <title>How to Use Customer Segmentation to Protect Your Delivery Margin | Blender Digital</title>
+  <meta name="description" content="Most restaurants treat every delivery customer the same. The ones with healthy margins don't. Here's how to segment your audience across platforms — and why it changes everything." />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <style>
+    :root{--lime:#A7D51E;--mint:#E6F7DB;--cream:#FFF7D6;--blush:#FBE4EA;--text:#2B2B2B;--white:#FFFFFF;--radius:18px;--shadow:0 10px 30px rgba(0,0,0,.08);--max:1120px}
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{margin:0;font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif;color:var(--text);background:var(--mint);line-height:1.6}
+    a{color:inherit;text-decoration:none}
+    .container{max-width:var(--max);margin:0 auto;padding:0 clamp(24px,6vw,72px)}
+    .nav{position:sticky;top:0;z-index:20;background:rgba(230,247,219,.85);backdrop-filter:blur(10px);border-bottom:1px solid rgba(43,43,43,.08)}
+    .nav-inner{display:flex;align-items:center;justify-content:space-between;gap:16px;position:relative;padding-top:16px;padding-bottom:16px}
+    .brand{display:flex;align-items:center;gap:12px;text-decoration:none}
+    .brand-badge{width:170px;height:48px;border-radius:0;display:flex;align-items:center;justify-content:flex-start;overflow:visible}
+    .brand-badge img{width:170px;height:auto;max-width:none;object-fit:contain;display:block}
+    .nav-links{display:flex;flex-wrap:wrap;gap:14px;align-items:center}
+    .nav-links a{text-decoration:none;padding:10px 12px;border-radius:12px}
+    .nav-links a:hover{background:rgba(255,255,255,.7)}
+    .btn{display:inline-block;text-decoration:none;font-weight:700;padding:10px 16px;border-radius:14px}
+    .btn-primary{background:var(--lime)}
+    .btn-ghost{background:rgba(255,255,255,.7)}
+    .nav-toggle{display:none;align-items:center;justify-content:center;width:44px;height:44px;border-radius:12px;border:1px solid rgba(43,43,43,.10);background:rgba(255,255,255,.7);cursor:pointer}
+    .nav-toggle:active{transform:scale(.98)}
+    .nav-toggle-lines{width:18px;height:12px;position:relative}
+    .nav-toggle-lines span{position:absolute;left:0;right:0;height:2px;background:rgba(43,43,43,.85);border-radius:999px}
+    .nav-toggle-lines span:nth-child(1){top:0}
+    .nav-toggle-lines span:nth-child(2){top:5px}
+    .nav-toggle-lines span:nth-child(3){bottom:0}
+    @media (max-width:820px){
+      .nav-toggle{display:inline-flex}
+      .nav-links{display:none;position:absolute;left:0;right:0;top:100%;padding:14px clamp(24px,6vw,72px);background:rgba(230,247,219,.97);backdrop-filter:blur(10px);border-bottom:1px solid rgba(43,43,43,.08);flex-direction:column;gap:10px}
+      .nav-links a{padding:12px 12px}
+      .nav-links .btn{width:100%;text-align:center}
+      .nav.is-open .nav-links{display:flex}
+    }
+    .hero{padding-top:32px;padding-bottom:24px}
+    @media (max-width:560px){.hero{padding-top:20px;padding-bottom:20px}}
+    h1{font-size:clamp(2.1rem,4vw,3.25rem);line-height:1.05;margin:0 0 14px;letter-spacing:-.03em}
+    h2{font-size:clamp(1.45rem,2.4vw,2rem);margin:0 0 12px;letter-spacing:-.02em}
+    h3{font-size:1.05rem;margin:0 0 8px}
+    .kicker{display:inline-flex;gap:10px;align-items:center;font-weight:700;font-size:.9rem;padding:8px 12px;border-radius:999px;background:rgba(255,255,255,.7);margin-bottom:16px}
+    .kicker-dot{width:10px;height:10px;border-radius:999px;background:var(--lime)}
+    .lead{font-size:1.08rem;margin:0 0 18px;max-width:760px}
+    .section{padding:24px 0 64px}
+    .card{background:var(--white);border-radius:var(--radius);padding:28px;box-shadow:var(--shadow);border:1px solid rgba(43,43,43,.06)}
+    @media (max-width:560px){.card{padding:20px}}
+    .pill{display:inline-block;padding:6px 10px;border-radius:999px;background:rgba(167,213,30,.18);font-weight:700;font-size:.85rem}
+    .small{font-size:.9rem;opacity:.85}
+    .blog-shell{max-width:820px}
+    .blog-meta{display:flex;gap:10px;flex-wrap:wrap;margin:12px 0 18px}
+    .intro{font-size:1rem;margin-bottom:24px}
+    .intro p{margin:0 0 16px}
+    .section-block{margin-top:28px;padding-top:28px;border-top:1px solid rgba(43,43,43,.10)}
+    .section-block:first-child{margin-top:0;padding-top:0;border-top:none}
+    .section-head{display:flex;align-items:center;gap:12px;margin-bottom:10px}
+    .icon-badge{width:36px;height:36px;border-radius:12px;background:rgba(167,213,30,.18);display:flex;align-items:center;justify-content:center;font-weight:800;flex-shrink:0}
+    .blog-body p{margin:0 0 16px}
+    .blog-body ul,.blog-body ol{margin:0 0 18px 0;padding-left:20px}
+    .blog-body li{margin-bottom:10px}
+    .blog-body strong{font-weight:800}
+    .blog-body a{text-decoration:underline;text-underline-offset:3px;font-weight:600}
+    .blog-body a:hover{opacity:.75}
+    .callout{background:var(--cream);border:1px solid rgba(43,43,43,.06);border-radius:16px;padding:18px;margin:18px 0 22px}
+    .warning{background:var(--blush);border:1px solid rgba(43,43,43,.06);border-radius:16px;padding:18px;margin:18px 0 22px}
+    .related-carousel-wrap{margin-top:14px}
+    .related-carousel{display:flex;gap:14px;overflow-x:auto;scroll-snap-type:x mandatory;-webkit-overflow-scrolling:touch;padding:4px 4px 12px}
+    .related-carousel::-webkit-scrollbar{height:8px}
+    .related-carousel::-webkit-scrollbar-thumb{background:rgba(43,43,43,.18);border-radius:999px}
+    .related-card{flex:0 0 260px;scroll-snap-align:start;display:flex;flex-direction:column;justify-content:space-between;min-height:210px;background:var(--cream);border:1px solid rgba(43,43,43,.06);border-radius:16px;padding:18px;text-decoration:none !important;transition:.2s ease}
+    .related-card:hover{transform:translateY(-3px);background:rgba(167,213,30,.18);opacity:1}
+    .related-card h3{margin:8px 0 8px;font-size:1rem}
+    .related-card p{margin:0;font-size:.9rem;opacity:.85}
+    .related-card-cta{background:var(--lime)}
+    .related-link-text{display:inline-block;margin-top:14px;font-weight:800;font-size:.9rem}
+    @media (max-width:560px){.related-card{flex-basis:82%;min-height:220px}}
+    footer.footer{background:rgba(255,255,255,.92);border-top:1px solid rgba(43,43,43,.10)}
+    .footer-main{padding:40px 0}
+    .footer-grid{display:grid;grid-template-columns:1.3fr 1fr 1fr 1fr;gap:32px;align-items:start}
+    @media (max-width:900px){.footer-grid{grid-template-columns:1fr 1fr}}
+    @media (max-width:560px){.footer-grid{grid-template-columns:1fr}}
+    footer.footer h4{margin:0 0 10px;font-size:.95rem}
+    .footer-grid ul{list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:8px}
+    .footer-grid a{color:inherit;text-decoration:none}
+    .footer-grid a:hover{text-decoration:underline}
+    .footer-bottom{border-top:1px solid rgba(43,43,43,.08);padding:16px 0}
+</style>
+</head>
+
+<body id="top">
+  <nav class="nav">
+    <div class="container nav-inner">
+      <a class="brand" href="/">
+        <span class="brand-badge"><img src="/Blender%20Digital%20Full%20Logo.svg" alt="Blender Digital logo" /></span>
+      </a>
+
+      <button class="nav-toggle" id="navToggle" aria-label="Open menu" aria-expanded="false" aria-controls="navMenu">
+        <span class="nav-toggle-lines" aria-hidden="true"><span></span><span></span><span></span></span>
+      </button>
+
+      <div class="nav-links" id="navMenu">
+        <a href="/#services">Services</a>
+        <a href="/results.html">Results</a>
+        <a href="/blog.html">Resources</a>
+        <a href="/#pricing">Pricing</a>
+        <a class="btn btn-ghost" href="https://form.jotform.com/261082345751051" target="_blank" rel="noopener noreferrer">Contact</a>
+      </div>
+    </div>
+  </nav>
+
+  <header class="hero">
+    <div class="container blog-shell">
+      <div class="kicker"><span class="kicker-dot"></span>Segmentation</div>
+      <h1>How to Use Customer Segmentation to Protect Your Delivery Margin</h1>
+      <p class="lead">Most restaurants treat every delivery customer the same. The ones with healthier margins do not.</p>
+      <div class="blog-meta">
+        <span class="pill">Segmentation</span>
+        <span class="pill">Margin Protection</span>
+        <span class="pill">Promotions</span>
+      </div>
+    </div>
+  </header>
+
+  <main class="section">
+    <div class="container blog-shell">
+      <article class="card blog-body">
+
+        <div class="intro">
+          <p>If you are spending the same amount to reach every customer on your delivery platforms — the same ad dollars, the same promotional discounts, the same marketing fee — you are almost certainly losing money on a significant portion of those orders without knowing it.</p>
+          <p>Customer segmentation is the practice of treating different customers differently based on their relationship to your restaurant. It is standard practice in retail and e-commerce. In restaurant delivery, it is still underused — and the margin gap between operators who do it and operators who do not is widening.</p>
+        </div>
+
+        
+        <section class="section-block">
+          <div class="section-head">
+            <div class="icon-badge">1</div>
+            <h2>The Four Segments That Matter in Delivery</h2>
+          </div>
+
+          <div class="callout">
+            <h3>New Customers</h3>
+            <p>Defined as customers who have never ordered from your restaurant on this platform. They require the highest investment to convert — a paid impression plus a first-order incentive — and they carry the highest risk of never coming back.</p>
+            <p>According to <a href="https://merchants.doordash.com/en-us/blog/restaurant-customer-acquisition-cost" target="_blank" rel="noopener noreferrer">DoorDash's merchant education materials</a>, a healthy customer acquisition strategy targets a 3:1 LTV-to-CAC ratio. If you are spending $8 in ad cost plus funding a 25% promo on a $30 new customer order, the economics only work if that customer orders again.</p>
+            <p><strong>The play:</strong> ad + first-order promo. Accept the lower margin on this order as a customer acquisition cost, and measure retention to evaluate whether the investment paid off.</p>
+          </div>
+
+          <div class="callout">
+            <h3>Returning Customers</h3>
+            <p>These customers know you exist and have had at least one positive experience. They do not need paid ads to find you — they will search for you directly. What they might need is a light incentive to keep the habit going.</p>
+            <p><strong>The play:</strong> promo only, no ad spend. Free delivery or $5 off can maintain engagement without the double-dip.</p>
+          </div>
+
+          <div class="callout">
+            <h3>Loyal Customers</h3>
+            <p>These customers will order regardless of what you do. They are your highest-margin segment — full price, no ad spend, no promo needed. Doing anything to this group is usually waste.</p>
+            <p><strong>The play:</strong> nothing. Let them order organically. Do not run ads to them. Do not send them promos. Protect the full margin.</p>
+          </div>
+
+          <div class="callout">
+            <h3>Lapsed Customers</h3>
+            <p>These are customers who have not ordered in 30–60+ days. They know your restaurant, but the habit has broken. This is a recovery play, similar to new customer acquisition.</p>
+            <p><strong>The play:</strong> ad + win-back promo. Use a targeted offer to re-engage them, then measure whether they return again after the incentive.</p>
+          </div>
+        </section>
+
+        <section class="section-block">
+          <div class="section-head">
+            <div class="icon-badge">2</div>
+            <h2>Why Blanket Promotions Destroy Margin</h2>
+          </div>
+
+          <p>The margin problem starts when every customer receives the same offer. A new customer may need a discount to take a chance on you. A loyal customer does not. When you give both of them the same promotion, you are subsidizing orders that would have happened anyway.</p>
+
+          <p>This is how restaurants end up with strong order volume but weak payout. The dashboard shows activity, but the economics are messy because too much discounting is flowing to customers who were already likely to order.</p>
+
+          <div class="warning">
+            <h3>The hidden waste</h3>
+            <p>Every dollar of ad spend or promo discount applied to a customer who was going to order anyway is not acquisition. It is margin leakage.</p>
+          </div>
+        </section>
+
+        <section class="section-block">
+          <div class="section-head">
+            <div class="icon-badge">3</div>
+            <h2>How to Implement This on Each Platform</h2>
+          </div>
+
+          <div class="callout">
+            <h3>Uber Eats</h3>
+            <ul>
+              <li><strong>Campaign 1:</strong> New Customers audience + keyword targeting → pair with a 20–25% off first-order promo.</li>
+              <li><strong>Campaign 2:</strong> Returning Customers audience → pair with free delivery only, not a percentage-off offer.</li>
+              <li><strong>Loyal customers:</strong> no paid campaign. Let them order organically.</li>
+            </ul>
+          </div>
+
+          <div class="callout">
+            <h3>DoorDash</h3>
+            <ul>
+              <li><strong>Campaign 1:</strong> New Customers + location group targeting → pair with 25% off.</li>
+              <li><strong>Campaign 2:</strong> Lapsed Customers → pair with BOGO or $10 off as a win-back offer.</li>
+              <li><strong>Existing Customers:</strong> promo only, no ad spend. Use light incentives like free delivery when needed.</li>
+            </ul>
+          </div>
+
+          <p>This structure keeps your blended margin healthier because most of your order volume — the returning and loyal segments — carries no ad cost weight.</p>
+        </section>
+
+        <section class="section-block">
+          <div class="section-head">
+            <div class="icon-badge">$</div>
+            <h2>Measuring Whether It Is Working</h2>
+          </div>
+
+          <p>The metric to watch is <strong>promo dependency rate</strong>: the percentage of your total orders that include a promotional discount.</p>
+
+          <p><a href="https://www.gofoodservice.com/guides/restaurant-coupons-and-promotions-guide" target="_blank" rel="noopener noreferrer">GoFoodService's promotions research</a> cites Circana data showing that 29% of all commercial restaurant traffic in the past 12 months involved a deal — the highest rate in tracking history. If your promo dependency rate is significantly above that, say 50–60% of your orders, you have likely fallen into the blanket-discount pattern.</p>
+
+          <div class="callout">
+            <h3>Healthy target</h3>
+            <p>A healthy promo dependency target is below 40%. At that rate, the majority of your volume is coming in at full price, and your promotional spend is working as an acquisition and retention tool rather than as the only reason people order from you.</p>
+          </div>
+        </section>
+
+        <section class="section-block">
+          <div class="section-head">
+            <div class="icon-badge">✓</div>
+            <h2>Final Takeaway</h2>
+          </div>
+
+          <p>Segmentation is not about making marketing more complicated. It is about stopping waste. New customers, returning customers, loyal customers, and lapsed customers do not have the same relationship to your restaurant, so they should not receive the same offer strategy.</p>
+
+          <p>The restaurants with healthier delivery margins are not necessarily the ones with fewer promotions. They are the ones that know exactly who should receive each offer — and who should be left alone.</p>
+        </section>
+
+        
+        <section class="section-block">
+          <div class="section-head">
+            <div class="icon-badge">→</div>
+            <h2>More Resources</h2>
+          </div>
+
+          <p>Keep exploring practical ways to improve delivery platform performance, margin, and visibility.</p>
+
+          <div class="related-carousel-wrap">
+            <div class="related-carousel">
+
+              <a class="related-card" href="/blog/delivery-ads-and-promos-same-time-killing-profitability.html">
+                <span class="pill">Ads + Promos</span>
+                <h3>Why Running Ads and Promos at the Same Time Is Killing Your Profitability</h3>
+                <p>Learn why stacking paid visibility and discounts can quietly push orders negative.</p>
+              </a>
+
+              <a class="related-card" href="/blog/how-much-delivery-revenue-are-you-actually-keeping.html">
+                <span class="pill">Margins</span>
+                <h3>How Much of Your Delivery Revenue Are You Actually Keeping?</h3>
+                <p>Break down commissions, fees, promo costs, and the real economics of delivery orders.</p>
+              </a>
+
+              <a class="related-card" href="/blog/bogo-delivery-promo-margin-protection.html">
+                <span class="pill">Promotions</span>
+                <h3>The Right Way to Run BOGO Promos Without Destroying Your Margin</h3>
+                <p>Structure BOGO offers more carefully so growth does not come at the expense of profit.</p>
+              </a>
+
+              <a class="related-card" href="/blog/profitable-restaurants-spend-less-delivery-ads.html">
+                <span class="pill">Ad Spend</span>
+                <h3>Why the Most Profitable Restaurants Spend Less on Delivery Ads — Not More</h3>
+                <p>Understand why healthier delivery programs rely less on paid traffic over time.</p>
+              </a>
+
+              <a class="related-card" href="/blog/delivery-metrics-what-they-mean-how-to-read-them.html">
+                <span class="pill">Reporting</span>
+                <h3>What Your Delivery Metrics Are Actually Telling You</h3>
+                <p>Learn which numbers matter most and how to read platform performance clearly.</p>
+              </a>
+
+              <a class="related-card related-card-cta" href="/blog.html">
+                <span class="pill">All Resources</span>
+                <h3>See other resources</h3>
+                <p>Browse the full Blender Digital resource library for delivery platform growth guides.</p>
+                <span class="related-link-text">View all blogs →</span>
+              </a>
+
+            </div>
+          </div>
+        </section>
+
+
+      </article>
+    </div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-main">
+      <div class="container footer-grid">
+        <div class="footer-brand">
+          <div style="display:flex;align-items:center;gap:10px;margin-bottom:10px">
+            <span class="brand-badge"><img src="/Blender%20Digital%20Full%20Logo.svg" alt="Blender Digital logo" /></span>
+          </div>
+          <p class="small">Fractional growth team for restaurants selling on DoorDash, Uber Eats, Grubhub, and Toast. We focus on disciplined execution—not fluff.</p>
+        </div>
+        <div><h4>Services</h4><ul class="small"><li><a href="/#services">Platform operations</a></li><li><a href="/#services">Promotions strategy</a></li><li><a href="/#services">Sponsored listings</a></li><li><a href="/#services">Reviews & loyalty</a></li></ul></div>
+        <div><h4>Resources</h4><ul class="small"><li><a href="/blog.html">Blog</a></li><li><a href="/blog/why-your-uber-eats-promotions-are-destroying-your-margins.html">Uber Eats promo margins</a></li><li><a href="/blog/restaurant-delivery-platform-image-size-requirements.html">Image size requirements</a></li></ul></div>
+        <div><h4>Company</h4><ul class="small"><li><a href="/results.html">Results</a></li><li><a href="/#pricing">Pricing</a></li><li><a href="https://form.jotform.com/261082345751051" target="_blank" rel="noopener noreferrer">Contact</a></li><li><a href="#top">Back to top</a></li></ul></div>
+      </div>
+    </div>
+    <div class="footer-bottom"><div class="container" style="display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap"><div class="small" style="text-align:center;width:100%">© 2026 Blender Digital</div></div></div>
+  </footer>
+
+  <script>
+    (function(){
+      const nav = document.querySelector('.nav');
+      const btn = document.getElementById('navToggle');
+      const menu = document.getElementById('navMenu');
+      if(!nav || !btn || !menu) return;
+      const close = () => {nav.classList.remove('is-open');btn.setAttribute('aria-expanded','false');};
+      btn.addEventListener('click', () => {const open = nav.classList.toggle('is-open');btn.setAttribute('aria-expanded', open ? 'true' : 'false');});
+      menu.addEventListener('click', (e) => {const t = e.target;if(t && t.tagName === 'A') close();});
+      document.addEventListener('keydown', (e) => {if(e.key === 'Escape') close();});
+      window.addEventListener('resize', () => {if(window.innerWidth > 820) close();});
+    })();
+  </script>
+</body>
+</html>
