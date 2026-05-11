@@ -1,1 +1,288 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<link rel="icon" href="/Blender%20Digital%20Logo%20Mark%20Favicon.svg">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-JEJPG0H4HC"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-JEJPG0H4HC');
+</script>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
+  <title>Third-Party vs. First-Party Delivery: The Strategy Most Restaurant Owners Get Backwards | Blender Digital</title>
+  <meta name="description" content="Most restaurants treat DoorDash and Uber Eats as their primary delivery channel indefinitely. The operators building durable, high-margin delivery businesses are doing it differently." />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <style>
+    :root{--lime:#A7D51E;--mint:#E6F7DB;--cream:#FFF7D6;--blush:#FBE4EA;--text:#2B2B2B;--white:#FFFFFF;--radius:18px;--shadow:0 10px 30px rgba(0,0,0,.08);--max:1120px}
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{margin:0;font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif;color:var(--text);background:var(--mint);line-height:1.6}
+    a{color:inherit;text-decoration:none}
+    .container{max-width:var(--max);margin:0 auto;padding:0 clamp(24px,6vw,72px)}
+    .nav{position:sticky;top:0;z-index:20;background:rgba(230,247,219,.85);backdrop-filter:blur(10px);border-bottom:1px solid rgba(43,43,43,.08)}
+    .nav-inner{display:flex;align-items:center;justify-content:space-between;gap:16px;position:relative;padding-top:16px;padding-bottom:16px}
+    .brand{display:flex;align-items:center;gap:12px;text-decoration:none}
+    .brand-badge{width:170px;height:48px;border-radius:0;display:flex;align-items:center;justify-content:flex-start;overflow:visible}
+    .brand-badge img{width:170px;height:auto;max-width:none;object-fit:contain;display:block}
+    .nav-links{display:flex;flex-wrap:wrap;gap:14px;align-items:center}
+    .nav-links a{text-decoration:none;padding:10px 12px;border-radius:12px}
+    .nav-links a:hover{background:rgba(255,255,255,.7)}
+    .btn{display:inline-block;text-decoration:none;font-weight:700;padding:10px 16px;border-radius:14px}
+    .btn-primary{background:var(--lime)}
+    .btn-ghost{background:rgba(255,255,255,.7)}
+    .nav-toggle{display:none;align-items:center;justify-content:center;width:44px;height:44px;border-radius:12px;border:1px solid rgba(43,43,43,.10);background:rgba(255,255,255,.7);cursor:pointer}
+    .nav-toggle:active{transform:scale(.98)}
+    .nav-toggle-lines{width:18px;height:12px;position:relative}
+    .nav-toggle-lines span{position:absolute;left:0;right:0;height:2px;background:rgba(43,43,43,.85);border-radius:999px}
+    .nav-toggle-lines span:nth-child(1){top:0}
+    .nav-toggle-lines span:nth-child(2){top:5px}
+    .nav-toggle-lines span:nth-child(3){bottom:0}
+    @media (max-width:820px){
+      .nav-toggle{display:inline-flex}
+      .nav-links{display:none;position:absolute;left:0;right:0;top:100%;padding:14px clamp(24px,6vw,72px);background:rgba(230,247,219,.97);backdrop-filter:blur(10px);border-bottom:1px solid rgba(43,43,43,.08);flex-direction:column;gap:10px}
+      .nav-links a{padding:12px 12px}
+      .nav-links .btn{width:100%;text-align:center}
+      .nav.is-open .nav-links{display:flex}
+    }
+    .hero{padding-top:32px;padding-bottom:24px}
+    @media (max-width:560px){.hero{padding-top:20px;padding-bottom:20px}}
+    h1{font-size:clamp(2.1rem,4vw,3.25rem);line-height:1.05;margin:0 0 14px;letter-spacing:-.03em}
+    h2{font-size:clamp(1.45rem,2.4vw,2rem);margin:0 0 12px;letter-spacing:-.02em}
+    h3{font-size:1.05rem;margin:0 0 8px}
+    .kicker{display:inline-flex;gap:10px;align-items:center;font-weight:700;font-size:.9rem;padding:8px 12px;border-radius:999px;background:rgba(255,255,255,.7);margin-bottom:16px}
+    .kicker-dot{width:10px;height:10px;border-radius:999px;background:var(--lime)}
+    .lead{font-size:1.08rem;margin:0 0 18px;max-width:760px}
+    .section{padding:24px 0 64px}
+    .card{background:var(--white);border-radius:var(--radius);padding:28px;box-shadow:var(--shadow);border:1px solid rgba(43,43,43,.06)}
+    @media (max-width:560px){.card{padding:20px}}
+    .pill{display:inline-block;padding:6px 10px;border-radius:999px;background:rgba(167,213,30,.18);font-weight:700;font-size:.85rem}
+    .small{font-size:.9rem;opacity:.85}
+    .blog-shell{max-width:820px}
+    .blog-meta{display:flex;gap:10px;flex-wrap:wrap;margin:12px 0 18px}
+    .intro{font-size:1rem;margin-bottom:24px}
+    .intro p{margin:0 0 16px}
+    .section-block{margin-top:28px;padding-top:28px;border-top:1px solid rgba(43,43,43,.10)}
+    .section-block:first-child{margin-top:0;padding-top:0;border-top:none}
+    .section-head{display:flex;align-items:center;gap:12px;margin-bottom:10px}
+    .icon-badge{width:36px;height:36px;border-radius:12px;background:rgba(167,213,30,.18);display:flex;align-items:center;justify-content:center;font-weight:800;flex-shrink:0}
+    .blog-body p{margin:0 0 16px}
+    .blog-body ul,.blog-body ol{margin:0 0 18px 0;padding-left:20px}
+    .blog-body li{margin-bottom:10px}
+    .blog-body strong{font-weight:800}
+    .blog-body a{text-decoration:underline;text-underline-offset:3px;font-weight:600}
+    .blog-body a:hover{opacity:.75}
+    .callout{background:var(--cream);border:1px solid rgba(43,43,43,.06);border-radius:16px;padding:18px;margin:18px 0 22px}
+    .warning{background:var(--blush);border:1px solid rgba(43,43,43,.06);border-radius:16px;padding:18px;margin:18px 0 22px}
+    .related-carousel-wrap{margin-top:14px}
+    .related-carousel{display:flex;gap:14px;overflow-x:auto;scroll-snap-type:x mandatory;-webkit-overflow-scrolling:touch;padding:4px 4px 12px}
+    .related-carousel::-webkit-scrollbar{height:8px}
+    .related-carousel::-webkit-scrollbar-thumb{background:rgba(43,43,43,.18);border-radius:999px}
+    .related-card{flex:0 0 260px;scroll-snap-align:start;display:flex;flex-direction:column;justify-content:space-between;min-height:210px;background:var(--cream);border:1px solid rgba(43,43,43,.06);border-radius:16px;padding:18px;text-decoration:none !important;transition:.2s ease}
+    .related-card:hover{transform:translateY(-3px);background:rgba(167,213,30,.18);opacity:1}
+    .related-card h3{margin:8px 0 8px;font-size:1rem}
+    .related-card p{margin:0;font-size:.9rem;opacity:.85}
+    .related-card-cta{background:var(--lime)}
+    .related-link-text{display:inline-block;margin-top:14px;font-weight:800;font-size:.9rem}
+    @media (max-width:560px){.related-card{flex-basis:82%;min-height:220px}}
+    footer.footer{background:rgba(255,255,255,.92);border-top:1px solid rgba(43,43,43,.10)}
+    .footer-main{padding:40px 0}
+    .footer-grid{display:grid;grid-template-columns:1.3fr 1fr 1fr 1fr;gap:32px;align-items:start}
+    @media (max-width:900px){.footer-grid{grid-template-columns:1fr 1fr}}
+    @media (max-width:560px){.footer-grid{grid-template-columns:1fr}}
+    footer.footer h4{margin:0 0 10px;font-size:.95rem}
+    .footer-grid ul{list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:8px}
+    .footer-grid a{color:inherit;text-decoration:none}
+    .footer-grid a:hover{text-decoration:underline}
+    .footer-bottom{border-top:1px solid rgba(43,43,43,.08);padding:16px 0}
+</style>
+</head>
+
+<body id="top">
+
+  <nav class="nav">
+    <div class="container nav-inner">
+      <a class="brand" href="/">
+        <span class="brand-badge"><img src="/Blender%20Digital%20Full%20Logo.svg" alt="Blender Digital logo" /></span>
+      </a>
+      <button class="nav-toggle" id="navToggle" aria-label="Open menu" aria-expanded="false" aria-controls="navMenu">
+        <span class="nav-toggle-lines" aria-hidden="true"><span></span><span></span><span></span></span>
+      </button>
+      <div class="nav-links" id="navMenu">
+        <a href="/#services">Services</a>
+        <a href="/results.html">Results</a>
+        <a href="/blog.html">Resources</a>
+        <a href="/#pricing">Pricing</a>
+        <a class="btn btn-ghost" href="https://form.jotform.com/261082345751051" target="_blank" rel="noopener noreferrer">Contact</a>
+      </div>
+    </div>
+  </nav>
+
+
+  <header class="hero">
+    <div class="container blog-shell">
+      <div class="kicker"><span class="kicker-dot"></span>Delivery Strategy</div>
+      <h1>Third-Party vs. First-Party Delivery: The Strategy Most Restaurant Owners Get Backwards</h1>
+      <p class="lead">Most restaurants treat DoorDash and Uber Eats as the delivery strategy. Durable, high-margin operators think about the whole channel mix differently.</p>
+      <div class="blog-meta">
+        <span class="pill">Delivery Strategy</span>
+        <span class="pill">First-Party</span>
+        <span class="pill">Third-Party</span>
+      </div>
+    </div>
+  </header>
+
+  <main class="section">
+    <div class="container blog-shell">
+      <article class="card blog-body">
+
+        <div class="intro">
+          <p>Ask most restaurant operators what their delivery strategy is and they will describe their DoorDash setup, their Uber Eats ads, or their Grubhub commission rate.</p>
+          <p>That is a platform strategy. It is not a delivery strategy.</p>
+          <p>A real delivery strategy accounts for where you want those customers ordering from in 12 months, 24 months, and beyond. For most multi-location restaurant groups, the answer is increasingly: directly.</p>
+        </div>
+
+        <section class="section-block">
+          <div class="section-head"><div class="icon-badge">1</div><h2>What Third-Party Platforms Are Actually Good For</h2></div>
+          <p>Third-party delivery platforms — DoorDash, Uber Eats, and Grubhub — do specific things extremely well that no first-party channel can replicate at the same scale.</p>
+          <div class="callout">
+            <h3>Discovery</h3>
+            <p>When someone opens DoorDash in an unfamiliar neighborhood or wants to try something new, you want to be there. Third-party apps are powerful discovery engines.</p>
+          </div>
+          <div class="callout">
+            <h3>Logistics</h3>
+            <p>Building your own delivery fleet is expensive, operationally complex, and rarely makes sense below significant order volume. Third-party platforms provide an outsourced logistics network most restaurants cannot replicate cost-effectively.</p>
+          </div>
+          <div class="callout">
+            <h3>Speed to market</h3>
+            <p>For a new location, getting live on DoorDash can take days. Building a functional first-party ordering and delivery system can take much longer.</p>
+          </div>
+          <p>These are genuine advantages. Third-party platforms belong in every delivery strategy — as a discovery and new customer acquisition channel.</p>
+        </section>
+
+        <section class="section-block">
+          <div class="section-head"><div class="icon-badge">⚠</div><h2>What Third-Party Platforms Are Terrible For</h2></div>
+          <p>What platforms are not good for: owning the customer relationship, keeping margin, building loyalty, and giving you data.</p>
+          <p>When a customer orders through DoorDash, DoorDash owns that transaction. They have the customer’s name, order history, and contact information. You get an order and a payout. If that customer’s next order goes to a competitor because DoorDash showed them a sponsored listing, you may never know.</p>
+          <div class="warning">
+            <h3>The margin issue</h3>
+            <p>At scale, commission, processing fees, marketing fees, and promo costs can turn third-party delivery into a high-volume but low-margin channel. The more repeat customers stay trapped there, the more expensive the channel becomes.</p>
+          </div>
+        </section>
+
+        <section class="section-block">
+          <div class="section-head"><div class="icon-badge">2</div><h2>What First-Party Ordering Actually Looks Like</h2></div>
+          <p>A first-party ordering channel is your restaurant’s own digital storefront — accessible through your website, a mobile app, or a QR code — where customers can order directly without going through DoorDash or Uber Eats.</p>
+          <p>Platforms like Toast can handle ordering infrastructure, payment processing, and in some cases delivery logistics through integrations, often at a flat per-order fee instead of a percentage commission.</p>
+          <div class="callout">
+            <h3>Operational advantages</h3>
+            <ul>
+              <li>You own the customer data — email, phone, and order history.</li>
+              <li>You control the ordering experience — no competitor ads and no algorithm suppressing your placement.</li>
+              <li>You can run loyalty programs that actually build repeat behavior.</li>
+              <li>Your menu changes can sync more cleanly from your POS.</li>
+              <li>You can build direct remarketing and retention campaigns over time.</li>
+            </ul>
+          </div>
+        </section>
+
+        <section class="section-block">
+          <div class="section-head"><div class="icon-badge">→</div><h2>The Right Model: Both Channels, Different Jobs</h2></div>
+          <p>The mistake most operators make is treating this as either/or. It is not.</p>
+          <div class="callout">
+            <h3>Use third-party for:</h3>
+            <ul>
+              <li>New customer discovery</li>
+              <li>Marketplace visibility</li>
+              <li>Geographic reach</li>
+              <li>Launch momentum</li>
+              <li>Incremental demand during strategic windows</li>
+            </ul>
+          </div>
+          <div class="callout">
+            <h3>Use first-party for:</h3>
+            <ul>
+              <li>Repeat customers</li>
+              <li>Loyalty and retention</li>
+              <li>Higher-margin ordering</li>
+              <li>Customer data ownership</li>
+              <li>Long-term brand relationship building</li>
+            </ul>
+          </div>
+          <p>The right delivery strategy lets third-party platforms introduce customers to the restaurant, then gradually gives those customers reasons to order directly.</p>
+        </section>
+
+        <section class="section-block">
+          <div class="section-head"><div class="icon-badge">✓</div><h2>How to Start Shifting Customers Direct</h2></div>
+          <p>You do not need to abandon third-party platforms to build a first-party strategy. Start with simple, operator-safe steps:</p>
+          <ul>
+            <li>Add branded insert cards to delivery bags that promote direct ordering for the next purchase.</li>
+            <li>Use QR codes in-store and on packaging that point to your direct ordering page.</li>
+            <li>Create loyalty incentives that only apply to direct orders.</li>
+            <li>Promote direct ordering on social, Google Business Profile, and your website.</li>
+            <li>Use third-party delivery to acquire new customers, then use first-party ordering to retain them.</li>
+          </ul>
+          <div class="callout">
+            <h3>Final takeaway</h3>
+            <p>Third-party platforms are useful. They are not the whole strategy. The operators building durable, high-margin delivery businesses use marketplaces for discovery and owned channels for retention.</p>
+          </div>
+        </section>
+
+        <section class="section-block">
+          <div class="section-head"><div class="icon-badge">→</div><h2>More Resources</h2></div>
+          <p>Keep exploring practical ways to improve delivery platform performance, margin, and visibility.</p>
+          <div class="related-carousel-wrap"><div class="related-carousel">
+            <a class="related-card" href="/blog/profitable-restaurants-spend-less-delivery-ads.html"><span class="pill">Ad Spend</span><h3>Why the Most Profitable Restaurants Spend Less on Delivery Ads</h3><p>Understand why healthier delivery programs rely less on paid traffic.</p></a>
+            <a class="related-card" href="/blog/delivery-metrics-what-they-mean-how-to-read-them.html"><span class="pill">Reporting</span><h3>What Your Delivery Metrics Are Actually Telling You</h3><p>Learn which platform metrics matter most and what to do with them.</p></a>
+            <a class="related-card" href="/blog/customer-segmentation-protect-delivery-margin.html"><span class="pill">Segmentation</span><h3>How to Use Customer Segmentation to Protect Your Delivery Margin</h3><p>See how offer strategy changes by customer type.</p></a>
+            <a class="related-card" href="/blog/when-to-add-second-delivery-platform.html"><span class="pill">Platform Strategy</span><h3>When Should You Actually Add a Second Delivery Platform?</h3><p>Use a clear decision framework before expanding platforms.</p></a>
+            <a class="related-card" href="/blog/how-much-delivery-revenue-are-you-actually-keeping.html"><span class="pill">Margins</span><h3>How Much of Your Delivery Revenue Are You Actually Keeping?</h3><p>Break down commissions, fees, promo costs, and order economics.</p></a>
+            <a class="related-card related-card-cta" href="/blog.html"><span class="pill">All Resources</span><h3>See other resources</h3><p>Browse the full Blender Digital resource library.</p><span class="related-link-text">View all blogs →</span></a>
+          </div></div>
+        </section>
+
+      </article>
+    </div>
+  </main>
+
+
+  <footer class="footer">
+    <div class="footer-main">
+      <div class="container footer-grid">
+        <div class="footer-brand">
+          <div style="display:flex;align-items:center;gap:10px;margin-bottom:10px">
+            <span class="brand-badge"><img src="/Blender%20Digital%20Full%20Logo.svg" alt="Blender Digital logo" /></span>
+          </div>
+          <p class="small">Fractional growth team for restaurants selling on DoorDash, Uber Eats, Grubhub, and Toast. We focus on disciplined execution—not fluff.</p>
+        </div>
+        <div><h4>Services</h4><ul class="small"><li><a href="/#services">Platform operations</a></li><li><a href="/#services">Promotions strategy</a></li><li><a href="/#services">Sponsored listings</a></li><li><a href="/#services">Reviews & loyalty</a></li></ul></div>
+        <div><h4>Resources</h4><ul class="small"><li><a href="/blog.html">Blog</a></li><li><a href="/blog/why-your-uber-eats-promotions-are-destroying-your-margins.html">Uber Eats promo margins</a></li><li><a href="/blog/restaurant-delivery-platform-image-size-requirements.html">Image size requirements</a></li></ul></div>
+        <div><h4>Company</h4><ul class="small"><li><a href="/results.html">Results</a></li><li><a href="/#pricing">Pricing</a></li><li><a href="https://form.jotform.com/261082345751051" target="_blank" rel="noopener noreferrer">Contact</a></li><li><a href="#top">Back to top</a></li></ul></div>
+      </div>
+    </div>
+    <div class="footer-bottom"><div class="container" style="display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap"><div class="small" style="text-align:center;width:100%">© 2026 Blender Digital</div></div></div>
+  </footer>
+
+
+  <script>
+    (function(){
+      const nav = document.querySelector('.nav');
+      const btn = document.getElementById('navToggle');
+      const menu = document.getElementById('navMenu');
+      if(!nav || !btn || !menu) return;
+      const close = () => {nav.classList.remove('is-open');btn.setAttribute('aria-expanded','false');};
+      btn.addEventListener('click', () => {const open = nav.classList.toggle('is-open');btn.setAttribute('aria-expanded', open ? 'true' : 'false');});
+      menu.addEventListener('click', (e) => {const t = e.target;if(t && t.tagName === 'A') close();});
+      document.addEventListener('keydown', (e) => {if(e.key === 'Escape') close();});
+      window.addEventListener('resize', () => {if(window.innerWidth > 820) close();});
+    })();
+  </script>
+
+</body>
+</html>
