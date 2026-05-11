@@ -2,6 +2,7 @@
 <html lang="en">
 <head>
 <link rel="icon" href="/Blender%20Digital%20Logo%20Mark%20Favicon.svg">
+
   <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-JEJPG0H4HC"></script>
 <script>
@@ -14,25 +15,74 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Resources | Blender Digital</title>
+  <meta name="description" content="Practical resources, guides, and strategies to help restaurants grow profitably across DoorDash, Uber Eats, Grubhub, and Toast." />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 
   <style>
     :root{--lime:#A7D51E;--mint:#E6F7DB;--cream:#FFF7D6;--text:#2B2B2B;--white:#FFFFFF;--radius:18px;--shadow:0 10px 30px rgba(0,0,0,.08);--max:1120px}
     *{box-sizing:border-box}
-    body{margin:0;font-family:Inter,system-ui,sans-serif;background:var(--mint);color:var(--text)}
-    .container{max-width:var(--max);margin:0 auto;padding:40px clamp(24px,6vw,72px)}
+    html{scroll-behavior:smooth}
+    body{margin:0;font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif;background:var(--mint);color:var(--text);line-height:1.55}
+    a{color:inherit;text-decoration:none}
 
-    .nav{position:sticky;top:0;background:rgba(230,247,219,.85);backdrop-filter:blur(10px);border-bottom:1px solid rgba(43,43,43,.08)}
-    .nav-inner{display:flex;justify-content:space-between;align-items:center;padding:16px}
-    .brand{display:flex;align-items:center;gap:10px;font-weight:800}
-    .brand img{width:34px}
+    .container{max-width:var(--max);margin:0 auto;padding:0 clamp(24px,6vw,72px)}
 
-    .nav-links{display:flex;gap:14px}
-    .nav-links a{padding:10px 12px;border-radius:12px}
+    /* Nav */
+    .nav{position:sticky;top:0;z-index:20;background:rgba(230,247,219,.85);backdrop-filter:blur(10px);border-bottom:1px solid rgba(43,43,43,.08)}
+    .nav-inner{display:flex;align-items:center;justify-content:space-between;gap:16px;position:relative;padding-top:16px;padding-bottom:16px}
+    .brand{display:flex;align-items:center;gap:12px;text-decoration:none}
+
+    .brand-badge{
+      width:170px;
+      height:48px;
+      border-radius:0;
+      display:flex;
+      align-items:center;
+      justify-content:flex-start;
+      overflow:visible;
+    }
+
+    .brand-badge img{
+      width:170px;
+      height:auto;
+      max-width:none;
+      object-fit:contain;
+      display:block;
+    }
+
+    .nav-links{display:flex;flex-wrap:wrap;gap:14px;align-items:center}
+    .nav-links a{text-decoration:none;padding:10px 12px;border-radius:12px}
     .nav-links a:hover{background:rgba(255,255,255,.7)}
-    .btn{padding:10px 16px;border-radius:14px;font-weight:700;background:var(--lime)}
 
-    h1{font-size:clamp(2rem,4vw,3rem);margin-bottom:10px}
-    .lead{margin-bottom:30px;font-size:1.05rem}
+    .btn{display:inline-block;text-decoration:none;font-weight:700;padding:10px 16px;border-radius:14px}
+    .btn-primary{background:var(--lime)}
+    .btn-ghost{background:rgba(255,255,255,.7)}
+
+    .nav-toggle{display:none;align-items:center;justify-content:center;width:44px;height:44px;border-radius:12px;border:1px solid rgba(43,43,43,.10);background:rgba(255,255,255,.7);cursor:pointer}
+    .nav-toggle:active{transform:scale(.98)}
+    .nav-toggle-lines{width:18px;height:12px;position:relative}
+    .nav-toggle-lines span{position:absolute;left:0;right:0;height:2px;background:rgba(43,43,43,.85);border-radius:999px}
+    .nav-toggle-lines span:nth-child(1){top:0}
+    .nav-toggle-lines span:nth-child(2){top:5px}
+    .nav-toggle-lines span:nth-child(3){bottom:0}
+
+    @media (max-width:820px){
+      .nav-toggle{display:inline-flex}
+      .nav-links{display:none;position:absolute;left:0;right:0;top:100%;padding:14px clamp(24px,6vw,72px);background:rgba(230,247,219,.97);backdrop-filter:blur(10px);border-bottom:1px solid rgba(43,43,43,.08);flex-direction:column;gap:10px}
+      .nav-links a{padding:12px 12px}
+      .nav-links .btn{width:100%;text-align:center}
+      .nav.is-open .nav-links{display:flex}
+    }
+
+    /* Page */
+    .page-section{padding:54px 0}
+    .hero-copy{max-width:760px}
+    h1{font-size:clamp(2rem,4vw,3rem);line-height:1.05;margin:0 0 12px;letter-spacing:-.03em}
+    h3{font-size:1.15rem;margin:6px 0 10px}
+    .lead{margin:0 0 30px;font-size:1.05rem}
 
     .grid{display:grid;grid-template-columns:repeat(2,1fr);gap:20px}
     @media(max-width:700px){.grid{grid-template-columns:1fr}}
@@ -46,6 +96,7 @@
       text-decoration:none;
       color:inherit;
       transition:.2s ease;
+      display:block;
     }
 
     .card:hover{
@@ -63,53 +114,155 @@
       margin-bottom:10px;
     }
 
-    h3{margin:6px 0 10px}
+    .small{font-size:.9rem;opacity:.85}
+
+    /* Footer */
+    footer.footer{background:rgba(255,255,255,.92);border-top:1px solid rgba(43,43,43,.10);margin-top:54px}
+    .footer-main{padding:40px 0}
+    .footer-grid{display:grid;grid-template-columns:1.3fr 1fr 1fr 1fr;gap:32px;align-items:start}
+    @media (max-width:900px){.footer-grid{grid-template-columns:1fr 1fr}}
+    @media (max-width:560px){.footer-grid{grid-template-columns:1fr}}
+    footer.footer h4{margin:0 0 10px;font-size:.95rem}
+    .footer-grid ul{list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:8px}
+    .footer-grid a{color:inherit;text-decoration:none}
+    .footer-grid a:hover{text-decoration:underline}
+    .footer-bottom{border-top:1px solid rgba(43,43,43,.08);padding:16px 0}
   </style>
 </head>
 
-<body>
+<body id="top">
 
   <nav class="nav">
     <div class="container nav-inner">
-      <div class="brand">
-        <img src="/Blender - Official Logo.svg" alt="Blender Digital logo"/>
-        Blender Digital
-      </div>
-      <div class="nav-links">
-        <a href="https://www.blenderdigital.co/#services">Services</a>
-        <a href="https://www.blenderdigital.co/#case-study">Case Study</a>
-        <a href="https://www.blenderdigital.co/#resources">Resources</a>
-        <a href="https://form.jotform.com/261082345751051" target="_blank" rel="noopener noreferrer" class="btn">Contact</a>
+      <a class="brand" href="/">
+        <span class="brand-badge"><img src="/Blender%20Digital%20Full%20Logo.svg" alt="Blender Digital logo" /></span>
+      </a>
+
+      <button class="nav-toggle" id="navToggle" aria-label="Open menu" aria-expanded="false" aria-controls="navMenu">
+        <span class="nav-toggle-lines" aria-hidden="true"><span></span><span></span><span></span></span>
+      </button>
+
+      <div class="nav-links" id="navMenu">
+        <a href="/#services">Services</a>
+        <a href="/results.html">Results</a>
+        <a href="/blog.html">Resources</a>
+        <a href="/#pricing">Pricing</a>
+        <a class="btn btn-ghost" href="/#contact">Contact</a>
       </div>
     </div>
   </nav>
 
-  <div class="container">
-    <h1>Resources</h1>
-    <p class="lead">
-      Insights and practical strategies to help restaurants grow profitably on delivery platforms.
-    </p>
+  <main>
+    <section class="page-section">
+      <div class="container">
+        <div class="hero-copy">
+          <h1>Resources</h1>
+          <p class="lead">
+            Insights and practical strategies to help restaurants grow profitably on delivery platforms.
+          </p>
+        </div>
 
-    <div class="grid">
+        <div class="grid">
+          <a class="card" href="/blog/why-your-uber-eats-promotions-are-destroying-your-margins.html">
+            <div class="pill">Uber Eats</div>
+            <h3>Why Your Uber Eats Promotions Are Destroying Your Margins</h3>
+            <p>
+              How overlapping promotions can quietly kill profitability and lead to unprofitable orders.
+            </p>
+          </a>
 
-      <a class="card" href="/blog/why-your-uber-eats-promotions-are-destroying-your-margins.html">
-        <div class="pill">Uber Eats</div>
-        <h3>Why Your Uber Eats Promotions Are Destroying Your Margins</h3>
-        <p>
-          How overlapping promotions can quietly kill profitability and lead to unprofitable orders.
-        </p>
-      </a>
+          <a class="card" href="/blog/restaurant-delivery-platform-image-size-requirements.html">
+            <div class="pill">Guide</div>
+            <h3>Restaurant Delivery App Image Size Requirements</h3>
+            <p>
+              A complete reference guide for Uber Eats, DoorDash, Grubhub, and Toast image specs.
+            </p>
+          </a>
+        </div>
+      </div>
+    </section>
+  </main>
 
-      <a class="card" href="/blog/restaurant-delivery-platform-image-size-requirements.html">
-        <div class="pill">Guide</div>
-        <h3>Restaurant Delivery App Image Size Requirements</h3>
-        <p>
-          A complete reference guide for Uber Eats, DoorDash, Grubhub, and Toast image specs.
-        </p>
-      </a>
+  <footer class="footer">
+    <div class="footer-main">
+      <div class="container footer-grid">
+        <div class="footer-brand">
+          <div style="display:flex;align-items:center;gap:10px;margin-bottom:10px">
+            <span class="brand-badge"><img src="/Blender%20Digital%20Full%20Logo.svg" alt="Blender Digital logo" /></span>
+          </div>
+          <p class="small">Fractional growth team for restaurants selling on DoorDash, Uber Eats, Grubhub, and Toast. We focus on disciplined execution—not fluff.</p>
+        </div>
 
+        <div>
+          <h4>Services</h4>
+          <ul class="small">
+            <li><a href="/#services">Platform operations</a></li>
+            <li><a href="/#services">Promotions strategy</a></li>
+            <li><a href="/#services">Sponsored listings</a></li>
+            <li><a href="/#services">Reviews & loyalty</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4>Resources</h4>
+          <ul class="small">
+            <li><a href="/blog.html">Blog</a></li>
+            <li><a href="/blog/why-your-uber-eats-promotions-are-destroying-your-margins.html">Uber Eats promo margins</a></li>
+            <li><a href="/blog/restaurant-delivery-platform-image-size-requirements.html">Image size requirements</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4>Company</h4>
+          <ul class="small">
+            <li><a href="/results.html">Results</a></li>
+            <li><a href="/#pricing">Pricing</a></li>
+            <li><a href="/#contact">Contact</a></li>
+            <li><a href="#top">Back to top</a></li>
+          </ul>
+        </div>
+      </div>
     </div>
-  </div>
+
+    <div class="footer-bottom">
+      <div class="container" style="display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap">
+        <div class="small" style="text-align:center;width:100%">© 2026 Blender Digital</div>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // Mobile nav toggle
+    (function(){
+      const nav = document.querySelector('.nav');
+      const btn = document.getElementById('navToggle');
+      const menu = document.getElementById('navMenu');
+      if(!nav || !btn || !menu) return;
+
+      const close = () => {
+        nav.classList.remove('is-open');
+        btn.setAttribute('aria-expanded','false');
+      };
+
+      btn.addEventListener('click', () => {
+        const open = nav.classList.toggle('is-open');
+        btn.setAttribute('aria-expanded', open ? 'true' : 'false');
+      });
+
+      menu.addEventListener('click', (e) => {
+        const t = e.target;
+        if(t && t.tagName === 'A') close();
+      });
+
+      document.addEventListener('keydown', (e) => {
+        if(e.key === 'Escape') close();
+      });
+
+      window.addEventListener('resize', () => {
+        if(window.innerWidth > 820) close();
+      });
+    })();
+  </script>
 
 </body>
 </html>
