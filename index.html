@@ -152,6 +152,26 @@
       background:var(--cream);
     }
 
+    .resource-card-featured h3{
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:12px;
+    }
+    
+    .resource-arrow{
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      width:34px;
+      height:34px;
+      border-radius:999px;
+      background:var(--lime);
+      font-size:1rem;
+      line-height:1;
+      flex-shrink:0;
+    }
+    
     /* Forms */
     .form{background:var(--white);border-radius:var(--radius);padding:18px;box-shadow:var(--shadow);border:1px solid rgba(43,43,43,.06)}
     label{display:block;font-weight:700;font-size:.9rem;margin:12px 0 6px}
@@ -363,9 +383,12 @@
             <p>A complete reference guide for Uber Eats, DoorDash, Grubhub, and Toast image specs.</p>
           </a>
     
-          <a class="card resource-card" href="/blog.html">
+          <a class="card resource-card resource-card-featured" href="/blog.html">
             <div class="pill">All Resources</div>
-            <h3>View the full resource library</h3>
+            <h3>
+              View the full resource library
+              <span class="resource-arrow" aria-hidden="true">↗</span>
+            </h3>
             <p>Browse guides, checklists, and practical breakdowns for growing restaurant sales across delivery platforms.</p>
           </a>
         </div>
