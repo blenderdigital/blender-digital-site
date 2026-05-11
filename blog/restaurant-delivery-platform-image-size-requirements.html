@@ -169,21 +169,78 @@
       .spec-table{display:block;overflow-x:auto;white-space:nowrap}
     }
 
-    .related-grid{
-      display:grid;
-      grid-template-columns:1fr;
-      gap:14px;
+    /* Related resources carousel */
+    .related-carousel-wrap{
       margin-top:14px;
     }
+
+    .related-carousel{
+      display:flex;
+      gap:14px;
+      overflow-x:auto;
+      scroll-snap-type:x mandatory;
+      -webkit-overflow-scrolling:touch;
+      padding:4px 4px 12px;
+    }
+
+    .related-carousel::-webkit-scrollbar{
+      height:8px;
+    }
+
+    .related-carousel::-webkit-scrollbar-thumb{
+      background:rgba(43,43,43,.18);
+      border-radius:999px;
+    }
+
     .related-card{
-      display:block;
+      flex:0 0 260px;
+      scroll-snap-align:start;
+      display:flex;
+      flex-direction:column;
+      justify-content:space-between;
+      min-height:210px;
       background:var(--cream);
       border:1px solid rgba(43,43,43,.06);
       border-radius:16px;
       padding:18px;
-      text-decoration:none;
+      text-decoration:none !important;
+      transition:.2s ease;
     }
-    .related-card:hover{background:rgba(167,213,30,.18)}
+
+    .related-card:hover{
+      transform:translateY(-3px);
+      background:rgba(167,213,30,.18);
+      opacity:1;
+    }
+
+    .related-card h3{
+      margin:8px 0 8px;
+      font-size:1rem;
+    }
+
+    .related-card p{
+      margin:0;
+      font-size:.9rem;
+      opacity:.85;
+    }
+
+    .related-card-cta{
+      background:var(--lime);
+    }
+
+    .related-link-text{
+      display:inline-block;
+      margin-top:14px;
+      font-weight:800;
+      font-size:.9rem;
+    }
+
+    @media (max-width:560px){
+      .related-card{
+        flex-basis:82%;
+        min-height:220px;
+      }
+    }
 
     footer.footer{background:rgba(255,255,255,.92);border-top:1px solid rgba(43,43,43,.10)}
     .footer-main{padding:40px 0}
@@ -645,15 +702,51 @@
             <h2>More Resources</h2>
           </div>
 
-          <div class="related-grid">
-            <a class="related-card" href="/blog/why-your-uber-eats-promotions-are-destroying-your-margins.html">
-              <span class="pill">Uber Eats</span>
-              <h3>Why Your Uber Eats Promotions Are Destroying Your Margins</h3>
-              <p>
-                Learn how overlapping promotions can quietly weaken profitability and create
-                unprofitable order growth.
-              </p>
-            </a>
+          <p>
+            Keep exploring practical ways to improve delivery platform performance, margin, and visibility.
+          </p>
+
+          <div class="related-carousel-wrap">
+            <div class="related-carousel">
+
+              <a class="related-card" href="/blog/why-your-restaurant-is-invisible-on-doordash-uber-eats.html">
+                <span class="pill">Visibility</span>
+                <h3>Why Your Restaurant Is Invisible on DoorDash and Uber Eats</h3>
+                <p>Learn why low platform visibility happens and which levers help improve rank.</p>
+              </a>
+
+              <a class="related-card" href="/blog/how-much-delivery-revenue-are-you-actually-keeping.html">
+                <span class="pill">Margins</span>
+                <h3>How Much of Your Delivery Revenue Are You Actually Keeping?</h3>
+                <p>Break down commissions, fees, promo costs, and the real economics of delivery orders.</p>
+              </a>
+
+              <a class="related-card" href="/blog/delivery-menu-costing-you-orders.html">
+                <span class="pill">Menu Optimization</span>
+                <h3>Your Menu Is Costing You Orders — Here's How to Fix It</h3>
+                <p>See how menu structure, descriptions, photos, and add-ons affect conversion.</p>
+              </a>
+
+              <a class="related-card" href="/blog/hero-image-reason-customers-skipping-restaurant.html">
+                <span class="pill">Creative</span>
+                <h3>Your Hero Image Is the Reason Customers Are Skipping Your Restaurant</h3>
+                <p>Understand why your storefront image may be hurting clicks before customers even view your menu.</p>
+              </a>
+
+              <a class="related-card" href="/blog/new-restaurant-doordash-uber-eats-first-30-days.html">
+                <span class="pill">Launch Plan</span>
+                <h3>New on DoorDash or Uber Eats? Here's Exactly What to Do in Your First 30 Days</h3>
+                <p>Use the first month to build the right algorithmic and operational foundation.</p>
+              </a>
+
+              <a class="related-card related-card-cta" href="/blog.html">
+                <span class="pill">All Resources</span>
+                <h3>See other resources</h3>
+                <p>Browse the full Blender Digital resource library for delivery platform growth guides.</p>
+                <span class="related-link-text">View all blogs →</span>
+              </a>
+
+            </div>
           </div>
         </section>
 
