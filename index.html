@@ -152,24 +152,25 @@
       background:var(--cream);
     }
 
-    .resource-card-featured h3{
-      display:flex;
-      align-items:center;
-      justify-content:space-between;
-      gap:12px;
+     .resource-card-featured{
+      position:relative;
     }
     
-    .resource-arrow{
-      display:inline-flex;
-      align-items:center;
-      justify-content:center;
-      width:34px;
-      height:34px;
-      border-radius:999px;
-      background:var(--lime);
-      font-size:1rem;
-      line-height:1;
-      flex-shrink:0;
+    .resource-link-text{
+      display:inline-block;
+      margin-top:12px;
+      font-weight:700;
+      font-size:.9rem;
+      opacity:.8;
+    }
+    
+    .resource-card-featured:hover .resource-link-text{
+      opacity:1;
+      transform:translateX(3px);
+    }
+    
+    .resource-link-text{
+      transition:.2s ease;
     }
     
     /* Forms */
