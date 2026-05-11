@@ -1,1 +1,278 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<link rel="icon" href="/Blender%20Digital%20Logo%20Mark%20Favicon.svg">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-JEJPG0H4HC"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-JEJPG0H4HC');
+</script>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
+  <title>What Your Delivery Metrics Are Actually Telling You | Blender Digital</title>
+  <meta name="description" content="Most restaurant operators check their delivery numbers but don't know what they're looking at. Here's a plain-language guide to every metric that matters — and what each one is telling you to do." />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <style>
+    :root{--lime:#A7D51E;--mint:#E6F7DB;--cream:#FFF7D6;--blush:#FBE4EA;--text:#2B2B2B;--white:#FFFFFF;--radius:18px;--shadow:0 10px 30px rgba(0,0,0,.08);--max:1120px}
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{margin:0;font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif;color:var(--text);background:var(--mint);line-height:1.6}
+    a{color:inherit;text-decoration:none}
+    .container{max-width:var(--max);margin:0 auto;padding:0 clamp(24px,6vw,72px)}
+    .nav{position:sticky;top:0;z-index:20;background:rgba(230,247,219,.85);backdrop-filter:blur(10px);border-bottom:1px solid rgba(43,43,43,.08)}
+    .nav-inner{display:flex;align-items:center;justify-content:space-between;gap:16px;position:relative;padding-top:16px;padding-bottom:16px}
+    .brand{display:flex;align-items:center;gap:12px;text-decoration:none}
+    .brand-badge{width:170px;height:48px;border-radius:0;display:flex;align-items:center;justify-content:flex-start;overflow:visible}
+    .brand-badge img{width:170px;height:auto;max-width:none;object-fit:contain;display:block}
+    .nav-links{display:flex;flex-wrap:wrap;gap:14px;align-items:center}
+    .nav-links a{text-decoration:none;padding:10px 12px;border-radius:12px}
+    .nav-links a:hover{background:rgba(255,255,255,.7)}
+    .btn{display:inline-block;text-decoration:none;font-weight:700;padding:10px 16px;border-radius:14px}
+    .btn-primary{background:var(--lime)}
+    .btn-ghost{background:rgba(255,255,255,.7)}
+    .nav-toggle{display:none;align-items:center;justify-content:center;width:44px;height:44px;border-radius:12px;border:1px solid rgba(43,43,43,.10);background:rgba(255,255,255,.7);cursor:pointer}
+    .nav-toggle:active{transform:scale(.98)}
+    .nav-toggle-lines{width:18px;height:12px;position:relative}
+    .nav-toggle-lines span{position:absolute;left:0;right:0;height:2px;background:rgba(43,43,43,.85);border-radius:999px}
+    .nav-toggle-lines span:nth-child(1){top:0}
+    .nav-toggle-lines span:nth-child(2){top:5px}
+    .nav-toggle-lines span:nth-child(3){bottom:0}
+    @media (max-width:820px){
+      .nav-toggle{display:inline-flex}
+      .nav-links{display:none;position:absolute;left:0;right:0;top:100%;padding:14px clamp(24px,6vw,72px);background:rgba(230,247,219,.97);backdrop-filter:blur(10px);border-bottom:1px solid rgba(43,43,43,.08);flex-direction:column;gap:10px}
+      .nav-links a{padding:12px 12px}
+      .nav-links .btn{width:100%;text-align:center}
+      .nav.is-open .nav-links{display:flex}
+    }
+    .hero{padding-top:32px;padding-bottom:24px}
+    @media (max-width:560px){.hero{padding-top:20px;padding-bottom:20px}}
+    h1{font-size:clamp(2.1rem,4vw,3.25rem);line-height:1.05;margin:0 0 14px;letter-spacing:-.03em}
+    h2{font-size:clamp(1.45rem,2.4vw,2rem);margin:0 0 12px;letter-spacing:-.02em}
+    h3{font-size:1.05rem;margin:0 0 8px}
+    .kicker{display:inline-flex;gap:10px;align-items:center;font-weight:700;font-size:.9rem;padding:8px 12px;border-radius:999px;background:rgba(255,255,255,.7);margin-bottom:16px}
+    .kicker-dot{width:10px;height:10px;border-radius:999px;background:var(--lime)}
+    .lead{font-size:1.08rem;margin:0 0 18px;max-width:760px}
+    .section{padding:24px 0 64px}
+    .card{background:var(--white);border-radius:var(--radius);padding:28px;box-shadow:var(--shadow);border:1px solid rgba(43,43,43,.06)}
+    @media (max-width:560px){.card{padding:20px}}
+    .pill{display:inline-block;padding:6px 10px;border-radius:999px;background:rgba(167,213,30,.18);font-weight:700;font-size:.85rem}
+    .small{font-size:.9rem;opacity:.85}
+    .blog-shell{max-width:820px}
+    .blog-meta{display:flex;gap:10px;flex-wrap:wrap;margin:12px 0 18px}
+    .intro{font-size:1rem;margin-bottom:24px}
+    .intro p{margin:0 0 16px}
+    .section-block{margin-top:28px;padding-top:28px;border-top:1px solid rgba(43,43,43,.10)}
+    .section-block:first-child{margin-top:0;padding-top:0;border-top:none}
+    .section-head{display:flex;align-items:center;gap:12px;margin-bottom:10px}
+    .icon-badge{width:36px;height:36px;border-radius:12px;background:rgba(167,213,30,.18);display:flex;align-items:center;justify-content:center;font-weight:800;flex-shrink:0}
+    .blog-body p{margin:0 0 16px}
+    .blog-body ul,.blog-body ol{margin:0 0 18px 0;padding-left:20px}
+    .blog-body li{margin-bottom:10px}
+    .blog-body strong{font-weight:800}
+    .blog-body a{text-decoration:underline;text-underline-offset:3px;font-weight:600}
+    .blog-body a:hover{opacity:.75}
+    .callout{background:var(--cream);border:1px solid rgba(43,43,43,.06);border-radius:16px;padding:18px;margin:18px 0 22px}
+    .warning{background:var(--blush);border:1px solid rgba(43,43,43,.06);border-radius:16px;padding:18px;margin:18px 0 22px}
+    .related-carousel-wrap{margin-top:14px}
+    .related-carousel{display:flex;gap:14px;overflow-x:auto;scroll-snap-type:x mandatory;-webkit-overflow-scrolling:touch;padding:4px 4px 12px}
+    .related-carousel::-webkit-scrollbar{height:8px}
+    .related-carousel::-webkit-scrollbar-thumb{background:rgba(43,43,43,.18);border-radius:999px}
+    .related-card{flex:0 0 260px;scroll-snap-align:start;display:flex;flex-direction:column;justify-content:space-between;min-height:210px;background:var(--cream);border:1px solid rgba(43,43,43,.06);border-radius:16px;padding:18px;text-decoration:none !important;transition:.2s ease}
+    .related-card:hover{transform:translateY(-3px);background:rgba(167,213,30,.18);opacity:1}
+    .related-card h3{margin:8px 0 8px;font-size:1rem}
+    .related-card p{margin:0;font-size:.9rem;opacity:.85}
+    .related-card-cta{background:var(--lime)}
+    .related-link-text{display:inline-block;margin-top:14px;font-weight:800;font-size:.9rem}
+    @media (max-width:560px){.related-card{flex-basis:82%;min-height:220px}}
+    footer.footer{background:rgba(255,255,255,.92);border-top:1px solid rgba(43,43,43,.10)}
+    .footer-main{padding:40px 0}
+    .footer-grid{display:grid;grid-template-columns:1.3fr 1fr 1fr 1fr;gap:32px;align-items:start}
+    @media (max-width:900px){.footer-grid{grid-template-columns:1fr 1fr}}
+    @media (max-width:560px){.footer-grid{grid-template-columns:1fr}}
+    footer.footer h4{margin:0 0 10px;font-size:.95rem}
+    .footer-grid ul{list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:8px}
+    .footer-grid a{color:inherit;text-decoration:none}
+    .footer-grid a:hover{text-decoration:underline}
+    .footer-bottom{border-top:1px solid rgba(43,43,43,.08);padding:16px 0}
+</style>
+</head>
+
+<body id="top">
+
+  <nav class="nav">
+    <div class="container nav-inner">
+      <a class="brand" href="/">
+        <span class="brand-badge"><img src="/Blender%20Digital%20Full%20Logo.svg" alt="Blender Digital logo" /></span>
+      </a>
+      <button class="nav-toggle" id="navToggle" aria-label="Open menu" aria-expanded="false" aria-controls="navMenu">
+        <span class="nav-toggle-lines" aria-hidden="true"><span></span><span></span><span></span></span>
+      </button>
+      <div class="nav-links" id="navMenu">
+        <a href="/#services">Services</a>
+        <a href="/results.html">Results</a>
+        <a href="/blog.html">Resources</a>
+        <a href="/#pricing">Pricing</a>
+        <a class="btn btn-ghost" href="https://form.jotform.com/261082345751051" target="_blank" rel="noopener noreferrer">Contact</a>
+      </div>
+    </div>
+  </nav>
+
+
+  <header class="hero">
+    <div class="container blog-shell">
+      <div class="kicker"><span class="kicker-dot"></span>Reporting</div>
+      <h1>What Your Delivery Metrics Are Actually Telling You</h1>
+      <p class="lead">Most restaurant operators check their delivery numbers, but the metrics that actually explain what to fix are often sitting unread in the dashboard.</p>
+      <div class="blog-meta">
+        <span class="pill">Reporting</span>
+        <span class="pill">Metrics</span>
+        <span class="pill">Delivery Analytics</span>
+      </div>
+    </div>
+  </header>
+
+  <main class="section">
+    <div class="container blog-shell">
+      <article class="card blog-body">
+
+        <div class="intro">
+          <p>Every delivery platform gives you a dashboard. Most operators open it, look at their total orders and revenue, and close it. The metrics that actually tell you what is happening with your business — and what to fix — are sitting right there, largely unread.</p>
+          <p>This post is a plain-language guide to every metric that matters, what it means, and what action it should drive.</p>
+        </div>
+
+        <section class="section-block">
+          <div class="section-head"><div class="icon-badge">%</div><h2>Menu Conversion Rate</h2></div>
+          <p><strong>What it is:</strong> the percentage of customers who view your storefront and place an order.</p>
+          <p><strong>Formula:</strong> Orders ÷ Storefront Views × 100.</p>
+          <p><strong>What it tells you:</strong> how compelling your storefront experience is — hero image, menu architecture, pricing, photography, and overall first impression.</p>
+          <div class="callout">
+            <h3>Benchmarks</h3>
+            <ul>
+              <li><strong>Below 5%:</strong> something is fundamentally broken. Check hero image first, then menu structure.</li>
+              <li><strong>5–10%:</strong> below average. Systematic improvement needed.</li>
+              <li><strong>10–20%:</strong> average to good.</li>
+              <li><strong>20–30%:</strong> strong. Most things are working.</li>
+              <li><strong>30%+:</strong> best in class.</li>
+            </ul>
+          </div>
+          <p><strong>What to do if it is low:</strong> run a storefront audit. Start with the hero image, then menu architecture, item descriptions, photography, and add-ons.</p>
+        </section>
+
+        <section class="section-block">
+          <div class="section-head"><div class="icon-badge">✓</div><h2>Acceptance Rate</h2></div>
+          <p><strong>What it is:</strong> the percentage of incoming orders you accept versus cancel or reject.</p>
+          <p><strong>What it tells you:</strong> operational reliability. A low acceptance rate signals that orders are being turned away because of out-of-stock items, tech issues, a busy kitchen, or a tablet that is not being monitored.</p>
+          <div class="callout">
+            <h3>Target</h3>
+            <p>95%+ at all times.</p>
+          </div>
+          <p><strong>What to do if it is low:</strong> identify the rejection reason, fix tablet coverage, clean up out-of-stock items, and tighten staffing during high-volume windows.</p>
+        </section>
+
+        <section class="section-block">
+          <div class="section-head"><div class="icon-badge">⏱</div><h2>Prep Time and Avoidable Wait Time</h2></div>
+          <p><strong>What it is:</strong> how accurately your kitchen hits quoted prep times and how often couriers wait because the order is not ready.</p>
+          <p><strong>What it tells you:</strong> whether the kitchen is predictable. Platforms care about consistency because late orders create bad customer experiences and lower ratings.</p>
+          <div class="warning">
+            <h3>Red flag</h3>
+            <p>If you quote 15 minutes but frequently need 30, you are not just creating courier frustration — you are creating downstream customer dissatisfaction that can hurt ratings and rank.</p>
+          </div>
+          <p><strong>What to do if it is high:</strong> adjust quoted prep times, simplify complex items during rush periods, and track which categories create the most delays.</p>
+        </section>
+
+        <section class="section-block">
+          <div class="section-head"><div class="icon-badge">★</div><h2>Rating, Review Volume, and Review Velocity</h2></div>
+          <p><strong>What it is:</strong> your average customer rating, the number of total reviews, and the pace at which new reviews come in.</p>
+          <p><strong>What it tells you:</strong> trust, quality control, and platform activity. A 4.8 rating with 40 old reviews is not the same as a 4.7 rating with 300 reviews and fresh activity every week.</p>
+          <div class="callout">
+            <h3>Targets</h3>
+            <ul>
+              <li>Rating: 4.5+ minimum, 4.7+ ideal.</li>
+              <li>Review velocity: at least 5 new reviews per week for an active storefront.</li>
+              <li>Negative review response time: within 24–48 hours.</li>
+            </ul>
+          </div>
+          <p><strong>What to do if it is weak:</strong> categorize 1–2 star reviews, fix the top recurring issue, and build a review request system through in-bag cards, pickup prompts, and follow-up where possible.</p>
+        </section>
+
+        <section class="section-block">
+          <div class="section-head"><div class="icon-badge">$</div><h2>AOV, Payout, and Blended Cost Per Order</h2></div>
+          <p><strong>Average order value:</strong> total sales ÷ total orders. This tells you whether menu structure, bundles, add-ons, and pricing are encouraging customers to build bigger carts.</p>
+          <p><strong>Payout ratio:</strong> payout ÷ gross sales. This tells you how much of your platform revenue you are actually keeping after commissions, fees, and promotional costs.</p>
+          <p><strong>Blended cost per order:</strong> total marketing and promo costs ÷ total orders. This tells you whether growth is profitable or merely expensive.</p>
+          <div class="callout">
+            <h3>Healthy direction</h3>
+            <p>You want AOV rising, payout ratio staying stable or improving, and cost per order staying low enough that your promotional growth does not erase contribution margin.</p>
+          </div>
+          <p><strong>What to do if cost per order is high:</strong> break performance down by campaign. Pause campaigns above $10 CPO, protect campaigns below $5 CPO, and move budget toward the strongest performers.</p>
+        </section>
+
+        <section class="section-block">
+          <div class="section-head"><div class="icon-badge">→</div><h2>The Weekly Reporting Rhythm</h2></div>
+          <p>These metrics are only useful if you review them consistently. A Monday morning 20-minute review of the prior week’s numbers — across all platforms — is the habit that separates operators who improve continuously from those who react to problems only after they have compounded.</p>
+          <p>Build a simple tracking sheet: one row per platform per week, with columns for conversion rate, orders, sales, AOV, payout ratio, promo redemptions, ad spend, cost per order, rating, review count, and key actions for the next week.</p>
+          <div class="callout">
+            <h3>Why this works</h3>
+            <p>After 4–6 weeks, patterns become obvious. After 12 weeks, you have a real performance baseline that makes every optimization decision easier and more confident.</p>
+          </div>
+        </section>
+
+        <section class="section-block">
+          <div class="section-head"><div class="icon-badge">→</div><h2>More Resources</h2></div>
+          <p>Keep exploring practical ways to improve delivery platform performance, margin, and visibility.</p>
+          <div class="related-carousel-wrap"><div class="related-carousel">
+            <a class="related-card" href="/blog/how-much-delivery-revenue-are-you-actually-keeping.html"><span class="pill">Margins</span><h3>How Much of Your Delivery Revenue Are You Actually Keeping?</h3><p>Break down commissions, fees, promo costs, and order economics.</p></a>
+            <a class="related-card" href="/blog/customer-segmentation-protect-delivery-margin.html"><span class="pill">Segmentation</span><h3>How to Use Customer Segmentation to Protect Your Delivery Margin</h3><p>See how different customer groups should receive different offers.</p></a>
+            <a class="related-card" href="/blog/profitable-restaurants-spend-less-delivery-ads.html"><span class="pill">Ad Spend</span><h3>Why the Most Profitable Restaurants Spend Less on Delivery Ads</h3><p>Understand why healthier delivery programs rely less on paid traffic.</p></a>
+            <a class="related-card" href="/blog/delivery-ads-and-promos-same-time-killing-profitability.html"><span class="pill">Ads + Promos</span><h3>Why Running Ads and Promos at the Same Time Is Killing Your Profitability</h3><p>Learn why stacking paid visibility and discounts can push orders negative.</p></a>
+            <a class="related-card" href="/blog/third-party-vs-first-party-delivery-strategy.html"><span class="pill">Strategy</span><h3>Third-Party vs. First-Party Delivery</h3><p>Understand the bigger channel strategy behind delivery growth.</p></a>
+            <a class="related-card related-card-cta" href="/blog.html"><span class="pill">All Resources</span><h3>See other resources</h3><p>Browse the full Blender Digital resource library.</p><span class="related-link-text">View all blogs →</span></a>
+          </div></div>
+        </section>
+
+      </article>
+    </div>
+  </main>
+
+
+  <footer class="footer">
+    <div class="footer-main">
+      <div class="container footer-grid">
+        <div class="footer-brand">
+          <div style="display:flex;align-items:center;gap:10px;margin-bottom:10px">
+            <span class="brand-badge"><img src="/Blender%20Digital%20Full%20Logo.svg" alt="Blender Digital logo" /></span>
+          </div>
+          <p class="small">Fractional growth team for restaurants selling on DoorDash, Uber Eats, Grubhub, and Toast. We focus on disciplined execution—not fluff.</p>
+        </div>
+        <div><h4>Services</h4><ul class="small"><li><a href="/#services">Platform operations</a></li><li><a href="/#services">Promotions strategy</a></li><li><a href="/#services">Sponsored listings</a></li><li><a href="/#services">Reviews & loyalty</a></li></ul></div>
+        <div><h4>Resources</h4><ul class="small"><li><a href="/blog.html">Blog</a></li><li><a href="/blog/why-your-uber-eats-promotions-are-destroying-your-margins.html">Uber Eats promo margins</a></li><li><a href="/blog/restaurant-delivery-platform-image-size-requirements.html">Image size requirements</a></li></ul></div>
+        <div><h4>Company</h4><ul class="small"><li><a href="/results.html">Results</a></li><li><a href="/#pricing">Pricing</a></li><li><a href="https://form.jotform.com/261082345751051" target="_blank" rel="noopener noreferrer">Contact</a></li><li><a href="#top">Back to top</a></li></ul></div>
+      </div>
+    </div>
+    <div class="footer-bottom"><div class="container" style="display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap"><div class="small" style="text-align:center;width:100%">© 2026 Blender Digital</div></div></div>
+  </footer>
+
+
+  <script>
+    (function(){
+      const nav = document.querySelector('.nav');
+      const btn = document.getElementById('navToggle');
+      const menu = document.getElementById('navMenu');
+      if(!nav || !btn || !menu) return;
+      const close = () => {nav.classList.remove('is-open');btn.setAttribute('aria-expanded','false');};
+      btn.addEventListener('click', () => {const open = nav.classList.toggle('is-open');btn.setAttribute('aria-expanded', open ? 'true' : 'false');});
+      menu.addEventListener('click', (e) => {const t = e.target;if(t && t.tagName === 'A') close();});
+      document.addEventListener('keydown', (e) => {if(e.key === 'Escape') close();});
+      window.addEventListener('resize', () => {if(window.innerWidth > 820) close();});
+    })();
+  </script>
+
+</body>
+</html>
