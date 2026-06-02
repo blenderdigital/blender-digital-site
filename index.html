@@ -101,6 +101,69 @@
 
     .lead{font-size:1.05rem;margin:0 0 18px}
 
+    /* Homepage hero: centered above-the-fold module */
+    .hero-home{
+      padding-top:72px;
+      padding-bottom:86px;
+    }
+    .hero-main{
+      max-width:940px;
+      margin:0 auto;
+      text-align:center;
+      display:flex;
+      flex-direction:column;
+      align-items:center;
+    }
+    .hero-main .kicker{
+      margin-bottom:22px;
+    }
+    .hero-main h1{
+      max-width:920px;
+      font-size:clamp(2.65rem,5.5vw,4.35rem);
+      line-height:1.04;
+      margin-bottom:20px;
+    }
+    .hero-main .lead{
+      max-width:760px;
+      font-size:clamp(1.05rem,1.5vw,1.18rem);
+      line-height:1.65;
+      margin:0 auto 30px;
+    }
+    .hero-actions{
+      display:flex;
+      justify-content:center;
+      gap:12px;
+      flex-wrap:wrap;
+    }
+    .hero-actions .btn{
+      padding:13px 22px;
+    }
+    .hero-platforms{
+      margin:34px 0 0;
+      font-size:.88rem;
+      font-weight:600;
+      letter-spacing:.04em;
+      opacity:.68;
+    }
+    @media (max-width:560px){
+      .hero-home{
+        padding-top:48px;
+        padding-bottom:56px;
+      }
+      .hero-main h1{
+        font-size:2.35rem;
+      }
+      .hero-actions{
+        width:100%;
+        flex-direction:column;
+      }
+      .hero-actions .btn{
+        width:100%;
+        text-align:center;
+        justify-content:center;
+      }
+    }
+
     /* Sections */
     .section{padding:54px 0}
     .section.alt-cream{background:var(--cream)}
@@ -238,32 +301,23 @@
   </div>
 
   <main>
-    <section class="section"><div class="container hero">
-      <div class="hero-grid">
-        <div>
-          <div class="kicker"><span class="kicker-dot"></span> Your 3rd Party Delivery Growth Team</div>
-          <h1>We run your 3rd party delivery platforms like an in-house growth team.</h1>
-          <p class="lead">We help single or multi-location restaurants grow delivery revenue across DoorDash, Uber Eats, Grubhub, and Toast through disciplined, hands-on platform management.</p>
-          <div style="display:flex;gap:10px;flex-wrap:wrap">
-            <a class="btn btn-primary" href="#contact" style="display:inline-flex;align-items:center;gap:8px">Help me grow <svg width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M6 18L18 6M18 6H10M18 6V14" stroke="#2B2B2B" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
-            <a class="btn btn-ghost" href="#case-study">See results</a>
+    <section class="hero-home">
+      <div class="container">
+        <div class="hero-main">
+          <div class="kicker"><span class="kicker-dot"></span> 1st Party &amp; 3rd Party Delivery Platform Management for Restaurants</div>
+          <h1>Grow Your Restaurant’s Online Ordering Sales</h1>
+          <p class="lead">
+            You’re busy running your restaurant. We manage and grow your <strong>DoorDash</strong>, <strong>Uber Eats</strong>, <strong>Grubhub</strong>, and <strong>Toast</strong> channels—helping you drive more online orders without having to manage every platform yourself.
+          </p>
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="#contact" style="display:inline-flex;align-items:center;gap:8px">Get started <svg width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M6 18L18 6M18 6H10M18 6V14" stroke="#2B2B2B" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+            <a class="btn btn-ghost" href="/results.html">View results</a>
           </div>
+          <p class="hero-platforms">DOORDASH &nbsp;·&nbsp; UBER EATS &nbsp;·&nbsp; GRUBHUB &nbsp;·&nbsp; TOAST</p>
         </div>
-
-        <form class="form" id="quickForm">
-          <div class="pill">Quick inquiry</div>
-          <label>Name</label><input name="name" placeholder="Your name" />
-          <label>Email</label><input name="email" placeholder="you@company.com" />
-          <div class="form-row">
-            <div><label># of Locations</label><input name="locations" placeholder="1" /></div>
-            <div><label>Avg. annual sales</label><input id="avgRevenue" name="annualSales" placeholder="$" inputmode="numeric" /></div>
-          </div>
-          <label>Notes</label>
-          <textarea name="notes" placeholder="Tell us what you're running and what you want to improve…"></textarea>
-          <button class="btn btn-primary" style="width:100%;text-align:center;margin-top:14px;border:0;cursor:pointer" type="submit">Submit</button>
-        </form>
       </div>
-    </div></section>
+    </section>
+
 
     <!--
       Services meta (kept from removed earlier Services section):
@@ -645,5 +699,3 @@ async function postLead(formEl, source) {
 </script>
 </body>
 </html>
-
-
