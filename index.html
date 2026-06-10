@@ -212,11 +212,15 @@
     
     .resource-card:hover{
       transform:translateY(-4px);
-      background:var(--cream);
     }
 
      .resource-card-featured{
       position:relative;
+      background:var(--cream);
+    }
+
+    .resource-card-featured:hover{
+      background:var(--cream);
     }
     
     .resource-link-text{
@@ -244,6 +248,42 @@
     .form-row{display:grid;grid-template-columns:1fr 1fr;gap:12px}
     @media (max-width:720px){.form-row{grid-template-columns:1fr}}
 
+    /* Calendly contact embed */
+    .contact-calendly-wrap{
+      max-width:940px;
+      margin:0 auto;
+    }
+    .contact-calendly-card{
+      background:var(--white);
+      border-radius:var(--radius);
+      padding:18px;
+      box-shadow:var(--shadow);
+      border:1px solid rgba(43,43,43,.06);
+      overflow:hidden;
+    }
+    .contact-calendly-header{
+      text-align:center;
+      max-width:720px;
+      margin:0 auto 22px;
+    }
+    .contact-calendly-header .lead{
+      margin-bottom:0;
+    }
+    .calendly-inline-widget{
+      border-radius:14px;
+      overflow:hidden;
+    }
+    .contact-email{
+      text-align:center;
+      margin-top:24px;
+    }
+    .contact-email a{
+      font-weight:800;
+      text-decoration:underline;
+      text-decoration-thickness:2px;
+      text-underline-offset:4px;
+    }
+
     /* Footer */
     footer.footer{background:rgba(255,255,255,.92);border-top:1px solid rgba(43,43,43,.10)}
     .footer-main{padding:40px 0}
@@ -260,6 +300,44 @@
     .timeline-header{display:flex;align-items:center;gap:14px;margin:18px 0}
     .timeline-header h4{margin:0;font-size:.85rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;opacity:.7;white-space:nowrap}
     .timeline-header span{flex:1;height:1px;background:rgba(43,43,43,.18)}
+
+
+    /* Clean How It Works process */
+    .process-header{max-width:760px;margin:0 auto 46px;text-align:center}
+    .process-header .lead{margin-bottom:0}
+    .process-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:32px}
+    .process-step{text-align:center;padding:0 10px}
+    .process-number{font-size:clamp(3.2rem,5vw,4.25rem);line-height:1;font-weight:800;letter-spacing:-.05em;color:var(--lime);margin-bottom:15px}
+    .process-step h3{margin-bottom:10px;font-size:1.08rem}
+    .process-step p{font-size:.94rem;margin:0;opacity:.86}
+    .process-platforms{margin:42px auto 0;text-align:center;font-size:.85rem;font-weight:700;letter-spacing:.08em;opacity:.72}
+    .process-platforms small{display:block;margin-top:8px;font-size:.86rem;font-weight:500;letter-spacing:0;opacity:.85}
+
+    /* Homepage visual results section */
+    .results-header{max-width:780px;margin:0 auto 34px;text-align:center}
+    .results-header .lead{margin-bottom:0}
+    .results-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+    .result-card{background:var(--white);border-radius:var(--radius);box-shadow:var(--shadow);border:1px solid rgba(43,43,43,.06);overflow:hidden}
+    .result-card-body{padding:16px 18px 18px}
+    .result-card h3{margin:0}
+    .result-card p{margin:0}
+    .before-after{display:grid;grid-template-columns:1fr 1fr;gap:10px;padding:14px;background:rgba(255,255,255,.62)}
+    .shot-wrap{background:rgba(43,43,43,.05);border-radius:14px;overflow:hidden;border:1px solid rgba(43,43,43,.08)}
+    .shot-label{display:block;padding:8px 10px;font-size:.72rem;font-weight:800;letter-spacing:.08em;text-transform:uppercase;background:rgba(255,255,255,.75)}
+    .shot-wrap img{display:block;width:100%;height:210px;object-fit:cover;object-position:top center}
+    .results-cta{display:flex;justify-content:center;margin-top:26px}
+
+    @media (max-width:900px){
+      .process-grid{grid-template-columns:repeat(2,1fr);gap:38px 22px}
+      .results-grid{grid-template-columns:1fr}
+      .shot-wrap img{height:260px}
+    }
+    @media (max-width:560px){
+      .process-header{margin-bottom:36px}
+      .process-grid{grid-template-columns:1fr;gap:34px}
+      .before-after{grid-template-columns:1fr}
+      .shot-wrap img{height:auto}
+    }
 
     /* Grid variants to keep responsiveness (avoids inline grid-template-columns overrides) */
     .grid-3{grid-template-columns:repeat(3,1fr)}
@@ -291,7 +369,7 @@
         <span class="nav-toggle-lines" aria-hidden="true"><span></span><span></span><span></span></span>
       </button>
       <div class="nav-links" id="navMenu">
-        <a href="#services">Services</a>
+        <a href="#services">How It Works</a>
         <a href="/results.html">Results</a>
         <a href="/blog.html">Resources</a>
         <a href="#pricing">Pricing</a>
@@ -307,117 +385,124 @@
           <div class="kicker"><span class="kicker-dot"></span> 1st Party &amp; 3rd Party Delivery Platform Management for Restaurants</div>
           <h1>Grow Your Restaurant’s Online Ordering Sales</h1>
           <p class="lead">
-            You’re busy running your restaurant. We manage and grow your <strong>DoorDash</strong>, <strong>Uber Eats</strong>, <strong>Grubhub</strong>, and <strong>Toast</strong> channels—helping you drive more online orders without having to manage every platform yourself.
+            You’re busy running your restaurant. We manage and grow your <strong>DoorDash</strong>, <strong>Uber Eats</strong>, and <strong>Grubhub</strong> channels—helping you drive more online orders without having to manage every platform yourself.
           </p>
           <div class="hero-actions">
             <a class="btn btn-primary" href="#contact" style="display:inline-flex;align-items:center;gap:8px">Get started <svg width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M6 18L18 6M18 6H10M18 6V14" stroke="#2B2B2B" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
             <a class="btn btn-ghost" href="/results.html">View results</a>
           </div>
-          <p class="hero-platforms">DOORDASH &nbsp;·&nbsp; UBER EATS &nbsp;·&nbsp; GRUBHUB &nbsp;·&nbsp; TOAST</p>
+          <p class="hero-platforms">DOORDASH &nbsp;·&nbsp; UBER EATS &nbsp;·&nbsp; GRUBHUB <span style="opacity:.7">&nbsp; | &nbsp; Toast support available</span></p>
         </div>
       </div>
     </section>
 
 
-    <!--
-      Services meta (kept from removed earlier Services section):
-      - DoorDash: Listing + reputation (reviews, promos, sponsored listings)
-      - Uber Eats: Offers + loyalty (repeat signals and discipline)
-      - Grubhub: Stability (visibility and monitoring)
-      - Toast: Menu + ops (structure and alignment)
-    -->
-
-    <!-- SERVICES (kept) -->
+    <!-- HOW IT WORKS -->
     <section id="services" class="section alt-cream">
       <div class="container">
-        <h2>Services</h2>
-        <p class="lead">We manage the <span class="pill" style="vertical-align:middle">levers</span> that actually move orders: visibility, menu conversions, repeat customers, and operational alignment.</p>
+        <div class="process-header">
+          <h2>How It Works</h2>
+          <p class="lead">We run your online ordering channels, so you can focus on running your restaurant.</p>
+        </div>
 
-        <div class="grid">
-          <div class="card">
-            <div class="pill">Platform Operations</div>
-            <h3>Hands-on storefront management</h3>
-            <p>Menu structure, hours/availability, item health, categories, and ongoing maintenance so your listing stays conversion-ready.</p>
+        <div class="process-grid">
+          <div class="process-step">
+            <div class="process-number">#1</div>
+            <h3>Access &amp; Plan</h3>
+            <p>We get access to your platforms, identify what is holding back sales, and build your campaign plan.</p>
           </div>
-          <div class="card">
-            <div class="pill">Promotions Strategy</div>
-            <h3>Promo cadence that makes sense</h3>
-            <p>BOGO, spend/save, $0 delivery, and targeted offers—planned with a profitability lens, not guesswork.</p>
+
+          <div class="process-step">
+            <div class="process-number">#2</div>
+            <h3>Launch Campaigns</h3>
+            <p>We set up promotions and improve your listings, menus, photos, ads, or reviews where needed.</p>
           </div>
-          <div class="card">
-            <div class="pill">Sponsored Listings</div>
-            <h3>Paid visibility with discipline</h3>
-            <p>Ad spend management with platform-specific controls, plus monthly tuning to steadily improve visibility and sales.</p>
+
+          <div class="process-step">
+            <div class="process-number">#3</div>
+            <h3>Manage &amp; Improve</h3>
+            <p>We monitor sales and campaign performance, then adjust what is running to improve results.</p>
           </div>
-          <div class="card">
-            <div class="pill">Reviews + Loyalty</div>
-            <h3>Reputation that compounds</h3>
-            <p>Response workflows, ratings lift tactics, and loyalty/repeat signals that help ranking over time.</p>
+
+          <div class="process-step">
+            <div class="process-number">#4</div>
+            <h3>Report &amp; Grow</h3>
+            <p>We show you what is working, what needs to change, and where to focus next to grow online orders.</p>
           </div>
         </div>
 
-        <div style="height:18px"></div>
-
-        <div class="timeline-header">
-          <span></span>
-          <h4>Our Timeline</h4>
-          <span></span>
-        </div>
-
-        <div class="grid grid-3">
-          <div class="card">
-            <div class="pill">Month 1</div>
-            <h3>Audit + quick fixes</h3>
-            <p>We baseline your storefronts and patch obvious leaks: photos, modifiers, hours, top items, and promo setup.</p>
-          </div>
-          <div class="card">
-            <div class="pill">Months 2–4</div>
-            <h3>Stabilize + build cadence</h3>
-            <p>Establish a repeatable rhythm for promos, reviews, and ads—plus weekly KPI tracking.</p>
-          </div>
-          <div class="card">
-            <div class="pill">Ongoing</div>
-            <h3>Optimize + scale</h3>
-            <p>Monthly learnings, playbooks for new items, seasonal pushes, and multi-location rollouts.</p>
-          </div>
-        </div>
+        <p class="process-platforms">
+          DOORDASH &nbsp;·&nbsp; UBER EATS &nbsp;·&nbsp; GRUBHUB
+          <small>Toast and first-party ordering support available where needed.</small>
+        </p>
       </div>
     </section>
 
-    <!-- CASE STUDY (pink like Resources) -->
+
+    <!-- RESULTS PREVIEW -->
     <section id="case-study" class="section" style="background:var(--blush)">
       <div class="container">
-        <h2>Case Study</h2>
-        <p class="lead">Philly based specialty coffee shop managed end-to-end across platforms—focused on sustainable, measurable lift.</p>
-
-        <div class="stats">
-          <div class="stat"><b>$7.3K → $24.7K <span class="small" style="font-weight:600">(+238% ↗)</span></b><span class="small">Monthly 3rd-party revenue</span></div>
-          <div class="stat"><b>+1.2 ★ <span class="small" style="font-weight:600">(3.3 → 4.5)</span></b><span class="small">Rating lift from review operations</span></div>
-          <div class="stat"><b>+70%</b><span class="small">Order volume growth from promo cadence</span></div>
-          <div class="stat"><b>$19.8 → $24.5 <span class="small" style="font-weight:600">(+24% ↗)</span></b><span class="small">Average order value</span></div>
+        <div class="results-header">
+          <h2>Client Results <strong>Before</strong> vs. <strong>After</strong></h2>
+          <p class="lead">Across Uber Eats &amp; DoorDash.</p>
         </div>
 
-        <div style="height:18px"></div>
+        <div class="results-grid">
+          <div class="result-card">
+            <div class="before-after">
+              <div class="shot-wrap">
+                <span class="shot-label">Before</span>
+                <img src="/assets/results/homepage/client-1-before-results.png" alt="Client 1 before results screenshot">
+              </div>
+              <div class="shot-wrap">
+                <span class="shot-label">After</span>
+                <img src="/assets/results/homepage/client-1-after-results.png" alt="Client 1 after results screenshot">
+              </div>
+            </div>
+            <div class="result-card-body" style="text-align:center">
+              <h3>Client 1</h3>
+            </div>
+          </div>
 
-        <div class="grid pricing-grid grid-3">
-          <div class="card">
-            <div class="pill">Problem</div>
-            <h3>Leaky storefront + inconsistent promos</h3>
-            <p>Visibility was volatile, menu structure was messy, and promos weren’t aligned to margin realities.</p>
+          <div class="result-card">
+            <div class="before-after">
+              <div class="shot-wrap">
+                <span class="shot-label">Before</span>
+                <img src="/assets/results/homepage/client-2-before-results.png" alt="Client 2 before results screenshot">
+              </div>
+              <div class="shot-wrap">
+                <span class="shot-label">After</span>
+                <img src="/assets/results/homepage/client-2-after-results.png" alt="Client 2 after results screenshot">
+              </div>
+            </div>
+            <div class="result-card-body" style="text-align:center">
+              <h3>Client 2</h3>
+            </div>
           </div>
-          <div class="card">
-            <div class="pill">What we did</div>
-            <h3>Fix → cadence → scale</h3>
-            <p>Menu cleanup, photo refresh guidance, weekly promo calendar, review workflow, and sponsored listings discipline.</p>
+
+          <div class="result-card">
+            <div class="before-after">
+              <div class="shot-wrap">
+                <span class="shot-label">Before</span>
+                <img src="/assets/results/homepage/client-3-before-results.png" alt="Client 3 before results screenshot">
+              </div>
+              <div class="shot-wrap">
+                <span class="shot-label">After</span>
+                <img src="/assets/results/homepage/client-3-after-results.png" alt="Client 3 after results screenshot">
+              </div>
+            </div>
+            <div class="result-card-body" style="text-align:center">
+              <h3>Client 3</h3>
+            </div>
           </div>
-          <div class="card">
-            <div class="pill">Outcome</div>
-            <h3>Repeatable lift + reporting</h3>
-            <p>More stable conversion, higher repeat signals, and a consistent KPI rhythm owners can understand.</p>
-          </div>
+        </div>
+
+        <div class="results-cta">
+          <a class="btn btn-primary" href="/results.html">View more Client Results</a>
         </div>
       </div>
     </section>
+
 
    <!-- RESOURCES -->
     <section id="resources" class="section" style="background:var(--mint)">
@@ -458,7 +543,7 @@
           <div class="card">
             <div class="pill">Starter</div>
             <h3>$1,000 / month</h3>
-            <p class="small">Best for 1 location getting disciplined.</p>
+            <p class="small">Best for 1 location. 2 stores: DoorDash &amp; Uber Eats.</p>
             <div class="features">
               <ul class="small" style="margin:12px 0 0;padding-left:18px">
                 <li>Promo campaign management</li>
@@ -471,25 +556,24 @@
               </ul>
             </div>
             <div style="height:12px"></div>
-            <a class="btn btn-primary" style="width:100%;text-align:center;display:block" href="#contact">Get Started</a>
+            <a class="btn btn-primary" style="width:100%;text-align:center;display:block" href="https://form.jotform.com/261082345751051" target="_blank" rel="noopener">Get Started</a>
           </div>
 
           <div class="card">
             <div class="pill">Growth</div>
             <h3>$1,200 / month</h3>
-            <p class="small">Most popular for predictable lift.</p>
+            <p class="small">Comprehensive online ordering support across all 3rd-party platforms and 1st-party platforms.</p>
             <div class="features">
               <ul class="small" style="margin:12px 0 0;padding-left:18px">
-                <li>Everything in Starter</li>
-                <li>Email and SMS marketing support</li>
-                <li>Social and paid ads collaboration</li>
+                <li>Everything in <strong>Starter</strong></li>
+                <li>Collaborate with social media teams for content</li>
                 <li>Weekly KPI updates</li>
                 <li>Monthly strategy call</li>
               </ul>
               <div class="small" style="margin-top:8px;opacity:.85">+ More</div>
             </div>
             <div style="height:12px"></div>
-            <a class="btn btn-primary" style="width:100%;text-align:center;display:block" href="#contact">Boost my growth</a>
+            <a class="btn btn-primary" style="width:100%;text-align:center;display:block" href="https://form.jotform.com/261082345751051" target="_blank" rel="noopener">Request a call</a>
           </div>
 
           <div class="card">
@@ -505,7 +589,7 @@
               </ul>
             </div>
             <div style="height:12px"></div>
-            <a class="btn btn-primary" style="width:100%;text-align:center;display:block" href="#contact">Request a quote</a>
+            <a class="btn btn-primary" style="width:100%;text-align:center;display:block" href="https://calendly.com/hassan-blenderdigital/30min" target="_blank" rel="noopener">Schedule Discovery Call</a>
           </div>
         </div>
       </div>
@@ -514,34 +598,22 @@
     <!-- CONTACT -->
     <section id="contact" class="section">
       <div class="container">
-        <h2>Contact</h2>
-        <p class="lead">Tell us what you’re running and where you want to get. We’ll respond with next steps and a simple plan.</p>
-
-        <div class="hero-grid" style="padding:0">
-          <div class="card">
-            <h3>What you’ll get</h3>
-            <div class="grid keep-2">
-              <div class="card" style="box-shadow:none;background:rgba(255,255,255,.7)"><div class="pill">Audit</div><p class="small">A quick diagnostic: where revenue is leaking and what to fix first.</p></div>
-              <div class="card" style="box-shadow:none;background:rgba(255,255,255,.7)"><div class="pill">Plan</div><p class="small">A 30–60–90-day action plan that’s realistic for your growth and margins.</p></div>
-              <div class="card" style="box-shadow:none;background:rgba(255,255,255,.7)"><div class="pill">Scope</div><p class="small">Clear monthly goals so you’re not paying for fluff.</p></div>
-              <div class="card" style="box-shadow:none;background:rgba(255,255,255,.7)"><div class="pill">Reporting</div><p class="small">Weekly KPIs + monthly recap (sales, orders, AOV, rating, ROI, etc.)</p></div>
-            </div>
+        <div class="contact-calendly-wrap">
+          <div class="contact-calendly-header">
+            <h2>Schedule a Discovery Call</h2>
+            <p class="lead">Pick a time that works for you and we’ll talk through your restaurant, your current online ordering setup, and where there may be room to grow.</p>
           </div>
 
-          <form class="form" id="contactForm">
-            <div class="pill">Contact form</div>
-            <label>Name</label><input name="name" placeholder="Your name" />
-            <label>Email</label><input name="email" placeholder="you@company.com" />
-            <div class="form-row">
-              <div><label>Avg. annual sales</label><input name="annualSales" placeholder="$" /></div>
-              <div><label># of Locations</label><input name="locations" placeholder="1" /></div>
-            </div>
-            <label>What do you want to improve?</label>
-            <textarea name="notes" placeholder="More orders, better AOV, better rating, less ad waste…"></textarea>
-            <div style="height:12px"></div>
-            <button class="btn btn-primary" style="width:100%;text-align:center;border:0;cursor:pointer" type="submit">Submit</button>
-            <p class="small" style="margin:10px 0 0">Or email: <b>hello@blenderdigital.co</b> </p>
-          </form>
+          <div class="contact-calendly-card">
+            <!-- Calendly inline widget begin -->
+            <div class="calendly-inline-widget" data-url="https://calendly.com/hassan-blenderdigital/30min?hide_event_type_details=1&primary_color=a7d51e" style="min-width:320px;height:700px;"></div>
+            <script type="text/javascript" src="https://assets.calendly.com/assets/external/widget.js" async></script>
+            <!-- Calendly inline widget end -->
+          </div>
+
+          <p class="contact-email small">
+            Or email: <a href="mailto:hello@blenderdigital.co">hello@blenderdigital.co</a>
+          </p>
         </div>
       </div>
     </section>
@@ -560,12 +632,12 @@
       </div>
 
       <div>
-        <h4>Services</h4>
+        <h4>How It Works</h4>
         <ul class="small">
-          <li><a href="#services">Platform operations</a></li>
-          <li><a href="#services">Promotions strategy</a></li>
-          <li><a href="#services">Sponsored listings</a></li>
-          <li><a href="#services">Reviews & loyalty</a></li>
+          <li><a href="#services">Access &amp; plan</a></li>
+          <li><a href="#services">Launch campaigns</a></li>
+          <li><a href="#services">Manage &amp; improve</a></li>
+          <li><a href="#services">Report &amp; grow</a></li>
         </ul>
       </div>
 
@@ -642,59 +714,6 @@
         input.value = '$' + Number(raw).toLocaleString();
       });
     })();
-async function postLead(formEl, source) {
-  const fd = new FormData(formEl);
-  const payload = Object.fromEntries(fd.entries());
-  payload.source = source;
-
-  const res = await fetch("/api/lead", {
-    method: "POST",
-    headers: { "Content-Type": "application/json" },
-    body: JSON.stringify(payload),
-  });
-
-  const data = await res.json().catch(() => ({}));
-  if (!res.ok || !data.ok) throw new Error("submit_failed");
-}
-
-(function () {
-  const quick = document.getElementById("quickForm");
-  const contact = document.getElementById("contactForm");
-
-  if (quick) {
-    quick.addEventListener("submit", async (e) => {
-      e.preventDefault();
-      const btn = quick.querySelector('button[type="submit"]');
-      const prev = btn ? btn.textContent : "";
-      if (btn) btn.textContent = "Sending...";
-      try {
-        await postLead(quick, "quick-inquiry");
-        if (btn) btn.textContent = "Submitted ✓";
-        quick.reset();
-      } catch {
-        if (btn) btn.textContent = prev || "Submit";
-        alert("Couldn’t submit. Please try again.");
-      }
-    });
-  }
-
-  if (contact) {
-    contact.addEventListener("submit", async (e) => {
-      e.preventDefault();
-      const btn = contact.querySelector('button[type="submit"]');
-      const prev = btn ? btn.textContent : "";
-      if (btn) btn.textContent = "Sending...";
-      try {
-        await postLead(contact, "contact-form");
-        if (btn) btn.textContent = "Submitted ✓";
-        contact.reset();
-      } catch {
-        if (btn) btn.textContent = prev || "Submit";
-        alert("Couldn’t submit. Please try again.");
-      }
-    });
-  }
-})();
 
 </script>
 </body>
