@@ -1,0 +1,287 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Haraz Coffee House - Philly | Blender Digital Dashboard</title>
+  <meta name="description" content="Client dashboard for Haraz Coffee House - Philly, powered by Blender Digital." />
+  <link rel="icon" href="/Blender%20Digital%20Logo%20Mark%20Favicon.svg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <style>
+    :root{
+      --lime:#A7D51E;
+      --mint:#E6F7DB;
+      --cream:#FFF7D6;
+      --text:#2B2B2B;
+      --dark:#10130f;
+      --dark-2:#151a13;
+      --dark-3:#1d2418;
+      --muted:#bfc8b9;
+      --soft:#f5f0e5;
+      --danger:#efb3ae;
+      --ok:#dce7b0;
+      --line:rgba(255,255,255,.11);
+      --radius:28px;
+      --shadow:0 18px 55px rgba(0,0,0,.28);
+      --max:1180px;
+    }
+    *{box-sizing:border-box}
+    body{
+      margin:0;
+      font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif;
+      color:var(--soft);
+      background:
+        radial-gradient(circle at top left, rgba(167,213,30,.18), transparent 28%),
+        radial-gradient(circle at top right, rgba(255,247,214,.08), transparent 22%),
+        #0b0e0d;
+      line-height:1.5;
+    }
+    a{color:inherit;text-decoration:none}
+    .wrap{max-width:var(--max);margin:0 auto;padding:32px clamp(18px,4vw,44px) 64px}
+    .topbar{display:flex;align-items:flex-end;justify-content:space-between;gap:22px;margin-bottom:28px}
+    .eyebrow{display:inline-flex;align-items:center;border:1px solid rgba(167,213,30,.22);background:rgba(255,255,255,.045);border-radius:999px;padding:7px 12px;color:#d8d3c7;font-size:13px;font-weight:650;margin-bottom:12px}
+    h1{font-size:clamp(30px,4vw,46px);line-height:1.08;margin:0;font-weight:800;letter-spacing:-.04em;color:var(--soft)}
+    .chips{display:flex;flex-wrap:wrap;justify-content:flex-end;gap:10px}
+    .chip{border:1px solid var(--line);background:rgba(255,255,255,.045);border-radius:16px;padding:10px 14px;font-size:14px;font-weight:650;color:#d7d2c7;white-space:nowrap}
+    .chip.primary{background:var(--lime);border-color:rgba(167,213,30,.42);color:#11130f;box-shadow:0 8px 22px rgba(167,213,30,.16)}
+    .tabs{display:flex;justify-content:center;margin:0 0 28px}
+    .tabs-inner{display:inline-flex;gap:10px;padding:8px;border:1px solid var(--line);background:rgba(0,0,0,.16);border-radius:24px;flex-wrap:wrap;justify-content:center}
+    .tab{appearance:none;border:1px solid var(--line);background:rgba(255,255,255,.045);color:#d7d2c7;border-radius:16px;padding:10px 22px;font-weight:750;font-size:14px;cursor:pointer;transition:.18s ease}
+    .tab:hover{background:rgba(255,255,255,.08)}
+    .tab.active{background:var(--lime);border-color:rgba(167,213,30,.42);color:#11130f;box-shadow:0 8px 22px rgba(167,213,30,.16)}
+    .grid-main{display:grid;grid-template-columns:1.7fr .95fr;gap:22px;margin-bottom:22px}
+    .grid-issues{display:grid;grid-template-columns:.9fr 1.45fr;gap:22px}
+    .card{border:1px solid var(--line);background:rgba(19,22,21,.92);border-radius:32px;box-shadow:var(--shadow);padding:28px;backdrop-filter:blur(10px)}
+    .snapshot{background:linear-gradient(180deg,#171b18 0%,#101311 100%)}
+    .label{font-size:12px;font-weight:800;letter-spacing:.2em;text-transform:uppercase;color:var(--lime);margin:0 0 10px}
+    .card-head{display:flex;justify-content:space-between;align-items:flex-start;gap:16px;margin-bottom:22px}
+    h2{margin:0;font-size:clamp(25px,3vw,34px);letter-spacing:-.035em;line-height:1.1;color:var(--soft)}
+    h3{margin:4px 0 0;font-size:25px;letter-spacing:-.03em;color:var(--soft)}
+    .subline{color:#b9b4a8;margin:8px 0 0;font-size:16px}
+    .status{display:inline-flex;border-radius:999px;padding:9px 14px;font-weight:800;font-size:14px;border:1px solid #5a302d;background:#291514;color:var(--danger)}
+    .status.ahead{border-color:#5f673e;background:#232917;color:var(--ok)}
+    .progress-row{display:flex;justify-content:space-between;color:#b9b4a8;font-size:14px;margin-bottom:8px}
+    .bar{height:12px;background:rgba(255,255,255,.08);border-radius:999px;overflow:hidden;margin-bottom:16px}
+    .fill{height:100%;width:0;background:var(--lime);border-radius:999px;transition:width .6s ease}
+    .mini-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:16px}
+    .tile{border:1px solid var(--line);background:rgba(0,0,0,.16);border-radius:18px;padding:14px}
+    .tile .k{font-size:13px;color:#a9a396;margin:0 0 6px}
+    .tile .v{font-size:24px;font-weight:800;margin:0;color:var(--soft);letter-spacing:-.02em}
+    .snapshot-stack{display:grid;gap:14px;margin-top:20px}
+    .snap-item{border:1px solid rgba(255,255,255,.08);background:rgba(255,255,255,.035);border-radius:20px;padding:16px}
+    .snap-item .k{font-size:14px;color:#beb8aa;margin:0 0 6px}.snap-item .v{font-size:25px;font-weight:850;margin:0;color:var(--soft);letter-spacing:-.025em}.snap-item .note{font-size:13px;margin:3px 0 0;color:#a9a396}.note.good{color:var(--ok)}.note.bad{color:var(--danger)}
+    .platform-card{border:1px solid rgba(255,255,255,.1);background:rgba(255,255,255,.035);border-radius:24px;padding:17px;margin-top:14px}
+    .platform-top{display:flex;align-items:center;gap:9px;margin-bottom:14px;flex-wrap:wrap}
+    .platform-name{font-size:16px;font-weight:800;color:var(--soft)}
+    .share{border:1px solid #2f3a2d;background:#161c15;color:var(--ok);border-radius:999px;padding:3px 9px;font-size:12px;font-weight:700}
+    .metric-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}.metric{border:1px solid rgba(255,255,255,.06);background:rgba(0,0,0,.16);border-radius:15px;padding:12px}.metric .k{font-size:13px;color:#8b9286;margin:0 0 4px}.metric .v{font-size:16px;font-weight:850;color:var(--soft);margin:0}
+    .view{display:none}.view.active{display:block}.loading,.error{border:1px solid var(--line);background:rgba(19,22,21,.92);border-radius:32px;padding:28px;box-shadow:var(--shadow);color:#d7d2c7}.error{color:var(--danger)}
+    .footer-note{margin-top:24px;color:#87917f;font-size:13px;text-align:center}
+    @media (max-width:900px){.topbar{align-items:flex-start;flex-direction:column}.chips{justify-content:flex-start}.grid-main,.grid-issues{grid-template-columns:1fr}.mini-grid,.metric-grid{grid-template-columns:1fr}.wrap{padding-top:22px}.card{padding:22px}}
+  </style>
+</head>
+<body>
+  <main class="wrap">
+    <header class="topbar">
+      <div>
+        <div class="eyebrow">Blender Digital • Client Dashboard V1</div>
+        <h1>Monthly 3rd Party Sales Tracker</h1>
+      </div>
+      <div class="chips">
+        <div class="chip primary">Client View</div>
+        <div class="chip" id="clientName">Haraz Coffee House - Philly</div>
+        <div class="chip" id="monthName">March</div>
+      </div>
+    </header>
+
+    <nav class="tabs" aria-label="Dashboard tabs">
+      <div class="tabs-inner">
+        <button class="tab active" data-tab="sales">Sales</button>
+        <button class="tab" data-tab="reviews">Reviews</button>
+        <button class="tab" data-tab="issues">Issues</button>
+      </div>
+    </nav>
+
+    <section id="loading" class="loading">Loading dashboard data…</section>
+    <section id="error" class="error" style="display:none"></section>
+
+    <section id="dashboard" style="display:none">
+      <div id="sales" class="view active"></div>
+      <div id="reviews" class="view"></div>
+      <div id="issues" class="view"></div>
+    </section>
+
+    <p class="footer-note">Powered by Blender Digital. Data is refreshed from the client tracker sheet.</p>
+  </main>
+
+  <script>
+    const DATA_URL = "https://script.google.com/macros/s/AKfycbx66WNPzS8Y12AI63ba50WXFxAf37VxNKSuNeL2qRaZaWIm4cQgIqDUpdFFffgQ58Do/exec";
+
+    const $ = (id) => document.getElementById(id);
+
+    function safe(value, fallback = "—") {
+      return value === undefined || value === null || value === "" ? fallback : value;
+    }
+
+    function statusClass(status) {
+      return String(status || "").toLowerCase() === "ahead" ? "status ahead" : "status";
+    }
+
+    function goalTrackerHTML({ title, primary, goal, status, progress, daysElapsed, daysInMonth, neededDailyPace, currentDailyPace }) {
+      const width = Math.max(0, Math.min(Number(progress || 0), 100));
+      return `
+        <section class="card">
+          <div class="card-head">
+            <div>
+              <p class="label">${title}</p>
+              <h2>${safe(primary)}</h2>
+              <p class="subline">Goal: <strong>${safe(goal)}</strong></p>
+            </div>
+            <div class="${statusClass(status)}">${safe(status, "Behind")}</div>
+          </div>
+          <div class="progress-row"><span>Month progress</span><span>${safe(progress, 0)}%</span></div>
+          <div class="bar"><div class="fill" style="width:${width}%"></div></div>
+          <div class="mini-grid">
+            <div class="tile"><p class="k">Days elapsed</p><p class="v">${safe(daysElapsed, 0)} / ${safe(daysInMonth, 31)}</p></div>
+            <div class="tile"><p class="k">Needed daily pace</p><p class="v">${safe(neededDailyPace)}</p></div>
+            <div class="tile"><p class="k">Current daily pace</p><p class="v">${safe(currentDailyPace)}</p></div>
+          </div>
+        </section>`;
+    }
+
+    function snapshotHTML(items) {
+      return `
+        <aside class="card snapshot">
+          <p class="label">Monthly Snapshot</p>
+          <div class="snapshot-stack">
+            ${items.map(item => `
+              <div class="snap-item">
+                <p class="k">${item.label}</p>
+                <p class="v">${safe(item.value)}</p>
+                <p class="note ${item.tone || ""}">${safe(item.note, "")}</p>
+              </div>`).join("")}
+          </div>
+        </aside>`;
+    }
+
+    function platformHTML({ rows, metricLabels, metricKeys, shareLabel }) {
+      return `
+        <section class="card">
+          <p class="label">Platform Contribution</p>
+          <h3>Where the business is coming from</h3>
+          <div>
+            ${(rows || []).map(row => `
+              <article class="platform-card">
+                <div class="platform-top">
+                  <div class="platform-name">${safe(row.name)}</div>
+                  <div class="share">${safe(row.share)} of ${shareLabel}</div>
+                </div>
+                <div class="metric-grid">
+                  ${metricLabels.map((label, i) => `
+                    <div class="metric">
+                      <p class="k">${label}</p>
+                      <p class="v">${safe(row[metricKeys[i]])}</p>
+                    </div>`).join("")}
+                </div>
+              </article>`).join("")}
+          </div>
+        </section>`;
+    }
+
+    function render(data) {
+      $("clientName").textContent = safe(data.clientName, "Haraz Coffee House - Philly");
+      $("monthName").textContent = safe(data.month, "March");
+
+      const sales = data.sales || {};
+      const sg = sales.goalTracker || {};
+      const ss = sales.snapshot || {};
+      $("sales").innerHTML = `
+        <div class="grid-main">
+          ${goalTrackerHTML({
+            title: "Monthly Goal Tracker",
+            primary: sg.currentFormatted,
+            goal: sg.goalFormatted,
+            status: sg.status,
+            progress: sg.progress,
+            daysElapsed: sg.daysElapsed,
+            daysInMonth: sg.daysInMonth,
+            neededDailyPace: sg.neededDailyPaceFormatted,
+            currentDailyPace: sg.currentDailyPaceFormatted
+          })}
+          ${snapshotHTML([
+            { label: "Sales", value: ss.salesFormatted, note: `${safe(sg.progress, 0)}% of monthly goal`, tone: "good" },
+            { label: "Orders", value: ss.ordersFormatted, note: "Current monthly order volume" },
+            { label: "AOV", value: ss.aovFormatted, note: "Average order value this month", tone: "good" }
+          ])}
+        </div>
+        ${platformHTML({ rows: sales.platforms, metricLabels: ["Sales", "Orders", "AOV"], metricKeys: ["sales", "orders", "aov"], shareLabel: "online sales" })}`;
+
+      const reviews = data.reviews || {};
+      const rg = reviews.goalTracker || {};
+      const rs = reviews.snapshot || {};
+      $("reviews").innerHTML = `
+        <div class="grid-main">
+          ${goalTrackerHTML({
+            title: "Monthly Goal Tracker",
+            primary: rg.currentFormatted,
+            goal: rg.goalFormatted,
+            status: rg.status,
+            progress: rg.progress,
+            daysElapsed: rg.daysElapsed,
+            daysInMonth: rg.daysInMonth,
+            neededDailyPace: rg.neededDailyPaceFormatted,
+            currentDailyPace: rg.currentDailyPaceFormatted
+          })}
+          ${snapshotHTML([
+            { label: "Orders", value: rs.ordersFormatted, note: "Total review opportunities this month" },
+            { label: "Reviews", value: rs.reviewsFormatted, note: "Combined reviews captured across platforms", tone: "good" },
+            { label: "Rate of Review", value: rs.rateFormatted, note: "Reviews per order across tracked channels", tone: "good" }
+          ])}
+        </div>
+        ${platformHTML({ rows: reviews.platforms, metricLabels: ["Orders", "Reviews", "Rate of Review"], metricKeys: ["orders", "reviews", "rate"], shareLabel: "orders" })}`;
+
+      const issues = data.issues || {};
+      const is = issues.snapshot || {};
+      $("issues").innerHTML = `
+        <div class="grid-issues">
+          ${snapshotHTML([
+            { label: "Orders", value: is.ordersFormatted, note: "Total tracked orders across platforms" },
+            { label: "Issues", value: is.issuesFormatted, note: "Refunds, missing items, and order problems logged", tone: "bad" },
+            { label: "Error Rate", value: is.rateFormatted, note: "Share of orders with a tracked issue", tone: "bad" }
+          ])}
+          ${platformHTML({ rows: issues.platforms, metricLabels: ["Orders", "Issues", "Error Rate"], metricKeys: ["orders", "issues", "rate"], shareLabel: "orders" })}
+        </div>`;
+
+      $("loading").style.display = "none";
+      $("dashboard").style.display = "block";
+    }
+
+    async function loadDashboard() {
+      try {
+        const res = await fetch(DATA_URL, { cache: "no-store" });
+        if (!res.ok) throw new Error(`Data request failed: ${res.status}`);
+        const data = await res.json();
+        render(data);
+      } catch (err) {
+        $("loading").style.display = "none";
+        $("error").style.display = "block";
+        $("error").textContent = `Could not load dashboard data. ${err.message}`;
+      }
+    }
+
+    document.querySelectorAll(".tab").forEach(button => {
+      button.addEventListener("click", () => {
+        document.querySelectorAll(".tab").forEach(b => b.classList.remove("active"));
+        document.querySelectorAll(".view").forEach(v => v.classList.remove("active"));
+        button.classList.add("active");
+        $(button.dataset.tab).classList.add("active");
+      });
+    });
+
+    loadDashboard();
+  </script>
+</body>
+</html>
