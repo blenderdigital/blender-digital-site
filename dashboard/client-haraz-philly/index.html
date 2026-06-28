@@ -47,6 +47,8 @@
     .chips{display:flex;flex-wrap:wrap;justify-content:flex-end;gap:10px}
     .chip{border:1px solid var(--line);background:rgba(255,255,255,.045);border-radius:16px;padding:10px 14px;font-size:14px;font-weight:650;color:#d7d2c7;white-space:nowrap}
     .chip.primary{background:var(--lime);border-color:rgba(167,213,30,.42);color:#11130f;box-shadow:0 8px 22px rgba(167,213,30,.16)}
+    .chip.button{cursor:pointer;appearance:none;font-family:inherit}
+    .chip.button:hover{background:rgba(255,255,255,.08)}
     .tabs{display:flex;justify-content:center;margin:0 0 28px}
     .tabs-inner{display:inline-flex;gap:10px;padding:8px;border:1px solid var(--line);background:rgba(0,0,0,.16);border-radius:24px;flex-wrap:wrap;justify-content:center}
     .tab{appearance:none;border:1px solid var(--line);background:rgba(255,255,255,.045);color:#d7d2c7;border-radius:16px;padding:10px 22px;font-weight:750;font-size:14px;cursor:pointer;transition:.18s ease}
@@ -80,11 +82,37 @@
     .metric-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}.metric{border:1px solid rgba(255,255,255,.06);background:rgba(0,0,0,.16);border-radius:15px;padding:12px}.metric .k{font-size:13px;color:#8b9286;margin:0 0 4px}.metric .v{font-size:16px;font-weight:850;color:var(--soft);margin:0}
     .view{display:none}.view.active{display:block}.loading,.error{border:1px solid var(--line);background:rgba(19,22,21,.92);border-radius:32px;padding:28px;box-shadow:var(--shadow);color:#d7d2c7}.error{color:var(--danger)}
     .footer-note{margin-top:24px;color:#87917f;font-size:13px;text-align:center}
+
+    .auth-screen{min-height:100vh;display:grid;place-items:center;padding:24px;background:radial-gradient(circle at top left, rgba(167,213,30,.18), transparent 32%), #0b0e0d}
+    .auth-card{width:min(100%,440px);border:1px solid var(--line);background:rgba(19,22,21,.94);border-radius:34px;box-shadow:var(--shadow);padding:32px;backdrop-filter:blur(12px)}
+    .auth-title{font-size:31px;line-height:1.08;margin:8px 0 10px;font-weight:850;letter-spacing:-.04em;color:var(--soft)}
+    .auth-copy{margin:0;color:#b9b4a8;font-size:15px}
+    .auth-form{display:grid;gap:12px;margin-top:24px}
+    .auth-input{width:100%;border:1px solid var(--line);background:rgba(0,0,0,.18);border-radius:18px;padding:14px 15px;color:var(--soft);font:inherit;outline:none}
+    .auth-input:focus{border-color:rgba(167,213,30,.55);box-shadow:0 0 0 4px rgba(167,213,30,.10)}
+    .auth-submit{appearance:none;border:1px solid rgba(167,213,30,.42);background:var(--lime);color:#11130f;border-radius:18px;padding:14px 16px;font:inherit;font-weight:850;cursor:pointer;box-shadow:0 8px 22px rgba(167,213,30,.16)}
+    .auth-error{display:none;margin:2px 0 0;color:var(--danger);font-size:14px}
+    .auth-small{margin-top:18px;color:#87917f;font-size:13px;text-align:center}
+    #appRoot{display:none}
     @media (max-width:900px){.topbar{align-items:flex-start;flex-direction:column}.chips{justify-content:flex-start}.grid-main,.grid-issues{grid-template-columns:1fr}.mini-grid,.metric-grid{grid-template-columns:1fr}.wrap{padding-top:22px}.card{padding:22px}}
   </style>
 </head>
 <body>
-  <main class="wrap">
+  <section id="authScreen" class="auth-screen">
+    <div class="auth-card">
+      <div class="eyebrow">Blender Digital</div>
+      <h1 class="auth-title">Client Dashboard</h1>
+      <p class="auth-copy">This page is reserved for Haraz Coffee House - Philly. Enter the dashboard password to continue.</p>
+      <form id="authForm" class="auth-form">
+        <input id="passwordInput" class="auth-input" type="password" autocomplete="current-password" placeholder="Password" />
+        <button class="auth-submit" type="submit">View Dashboard</button>
+        <p id="authError" class="auth-error">Incorrect password. Please try again.</p>
+      </form>
+      <p class="auth-small">Powered by Blender Digital</p>
+    </div>
+  </section>
+
+  <main id="appRoot" class="wrap">
     <header class="topbar">
       <div>
         <div class="eyebrow">Blender Digital • Client Dashboard V1</div>
@@ -94,6 +122,7 @@
         <div class="chip primary">Client View</div>
         <div class="chip" id="clientName">Haraz Coffee House - Philly</div>
         <div class="chip" id="monthName">March</div>
+        <button class="chip button" id="logoutButton" type="button">Log out</button>
       </div>
     </header>
 
@@ -119,11 +148,29 @@
 
   <script>
     const DATA_URL = "https://script.google.com/macros/s/AKfycbx66WNPzS8Y12AI63ba50WXFxAf37VxNKSuNeL2qRaZaWIm4cQgIqDUpdFFffgQ58Do/exec";
+    const AUTH_HASH = "0b78187522fd5211d9ad05dc5327974e83327fc23d22727f71ec22efde5b9eb6";
+    const AUTH_KEY = "blender_haraz_philly_dashboard_access";
+    let dashboardLoaded = false;
 
     const $ = (id) => document.getElementById(id);
 
     function safe(value, fallback = "—") {
       return value === undefined || value === null || value === "" ? fallback : value;
+    }
+
+    async function sha256(text) {
+      const data = new TextEncoder().encode(text);
+      const hashBuffer = await crypto.subtle.digest("SHA-256", data);
+      return Array.from(new Uint8Array(hashBuffer)).map(b => b.toString(16).padStart(2, "0")).join("");
+    }
+
+    function showDashboard() {
+      $("authScreen").style.display = "none";
+      $("appRoot").style.display = "block";
+      if (!dashboardLoaded) {
+        dashboardLoaded = true;
+        loadDashboard();
+      }
     }
 
     function statusClass(status) {
@@ -281,7 +328,31 @@
       });
     });
 
-    loadDashboard();
+    $("authForm").addEventListener("submit", async (event) => {
+      event.preventDefault();
+      $("authError").style.display = "none";
+      const enteredPassword = $("passwordInput").value.trim();
+      const enteredHash = await sha256(enteredPassword);
+      if (enteredHash === AUTH_HASH) {
+        sessionStorage.setItem(AUTH_KEY, "true");
+        showDashboard();
+      } else {
+        $("authError").style.display = "block";
+        $("passwordInput").value = "";
+        $("passwordInput").focus();
+      }
+    });
+
+    $("logoutButton").addEventListener("click", () => {
+      sessionStorage.removeItem(AUTH_KEY);
+      window.location.reload();
+    });
+
+    if (sessionStorage.getItem(AUTH_KEY) === "true") {
+      showDashboard();
+    } else {
+      $("passwordInput").focus();
+    }
   </script>
 </body>
 </html>
