@@ -14,12 +14,11 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  <title>Restaurant Delivery App Image Size Requirements | Blender Digital</title>
+  <title>U.S. Delivery App Image Size Requirements: DoorDash, Uber Eats, Grubhub & Toast | Blender Digital</title>
   <meta
     name="description"
-    content="A quick reference guide for restaurant operators with image size, aspect ratio, and file requirements for Uber Eats, DoorDash, Grubhub, and Toast."
+    content="A practical U.S. restaurant guide to image size, aspect ratio, and file requirements for DoorDash, Uber Eats, Grubhub, Toast, and ezCater storefronts."
   />
-
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -32,240 +31,61 @@
     body{margin:0;font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif;color:var(--text);background:var(--mint);line-height:1.6}
     a{color:inherit;text-decoration:none}
     .container{max-width:var(--max);margin:0 auto;padding:0 clamp(24px,6vw,72px)}
-
     .nav{position:sticky;top:0;z-index:20;background:rgba(230,247,219,.85);backdrop-filter:blur(10px);border-bottom:1px solid rgba(43,43,43,.08)}
     .nav-inner{display:flex;align-items:center;justify-content:space-between;gap:16px;position:relative;padding-top:16px;padding-bottom:16px}
     .brand{display:flex;align-items:center;gap:12px;text-decoration:none}
-
-    .brand-badge{
-      width:170px;
-      height:48px;
-      border-radius:0;
-      display:flex;
-      align-items:center;
-      justify-content:flex-start;
-      overflow:visible;
-    }
-
-    .brand-badge img{
-      width:170px;
-      height:auto;
-      max-width:none;
-      object-fit:contain;
-      display:block;
-    }
-
+    .brand-badge{width:170px;height:48px;border-radius:0;display:flex;align-items:center;justify-content:flex-start;overflow:visible}
+    .brand-badge img{width:170px;height:auto;max-width:none;object-fit:contain;display:block}
     .nav-links{display:flex;flex-wrap:wrap;gap:14px;align-items:center}
     .nav-links a{text-decoration:none;padding:10px 12px;border-radius:12px}
     .nav-links a:hover{background:rgba(255,255,255,.7)}
-
     .btn{display:inline-block;text-decoration:none;font-weight:700;padding:10px 16px;border-radius:14px}
     .btn-primary{background:var(--lime)}
     .btn-ghost{background:rgba(255,255,255,.7)}
-
     .nav-toggle{display:none;align-items:center;justify-content:center;width:44px;height:44px;border-radius:12px;border:1px solid rgba(43,43,43,.10);background:rgba(255,255,255,.7);cursor:pointer}
     .nav-toggle:active{transform:scale(.98)}
     .nav-toggle-lines{width:18px;height:12px;position:relative}
     .nav-toggle-lines span{position:absolute;left:0;right:0;height:2px;background:rgba(43,43,43,.85);border-radius:999px}
-    .nav-toggle-lines span:nth-child(1){top:0}
-    .nav-toggle-lines span:nth-child(2){top:5px}
-    .nav-toggle-lines span:nth-child(3){bottom:0}
-
-    @media (max-width:820px){
-      .nav-toggle{display:inline-flex}
-      .nav-links{display:none;position:absolute;left:0;right:0;top:100%;padding:14px clamp(24px,6vw,72px);background:rgba(230,247,219,.97);backdrop-filter:blur(10px);border-bottom:1px solid rgba(43,43,43,.08);flex-direction:column;gap:10px}
-      .nav-links a{padding:12px 12px}
-      .nav-links .btn{width:100%;text-align:center}
-      .nav.is-open .nav-links{display:flex}
-    }
-
+    .nav-toggle-lines span:nth-child(1){top:0}.nav-toggle-lines span:nth-child(2){top:5px}.nav-toggle-lines span:nth-child(3){bottom:0}
+    @media (max-width:820px){.nav-toggle{display:inline-flex}.nav-links{display:none;position:absolute;left:0;right:0;top:100%;padding:14px clamp(24px,6vw,72px);background:rgba(230,247,219,.97);backdrop-filter:blur(10px);border-bottom:1px solid rgba(43,43,43,.08);flex-direction:column;gap:10px}.nav-links a{padding:12px 12px}.nav-links .btn{width:100%;text-align:center}.nav.is-open .nav-links{display:flex}}
     .hero{padding-top:32px;padding-bottom:24px}
-    @media (max-width:560px){.hero{padding-top:20px;padding-bottom:20px}}
-
     h1{font-size:clamp(2.1rem,4vw,3.25rem);line-height:1.05;margin:0 0 14px;letter-spacing:-.03em}
     h2{font-size:clamp(1.45rem,2.4vw,2rem);margin:0 0 12px;letter-spacing:-.02em}
     h3{font-size:1.05rem;margin:0 0 8px}
-
     .kicker{display:inline-flex;gap:10px;align-items:center;font-weight:700;font-size:.9rem;padding:8px 12px;border-radius:999px;background:rgba(255,255,255,.7);margin-bottom:16px}
     .kicker-dot{width:10px;height:10px;border-radius:999px;background:var(--lime)}
     .lead{font-size:1.08rem;margin:0 0 18px;max-width:760px}
     .section{padding:24px 0 64px}
     .card{background:var(--white);border-radius:var(--radius);padding:28px;box-shadow:var(--shadow);border:1px solid rgba(43,43,43,.06)}
     @media (max-width:560px){.card{padding:20px}}
-
     .pill{display:inline-block;padding:6px 10px;border-radius:999px;background:rgba(167,213,30,.18);font-weight:700;font-size:.85rem}
     .small{font-size:.9rem;opacity:.85}
-    .blog-shell{max-width:880px}
-    .blog-meta{display:flex;gap:10px;flex-wrap:wrap;margin:12px 0 18px}
-
-    .intro{font-size:1rem;margin-bottom:24px}
-    .intro p{margin:0 0 16px}
-
+    .blog-shell{max-width:880px}.blog-meta{display:flex;gap:10px;flex-wrap:wrap;margin:12px 0 18px}
+    .intro{font-size:1rem;margin-bottom:24px}.intro p{margin:0 0 16px}
     .section-block{margin-top:28px;padding-top:28px;border-top:1px solid rgba(43,43,43,.10)}
     .section-block:first-child{margin-top:0;padding-top:0;border-top:none}
-
     .section-head{display:flex;align-items:center;gap:12px;margin-bottom:10px}
-    .icon-badge{
-      width:36px;
-      height:36px;
-      border-radius:12px;
-      background:rgba(167,213,30,.18);
-      display:flex;
-      align-items:center;
-      justify-content:center;
-      font-weight:800;
-      flex-shrink:0;
-    }
-
-    .blog-body p{margin:0 0 16px}
-    .blog-body ul{margin:0 0 18px 0;padding-left:20px}
-    .blog-body li{margin-bottom:10px}
-    .blog-body strong{font-weight:800}
-
-    .blog-body a{
-      text-decoration:underline;
-      text-underline-offset:3px;
-      font-weight:600;
-    }
-    .blog-body a:hover{opacity:.75}
-
-    .callout{
-      background:var(--cream);
-      border:1px solid rgba(43,43,43,.06);
-      border-radius:16px;
-      padding:18px;
-      margin:18px 0 22px;
-    }
-
-    .warning{
-      background:var(--blush);
-      border:1px solid rgba(43,43,43,.06);
-      border-radius:16px;
-      padding:18px;
-      margin:18px 0 22px;
-    }
-
-    .spec-table{
-      width:100%;
-      border-collapse:collapse;
-      margin:16px 0 22px;
-      overflow:hidden;
-      border-radius:14px;
-      font-size:.95rem;
-    }
-    .spec-table th,
-    .spec-table td{
-      text-align:left;
-      vertical-align:top;
-      padding:12px;
-      border-bottom:1px solid rgba(43,43,43,.10);
-    }
-    .spec-table th{
-      background:rgba(167,213,30,.18);
-      font-weight:800;
-    }
-    .spec-table tr:last-child td{border-bottom:none}
-    @media (max-width:720px){
-      .spec-table{display:block;overflow-x:auto;white-space:nowrap}
-    }
-
-    /* Related resources carousel */
-    .related-carousel-wrap{
-      margin-top:14px;
-    }
-
-    .related-carousel{
-      display:flex;
-      gap:14px;
-      overflow-x:auto;
-      scroll-snap-type:x mandatory;
-      -webkit-overflow-scrolling:touch;
-      padding:4px 4px 12px;
-    }
-
-    .related-carousel::-webkit-scrollbar{
-      height:8px;
-    }
-
-    .related-carousel::-webkit-scrollbar-thumb{
-      background:rgba(43,43,43,.18);
-      border-radius:999px;
-    }
-
-    .related-card{
-      flex:0 0 260px;
-      scroll-snap-align:start;
-      display:flex;
-      flex-direction:column;
-      justify-content:space-between;
-      min-height:210px;
-      background:var(--cream);
-      border:1px solid rgba(43,43,43,.06);
-      border-radius:16px;
-      padding:18px;
-      text-decoration:none !important;
-      transition:.2s ease;
-    }
-
-    .related-card:hover{
-      transform:translateY(-3px);
-      background:rgba(167,213,30,.18);
-      opacity:1;
-    }
-
-    .related-card h3{
-      margin:8px 0 8px;
-      font-size:1rem;
-    }
-
-    .related-card p{
-      margin:0;
-      font-size:.9rem;
-      opacity:.85;
-    }
-
-    .related-card-cta{
-      background:var(--lime);
-    }
-
-    .related-link-text{
-      display:inline-block;
-      margin-top:14px;
-      font-weight:800;
-      font-size:.9rem;
-    }
-
-    @media (max-width:560px){
-      .related-card{
-        flex-basis:82%;
-        min-height:220px;
-      }
-    }
-
-    footer.footer{background:rgba(255,255,255,.92);border-top:1px solid rgba(43,43,43,.10)}
-    .footer-main{padding:40px 0}
-    .footer-grid{display:grid;grid-template-columns:1.3fr 1fr 1fr 1fr;gap:32px;align-items:start}
-    @media (max-width:900px){.footer-grid{grid-template-columns:1fr 1fr}}
-    @media (max-width:560px){.footer-grid{grid-template-columns:1fr}}
-    footer.footer h4{margin:0 0 10px;font-size:.95rem}
-    .footer-grid ul{list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:8px}
-    .footer-grid a{color:inherit;text-decoration:none}
-    .footer-grid a:hover{text-decoration:underline}
-    .footer-bottom{border-top:1px solid rgba(43,43,43,.08);padding:16px 0}
+    .icon-badge{width:36px;height:36px;border-radius:12px;background:rgba(167,213,30,.18);display:flex;align-items:center;justify-content:center;font-weight:800;flex-shrink:0}
+    .blog-body p{margin:0 0 16px}.blog-body ul{margin:0 0 18px 0;padding-left:20px}.blog-body li{margin-bottom:10px}.blog-body strong{font-weight:800}
+    .blog-body a{text-decoration:underline;text-underline-offset:3px;font-weight:600}.blog-body a:hover{opacity:.75}
+    .callout{background:var(--cream);border:1px solid rgba(43,43,43,.06);border-radius:16px;padding:18px;margin:18px 0 22px}
+    .warning{background:var(--blush);border:1px solid rgba(43,43,43,.06);border-radius:16px;padding:18px;margin:18px 0 22px}
+    .spec-table{width:100%;border-collapse:collapse;margin:16px 0 22px;overflow:hidden;border-radius:14px;font-size:.95rem}
+    .spec-table th,.spec-table td{text-align:left;vertical-align:top;padding:12px;border-bottom:1px solid rgba(43,43,43,.10)}
+    .spec-table th{background:rgba(167,213,30,.18);font-weight:800}.spec-table tr:last-child td{border-bottom:none}
+    @media (max-width:720px){.spec-table{display:block;overflow-x:auto;white-space:nowrap}}
+    .related-carousel-wrap{margin-top:14px}.related-carousel{display:flex;gap:14px;overflow-x:auto;scroll-snap-type:x mandatory;-webkit-overflow-scrolling:touch;padding:4px 4px 12px}.related-carousel::-webkit-scrollbar{height:8px}.related-carousel::-webkit-scrollbar-thumb{background:rgba(43,43,43,.18);border-radius:999px}
+    .related-card{flex:0 0 260px;scroll-snap-align:start;display:flex;flex-direction:column;justify-content:space-between;min-height:210px;background:var(--cream);border:1px solid rgba(43,43,43,.06);border-radius:16px;padding:18px;text-decoration:none !important;transition:.2s ease}.related-card:hover{transform:translateY(-3px);background:rgba(167,213,30,.18);opacity:1}.related-card h3{margin:8px 0 8px;font-size:1rem}.related-card p{margin:0;font-size:.9rem;opacity:.85}.related-card-cta{background:var(--lime)}.related-link-text{display:inline-block;margin-top:14px;font-weight:800;font-size:.9rem}
+    @media (max-width:560px){.related-card{flex-basis:82%;min-height:220px}}
+    footer.footer{background:rgba(255,255,255,.92);border-top:1px solid rgba(43,43,43,.10)}.footer-main{padding:40px 0}.footer-grid{display:grid;grid-template-columns:1.3fr 1fr 1fr 1fr;gap:32px;align-items:start}@media (max-width:900px){.footer-grid{grid-template-columns:1fr 1fr}}@media (max-width:560px){.footer-grid{grid-template-columns:1fr}}footer.footer h4{margin:0 0 10px;font-size:.95rem}.footer-grid ul{list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:8px}.footer-grid a{color:inherit;text-decoration:none}.footer-grid a:hover{text-decoration:underline}.footer-bottom{border-top:1px solid rgba(43,43,43,.08);padding:16px 0}
   </style>
 </head>
 
 <body id="top">
   <nav class="nav">
     <div class="container nav-inner">
-      <a class="brand" href="/">
-        <span class="brand-badge"><img src="/Blender%20Digital%20Full%20Logo.svg" alt="Blender Digital logo" /></span>
-      </a>
-
-      <button class="nav-toggle" id="navToggle" aria-label="Open menu" aria-expanded="false" aria-controls="navMenu">
-        <span class="nav-toggle-lines" aria-hidden="true"><span></span><span></span><span></span></span>
-      </button>
-
+      <a class="brand" href="/"><span class="brand-badge"><img src="/Blender%20Digital%20Full%20Logo.svg" alt="Blender Digital logo" /></span></a>
+      <button class="nav-toggle" id="navToggle" aria-label="Open menu" aria-expanded="false" aria-controls="navMenu"><span class="nav-toggle-lines" aria-hidden="true"><span></span><span></span><span></span></span></button>
       <div class="nav-links" id="navMenu">
         <a href="/#services">Services</a>
         <a href="/results.html">Results</a>
@@ -278,24 +98,15 @@
 
   <header class="hero">
     <div class="container blog-shell">
-      <div class="kicker">
-        <span class="kicker-dot"></span>
-        Quick Reference Guide
-      </div>
-
-      <h1>Restaurant Delivery App Image Size Requirements</h1>
-
-      <p class="lead">
-        A practical image size checklist for restaurant operators managing Uber Eats,
-        DoorDash, Grubhub, and Toast storefronts.
-      </p>
-
+      <div class="kicker"><span class="kicker-dot"></span>U.S. Restaurant Delivery Guide</div>
+      <h1>U.S. Delivery App Image Size Requirements: DoorDash, Uber Eats, Grubhub & Toast</h1>
+      <p class="lead">A practical image size checklist for U.S. restaurant operators managing DoorDash, Uber Eats, Grubhub, Toast, and ezCater storefronts.</p>
       <div class="blog-meta">
-        <span class="pill">Uber Eats</span>
         <span class="pill">DoorDash</span>
+        <span class="pill">Uber Eats</span>
         <span class="pill">Grubhub</span>
         <span class="pill">Toast</span>
-        <span class="pill">Menu Photos</span>
+        <span class="pill">U.S. Restaurants</span>
       </div>
     </div>
   </header>
@@ -303,317 +114,79 @@
   <main class="section">
     <div class="container blog-shell">
       <article class="card blog-body">
-
         <div class="intro">
-          <p>
-            If you manage a restaurant across multiple delivery and online ordering platforms,
-            image requirements can get annoying fast. Uber Eats may want one crop, DoorDash may
-            prefer another, Grubhub may require a square format, and Toast may have its own
-            requirements depending on where the image appears.
-          </p>
-
-          <p>
-            This guide pulls the key image requirements into one place so operators can avoid
-            rejected uploads, awkward crops, blurry menu photos, and unnecessary back-and-forth
-            with platform support teams.
-          </p>
+          <p>If you manage a restaurant in the United States across multiple delivery and online ordering platforms, image requirements can get annoying fast. DoorDash may want one crop, Uber Eats may want another, Grubhub may require a square format, and Toast may have its own requirements depending on where the image appears.</p>
+          <p>This guide is focused on U.S. restaurant delivery and ordering platforms, including DoorDash, Uber Eats, Grubhub, Toast, and ezCater. It is not intended for Latin American delivery platforms such as PedidosYa, Rappi, or iFood.</p>
         </div>
 
         <section class="section-block">
-          <div class="section-head">
-            <div class="icon-badge">✓</div>
-            <h2>Quick Master Checklist</h2>
+          <div class="section-head"><div class="icon-badge">✓</div><h2>Platforms Covered in This U.S. Restaurant Guide</h2></div>
+          <p>This guide is built for restaurants operating in the United States and focuses on the image requirements used by major U.S. delivery and ordering platforms.</p>
+          <ul>
+            <li>DoorDash</li>
+            <li>Uber Eats</li>
+            <li>Grubhub</li>
+            <li>Toast</li>
+            <li>ezCater</li>
+          </ul>
+          <div class="warning">
+            <h3>Not covered here</h3>
+            <p>This guide does not cover Latin American delivery platforms such as PedidosYa, Rappi, or iFood. Those platforms may use different image dimensions, approval rules, and merchant workflows.</p>
           </div>
+        </section>
 
-          <p>
-            If you only want the fast version, use this as your working checklist before uploading
-            restaurant images.
-          </p>
-
+        <section class="section-block">
+          <div class="section-head"><div class="icon-badge">✓</div><h2>Quick Master Checklist</h2></div>
+          <p>If you only want the fast version, use this as your working checklist before uploading restaurant images to U.S. delivery apps.</p>
           <table class="spec-table">
-            <thead>
-              <tr>
-                <th>Platform</th>
-                <th>Image Type</th>
-                <th>Recommended Specs</th>
-                <th>Source</th>
-              </tr>
-            </thead>
+            <thead><tr><th>Platform</th><th>Image Type</th><th>Recommended Specs</th><th>Source</th></tr></thead>
             <tbody>
-              <tr>
-                <td>Uber Eats</td>
-                <td>Cover image</td>
-                <td>2880 × 2304 px, JPEG, 5:4 aspect ratio</td>
-                <td><a href="https://help.uber.com/en/merchants-and-restaurants/article/adding-cover-images-and-menu-catalog-photos?nodeId=b2dfa2b7-20f2-4f5f-81a3-32fa4c2aea89" target="_blank" rel="noopener noreferrer">Uber source</a></td>
-              </tr>
-              <tr>
-                <td>Uber Eats</td>
-                <td>Menu item photo</td>
-                <td>JPG, PNG, or GIF; max 10 MB; height 440–10,000 px; width 550–10,000 px</td>
-                <td><a href="https://help.uber.com/merchants-and-restaurants/article/store-submitted-menu-photo-guidelines?nodeId=0ad2da19-95e9-47d0-9db4-d7ddb346c357" target="_blank" rel="noopener noreferrer">Uber source</a></td>
-              </tr>
-              <tr>
-                <td>DoorDash</td>
-                <td>Item photo</td>
-                <td>1400 × 800 px minimum, 16:9 landscape, JPG/JPEG/PNG, under 16 MB</td>
-                <td><a href="https://merchants.doordash.com/en-us/learning-center/photo-rejection" target="_blank" rel="noopener noreferrer">DoorDash source</a></td>
-              </tr>
-              <tr>
-                <td>DoorDash</td>
-                <td>Logo</td>
-                <td>230 × 230 px, JPG/JPEG/PNG, under 2 MB; square works best</td>
-                <td><a href="https://merchants.doordash.com/en-us/learning-center/photo-rejection" target="_blank" rel="noopener noreferrer">DoorDash source</a></td>
-              </tr>
-              <tr>
-                <td>DoorDash</td>
-                <td>Header / carousel</td>
-                <td>1400 × 800 px minimum, JPG/JPEG/PNG, under 2 MB; 4:1 web / 16:9 app</td>
-                <td><a href="https://merchants.doordash.com/en-us/learning-center/photo-rejection" target="_blank" rel="noopener noreferrer">DoorDash source</a></td>
-              </tr>
-              <tr>
-                <td>Grubhub</td>
-                <td>Menu images / logo</td>
-                <td>1:1 square, at least 200 × 200 px, PNG</td>
-                <td><a href="https://get.grubhub.com/help-center/grubhub-menu-overview/" target="_blank" rel="noopener noreferrer">Grubhub source</a></td>
-              </tr>
-              <tr>
-                <td>Toast</td>
-                <td>Menu item image</td>
-                <td>JPG or PNG, max 5 MB; Toast recommends 750 × 450 px in Menu Builder</td>
-                <td><a href="https://support.toasttab.com/en/article/Adding-Images-to-Menu-Items-in-the-Menu" target="_blank" rel="noopener noreferrer">Toast source</a></td>
-              </tr>
-              <tr>
-                <td>Toast</td>
-                <td>Online Ordering Pro menu images</td>
-                <td>1:1, 4:3, or 16:9; minimum height or width of 1000 px recommended</td>
-                <td><a href="https://support.toasttab.com/en/article/Toast-Online-Ordering-Pro-Menu-Customization" target="_blank" rel="noopener noreferrer">Toast source</a></td>
-              </tr>
-              <tr>
-                <td>Toast</td>
-                <td>Logo / banner</td>
-                <td>Logo: 230 × 230 px max 5 MB; Banner: 1400 × 788 px max 5 MB</td>
-                <td><a href="https://support.toasttab.com/en/article/Customize-Your-Online-Ordering-Site" target="_blank" rel="noopener noreferrer">Toast source</a></td>
-              </tr>
+              <tr><td>Uber Eats</td><td>Cover image</td><td>2880 × 2304 px, JPEG, 5:4 aspect ratio</td><td><a href="https://help.uber.com/en/merchants-and-restaurants/article/adding-cover-images-and-menu-catalog-photos?nodeId=b2dfa2b7-20f2-4f5f-81a3-32fa4c2aea89" target="_blank" rel="noopener noreferrer">Uber source</a></td></tr>
+              <tr><td>Uber Eats</td><td>Menu item photo</td><td>JPG, PNG, or GIF; max 10 MB; height 440–10,000 px; width 550–10,000 px</td><td><a href="https://help.uber.com/merchants-and-restaurants/article/store-submitted-menu-photo-guidelines?nodeId=0ad2da19-95e9-47d0-9db4-d7ddb346c357" target="_blank" rel="noopener noreferrer">Uber source</a></td></tr>
+              <tr><td>DoorDash</td><td>Item photo</td><td>1400 × 800 px minimum, 16:9 landscape, JPG/JPEG/PNG, under 16 MB</td><td><a href="https://merchants.doordash.com/en-us/learning-center/photo-rejection" target="_blank" rel="noopener noreferrer">DoorDash source</a></td></tr>
+              <tr><td>DoorDash</td><td>Logo</td><td>230 × 230 px, JPG/JPEG/PNG, under 2 MB; square works best</td><td><a href="https://merchants.doordash.com/en-us/learning-center/photo-rejection" target="_blank" rel="noopener noreferrer">DoorDash source</a></td></tr>
+              <tr><td>DoorDash</td><td>Header / carousel</td><td>1400 × 800 px minimum, JPG/JPEG/PNG, under 2 MB; 4:1 web / 16:9 app</td><td><a href="https://merchants.doordash.com/en-us/learning-center/photo-rejection" target="_blank" rel="noopener noreferrer">DoorDash source</a></td></tr>
+              <tr><td>Grubhub</td><td>Menu images / logo</td><td>1:1 square, at least 200 × 200 px, PNG</td><td><a href="https://get.grubhub.com/help-center/grubhub-menu-overview/" target="_blank" rel="noopener noreferrer">Grubhub source</a></td></tr>
+              <tr><td>Toast</td><td>Menu item image</td><td>JPG or PNG, max 5 MB; Toast recommends 750 × 450 px in Menu Builder</td><td><a href="https://support.toasttab.com/en/article/Adding-Images-to-Menu-Items-in-the-Menu" target="_blank" rel="noopener noreferrer">Toast source</a></td></tr>
+              <tr><td>Toast</td><td>Online Ordering Pro menu images</td><td>1:1, 4:3, or 16:9; minimum height or width of 1000 px recommended</td><td><a href="https://support.toasttab.com/en/article/Toast-Online-Ordering-Pro-Menu-Customization" target="_blank" rel="noopener noreferrer">Toast source</a></td></tr>
+              <tr><td>Toast</td><td>Logo / banner</td><td>Logo: 230 × 230 px max 5 MB; Banner: 1400 × 788 px max 5 MB</td><td><a href="https://support.toasttab.com/en/article/Customize-Your-Online-Ordering-Site" target="_blank" rel="noopener noreferrer">Toast source</a></td></tr>
             </tbody>
           </table>
         </section>
 
         <section class="section-block">
-          <div class="section-head">
-            <div class="icon-badge">1</div>
-            <h2>Uber Eats Image Requirements</h2>
-          </div>
-
-          <p>
-            Uber Eats has separate guidance for cover images and menu/catalog item photos.
-            The cover image is the storefront visual customers see when browsing your restaurant,
-            while menu item photos are attached to specific items.
-          </p>
-
-          <div class="callout">
-            <h3>Uber Eats cover image</h3>
-            <ul>
-              <li><strong>Size:</strong> 2880 px wide × 2304 px tall</li>
-              <li><strong>Aspect ratio:</strong> 5:4</li>
-              <li><strong>Format:</strong> JPEG</li>
-              <li><strong>Composition:</strong> centered, level, properly cropped</li>
-              <li><strong>Content:</strong> relevant products or meals customers can buy</li>
-            </ul>
-            <p>
-              Source:
-              <a href="https://help.uber.com/en/merchants-and-restaurants/article/adding-cover-images-and-menu-catalog-photos?nodeId=b2dfa2b7-20f2-4f5f-81a3-32fa4c2aea89" target="_blank" rel="noopener noreferrer">Uber Eats cover image guidelines</a>
-            </p>
-          </div>
-
-          <div class="callout">
-            <h3>Uber Eats menu item photos</h3>
-            <ul>
-              <li><strong>File types:</strong> JPG, PNG, or GIF</li>
-              <li><strong>Max file size:</strong> 10 MB</li>
-              <li><strong>Height:</strong> 440–10,000 px</li>
-              <li><strong>Width:</strong> 550–10,000 px</li>
-              <li><strong>Content:</strong> one menu item, centered, clear, bright, and in focus</li>
-            </ul>
-            <p>
-              Source:
-              <a href="https://help.uber.com/merchants-and-restaurants/article/store-submitted-menu-photo-guidelines?nodeId=0ad2da19-95e9-47d0-9db4-d7ddb346c357" target="_blank" rel="noopener noreferrer">Uber Eats menu photo guidelines</a>
-            </p>
-          </div>
-
-          <div class="warning">
-            <h3>Common Uber Eats rejection risks</h3>
-            <ul>
-              <li>Too much text or logo treatment on the image</li>
-              <li>Multiple unrelated dishes in a menu item photo</li>
-              <li>Blurry, dark, shadow-heavy, or poorly cropped images</li>
-              <li>Images that include people, except hands in limited cases</li>
-              <li>Photos that do not accurately represent the menu item</li>
-            </ul>
-          </div>
+          <div class="section-head"><div class="icon-badge">1</div><h2>DoorDash Image Requirements</h2></div>
+          <p>DoorDash is more specific about different image types: item photos, logos, and header or carousel images. This matters because a food photo that works for an item may not be right for a header or logo slot.</p>
+          <div class="callout"><h3>DoorDash item photos</h3><ul><li><strong>Minimum resolution:</strong> 1400 × 800 px</li><li><strong>Aspect ratio:</strong> 16:9 landscape</li><li><strong>File size:</strong> under 16 MB</li><li><strong>Format:</strong> JPG, JPEG, or PNG</li><li><strong>Content:</strong> individual dish or product, centered, no overlays</li></ul></div>
+          <div class="callout"><h3>DoorDash logo</h3><ul><li><strong>Resolution:</strong> 230 × 230 px</li><li><strong>Best shape:</strong> square 1:1</li><li><strong>File size:</strong> under 2 MB</li><li><strong>Format:</strong> JPG, JPEG, or PNG</li></ul></div>
+          <div class="callout"><h3>DoorDash header / carousel images</h3><ul><li><strong>Minimum resolution:</strong> 1400 × 800 px</li><li><strong>Aspect ratio:</strong> 4:1 on web; 16:9 in app</li><li><strong>File size:</strong> under 2 MB</li><li><strong>Format:</strong> JPG, JPEG, or PNG</li><li><strong>Content:</strong> multiple products are okay, but not a collage</li></ul></div>
+          <p>Source: <a href="https://merchants.doordash.com/en-us/learning-center/photo-rejection" target="_blank" rel="noopener noreferrer">DoorDash photo requirements</a></p>
         </section>
 
         <section class="section-block">
-          <div class="section-head">
-            <div class="icon-badge">2</div>
-            <h2>DoorDash Image Requirements</h2>
-          </div>
-
-          <p>
-            DoorDash is more specific about different image types: item photos, logos,
-            and header/carousel images. This matters because a food photo that works
-            for an item may not be right for a header or logo slot.
-          </p>
-
-          <div class="callout">
-            <h3>DoorDash item photos</h3>
-            <ul>
-              <li><strong>Minimum resolution:</strong> 1400 × 800 px</li>
-              <li><strong>Aspect ratio:</strong> 16:9 landscape</li>
-              <li><strong>File size:</strong> under 16 MB</li>
-              <li><strong>Format:</strong> JPG, JPEG, or PNG</li>
-              <li><strong>Content:</strong> individual dish or product, centered, no overlays</li>
-            </ul>
-          </div>
-
-          <div class="callout">
-            <h3>DoorDash logo</h3>
-            <ul>
-              <li><strong>Resolution:</strong> 230 × 230 px</li>
-              <li><strong>Best shape:</strong> square 1:1</li>
-              <li><strong>File size:</strong> under 2 MB</li>
-              <li><strong>Format:</strong> JPG, JPEG, or PNG</li>
-            </ul>
-          </div>
-
-          <div class="callout">
-            <h3>DoorDash header / carousel images</h3>
-            <ul>
-              <li><strong>Minimum resolution:</strong> 1400 × 800 px</li>
-              <li><strong>Aspect ratio:</strong> 4:1 on web; 16:9 in app</li>
-              <li><strong>File size:</strong> under 2 MB</li>
-              <li><strong>Format:</strong> JPG, JPEG, or PNG</li>
-              <li><strong>Content:</strong> multiple products are okay, but not a collage</li>
-            </ul>
-          </div>
-
-          <p>
-            Source:
-            <a href="https://merchants.doordash.com/en-us/learning-center/photo-rejection" target="_blank" rel="noopener noreferrer">DoorDash photo requirements</a>
-          </p>
-
-          <div class="warning">
-            <h3>DoorDash integrated image note</h3>
-            <p>
-              If images are being sent through an integration, DoorDash’s developer docs specify
-              16:9 aspect ratio, JPG/JPEG/PNG format, and a 2 MB max file size for auto-approval.
-              If the aspect ratio is wrong, DoorDash may crop the middle section of the image.
-            </p>
-            <p>
-              Source:
-              <a href="https://developer.doordash.com/en-US/docs/marketplace/how_to/integrated_images/" target="_blank" rel="noopener noreferrer">DoorDash integrated image docs</a>
-            </p>
-          </div>
+          <div class="section-head"><div class="icon-badge">2</div><h2>Uber Eats Image Requirements</h2></div>
+          <p>Uber Eats has separate guidance for cover images and menu/catalog item photos. The cover image is the storefront visual customers see when browsing your restaurant, while menu item photos are attached to specific items.</p>
+          <div class="callout"><h3>Uber Eats cover image</h3><ul><li><strong>Size:</strong> 2880 px wide × 2304 px tall</li><li><strong>Aspect ratio:</strong> 5:4</li><li><strong>Format:</strong> JPEG</li><li><strong>Composition:</strong> centered, level, properly cropped</li><li><strong>Content:</strong> relevant products or meals customers can buy</li></ul><p>Source: <a href="https://help.uber.com/en/merchants-and-restaurants/article/adding-cover-images-and-menu-catalog-photos?nodeId=b2dfa2b7-20f2-4f5f-81a3-32fa4c2aea89" target="_blank" rel="noopener noreferrer">Uber Eats cover image guidelines</a></p></div>
+          <div class="callout"><h3>Uber Eats menu item photos</h3><ul><li><strong>File types:</strong> JPG, PNG, or GIF</li><li><strong>Max file size:</strong> 10 MB</li><li><strong>Height:</strong> 440–10,000 px</li><li><strong>Width:</strong> 550–10,000 px</li><li><strong>Content:</strong> one menu item, centered, clear, bright, and in focus</li></ul><p>Source: <a href="https://help.uber.com/merchants-and-restaurants/article/store-submitted-menu-photo-guidelines?nodeId=0ad2da19-95e9-47d0-9db4-d7ddb346c357" target="_blank" rel="noopener noreferrer">Uber Eats menu photo guidelines</a></p></div>
         </section>
 
         <section class="section-block">
-          <div class="section-head">
-            <div class="icon-badge">3</div>
-            <h2>Grubhub Image Requirements</h2>
-          </div>
-
-          <p>
-            Grubhub’s public merchant guidance is simpler: uploaded menu images should be
-            square and meet a minimum resolution requirement. The platform also has content
-            rules around food imagery, copyright, and safe-search review.
-          </p>
-
-          <div class="callout">
-            <h3>Grubhub menu and logo image specs</h3>
-            <ul>
-              <li><strong>Aspect ratio:</strong> 1:1 square</li>
-              <li><strong>Minimum resolution:</strong> 200 × 200 px</li>
-              <li><strong>Format:</strong> PNG</li>
-              <li><strong>Logo:</strong> must have a background color; white is acceptable</li>
-            </ul>
-            <p>
-              Source:
-              <a href="https://get.grubhub.com/help-center/grubhub-menu-overview/" target="_blank" rel="noopener noreferrer">Grubhub menu overview and image criteria</a>
-            </p>
-          </div>
-
-          <div class="warning">
-            <h3>Grubhub content rules to keep in mind</h3>
-            <ul>
-              <li>Images except for the logo should be food photos</li>
-              <li>Coupon, weekly special, interior, or exterior photos are not accepted for menu images</li>
-              <li>Images cannot contain adult content, violence, or medical/gore imagery</li>
-              <li>Images should not match other URLs in reverse image search</li>
-            </ul>
-          </div>
+          <div class="section-head"><div class="icon-badge">3</div><h2>Grubhub Image Requirements</h2></div>
+          <p>Grubhub’s public merchant guidance is simpler: uploaded menu images should be square and meet a minimum resolution requirement. The platform also has content rules around food imagery, copyright, and safe-search review.</p>
+          <div class="callout"><h3>Grubhub menu and logo image specs</h3><ul><li><strong>Aspect ratio:</strong> 1:1 square</li><li><strong>Minimum resolution:</strong> 200 × 200 px</li><li><strong>Format:</strong> PNG</li><li><strong>Logo:</strong> must have a background color; white is acceptable</li></ul><p>Source: <a href="https://get.grubhub.com/help-center/grubhub-menu-overview/" target="_blank" rel="noopener noreferrer">Grubhub menu overview and image criteria</a></p></div>
         </section>
 
         <section class="section-block">
-          <div class="section-head">
-            <div class="icon-badge">4</div>
-            <h2>Toast Image Requirements</h2>
-          </div>
-
-          <p>
-            Toast image requirements depend on where the image is used: menu item images,
-            Online Ordering Pro menu layouts, restaurant logos, banners, or eGift card images.
-          </p>
-
-          <div class="callout">
-            <h3>Toast menu item images</h3>
-            <ul>
-              <li><strong>Format:</strong> JPG or PNG</li>
-              <li><strong>Max file size:</strong> 5 MB</li>
-              <li><strong>Recommended menu item image:</strong> 750 × 450 px</li>
-            </ul>
-            <p>
-              Source:
-              <a href="https://support.toasttab.com/en/article/Adding-Images-to-Menu-Items-in-the-Menu" target="_blank" rel="noopener noreferrer">Toast menu item image guidance</a>
-            </p>
-          </div>
-
-          <div class="callout">
-            <h3>Toast Online Ordering Pro menu images</h3>
-            <ul>
-              <li><strong>Supported aspect ratios:</strong> 1:1, 4:3, and 16:9</li>
-              <li><strong>Quality recommendation:</strong> minimum height or width of 1000 px</li>
-            </ul>
-            <p>
-              Source:
-              <a href="https://support.toasttab.com/en/article/Toast-Online-Ordering-Pro-Menu-Customization" target="_blank" rel="noopener noreferrer">Toast Online Ordering Pro customization guidance</a>
-            </p>
-          </div>
-
-          <div class="callout">
-            <h3>Toast logo and banner images</h3>
-            <ul>
-              <li><strong>Logo:</strong> minimum 230 × 230 px; max 5 MB</li>
-              <li><strong>Banner:</strong> minimum 1400 × 788 px; max 5 MB</li>
-              <li><strong>eGift card image:</strong> minimum 640 × 400 px; max 5 MB</li>
-            </ul>
-            <p>
-              Source:
-              <a href="https://support.toasttab.com/en/article/Customize-Your-Online-Ordering-Site" target="_blank" rel="noopener noreferrer">Toast Online Ordering site image guidance</a>
-            </p>
-          </div>
+          <div class="section-head"><div class="icon-badge">4</div><h2>Toast Image Requirements</h2></div>
+          <p>Toast image requirements depend on where the image is used: menu item images, Online Ordering Pro menu layouts, restaurant logos, banners, or eGift card images.</p>
+          <div class="callout"><h3>Toast menu item images</h3><ul><li><strong>Format:</strong> JPG or PNG</li><li><strong>Max file size:</strong> 5 MB</li><li><strong>Recommended menu item image:</strong> 750 × 450 px</li></ul><p>Source: <a href="https://support.toasttab.com/en/article/Adding-Images-to-Menu-Items-in-the-Menu" target="_blank" rel="noopener noreferrer">Toast menu item image guidance</a></p></div>
+          <div class="callout"><h3>Toast Online Ordering Pro menu images</h3><ul><li><strong>Supported aspect ratios:</strong> 1:1, 4:3, and 16:9</li><li><strong>Quality recommendation:</strong> minimum height or width of 1000 px</li></ul><p>Source: <a href="https://support.toasttab.com/en/article/Toast-Online-Ordering-Pro-Menu-Customization" target="_blank" rel="noopener noreferrer">Toast Online Ordering Pro customization guidance</a></p></div>
+          <div class="callout"><h3>Toast logo and banner images</h3><ul><li><strong>Logo:</strong> minimum 230 × 230 px; max 5 MB</li><li><strong>Banner:</strong> minimum 1400 × 788 px; max 5 MB</li><li><strong>eGift card image:</strong> minimum 640 × 400 px; max 5 MB</li></ul><p>Source: <a href="https://support.toasttab.com/en/article/Customize-Your-Online-Ordering-Site" target="_blank" rel="noopener noreferrer">Toast Online Ordering site image guidance</a></p></div>
         </section>
 
         <section class="section-block">
-          <div class="section-head">
-            <div class="icon-badge">→</div>
-            <h2>Best Cross-Platform Workflow</h2>
-          </div>
-
-          <p>
-            The most common operator mistake is trying to upload the same exact image everywhere.
-            That usually creates awkward crops. Instead, use one master photo and export platform-specific
-            versions.
-          </p>
-
+          <div class="section-head"><div class="icon-badge">→</div><h2>Best Cross-Platform Workflow for U.S. Delivery Apps</h2></div>
+          <p>The most common operator mistake is trying to upload the same exact image everywhere. That usually creates awkward crops. Instead, use one master photo and export platform-specific versions.</p>
           <ul>
             <li><strong>Start with a high-resolution master image</strong> that has the food centered and extra breathing room around the edges.</li>
             <li><strong>Create a 5:4 version</strong> for Uber Eats cover-style needs.</li>
@@ -621,217 +194,62 @@
             <li><strong>Create a 1:1 square version</strong> for Grubhub and logo-style use cases.</li>
             <li><strong>Keep a clean naming system</strong> so files are easy to upload and audit later.</li>
           </ul>
-
-          <div class="callout">
-            <h3>Suggested filename format</h3>
-            <p>
-              <strong>platform-item-name-image-type-size.jpg</strong>
-            </p>
-            <p>
-              Example: <strong>doordash-chicken-sandwich-item-photo-1400x800.jpg</strong>
-            </p>
-          </div>
+          <div class="callout"><h3>Suggested filename format</h3><p><strong>platform-item-name-image-type-size.jpg</strong></p><p>Example: <strong>doordash-chicken-sandwich-item-photo-1400x800.jpg</strong></p></div>
         </section>
 
         <section class="section-block">
-          <div class="section-head">
-            <div class="icon-badge">⚠</div>
-            <h2>Common Reasons Images Get Rejected</h2>
-          </div>
-
-          <ul>
-            <li>Wrong image dimensions or aspect ratio</li>
-            <li>File size too large</li>
-            <li>Blurry, dark, or low-quality photo</li>
-            <li>Text, graphics, borders, or promotional overlays</li>
-            <li>Food not centered or cut off by the crop</li>
-            <li>Image does not match the actual menu item</li>
-            <li>Copyright risk or stock-style imagery</li>
-          </ul>
-
-          <p>
-            A good rule of thumb: delivery app photos should look like clean product images,
-            not flyers, social posts, coupons, or brand ads.
-          </p>
+          <div class="section-head"><div class="icon-badge">?</div><h2>FAQ</h2></div>
+          <div class="callout"><h3>Is this guide for U.S. restaurant delivery platforms?</h3><p>Yes. This guide is focused on U.S. platforms such as DoorDash, Uber Eats, Grubhub, Toast, and ezCater.</p></div>
+          <div class="callout"><h3>Does this guide cover PedidosYa, Rappi, or iFood?</h3><p>No. Those platforms serve different markets and may have different image requirements. This guide is specifically for U.S.-based restaurant delivery and online ordering platforms.</p></div>
+          <div class="callout"><h3>What image crops should a U.S. restaurant keep ready?</h3><p>Most restaurants should keep a high-resolution master image plus 5:4, 16:9, and 1:1 exported versions for the most common DoorDash, Uber Eats, Grubhub, and Toast placements.</p></div>
         </section>
 
         <section class="section-block">
-          <div class="section-head">
-            <div class="icon-badge">✓</div>
-            <h2>Operator Upload Checklist</h2>
-          </div>
-
-          <ul>
-            <li>Confirm which platform and image slot you are uploading to</li>
-            <li>Export the correct crop before uploading</li>
-            <li>Compress the file below the platform limit</li>
-            <li>Use JPG or PNG unless the platform specifically requires PNG</li>
-            <li>Avoid text, watermarks, borders, and promotional language</li>
-            <li>Keep the main item centered with space around it</li>
-            <li>Document rejected images and the reason for rejection</li>
-            <li>Keep platform-ready versions in a shared folder for future uploads</li>
-          </ul>
-        </section>
-
-        <section class="section-block">
-          <div class="section-head">
-            <div class="icon-badge">$</div>
-            <h2>Need Help Cleaning Up Your Delivery Storefront?</h2>
-          </div>
-
+          <div class="section-head"><div class="icon-badge">$</div><h2>Need Help Cleaning Up Your U.S. Delivery Storefront?</h2></div>
           <div class="warning">
             <h3>Blender Digital can help audit your platform storefronts</h3>
-            <p>
-              If your restaurant is managing Uber Eats, DoorDash, Grubhub, or Toast manually,
-              image requirements are only one piece of the puzzle. We help operators identify
-              storefront issues, promotion problems, menu friction, and revenue leakage across
-              third-party ordering channels.
-            </p>
-
-            <p>
-              <a href="https://form.jotform.com/261082345751051" target="_blank" rel="noopener noreferrer" class="btn btn-primary">
-                Request a storefront review
-              </a>
-            </p>
+            <p>If your restaurant is managing DoorDash, Uber Eats, Grubhub, or Toast manually, image requirements are only one piece of the puzzle. We help U.S. restaurant operators identify storefront issues, promotion problems, menu friction, and revenue leakage across third-party ordering channels.</p>
+            <p><a href="https://form.jotform.com/261082345751051" target="_blank" rel="noopener noreferrer" class="btn btn-primary">Request a storefront review</a></p>
           </div>
         </section>
 
         <section class="section-block">
-          <div class="section-head">
-            <div class="icon-badge">→</div>
-            <h2>More Resources</h2>
-          </div>
-
-          <p>
-            Keep exploring practical ways to improve delivery platform performance, margin, and visibility.
-          </p>
-
-          <div class="related-carousel-wrap">
-            <div class="related-carousel">
-
-              <a class="related-card" href="/blog/why-your-restaurant-is-invisible-on-doordash-uber-eats.html">
-                <span class="pill">Visibility</span>
-                <h3>Why Your Restaurant Is Invisible on DoorDash and Uber Eats</h3>
-                <p>Learn why low platform visibility happens and which levers help improve rank.</p>
-              </a>
-
-              <a class="related-card" href="/blog/how-much-delivery-revenue-are-you-actually-keeping.html">
-                <span class="pill">Margins</span>
-                <h3>How Much of Your Delivery Revenue Are You Actually Keeping?</h3>
-                <p>Break down commissions, fees, promo costs, and the real economics of delivery orders.</p>
-              </a>
-
-              <a class="related-card" href="/blog/delivery-menu-costing-you-orders.html">
-                <span class="pill">Menu Optimization</span>
-                <h3>Your Menu Is Costing You Orders — Here's How to Fix It</h3>
-                <p>See how menu structure, descriptions, photos, and add-ons affect conversion.</p>
-              </a>
-
-              <a class="related-card" href="/blog/hero-image-reason-customers-skipping-restaurant.html">
-                <span class="pill">Creative</span>
-                <h3>Your Hero Image Is the Reason Customers Are Skipping Your Restaurant</h3>
-                <p>Understand why your storefront image may be hurting clicks before customers even view your menu.</p>
-              </a>
-
-              <a class="related-card" href="/blog/new-restaurant-doordash-uber-eats-first-30-days.html">
-                <span class="pill">Launch Plan</span>
-                <h3>New on DoorDash or Uber Eats? Here's Exactly What to Do in Your First 30 Days</h3>
-                <p>Use the first month to build the right algorithmic and operational foundation.</p>
-              </a>
-
-              <a class="related-card related-card-cta" href="/blog.html">
-                <span class="pill">All Resources</span>
-                <h3>See other resources</h3>
-                <p>Browse the full Blender Digital resource library for delivery platform growth guides.</p>
-                <span class="related-link-text">View all blogs →</span>
-              </a>
-
-            </div>
-          </div>
+          <div class="section-head"><div class="icon-badge">→</div><h2>More Resources</h2></div>
+          <p>Keep exploring practical ways to improve delivery platform performance, margin, and visibility.</p>
+          <div class="related-carousel-wrap"><div class="related-carousel">
+            <a class="related-card" href="/blog/why-your-restaurant-is-invisible-on-doordash-uber-eats.html"><span class="pill">Visibility</span><h3>Why Your Restaurant Is Invisible on DoorDash and Uber Eats</h3><p>Learn why low platform visibility happens and which levers help improve rank.</p></a>
+            <a class="related-card" href="/blog/how-much-delivery-revenue-are-you-actually-keeping.html"><span class="pill">Margins</span><h3>How Much of Your Delivery Revenue Are You Actually Keeping?</h3><p>Break down commissions, fees, promo costs, and the real economics of delivery orders.</p></a>
+            <a class="related-card" href="/blog/delivery-menu-costing-you-orders.html"><span class="pill">Menu Optimization</span><h3>Your Menu Is Costing You Orders — Here's How to Fix It</h3><p>See how menu structure, descriptions, photos, and add-ons affect conversion.</p></a>
+            <a class="related-card" href="/blog/hero-image-reason-customers-skipping-restaurant.html"><span class="pill">Creative</span><h3>Your Hero Image Is the Reason Customers Are Skipping Your Restaurant</h3><p>Understand why your storefront image may be hurting clicks before customers even view your menu.</p></a>
+            <a class="related-card" href="/blog/new-restaurant-doordash-uber-eats-first-30-days.html"><span class="pill">Launch Plan</span><h3>New on DoorDash or Uber Eats? Here's Exactly What to Do in Your First 30 Days</h3><p>Use the first month to build the right algorithmic and operational foundation.</p></a>
+            <a class="related-card related-card-cta" href="/blog.html"><span class="pill">All Resources</span><h3>See other resources</h3><p>Browse the full Blender Digital resource library for delivery platform growth guides.</p><span class="related-link-text">View all blogs →</span></a>
+          </div></div>
         </section>
-
       </article>
     </div>
   </main>
 
   <footer class="footer">
-    <div class="footer-main">
-      <div class="container footer-grid">
-        <div class="footer-brand">
-          <div style="display:flex;align-items:center;gap:10px;margin-bottom:10px">
-            <span class="brand-badge"><img src="/Blender%20Digital%20Full%20Logo.svg" alt="Blender Digital logo" /></span>
-          </div>
-          <p class="small">Fractional growth team for restaurants selling on DoorDash, Uber Eats, Grubhub, and Toast. We focus on disciplined execution—not fluff.</p>
-        </div>
-
-        <div>
-          <h4>Services</h4>
-          <ul class="small">
-            <li><a href="/#services">Platform operations</a></li>
-            <li><a href="/#services">Promotions strategy</a></li>
-            <li><a href="/#services">Sponsored listings</a></li>
-            <li><a href="/#services">Reviews & loyalty</a></li>
-          </ul>
-        </div>
-
-        <div>
-          <h4>Resources</h4>
-          <ul class="small">
-            <li><a href="/blog.html">Blog</a></li>
-            <li><a href="/blog/why-your-uber-eats-promotions-are-destroying-your-margins.html">Uber Eats promo margins</a></li>
-            <li><a href="/blog/restaurant-delivery-platform-image-size-requirements.html">Image size requirements</a></li>
-          </ul>
-        </div>
-
-        <div>
-          <h4>Company</h4>
-          <ul class="small">
-            <li><a href="/results.html">Results</a></li>
-            <li><a href="/#pricing">Pricing</a></li>
-            <li><a href="/#contact">Contact</a></li>
-            <li><a href="#top">Back to top</a></li>
-          </ul>
-        </div>
-      </div>
-    </div>
-
-    <div class="footer-bottom">
-      <div class="container" style="display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap">
-        <div class="small" style="text-align:center;width:100%">© 2026 Blender Digital</div>
-      </div>
-    </div>
+    <div class="footer-main"><div class="container footer-grid">
+      <div class="footer-brand"><div style="display:flex;align-items:center;gap:10px;margin-bottom:10px"><span class="brand-badge"><img src="/Blender%20Digital%20Full%20Logo.svg" alt="Blender Digital logo" /></span></div><p class="small">Fractional growth team for U.S. restaurants selling on DoorDash, Uber Eats, Grubhub, and Toast. We focus on disciplined execution—not fluff.</p></div>
+      <div><h4>Services</h4><ul class="small"><li><a href="/#services">Platform operations</a></li><li><a href="/#services">Promotions strategy</a></li><li><a href="/#services">Sponsored listings</a></li><li><a href="/#services">Reviews & loyalty</a></li></ul></div>
+      <div><h4>Resources</h4><ul class="small"><li><a href="/blog.html">Blog</a></li><li><a href="/blog/why-your-uber-eats-promotions-are-destroying-your-margins.html">Uber Eats promo margins</a></li><li><a href="/blog/restaurant-delivery-platform-image-size-requirements.html">U.S. delivery app image requirements</a></li></ul></div>
+      <div><h4>Company</h4><ul class="small"><li><a href="/results.html">Results</a></li><li><a href="/#pricing">Pricing</a></li><li><a href="/#contact">Contact</a></li><li><a href="#top">Back to top</a></li></ul></div>
+    </div></div>
+    <div class="footer-bottom"><div class="container" style="display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap"><div class="small" style="text-align:center;width:100%">© 2026 Blender Digital</div></div></div>
   </footer>
 
   <script>
-    // Mobile nav toggle
     (function(){
       const nav = document.querySelector('.nav');
       const btn = document.getElementById('navToggle');
       const menu = document.getElementById('navMenu');
       if(!nav || !btn || !menu) return;
-
-      const close = () => {
-        nav.classList.remove('is-open');
-        btn.setAttribute('aria-expanded','false');
-      };
-
-      btn.addEventListener('click', () => {
-        const open = nav.classList.toggle('is-open');
-        btn.setAttribute('aria-expanded', open ? 'true' : 'false');
-      });
-
-      menu.addEventListener('click', (e) => {
-        const t = e.target;
-        if(t && t.tagName === 'A') close();
-      });
-
-      document.addEventListener('keydown', (e) => {
-        if(e.key === 'Escape') close();
-      });
-
-      window.addEventListener('resize', () => {
-        if(window.innerWidth > 820) close();
-      });
+      const close = () => {nav.classList.remove('is-open');btn.setAttribute('aria-expanded','false');};
+      btn.addEventListener('click', () => {const open = nav.classList.toggle('is-open');btn.setAttribute('aria-expanded', open ? 'true' : 'false');});
+      menu.addEventListener('click', (e) => {const t = e.target;if(t && t.tagName === 'A') close();});
+      document.addEventListener('keydown', (e) => {if(e.key === 'Escape') close();});
+      window.addEventListener('resize', () => {if(window.innerWidth > 820) close();});
     })();
   </script>
 </body>
