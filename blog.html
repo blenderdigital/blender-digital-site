@@ -27,25 +27,19 @@
     html{scroll-behavior:smooth}
     body{margin:0;font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif;background:var(--mint);color:var(--text);line-height:1.55}
     a{color:inherit;text-decoration:none}
-
     .container{max-width:var(--max);margin:0 auto;padding:0 clamp(24px,6vw,72px)}
 
-    /* Nav */
     .nav{position:sticky;top:0;z-index:20;background:rgba(230,247,219,.85);backdrop-filter:blur(10px);border-bottom:1px solid rgba(43,43,43,.08)}
     .nav-inner{display:flex;align-items:center;justify-content:space-between;gap:16px;position:relative;padding-top:16px;padding-bottom:16px}
     .brand{display:flex;align-items:center;gap:12px;text-decoration:none}
-
     .brand-badge{width:170px;height:48px;border-radius:0;display:flex;align-items:center;justify-content:flex-start;overflow:visible}
     .brand-badge img{width:170px;height:auto;max-width:none;object-fit:contain;display:block}
-
     .nav-links{display:flex;flex-wrap:wrap;gap:14px;align-items:center}
     .nav-links a{text-decoration:none;padding:10px 12px;border-radius:12px}
     .nav-links a:hover{background:rgba(255,255,255,.7)}
-
     .btn{display:inline-block;text-decoration:none;font-weight:700;padding:10px 16px;border-radius:14px}
     .btn-primary{background:var(--lime)}
     .btn-ghost{background:rgba(255,255,255,.7)}
-
     .nav-toggle{display:none;align-items:center;justify-content:center;width:44px;height:44px;border-radius:12px;border:1px solid rgba(43,43,43,.10);background:rgba(255,255,255,.7);cursor:pointer}
     .nav-toggle:active{transform:scale(.98)}
     .nav-toggle-lines{width:18px;height:12px;position:relative}
@@ -53,295 +47,50 @@
     .nav-toggle-lines span:nth-child(1){top:0}
     .nav-toggle-lines span:nth-child(2){top:5px}
     .nav-toggle-lines span:nth-child(3){bottom:0}
+    @media (max-width:820px){.nav-toggle{display:inline-flex}.nav-links{display:none;position:absolute;left:0;right:0;top:100%;padding:14px clamp(24px,6vw,72px);background:rgba(230,247,219,.97);backdrop-filter:blur(10px);border-bottom:1px solid rgba(43,43,43,.08);flex-direction:column;gap:10px}.nav-links a{padding:12px 12px}.nav-links .btn{width:100%;text-align:center}.nav.is-open .nav-links{display:flex}}
 
-    @media (max-width:820px){
-      .nav-toggle{display:inline-flex}
-      .nav-links{display:none;position:absolute;left:0;right:0;top:100%;padding:14px clamp(24px,6vw,72px);background:rgba(230,247,219,.97);backdrop-filter:blur(10px);border-bottom:1px solid rgba(43,43,43,.08);flex-direction:column;gap:10px}
-      .nav-links a{padding:12px 12px}
-      .nav-links .btn{width:100%;text-align:center}
-      .nav.is-open .nav-links{display:flex}
-    }
-
-    /* Page */
-    .page-section{padding:54px 0}
-    .hero-copy{max-width:760px}
-    h1{font-size:clamp(2rem,4vw,3rem);line-height:1.05;margin:0 0 12px;letter-spacing:-.03em}
-    h3{font-size:1.15rem;margin:6px 0 10px}
-    .lead{margin:0 0 30px;font-size:1.05rem}
-
-    .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
-    @media(max-width:900px){.grid{grid-template-columns:repeat(2,1fr)}}
-    @media(max-width:700px){.grid{grid-template-columns:1fr}}
-
-    .card{background:var(--white);border-radius:var(--radius);padding:20px;box-shadow:var(--shadow);border:1px solid rgba(43,43,43,.06);text-decoration:none;color:inherit;transition:.2s ease;display:block}
-    .card:hover{transform:translateY(-4px);background:var(--cream)}
-
-    .pill{display:inline-block;padding:6px 10px;border-radius:999px;background:rgba(167,213,30,.18);font-weight:700;font-size:.8rem;margin-bottom:10px}
-    .small{font-size:.9rem;opacity:.85}
-
-    /* Footer */
-    footer.footer{background:rgba(255,255,255,.92);border-top:1px solid rgba(43,43,43,.10);margin-top:54px}
-    .footer-main{padding:40px 0}
-    .footer-grid{display:grid;grid-template-columns:1.3fr 1fr 1fr 1fr;gap:32px;align-items:start}
-    @media (max-width:900px){.footer-grid{grid-template-columns:1fr 1fr}}
-    @media (max-width:560px){.footer-grid{grid-template-columns:1fr}}
-    footer.footer h4{margin:0 0 10px;font-size:.95rem}
-    .footer-grid ul{list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:8px}
-    .footer-grid a{color:inherit;text-decoration:none}
-    .footer-grid a:hover{text-decoration:underline}
-    .footer-bottom{border-top:1px solid rgba(43,43,43,.08);padding:16px 0}
+    .page-section{padding:54px 0}.hero-copy{max-width:760px}h1{font-size:clamp(2rem,4vw,3rem);line-height:1.05;margin:0 0 12px;letter-spacing:-.03em}h3{font-size:1.15rem;margin:6px 0 10px}.lead{margin:0 0 22px;font-size:1.05rem}
+    .filter-bar{display:flex;flex-wrap:wrap;gap:10px;margin:0 0 28px}.filter-chip{appearance:none;border:1px solid rgba(43,43,43,.10);background:rgba(255,255,255,.72);color:inherit;border-radius:999px;padding:9px 13px;font-family:inherit;font-weight:800;font-size:.88rem;cursor:pointer;transition:.18s ease}.filter-chip:hover{transform:translateY(-1px);background:var(--cream)}.filter-chip.is-active{background:var(--lime);border-color:rgba(43,43,43,.12)}
+    .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}@media(max-width:900px){.grid{grid-template-columns:repeat(2,1fr)}}@media(max-width:700px){.grid{grid-template-columns:1fr}}
+    .card{background:var(--white);border-radius:var(--radius);padding:20px;box-shadow:var(--shadow);border:1px solid rgba(43,43,43,.06);text-decoration:none;color:inherit;transition:.2s ease;display:block}.card:hover{transform:translateY(-4px);background:var(--cream)}.card.is-hidden{display:none}
+    .pill{display:inline-block;padding:6px 10px;border-radius:999px;background:rgba(167,213,30,.18);font-weight:700;font-size:.8rem;margin-bottom:10px}.small{font-size:.9rem;opacity:.85}
+    footer.footer{background:rgba(255,255,255,.92);border-top:1px solid rgba(43,43,43,.10);margin-top:54px}.footer-main{padding:40px 0}.footer-grid{display:grid;grid-template-columns:1.3fr 1fr 1fr 1fr;gap:32px;align-items:start}@media (max-width:900px){.footer-grid{grid-template-columns:1fr 1fr}}@media (max-width:560px){.footer-grid{grid-template-columns:1fr}}footer.footer h4{margin:0 0 10px;font-size:.95rem}.footer-grid ul{list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:8px}.footer-grid a{color:inherit;text-decoration:none}.footer-grid a:hover{text-decoration:underline}.footer-bottom{border-top:1px solid rgba(43,43,43,.08);padding:16px 0}
   </style>
 </head>
 
 <body id="top">
+  <nav class="nav"><div class="container nav-inner"><a class="brand" href="/"><span class="brand-badge"><img src="/Blender%20Digital%20Full%20Logo.svg" alt="Blender Digital logo" /></span></a><button class="nav-toggle" id="navToggle" aria-label="Open menu" aria-expanded="false" aria-controls="navMenu"><span class="nav-toggle-lines" aria-hidden="true"><span></span><span></span><span></span></span></button><div class="nav-links" id="navMenu"><a href="/#services">Services</a><a href="/results.html">Results</a><a href="/blog.html">Resources</a><a href="/#pricing">Pricing</a><a class="btn btn-ghost" href="/#contact">Contact</a></div></div></nav>
+  <main><section class="page-section"><div class="container"><div class="hero-copy"><h1>Resources</h1><p class="lead">Insights and practical strategies to help restaurants grow profitably on delivery platforms.</p></div>
+    <div class="filter-bar" aria-label="Filter resources by topic"><button class="filter-chip is-active" type="button" data-filter="all">All</button><button class="filter-chip" type="button" data-filter="getting-started">Getting Started</button><button class="filter-chip" type="button" data-filter="margins">Margins</button><button class="filter-chip" type="button" data-filter="promotions-ads">Promotions &amp; Ads</button><button class="filter-chip" type="button" data-filter="menu-storefront">Menu &amp; Storefront</button><button class="filter-chip" type="button" data-filter="reviews-visibility">Reviews &amp; Visibility</button><button class="filter-chip" type="button" data-filter="platform-strategy">Platform Strategy</button></div>
+    <div class="grid" id="resourceGrid">
+      <a class="card" data-theme="getting-started" href="/blog/you-opened-a-restaurant-now-what-about-delivery-apps.html"><div class="pill">Launch Strategy</div><h3>You Opened a Restaurant. Now What About DoorDash, Uber Eats, and Grubhub?</h3><p>A practical guide for new operators launching on third-party delivery platforms without creating chaos.</p></a>
+      <a class="card" data-theme="margins" href="/blog/why-30-percent-menu-markup-does-not-offset-30-percent-commission.html"><div class="pill">Margins</div><h3>Why a 30% Menu Markup Does Not Offset a 30% Delivery App Commission</h3><p>The math behind delivery app markups, commissions, promo costs, packaging, and real payout.</p></a>
+      <a class="card" data-theme="menu-storefront" href="/blog/delivery-app-menu-not-copy-paste-in-store-menu.html"><div class="pill">Menu Optimization</div><h3>Why Your DoorDash and Uber Eats Menu Should Not Be a Copy-Paste of Your In-Store Menu</h3><p>Your delivery menu is a storefront, conversion page, upsell system, and kitchen workflow.</p></a>
+      <a class="card" data-theme="platform-strategy" href="/blog/toast-delivery-services-vs-doordash-marketplace-vs-uber-eats.html"><div class="pill">Toast</div><h3>Toast Delivery Services vs DoorDash Marketplace vs Uber Eats</h3><p>A plain-English comparison of TDS, DoorDash Marketplace, Uber Eats Marketplace, DoorDash Drive, and Uber Direct.</p></a>
+      <a class="card" data-theme="promotions-ads" href="/blog/fix-marketplace-basics-before-delivery-ads.html"><div class="pill">Sponsored Listings</div><h3>Before You Spend on DoorDash or Uber Eats Ads, Fix These Marketplace Basics First</h3><p>Ads can drive visibility, but only after your storefront, menu, photos, ratings, and pricing are ready.</p></a>
+      <a class="card" data-theme="promotions-ads" href="/blog/why-your-uber-eats-promotions-are-destroying-your-margins.html"><div class="pill">Uber Eats</div><h3>Why Your Uber Eats Promotions Are Destroying Your Margins</h3><p>How overlapping promotions can quietly kill profitability and lead to unprofitable orders.</p></a>
+      <a class="card" data-theme="menu-storefront" href="/blog/restaurant-delivery-platform-image-size-requirements.html"><div class="pill">Guide</div><h3>Restaurant Delivery App Image Size Requirements</h3><p>A complete reference guide for Uber Eats, DoorDash, Grubhub, and Toast image specs.</p></a>
+      <a class="card" data-theme="reviews-visibility" href="/blog/why-your-restaurant-is-invisible-on-doordash-uber-eats.html"><div class="pill">Visibility</div><h3>Why Your Restaurant Is Invisible on DoorDash and Uber Eats</h3><p>If your restaurant is live on DoorDash or Uber Eats but barely getting orders, here are the specific levers that actually move the needle.</p></a>
+      <a class="card" data-theme="margins" href="/blog/how-much-delivery-revenue-are-you-actually-keeping.html"><div class="pill">Margins</div><h3>How Much of Your Delivery Revenue Are You Actually Keeping?</h3><p>Between commissions, processing fees, marketing fees, and promo costs, most restaurant owners do not know their actual delivery margin.</p></a>
+      <a class="card" data-theme="reviews-visibility" href="/blog/delivery-ratings-dragging-down-sales.html"><div class="pill">Reviews</div><h3>The Real Reason Your Delivery Ratings Are Dragging Down Your Sales</h3><p>A 4.3-star rating can actively cost you rank, visibility, and orders. Here is what platforms actually do with your rating.</p></a>
+      <a class="card" data-theme="menu-storefront" href="/blog/delivery-menu-costing-you-orders.html"><div class="pill">Menu Optimization</div><h3>Your Menu Is Costing You Orders — Here's How to Fix It</h3><p>Most restaurant menus on DoorDash and Uber Eats were built for in-store, not delivery. Here is what a high-converting delivery menu looks like.</p></a>
+      <a class="card" data-theme="promotions-ads" href="/blog/bogo-delivery-promo-margin-protection.html"><div class="pill">Promotions</div><h3>The Right Way to Run BOGO Promos Without Destroying Your Margin</h3><p>BOGO promotions can drive real order volume, but most restaurants run them in a way that destroys margin.</p></a>
+      <a class="card" data-theme="promotions-ads" href="/blog/delivery-ads-and-promos-same-time-killing-profitability.html"><div class="pill">Ads + Promos</div><h3>Why Running Ads and Promos at the Same Time Is Killing Your Profitability</h3><p>Most restaurants running delivery ads are stacking them on top of active promotions and silently going negative on orders.</p></a>
+      <a class="card" data-theme="reviews-visibility" href="/blog/get-first-100-reviews-doordash-uber-eats.html"><div class="pill">Reviews</div><h3>How to Get Your First 100 Reviews on DoorDash or Uber Eats Fast</h3><p>Reviews are one of the fastest-moving levers for delivery platform rank. Here is a systematic playbook for building review velocity.</p></a>
+      <a class="card" data-theme="menu-storefront" href="/blog/hero-image-reason-customers-skipping-restaurant.html"><div class="pill">Creative</div><h3>Your Hero Image Is the Reason Customers Are Skipping Your Restaurant</h3><p>The large banner photo on your storefront is your highest-leverage visual asset — and most restaurants waste it.</p></a>
+      <a class="card" data-theme="getting-started" href="/blog/when-to-add-second-delivery-platform.html"><div class="pill">Platform Strategy</div><h3>When Should You Actually Add a Second Delivery Platform?</h3><p>The answer is not always “as soon as possible.” Here is the decision framework for expanding beyond one delivery platform.</p></a>
+      <a class="card" data-theme="reviews-visibility" href="/blog/drive-traffic-delivery-storefront-without-algorithm.html"><div class="pill">Traffic</div><h3>How to Drive Traffic to Your Delivery Storefront Without Relying on the Algorithm</h3><p>New restaurants and low-traffic storefronts cannot wait for the algorithm to find them. Here are the channels that actually move the needle.</p></a>
+      <a class="card" data-theme="getting-started" href="/blog/new-restaurant-doordash-uber-eats-first-30-days.html"><div class="pill">Launch Plan</div><h3>New on DoorDash or Uber Eats? Here's Exactly What to Do in Your First 30 Days</h3><p>The first 30 days on a delivery platform set your algorithmic baseline. Most restaurants waste them.</p></a>
+      <a class="card" data-theme="promotions-ads" href="/blog/profitable-restaurants-spend-less-delivery-ads.html"><div class="pill">Ad Spend</div><h3>Why the Most Profitable Restaurants Spend Less on Delivery Ads — Not More</h3><p>The restaurants with the healthiest delivery margins are not outspending competitors — they are outsmarting them.</p></a>
+      <a class="card" data-theme="margins" href="/blog/customer-segmentation-protect-delivery-margin.html"><div class="pill">Segmentation</div><h3>How to Use Customer Segmentation to Protect Your Delivery Margin</h3><p>Most restaurants treat every delivery customer the same. The ones with healthier margins do not.</p></a>
+      <a class="card" data-theme="platform-strategy" href="/blog/delivery-metrics-what-they-mean-how-to-read-them.html"><div class="pill">Reporting</div><h3>What Your Delivery Metrics Are Actually Telling You</h3><p>Most restaurant operators check their delivery numbers but do not know what they are looking at. Here is how to read the metrics that matter.</p></a>
+      <a class="card" data-theme="platform-strategy" href="/blog/third-party-vs-first-party-delivery-strategy.html"><div class="pill">Delivery Strategy</div><h3>Third-Party vs. First-Party Delivery: The Strategy Most Restaurant Owners Get Backwards</h3><p>Most restaurants treat DoorDash and Uber Eats as their primary delivery channel indefinitely. Durable, high-margin operators think differently.</p></a>
+    </div></div></section></main>
 
-  <nav class="nav">
-    <div class="container nav-inner">
-      <a class="brand" href="/">
-        <span class="brand-badge"><img src="/Blender%20Digital%20Full%20Logo.svg" alt="Blender Digital logo" /></span>
-      </a>
-
-      <button class="nav-toggle" id="navToggle" aria-label="Open menu" aria-expanded="false" aria-controls="navMenu">
-        <span class="nav-toggle-lines" aria-hidden="true"><span></span><span></span><span></span></span>
-      </button>
-
-      <div class="nav-links" id="navMenu">
-        <a href="/#services">Services</a>
-        <a href="/results.html">Results</a>
-        <a href="/blog.html">Resources</a>
-        <a href="/#pricing">Pricing</a>
-        <a class="btn btn-ghost" href="/#contact">Contact</a>
-      </div>
-    </div>
-  </nav>
-
-  <main>
-    <section class="page-section">
-      <div class="container">
-        <div class="hero-copy">
-          <h1>Resources</h1>
-          <p class="lead">Insights and practical strategies to help restaurants grow profitably on delivery platforms.</p>
-        </div>
-
-        <div class="grid">
-
-          <a class="card" href="/blog/you-opened-a-restaurant-now-what-about-delivery-apps.html">
-            <div class="pill">Launch Strategy</div>
-            <h3>You Opened a Restaurant. Now What About DoorDash, Uber Eats, and Grubhub?</h3>
-            <p>A practical guide for new operators launching on third-party delivery platforms without creating chaos.</p>
-          </a>
-
-          <a class="card" href="/blog/why-30-percent-menu-markup-does-not-offset-30-percent-commission.html">
-            <div class="pill">Margins</div>
-            <h3>Why a 30% Menu Markup Does Not Offset a 30% Delivery App Commission</h3>
-            <p>The math behind delivery app markups, commissions, promo costs, packaging, and real payout.</p>
-          </a>
-
-          <a class="card" href="/blog/delivery-app-menu-not-copy-paste-in-store-menu.html">
-            <div class="pill">Menu Optimization</div>
-            <h3>Why Your DoorDash and Uber Eats Menu Should Not Be a Copy-Paste of Your In-Store Menu</h3>
-            <p>Your delivery menu is a storefront, conversion page, upsell system, and kitchen workflow.</p>
-          </a>
-
-          <a class="card" href="/blog/toast-delivery-services-vs-doordash-marketplace-vs-uber-eats.html">
-            <div class="pill">Toast</div>
-            <h3>Toast Delivery Services vs DoorDash Marketplace vs Uber Eats</h3>
-            <p>A plain-English comparison of TDS, DoorDash Marketplace, Uber Eats Marketplace, DoorDash Drive, and Uber Direct.</p>
-          </a>
-
-          <a class="card" href="/blog/fix-marketplace-basics-before-delivery-ads.html">
-            <div class="pill">Sponsored Listings</div>
-            <h3>Before You Spend on DoorDash or Uber Eats Ads, Fix These Marketplace Basics First</h3>
-            <p>Ads can drive visibility, but only after your storefront, menu, photos, ratings, and pricing are ready.</p>
-          </a>
-
-          <a class="card" href="/blog/why-your-uber-eats-promotions-are-destroying-your-margins.html">
-            <div class="pill">Uber Eats</div>
-            <h3>Why Your Uber Eats Promotions Are Destroying Your Margins</h3>
-            <p>How overlapping promotions can quietly kill profitability and lead to unprofitable orders.</p>
-          </a>
-
-          <a class="card" href="/blog/restaurant-delivery-platform-image-size-requirements.html">
-            <div class="pill">Guide</div>
-            <h3>Restaurant Delivery App Image Size Requirements</h3>
-            <p>A complete reference guide for Uber Eats, DoorDash, Grubhub, and Toast image specs.</p>
-          </a>
-
-          <a class="card" href="/blog/why-your-restaurant-is-invisible-on-doordash-uber-eats.html">
-            <div class="pill">Visibility</div>
-            <h3>Why Your Restaurant Is Invisible on DoorDash and Uber Eats</h3>
-            <p>If your restaurant is live on DoorDash or Uber Eats but barely getting orders, here are the specific levers that actually move the needle.</p>
-          </a>
-
-          <a class="card" href="/blog/how-much-delivery-revenue-are-you-actually-keeping.html">
-            <div class="pill">Margins</div>
-            <h3>How Much of Your Delivery Revenue Are You Actually Keeping?</h3>
-            <p>Between commissions, processing fees, marketing fees, and promo costs, most restaurant owners do not know their actual delivery margin.</p>
-          </a>
-
-          <a class="card" href="/blog/delivery-ratings-dragging-down-sales.html">
-            <div class="pill">Reviews</div>
-            <h3>The Real Reason Your Delivery Ratings Are Dragging Down Your Sales</h3>
-            <p>A 4.3-star rating can actively cost you rank, visibility, and orders. Here is what platforms actually do with your rating.</p>
-          </a>
-
-          <a class="card" href="/blog/delivery-menu-costing-you-orders.html">
-            <div class="pill">Menu Optimization</div>
-            <h3>Your Menu Is Costing You Orders — Here's How to Fix It</h3>
-            <p>Most restaurant menus on DoorDash and Uber Eats were built for in-store, not delivery. Here is what a high-converting delivery menu looks like.</p>
-          </a>
-
-          <a class="card" href="/blog/bogo-delivery-promo-margin-protection.html">
-            <div class="pill">Promotions</div>
-            <h3>The Right Way to Run BOGO Promos Without Destroying Your Margin</h3>
-            <p>BOGO promotions can drive real order volume, but most restaurants run them in a way that destroys margin.</p>
-          </a>
-
-          <a class="card" href="/blog/delivery-ads-and-promos-same-time-killing-profitability.html">
-            <div class="pill">Ads + Promos</div>
-            <h3>Why Running Ads and Promos at the Same Time Is Killing Your Profitability</h3>
-            <p>Most restaurants running delivery ads are stacking them on top of active promotions and silently going negative on orders.</p>
-          </a>
-
-          <a class="card" href="/blog/get-first-100-reviews-doordash-uber-eats.html">
-            <div class="pill">Reviews</div>
-            <h3>How to Get Your First 100 Reviews on DoorDash or Uber Eats Fast</h3>
-            <p>Reviews are one of the fastest-moving levers for delivery platform rank. Here is a systematic playbook for building review velocity.</p>
-          </a>
-
-          <a class="card" href="/blog/hero-image-reason-customers-skipping-restaurant.html">
-            <div class="pill">Creative</div>
-            <h3>Your Hero Image Is the Reason Customers Are Skipping Your Restaurant</h3>
-            <p>The large banner photo on your storefront is your highest-leverage visual asset — and most restaurants waste it.</p>
-          </a>
-
-          <a class="card" href="/blog/when-to-add-second-delivery-platform.html">
-            <div class="pill">Platform Strategy</div>
-            <h3>When Should You Actually Add a Second Delivery Platform?</h3>
-            <p>The answer is not always “as soon as possible.” Here is the decision framework for expanding beyond one delivery platform.</p>
-          </a>
-
-          <a class="card" href="/blog/drive-traffic-delivery-storefront-without-algorithm.html">
-            <div class="pill">Traffic</div>
-            <h3>How to Drive Traffic to Your Delivery Storefront Without Relying on the Algorithm</h3>
-            <p>New restaurants and low-traffic storefronts cannot wait for the algorithm to find them. Here are the channels that actually move the needle.</p>
-          </a>
-
-          <a class="card" href="/blog/new-restaurant-doordash-uber-eats-first-30-days.html">
-            <div class="pill">Launch Plan</div>
-            <h3>New on DoorDash or Uber Eats? Here's Exactly What to Do in Your First 30 Days</h3>
-            <p>The first 30 days on a delivery platform set your algorithmic baseline. Most restaurants waste them.</p>
-          </a>
-
-          <a class="card" href="/blog/profitable-restaurants-spend-less-delivery-ads.html">
-            <div class="pill">Ad Spend</div>
-            <h3>Why the Most Profitable Restaurants Spend Less on Delivery Ads — Not More</h3>
-            <p>The restaurants with the healthiest delivery margins are not outspending competitors — they are outsmarting them.</p>
-          </a>
-
-          <a class="card" href="/blog/customer-segmentation-protect-delivery-margin.html">
-            <div class="pill">Segmentation</div>
-            <h3>How to Use Customer Segmentation to Protect Your Delivery Margin</h3>
-            <p>Most restaurants treat every delivery customer the same. The ones with healthier margins do not.</p>
-          </a>
-
-          <a class="card" href="/blog/delivery-metrics-what-they-mean-how-to-read-them.html">
-            <div class="pill">Reporting</div>
-            <h3>What Your Delivery Metrics Are Actually Telling You</h3>
-            <p>Most restaurant operators check their delivery numbers but do not know what they are looking at. Here is how to read the metrics that matter.</p>
-          </a>
-
-          <a class="card" href="/blog/third-party-vs-first-party-delivery-strategy.html">
-            <div class="pill">Delivery Strategy</div>
-            <h3>Third-Party vs. First-Party Delivery: The Strategy Most Restaurant Owners Get Backwards</h3>
-            <p>Most restaurants treat DoorDash and Uber Eats as their primary delivery channel indefinitely. Durable, high-margin operators think differently.</p>
-          </a>
-
-        </div>
-      </div>
-    </section>
-  </main>
-
-  <footer class="footer">
-    <div class="footer-main">
-      <div class="container footer-grid">
-        <div class="footer-brand">
-          <div style="display:flex;align-items:center;gap:10px;margin-bottom:10px">
-            <span class="brand-badge"><img src="/Blender%20Digital%20Full%20Logo.svg" alt="Blender Digital logo" /></span>
-          </div>
-          <p class="small">Fractional growth team for restaurants selling on DoorDash, Uber Eats, Grubhub, and Toast. We focus on disciplined execution—not fluff.</p>
-        </div>
-
-        <div>
-          <h4>Services</h4>
-          <ul class="small">
-            <li><a href="/#services">Platform operations</a></li>
-            <li><a href="/#services">Promotions strategy</a></li>
-            <li><a href="/#services">Sponsored listings</a></li>
-            <li><a href="/#services">Reviews & loyalty</a></li>
-          </ul>
-        </div>
-
-        <div>
-          <h4>Resources</h4>
-          <ul class="small">
-            <li><a href="/blog.html">Blog</a></li>
-            <li><a href="/blog/why-your-uber-eats-promotions-are-destroying-your-margins.html">Uber Eats promo margins</a></li>
-            <li><a href="/blog/restaurant-delivery-platform-image-size-requirements.html">Image size requirements</a></li>
-          </ul>
-        </div>
-
-        <div>
-          <h4>Company</h4>
-          <ul class="small">
-            <li><a href="/results.html">Results</a></li>
-            <li><a href="/#pricing">Pricing</a></li>
-            <li><a href="/#contact">Contact</a></li>
-            <li><a href="#top">Back to top</a></li>
-          </ul>
-        </div>
-      </div>
-    </div>
-
-    <div class="footer-bottom">
-      <div class="container" style="display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap">
-        <div class="small" style="text-align:center;width:100%">© 2026 Blender Digital</div>
-      </div>
-    </div>
-  </footer>
-
+  <footer class="footer"><div class="footer-main"><div class="container footer-grid"><div class="footer-brand"><div style="display:flex;align-items:center;gap:10px;margin-bottom:10px"><span class="brand-badge"><img src="/Blender%20Digital%20Full%20Logo.svg" alt="Blender Digital logo" /></span></div><p class="small">Fractional growth team for restaurants selling on DoorDash, Uber Eats, Grubhub, and Toast. We focus on disciplined execution—not fluff.</p></div><div><h4>Services</h4><ul class="small"><li><a href="/#services">Platform operations</a></li><li><a href="/#services">Promotions strategy</a></li><li><a href="/#services">Sponsored listings</a></li><li><a href="/#services">Reviews & loyalty</a></li></ul></div><div><h4>Resources</h4><ul class="small"><li><a href="/blog.html">Blog</a></li><li><a href="/blog/why-your-uber-eats-promotions-are-destroying-your-margins.html">Uber Eats promo margins</a></li><li><a href="/blog/restaurant-delivery-platform-image-size-requirements.html">Image size requirements</a></li></ul></div><div><h4>Company</h4><ul class="small"><li><a href="/results.html">Results</a></li><li><a href="/#pricing">Pricing</a></li><li><a href="/#contact">Contact</a></li><li><a href="#top">Back to top</a></li></ul></div></div></div><div class="footer-bottom"><div class="container" style="display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap"><div class="small" style="text-align:center;width:100%">© 2026 Blender Digital</div></div></div></footer>
   <script>
-    // Mobile nav toggle
-    (function(){
-      const nav = document.querySelector('.nav');
-      const btn = document.getElementById('navToggle');
-      const menu = document.getElementById('navMenu');
-      if(!nav || !btn || !menu) return;
-
-      const close = () => {
-        nav.classList.remove('is-open');
-        btn.setAttribute('aria-expanded','false');
-      };
-
-      btn.addEventListener('click', () => {
-        const open = nav.classList.toggle('is-open');
-        btn.setAttribute('aria-expanded', open ? 'true' : 'false');
-      });
-
-      menu.addEventListener('click', (e) => {
-        const t = e.target;
-        if(t && t.tagName === 'A') close();
-      });
-
-      document.addEventListener('keydown', (e) => {
-        if(e.key === 'Escape') close();
-      });
-
-      window.addEventListener('resize', () => {
-        if(window.innerWidth > 820) close();
-      });
-    })();
+    (function(){const nav=document.querySelector('.nav');const btn=document.getElementById('navToggle');const menu=document.getElementById('navMenu');if(!nav||!btn||!menu)return;const close=()=>{nav.classList.remove('is-open');btn.setAttribute('aria-expanded','false')};btn.addEventListener('click',()=>{const open=nav.classList.toggle('is-open');btn.setAttribute('aria-expanded',open?'true':'false')});menu.addEventListener('click',e=>{const t=e.target;if(t&&t.tagName==='A')close()});document.addEventListener('keydown',e=>{if(e.key==='Escape')close()});window.addEventListener('resize',()=>{if(window.innerWidth>820)close()})})();
+    (function(){const chips=document.querySelectorAll('.filter-chip');const cards=document.querySelectorAll('#resourceGrid .card');if(!chips.length||!cards.length)return;chips.forEach(chip=>{chip.addEventListener('click',()=>{const filter=chip.dataset.filter;chips.forEach(c=>c.classList.remove('is-active'));chip.classList.add('is-active');cards.forEach(card=>{const show=filter==='all'||card.dataset.theme===filter;card.classList.toggle('is-hidden',!show);});});});})();
   </script>
-
 </body>
 </html>
