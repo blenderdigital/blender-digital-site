@@ -35,23 +35,8 @@
     .nav-inner{display:flex;align-items:center;justify-content:space-between;gap:16px;position:relative;padding-top:16px;padding-bottom:16px}
     .brand{display:flex;align-items:center;gap:12px;text-decoration:none}
 
-    .brand-badge{
-      width:170px;
-      height:48px;
-      border-radius:0;
-      display:flex;
-      align-items:center;
-      justify-content:flex-start;
-      overflow:visible;
-    }
-
-    .brand-badge img{
-      width:170px;
-      height:auto;
-      max-width:none;
-      object-fit:contain;
-      display:block;
-    }
+    .brand-badge{width:170px;height:48px;border-radius:0;display:flex;align-items:center;justify-content:flex-start;overflow:visible}
+    .brand-badge img{width:170px;height:auto;max-width:none;object-fit:contain;display:block}
 
     .nav-links{display:flex;flex-wrap:wrap;gap:14px;align-items:center}
     .nav-links a{text-decoration:none;padding:10px 12px;border-radius:12px}
@@ -88,33 +73,10 @@
     @media(max-width:900px){.grid{grid-template-columns:repeat(2,1fr)}}
     @media(max-width:700px){.grid{grid-template-columns:1fr}}
 
-    .card{
-      background:var(--white);
-      border-radius:var(--radius);
-      padding:20px;
-      box-shadow:var(--shadow);
-      border:1px solid rgba(43,43,43,.06);
-      text-decoration:none;
-      color:inherit;
-      transition:.2s ease;
-      display:block;
-    }
+    .card{background:var(--white);border-radius:var(--radius);padding:20px;box-shadow:var(--shadow);border:1px solid rgba(43,43,43,.06);text-decoration:none;color:inherit;transition:.2s ease;display:block}
+    .card:hover{transform:translateY(-4px);background:var(--cream)}
 
-    .card:hover{
-      transform:translateY(-4px);
-      background:var(--cream);
-    }
-
-    .pill{
-      display:inline-block;
-      padding:6px 10px;
-      border-radius:999px;
-      background:rgba(167,213,30,.18);
-      font-weight:700;
-      font-size:.8rem;
-      margin-bottom:10px;
-    }
-
+    .pill{display:inline-block;padding:6px 10px;border-radius:999px;background:rgba(167,213,30,.18);font-weight:700;font-size:.8rem;margin-bottom:10px}
     .small{font-size:.9rem;opacity:.85}
 
     /* Footer */
@@ -158,12 +120,40 @@
       <div class="container">
         <div class="hero-copy">
           <h1>Resources</h1>
-          <p class="lead">
-            Insights and practical strategies to help restaurants grow profitably on delivery platforms.
-          </p>
+          <p class="lead">Insights and practical strategies to help restaurants grow profitably on delivery platforms.</p>
         </div>
 
         <div class="grid">
+
+          <a class="card" href="/blog/you-opened-a-restaurant-now-what-about-delivery-apps.html">
+            <div class="pill">Launch Strategy</div>
+            <h3>You Opened a Restaurant. Now What About DoorDash, Uber Eats, and Grubhub?</h3>
+            <p>A practical guide for new operators launching on third-party delivery platforms without creating chaos.</p>
+          </a>
+
+          <a class="card" href="/blog/why-30-percent-menu-markup-does-not-offset-30-percent-commission.html">
+            <div class="pill">Margins</div>
+            <h3>Why a 30% Menu Markup Does Not Offset a 30% Delivery App Commission</h3>
+            <p>The math behind delivery app markups, commissions, promo costs, packaging, and real payout.</p>
+          </a>
+
+          <a class="card" href="/blog/delivery-app-menu-not-copy-paste-in-store-menu.html">
+            <div class="pill">Menu Optimization</div>
+            <h3>Why Your DoorDash and Uber Eats Menu Should Not Be a Copy-Paste of Your In-Store Menu</h3>
+            <p>Your delivery menu is a storefront, conversion page, upsell system, and kitchen workflow.</p>
+          </a>
+
+          <a class="card" href="/blog/toast-delivery-services-vs-doordash-marketplace-vs-uber-eats.html">
+            <div class="pill">Toast</div>
+            <h3>Toast Delivery Services vs DoorDash Marketplace vs Uber Eats</h3>
+            <p>A plain-English comparison of TDS, DoorDash Marketplace, Uber Eats Marketplace, DoorDash Drive, and Uber Direct.</p>
+          </a>
+
+          <a class="card" href="/blog/fix-marketplace-basics-before-delivery-ads.html">
+            <div class="pill">Sponsored Listings</div>
+            <h3>Before You Spend on DoorDash or Uber Eats Ads, Fix These Marketplace Basics First</h3>
+            <p>Ads can drive visibility, but only after your storefront, menu, photos, ratings, and pricing are ready.</p>
+          </a>
 
           <a class="card" href="/blog/why-your-uber-eats-promotions-are-destroying-your-margins.html">
             <div class="pill">Uber Eats</div>
