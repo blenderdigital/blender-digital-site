@@ -1,0 +1,13 @@
+{
+  "$schema": "https://openapi.vercel.sh/vercel.json",
+  "rewrites": [
+    {
+      "source": "/tools",
+      "destination": "https://blender-digital-tools.vercel.app/tools"
+    },
+    {
+      "source": "/tools/:path*",
+      "destination": "https://blender-digital-tools.vercel.app/tools/:path*"
+    }
+  ]
+}
