@@ -2,16 +2,15 @@
 <!doctype html>
 <html lang="en">
 <head>
-<link rel="icon" href="/Blender%20Digital%20Logo%20Mark%20Favicon.svg">
+  <link rel="icon" href="/Blender%20Digital%20Logo%20Mark%20Favicon.svg">
   <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-JEJPG0H4HC"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-JEJPG0H4HC');
-</script>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-JEJPG0H4HC"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-JEJPG0H4HC');
+  </script>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Blender Digital | Third-Party Delivery Platform Management</title>
@@ -27,42 +26,20 @@
     html{scroll-behavior:smooth}
     body{margin:0;font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif;color:var(--text);background:var(--mint);line-height:1.55}
     a{color:inherit;text-decoration:none}
-
     .container{max-width:var(--max);margin:0 auto;padding:0 clamp(24px,6vw,72px)}
-
-    
 
     /* Nav */
     .nav{position:sticky;top:0;z-index:20;background:rgba(230,247,219,.85);backdrop-filter:blur(10px);border-bottom:1px solid rgba(43,43,43,.08)}
     .nav-inner{display:flex;align-items:center;justify-content:space-between;gap:16px;position:relative;padding-top:16px;padding-bottom:16px}
     .brand{display:flex;align-items:center;gap:12px;text-decoration:none}
-.brand-badge{
-  width:170px;
-  height:48px;
-  border-radius:0;
-  display:flex;
-  align-items:center;
-  justify-content:flex-start;
-  overflow:visible;
-}
-
-.brand-badge img{
-  width:170px;
-  height:auto;
-  max-width:none;
-  object-fit:contain;
-  display:block;
-}
-    .brand-name{font-weight:800;letter-spacing:-.02em}
-
+    .brand-badge{width:170px;height:48px;border-radius:0;display:flex;align-items:center;justify-content:flex-start;overflow:visible}
+    .brand-badge img{width:170px;height:auto;max-width:none;object-fit:contain;display:block}
     .nav-links{display:flex;flex-wrap:wrap;gap:14px;align-items:center}
     .nav-links a{text-decoration:none;padding:10px 12px;border-radius:12px}
     .nav-links a:hover{background:rgba(255,255,255,.7)}
 
     /* Buttons */
     .btn{display:inline-block;text-decoration:none;font-weight:700;padding:10px 16px;border-radius:14px}
-
-    /* Skinnier pricing CTAs only */
     #pricing .btn-primary{padding:8px 16px}
     .btn-primary{background:var(--lime)}
     .btn-ghost{background:rgba(255,255,255,.7)}
@@ -79,230 +56,59 @@
     @media (max-width:820px){
       .nav-toggle{display:inline-flex}
       .nav-links{display:none;position:absolute;left:0;right:0;top:100%;padding:14px clamp(24px,6vw,72px);background:rgba(230,247,219,.97);backdrop-filter:blur(10px);border-bottom:1px solid rgba(43,43,43,.08);flex-direction:column;gap:10px}
-      .nav-links a{padding:12px 12px}
+      .nav-links a{padding:12px}
       .nav-links .btn{width:100%;text-align:center}
       .nav.is-open .nav-links{display:flex}
     }
 
-    /* Hero */
-    .hero{padding-top:32px;padding-bottom:44px}
-@media (max-width:560px){
-  .hero{padding-top:20px;padding-bottom:36px}
-}
-    .hero-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:26px;align-items:start}
-    @media (max-width:900px){.hero-grid{grid-template-columns:1fr}}
-
+    /* Type and sections */
     h1{font-size:clamp(2.1rem,4vw,3.25rem);line-height:1.05;margin:0 0 14px;letter-spacing:-.03em}
     h2{font-size:clamp(1.6rem,2.6vw,2.25rem);margin:0 0 14px;letter-spacing:-.02em}
     h3{font-size:1.15rem;margin:0 0 8px}
-
-    .kicker{display:inline-flex;gap:10px;align-items:center;font-weight:700;font-size:.9rem;padding:8px 12px;border-radius:999px;background:rgba(255,255,255,.7);margin-bottom:16px}
-    .kicker-dot{width:10px;height:10px;border-radius:999px;background:var(--lime)}
-
     .lead{font-size:1.05rem;margin:0 0 18px}
-
-    /* Homepage hero: centered above-the-fold module */
-    .hero-home{
-      padding-top:72px;
-      padding-bottom:86px;
-    }
-    .hero-main{
-      max-width:940px;
-      margin:0 auto;
-      text-align:center;
-      display:flex;
-      flex-direction:column;
-      align-items:center;
-    }
-    .hero-main .kicker{
-      margin-bottom:22px;
-    }
-    .hero-main h1{
-      max-width:920px;
-      font-size:clamp(2.65rem,5.5vw,4.35rem);
-      line-height:1.04;
-      margin-bottom:20px;
-    }
-    .hero-main .lead{
-      max-width:760px;
-      font-size:clamp(1.05rem,1.5vw,1.18rem);
-      line-height:1.65;
-      margin:0 auto 30px;
-    }
-    .hero-actions{
-      display:flex;
-      justify-content:center;
-      gap:12px;
-      flex-wrap:wrap;
-    }
-    .hero-actions .btn{
-      padding:13px 22px;
-    }
-    .hero-platforms{
-      margin:34px 0 0;
-      font-size:.88rem;
-      font-weight:600;
-      letter-spacing:.04em;
-      opacity:.68;
-    }
-    @media (max-width:560px){
-      .hero-home{
-        padding-top:48px;
-        padding-bottom:56px;
-      }
-      .hero-main h1{
-        font-size:2.35rem;
-      }
-      .hero-actions{
-        width:100%;
-        flex-direction:column;
-      }
-      .hero-actions .btn{
-        width:100%;
-        text-align:center;
-        justify-content:center;
-      }
-    }
-
-    /* Sections */
+    .small{font-size:.9rem;opacity:.85}
     .section{padding:54px 0}
     .section.alt-cream{background:var(--cream)}
 
+    /* Hero */
+    .hero-home{padding-top:72px;padding-bottom:86px}
+    .hero-main{max-width:940px;margin:0 auto;text-align:center;display:flex;flex-direction:column;align-items:center}
+    .kicker{display:inline-flex;gap:10px;align-items:center;font-weight:700;font-size:.9rem;padding:8px 12px;border-radius:999px;background:rgba(255,255,255,.7);margin-bottom:22px}
+    .kicker-dot{width:10px;height:10px;border-radius:999px;background:var(--lime)}
+    .hero-main h1{max-width:920px;font-size:clamp(2.65rem,5.5vw,4.35rem);line-height:1.04;margin-bottom:20px}
+    .hero-main .lead{max-width:760px;font-size:clamp(1.05rem,1.5vw,1.18rem);line-height:1.65;margin:0 auto 30px}
+    .hero-actions{display:flex;justify-content:center;gap:12px;flex-wrap:wrap}
+    .hero-actions .btn{padding:13px 22px}
+    .hero-platforms{margin:34px 0 0;font-size:.88rem;font-weight:600;letter-spacing:.04em;opacity:.68}
+
+    /* General grids and cards */
     .grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;overflow-x:hidden}
-    @media (max-width:900px){.grid{grid-template-columns:repeat(2,1fr)}}
-    @media (max-width:560px){.grid{grid-template-columns:1fr}}
-
-    /* Mobile stacking overrides for sections using inline grid-template-columns */
-    @media (max-width:560px){
-      #resources .grid{grid-template-columns:1fr !important;}
-      #case-study .pricing-grid{grid-template-columns:1fr !important;}
-    }
-
-/* Allow specific grids to stay 2-up on mobile when desired */
-.grid.keep-2{grid-template-columns:repeat(2,1fr)}
-@media (max-width:560px){.grid.keep-2{grid-template-columns:repeat(2,1fr)}}
-
+    .grid-3{grid-template-columns:repeat(3,1fr)}
+    .grid-2{grid-template-columns:repeat(2,1fr)}
     .card{background:var(--white);border-radius:var(--radius);padding:18px;box-shadow:var(--shadow);border:1px solid rgba(43,43,43,.06)}
     .pill{display:inline-block;padding:6px 10px;border-radius:999px;background:rgba(167,213,30,.18);font-weight:700;font-size:.85rem}
-    .tag-soon{display:inline-flex;align-items:center;padding:4px 8px;border-radius:8px;font-size:.65rem;font-weight:600;color:#FFFFFF;background:#9CA3AF;line-height:1.2}
-    /* Add slight separation between pills and headings inside cards */
-    /* Pill visual fix: keep pills compact and visually detached from card height */
     .card > .pill{margin-bottom:10px}
-    .pricing-grid .card > .pill,
-    #case-study .card > .pill{
-      align-self:flex-start;
-    }
-    /* Reduce top padding in cards that start with pills to avoid stretch illusion */
-    .pricing-grid .card,
-    #case-study .card{
-      padding-top:14px;
-    }
+    .pricing-grid .card > .pill,#case-study .card > .pill{align-self:flex-start}
+    .pricing-grid .card,#case-study .card{padding-top:14px}
 
-    .stats{display:grid;grid-template-columns:repeat(2,1fr);gap:12px}
-    @media (max-width:560px){.stats{grid-template-columns:1fr}}
-    .stat{background:rgba(255,255,255,.75);border-radius:var(--radius);padding:14px;border:1px solid rgba(43,43,43,.06)}
-    .stat b{display:block;font-size:1.25rem;letter-spacing:-.02em}
-    
-    .resource-card{
-      display:block;
-      color:inherit;
-      text-decoration:none;
-      transition:.2s ease;
-    }
-    
-    .resource-card:hover{
-      transform:translateY(-4px);
-    }
+    /* Resources */
+    .resource-card{display:block;color:inherit;text-decoration:none;transition:.2s ease}
+    .resource-card:hover{transform:translateY(-4px)}
+    .resource-card-featured{position:relative;background:var(--cream)}
+    .resource-card-featured:hover{background:var(--cream)}
+    .resource-link-text{display:inline-block;margin-top:12px;font-weight:700;font-size:.9rem;opacity:.8;transition:.2s ease}
+    .resource-card-featured:hover .resource-link-text{opacity:1;transform:translateX(3px)}
 
-     .resource-card-featured{
-      position:relative;
-      background:var(--cream);
-    }
+    /* Contact */
+    .contact-calendly-wrap{max-width:940px;margin:0 auto}
+    .contact-calendly-card{background:var(--white);border-radius:var(--radius);padding:18px;box-shadow:var(--shadow);border:1px solid rgba(43,43,43,.06);overflow:hidden}
+    .contact-calendly-header{text-align:center;max-width:720px;margin:0 auto 22px}
+    .contact-calendly-header .lead{margin-bottom:0}
+    .calendly-inline-widget{border-radius:14px;overflow:hidden}
+    .contact-email{text-align:center;margin-top:24px}
+    .contact-email a{font-weight:800;text-decoration:underline;text-decoration-thickness:2px;text-underline-offset:4px}
 
-    .resource-card-featured:hover{
-      background:var(--cream);
-    }
-    
-    .resource-link-text{
-      display:inline-block;
-      margin-top:12px;
-      font-weight:700;
-      font-size:.9rem;
-      opacity:.8;
-    }
-    
-    .resource-card-featured:hover .resource-link-text{
-      opacity:1;
-      transform:translateX(3px);
-    }
-    
-    .resource-link-text{
-      transition:.2s ease;
-    }
-    
-    /* Forms */
-    .form{background:var(--white);border-radius:var(--radius);padding:18px;box-shadow:var(--shadow);border:1px solid rgba(43,43,43,.06)}
-    label{display:block;font-weight:700;font-size:.9rem;margin:12px 0 6px}
-    input,textarea{width:100%;padding:12px;border-radius:12px;border:1px solid rgba(43,43,43,.18);font:inherit}
-    textarea{min-height:110px;resize:vertical}
-    .form-row{display:grid;grid-template-columns:1fr 1fr;gap:12px}
-    @media (max-width:720px){.form-row{grid-template-columns:1fr}}
-
-    /* Calendly contact embed */
-    .contact-calendly-wrap{
-      max-width:940px;
-      margin:0 auto;
-    }
-    .contact-calendly-card{
-      background:var(--white);
-      border-radius:var(--radius);
-      padding:18px;
-      box-shadow:var(--shadow);
-      border:1px solid rgba(43,43,43,.06);
-      overflow:hidden;
-    }
-    .contact-calendly-header{
-      text-align:center;
-      max-width:720px;
-      margin:0 auto 22px;
-    }
-    .contact-calendly-header .lead{
-      margin-bottom:0;
-    }
-    .calendly-inline-widget{
-      border-radius:14px;
-      overflow:hidden;
-    }
-    .contact-email{
-      text-align:center;
-      margin-top:24px;
-    }
-    .contact-email a{
-      font-weight:800;
-      text-decoration:underline;
-      text-decoration-thickness:2px;
-      text-underline-offset:4px;
-    }
-
-    /* Footer */
-    footer.footer{background:rgba(255,255,255,.92);border-top:1px solid rgba(43,43,43,.10)}
-    .footer-main{padding:40px 0}
-    .footer-grid{display:grid;grid-template-columns:1.3fr 1fr 1fr 1fr;gap:18px;align-items:start}
-    @media (max-width:900px){.footer-grid{grid-template-columns:1fr 1fr}}
-    @media (max-width:560px){.footer-grid{grid-template-columns:1fr}}
-    footer.footer h4{margin:0 0 10px;font-size:.95rem}
-    .footer-cta{display:flex;gap:10px;flex-wrap:wrap;margin-top:10px}
-    .footer-bottom{border-top:1px solid rgba(43,43,43,.08);padding:16px 0}
-
-    .small{font-size:.9rem;opacity:.85}
-
-    /* Timeline mini header */
-    .timeline-header{display:flex;align-items:center;gap:14px;margin:18px 0}
-    .timeline-header h4{margin:0;font-size:.85rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;opacity:.7;white-space:nowrap}
-    .timeline-header span{flex:1;height:1px;background:rgba(43,43,43,.18)}
-
-
-    /* Clean How It Works process */
+    /* How it works */
     .process-header{max-width:760px;margin:0 auto 46px;text-align:center}
     .process-header .lead{margin-bottom:0}
     .process-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:32px}
@@ -313,49 +119,79 @@
     .process-platforms{margin:42px auto 0;text-align:center;font-size:.85rem;font-weight:700;letter-spacing:.08em;opacity:.72}
     .process-platforms small{display:block;margin-top:8px;font-size:.86rem;font-weight:500;letter-spacing:0;opacity:.85}
 
-    /* Homepage visual results section */
+    /* Results */
     .results-header{max-width:780px;margin:0 auto 34px;text-align:center}
     .results-header .lead{margin-bottom:0}
     .results-grid{display:grid;grid-template-columns:1fr;gap:24px;max-width:980px;margin:0 auto}
     .result-card{background:var(--white);border-radius:var(--radius);box-shadow:var(--shadow);border:1px solid rgba(43,43,43,.06);overflow:hidden}
     .result-card-body{padding:16px 18px 18px}
-    .result-card h3{margin:0}
-    .result-card p{margin:0}
+    .result-card h3,.result-card p{margin:0}
     .before-after{display:grid;grid-template-columns:1fr 1fr;gap:18px;padding:18px;background:rgba(255,255,255,.62)}
     .shot-wrap{background:rgba(43,43,43,.05);border-radius:14px;overflow:hidden;border:1px solid rgba(43,43,43,.08)}
     .shot-label{display:block;padding:8px 10px;font-size:.72rem;font-weight:800;letter-spacing:.08em;text-transform:uppercase;background:rgba(255,255,255,.75)}
     .shot-wrap img{display:block;width:100%;height:auto;object-fit:contain;object-position:top center}
     .results-cta{display:flex;justify-content:center;margin-top:26px}
 
-    @media (max-width:900px){
-      .process-grid{grid-template-columns:repeat(2,1fr);gap:38px 22px}
-      .results-grid{grid-template-columns:1fr}
-    }
-    @media (max-width:560px){
-      .process-header{margin-bottom:36px}
-      .process-grid{grid-template-columns:1fr;gap:34px}
-      .before-after{grid-template-columns:1fr}
-      .shot-wrap img{height:auto}
-    }
-
-    /* Grid variants to keep responsiveness (avoids inline grid-template-columns overrides) */
-    .grid-3{grid-template-columns:repeat(3,1fr)}
-    .grid-2{grid-template-columns:repeat(2,1fr)}
-    @media (max-width:900px){.grid-3{grid-template-columns:repeat(2,1fr)}}
-    @media (max-width:560px){.grid-3,.grid-2{grid-template-columns:1fr}}
-  
-    /* Pricing: force CTA vertical alignment */
+    /* Pricing */
     .pricing-grid .card{display:flex;flex-direction:column}
-    /* Prevent pills from stretching full-width inside flex cards */
-    .pricing-grid .card > .pill{align-self:flex-start}
     .pricing-grid .features{flex-grow:1}
     .pricing-grid .btn{margin-top:auto}
 
-    /* Footer spacing normalization */
-    .footer-grid{gap:32px}
+    /* Homepage FAQ */
+    .faq-header{max-width:780px;margin:0 auto 34px;text-align:center}
+    .faq-header .lead{margin-bottom:0}
+    .faq-list{max-width:940px;margin:0 auto;display:grid;gap:14px}
+    .faq-item{background:var(--white);border:1px solid rgba(43,43,43,.09);border-radius:16px;box-shadow:var(--shadow);overflow:hidden}
+    .faq-question{list-style:none;display:flex;align-items:center;justify-content:space-between;gap:18px;padding:20px 22px;font-weight:800;cursor:pointer}
+    .faq-question::-webkit-details-marker{display:none}
+    .faq-question::after{content:'+';flex:0 0 auto;font-size:1.55rem;line-height:1;font-weight:500}
+    .faq-item[open] .faq-question::after{content:'−'}
+    .faq-answer{padding:0 22px 22px;line-height:1.65;color:rgba(43,43,43,.9)}
+    .faq-answer p{margin:0}
+    .faq-more{text-align:center;margin-top:24px}
+
+    /* Footer */
+    footer.footer{background:rgba(255,255,255,.92);border-top:1px solid rgba(43,43,43,.10)}
+    .footer-main{padding:40px 0}
+    .footer-grid{display:grid;grid-template-columns:1.3fr 1fr 1fr 1fr;gap:32px;align-items:start}
+    footer.footer h4{margin:0 0 10px;font-size:.95rem}
+    .footer-bottom{border-top:1px solid rgba(43,43,43,.08);padding:16px 0}
     .footer-grid ul{list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:8px}
 
+    @media (max-width:900px){
+      .process-grid{grid-template-columns:repeat(2,1fr);gap:38px 22px}
+      .grid-3{grid-template-columns:repeat(2,1fr)}
+      .footer-grid{grid-template-columns:1fr 1fr}
+    }
+    @media (max-width:560px){
+      .hero-home{padding-top:48px;padding-bottom:56px}
+      .hero-main h1{font-size:2.35rem}
+      .hero-actions{width:100%;flex-direction:column}
+      .hero-actions .btn{width:100%;text-align:center;justify-content:center}
+      .process-header{margin-bottom:36px}
+      .process-grid{grid-template-columns:1fr;gap:34px}
+      .before-after{grid-template-columns:1fr}
+      .grid-3,.grid-2{grid-template-columns:1fr}
+      .footer-grid{grid-template-columns:1fr}
+      .faq-question{padding:18px}
+      .faq-answer{padding:0 18px 18px}
+    }
   </style>
+
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@type":"FAQPage",
+    "mainEntity":[
+      {"@type":"Question","name":"What exactly does Blender Digital do?","acceptedAnswer":{"@type":"Answer","text":"Blender Digital manages and grows restaurant online ordering channels, including DoorDash, Uber Eats, Grubhub, Toast, promotions, Sponsored Listings, menu and storefront optimization, review strategy, reporting, and ongoing performance improvements."}},
+      {"@type":"Question","name":"Which restaurant delivery platforms do you manage?","acceptedAnswer":{"@type":"Answer","text":"Blender Digital primarily manages DoorDash, Uber Eats, Grubhub, Toast, direct online ordering systems, and catering platforms such as ezCater when applicable."}},
+      {"@type":"Question","name":"How quickly can we expect to see results?","acceptedAnswer":{"@type":"Answer","text":"Many restaurants begin seeing measurable changes within 30 to 60 days, although the timeline depends on current sales, competition, ratings, pricing, operations, and promotional budget."}},
+      {"@type":"Question","name":"Will we need to hire another employee?","acceptedAnswer":{"@type":"Answer","text":"No. Blender Digital acts as an extension of the restaurant team and handles strategy, platform management, campaign planning, performance reviews, and ongoing recommendations."}},
+      {"@type":"Question","name":"Do you guarantee results?","acceptedAnswer":{"@type":"Answer","text":"No responsible agency can guarantee a specific sales result. Blender Digital commits to active management, clear recommendations, ongoing testing, and decisions based on actual performance data."}},
+      {"@type":"Question","name":"Who is Blender Digital a good fit for?","acceptedAnswer":{"@type":"Answer","text":"Blender Digital is a strong fit for restaurant owners and operators who already sell online, want more consistent platform management, care about sales and profitability, and are willing to test and improve their offers."}}
+    ]
+  }
+  </script>
 </head>
 
 <body id="top">
@@ -372,6 +208,7 @@
         <a href="/results.html">Results</a>
         <a href="/blog.html">Resources</a>
         <a href="#pricing">Pricing</a>
+        <a href="#faq">FAQ</a>
         <a class="btn btn-ghost" href="#contact">Contact</a>
       </div>
     </div>
@@ -383,9 +220,7 @@
         <div class="hero-main">
           <div class="kicker"><span class="kicker-dot"></span> 1st Party &amp; 3rd Party Delivery Platform Management for Restaurants</div>
           <h1>Grow Your Restaurant’s Online Ordering Sales</h1>
-          <p class="lead">
-            You’re busy running your restaurant. We manage and grow your <strong>DoorDash</strong>, <strong>Uber Eats</strong>, and <strong>Grubhub</strong> channels—helping you drive more online orders without having to manage every platform yourself.
-          </p>
+          <p class="lead">You’re busy running your restaurant. We manage and grow your <strong>DoorDash</strong>, <strong>Uber Eats</strong>, and <strong>Grubhub</strong> channels—helping you drive more online orders without having to manage every platform yourself.</p>
           <div class="hero-actions">
             <a class="btn btn-primary" href="#contact" style="display:inline-flex;align-items:center;gap:8px">Get started <svg width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M6 18L18 6M18 6H10M18 6V14" stroke="#2B2B2B" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
             <a class="btn btn-ghost" href="/results.html">View results</a>
@@ -395,7 +230,6 @@
       </div>
     </section>
 
-
     <!-- HOW IT WORKS -->
     <section id="services" class="section alt-cream">
       <div class="container">
@@ -403,131 +237,38 @@
           <h2>How It Works</h2>
           <p class="lead">We run your online ordering channels, so you can focus on running your restaurant.</p>
         </div>
-
         <div class="process-grid">
-          <div class="process-step">
-            <div class="process-number">#1</div>
-            <h3>Access &amp; Plan</h3>
-            <p>We get access to your platforms, identify what is holding back sales, and build your campaign plan.</p>
-          </div>
-
-          <div class="process-step">
-            <div class="process-number">#2</div>
-            <h3>Launch Campaigns</h3>
-            <p>We set up promotions and improve your listings, menus, photos, ads, or reviews where needed.</p>
-          </div>
-
-          <div class="process-step">
-            <div class="process-number">#3</div>
-            <h3>Manage &amp; Improve</h3>
-            <p>We monitor sales and campaign performance, then adjust what is running to improve results.</p>
-          </div>
-
-          <div class="process-step">
-            <div class="process-number">#4</div>
-            <h3>Report &amp; Grow</h3>
-            <p>We show you what is working, what needs to change, and where to focus next to grow online orders.</p>
-          </div>
+          <div class="process-step"><div class="process-number">#1</div><h3>Access &amp; Plan</h3><p>We get access to your platforms, identify what is holding back sales, and build your campaign plan.</p></div>
+          <div class="process-step"><div class="process-number">#2</div><h3>Launch Campaigns</h3><p>We set up promotions and improve your listings, menus, photos, ads, or reviews where needed.</p></div>
+          <div class="process-step"><div class="process-number">#3</div><h3>Manage &amp; Improve</h3><p>We monitor sales and campaign performance, then adjust what is running to improve results.</p></div>
+          <div class="process-step"><div class="process-number">#4</div><h3>Report &amp; Grow</h3><p>We show you what is working, what needs to change, and where to focus next to grow online orders.</p></div>
         </div>
-
-        <p class="process-platforms">
-          DOORDASH &nbsp;·&nbsp; UBER EATS &nbsp;·&nbsp; GRUBHUB
-          <small>Toast and first-party ordering support available where needed.</small>
-        </p>
+        <p class="process-platforms">DOORDASH &nbsp;·&nbsp; UBER EATS &nbsp;·&nbsp; GRUBHUB<small>Toast and first-party ordering support available where needed.</small></p>
       </div>
     </section>
-
 
     <!-- RESULTS PREVIEW -->
     <section id="case-study" class="section" style="background:var(--blush)">
       <div class="container">
-        <div class="results-header">
-          <h2>Client Results <strong>Before</strong> vs. <strong>After</strong></h2>
-          <p class="lead">Across Uber Eats &amp; DoorDash.</p>
-        </div>
-
+        <div class="results-header"><h2>Client Results <strong>Before</strong> vs. <strong>After</strong></h2><p class="lead">Across Uber Eats &amp; DoorDash.</p></div>
         <div class="results-grid">
-          <div class="result-card">
-            <div class="before-after">
-              <div class="shot-wrap">
-                <span class="shot-label">Before</span>
-                <img src="/assets/results/homepage/client-1-before-results.png" alt="Client 1 before results screenshot">
-              </div>
-              <div class="shot-wrap">
-                <span class="shot-label">After</span>
-                <img src="/assets/results/homepage/client-1-after-results.png" alt="Client 1 after results screenshot">
-              </div>
-            </div>
-            <div class="result-card-body" style="text-align:center">
-              <h3>Client 1</h3>
-            </div>
-          </div>
-
-          <div class="result-card">
-            <div class="before-after">
-              <div class="shot-wrap">
-                <span class="shot-label">Before</span>
-                <img src="/assets/results/homepage/client-2-before-results.png" alt="Client 2 before results screenshot">
-              </div>
-              <div class="shot-wrap">
-                <span class="shot-label">After</span>
-                <img src="/assets/results/homepage/client-2-after-results.png" alt="Client 2 after results screenshot">
-              </div>
-            </div>
-            <div class="result-card-body" style="text-align:center">
-              <h3>Client 2</h3>
-            </div>
-          </div>
-
-          <div class="result-card">
-            <div class="before-after">
-              <div class="shot-wrap">
-                <span class="shot-label">Before</span>
-                <img src="/assets/results/homepage/client-3-before-results.png" alt="Client 3 before results screenshot">
-              </div>
-              <div class="shot-wrap">
-                <span class="shot-label">After</span>
-                <img src="/assets/results/homepage/client-3-after-results.png" alt="Client 3 after results screenshot">
-              </div>
-            </div>
-            <div class="result-card-body" style="text-align:center">
-              <h3>Client 3</h3>
-            </div>
-          </div>
+          <div class="result-card"><div class="before-after"><div class="shot-wrap"><span class="shot-label">Before</span><img src="/assets/results/homepage/client-1-before-results.png" alt="Client 1 before results screenshot"></div><div class="shot-wrap"><span class="shot-label">After</span><img src="/assets/results/homepage/client-1-after-results.png" alt="Client 1 after results screenshot"></div></div><div class="result-card-body" style="text-align:center"><h3>Client 1</h3></div></div>
+          <div class="result-card"><div class="before-after"><div class="shot-wrap"><span class="shot-label">Before</span><img src="/assets/results/homepage/client-2-before-results.png" alt="Client 2 before results screenshot"></div><div class="shot-wrap"><span class="shot-label">After</span><img src="/assets/results/homepage/client-2-after-results.png" alt="Client 2 after results screenshot"></div></div><div class="result-card-body" style="text-align:center"><h3>Client 2</h3></div></div>
+          <div class="result-card"><div class="before-after"><div class="shot-wrap"><span class="shot-label">Before</span><img src="/assets/results/homepage/client-3-before-results.png" alt="Client 3 before results screenshot"></div><div class="shot-wrap"><span class="shot-label">After</span><img src="/assets/results/homepage/client-3-after-results.png" alt="Client 3 after results screenshot"></div></div><div class="result-card-body" style="text-align:center"><h3>Client 3</h3></div></div>
         </div>
-
-        <div class="results-cta">
-          <a class="btn btn-primary" href="/results.html">View more Client Results</a>
-        </div>
+        <div class="results-cta"><a class="btn btn-primary" href="/results.html">View more Client Results</a></div>
       </div>
     </section>
 
-
-   <!-- RESOURCES -->
+    <!-- RESOURCES -->
     <section id="resources" class="section" style="background:var(--mint)">
       <div class="container">
         <h2>Resources</h2>
         <p class="lead">Practical guides for operators—built from what actually happens inside the portals.</p>
-    
         <div class="grid grid-3">
-          <a class="card resource-card" href="/blog/why-your-uber-eats-promotions-are-destroying-your-margins.html">
-            <div class="pill">Uber Eats</div>
-            <h3>Why Your Uber Eats Promotions Are Destroying Your Margins</h3>
-            <p>How overlapping promotions can quietly kill profitability and lead to unprofitable orders.</p>
-          </a>
-    
-          <a class="card resource-card" href="/blog/restaurant-delivery-platform-image-size-requirements.html">
-            <div class="pill">Quick Reference Guide</div>
-            <h3>Restaurant Delivery App Image Size Requirements</h3>
-            <p>A complete reference guide for Uber Eats, DoorDash, Grubhub, and Toast image specs.</p>
-          </a>
-    
-           <a class="card resource-card resource-card-featured" href="/blog.html">
-            <div class="pill">All Resources</div>
-            <h3>View the full resource library</h3>
-            <p>Browse guides, checklists, and practical breakdowns for growing restaurant sales across delivery platforms.</p>
-            <span class="resource-link-text">Explore all resources →</span>
-          </a>
+          <a class="card resource-card" href="/blog/why-your-uber-eats-promotions-are-destroying-your-margins.html"><div class="pill">Uber Eats</div><h3>Why Your Uber Eats Promotions Are Destroying Your Margins</h3><p>How overlapping promotions can quietly kill profitability and lead to unprofitable orders.</p></a>
+          <a class="card resource-card" href="/blog/restaurant-delivery-platform-image-size-requirements.html"><div class="pill">Quick Reference Guide</div><h3>Restaurant Delivery App Image Size Requirements</h3><p>A complete reference guide for Uber Eats, DoorDash, Grubhub, and Toast image specs.</p></a>
+          <a class="card resource-card resource-card-featured" href="/blog.html"><div class="pill">All Resources</div><h3>View the full resource library</h3><p>Browse guides, checklists, and practical breakdowns for growing restaurant sales across delivery platforms.</p><span class="resource-link-text">Explore all resources →</span></a>
         </div>
       </div>
     </section>
@@ -537,60 +278,60 @@
       <div class="container">
         <h2>Pricing</h2>
         <p class="lead">Simple retainers. Clear scope. Month-to-month (with a minimum 6-mo. term).</p>
-
         <div class="grid grid-3 pricing-grid">
           <div class="card">
-            <div class="pill">Starter</div>
-            <h3>$1,000 / month</h3>
-            <p class="small">Best for 1 location. 2 stores: DoorDash &amp; Uber Eats.</p>
-            <div class="features">
-              <ul class="small" style="margin:12px 0 0;padding-left:18px">
-                <li>Promo campaign management</li>
-                <li>Storefront maintenance</li>
-                <li>Review management</li>
-                <li>Monthly recap</li>
-                <li>Daily issue &amp; error updates</li>
-                <li>Sponsored listings management</li>
-                <li>Loyalty program management</li>
-              </ul>
-            </div>
-            <div style="height:12px"></div>
-            <a class="btn btn-primary" style="width:100%;text-align:center;display:block" href="https://form.jotform.com/261082345751051" target="_blank" rel="noopener">Get Started</a>
+            <div class="pill">Starter</div><h3>$1,000 / month</h3><p class="small">Best for 1 location. 2 stores: DoorDash &amp; Uber Eats.</p>
+            <div class="features"><ul class="small" style="margin:12px 0 0;padding-left:18px"><li>Promo campaign management</li><li>Storefront maintenance</li><li>Review management</li><li>Monthly recap</li><li>Daily issue &amp; error updates</li><li>Sponsored listings management</li><li>Loyalty program management</li></ul></div>
+            <div style="height:12px"></div><a class="btn btn-primary" style="width:100%;text-align:center;display:block" href="https://form.jotform.com/261082345751051" target="_blank" rel="noopener">Get Started</a>
           </div>
-
           <div class="card">
-            <div class="pill">Growth</div>
-            <h3>$1,200 / month</h3>
-            <p class="small">Comprehensive online ordering support across all 3rd-party platforms and 1st-party platforms.</p>
-            <div class="features">
-              <ul class="small" style="margin:12px 0 0;padding-left:18px">
-                <li>Everything in <strong>Starter</strong></li>
-                <li>Collaborate with social media teams for content</li>
-                <li>Weekly KPI updates</li>
-                <li>Monthly strategy call</li>
-              </ul>
-              <div class="small" style="margin-top:8px;opacity:.85">+ More</div>
-            </div>
-            <div style="height:12px"></div>
-            <a class="btn btn-primary" style="width:100%;text-align:center;display:block" href="https://form.jotform.com/261082345751051" target="_blank" rel="noopener">Request a call</a>
+            <div class="pill">Growth</div><h3>$1,200 / month</h3><p class="small">Comprehensive online ordering support across all 3rd-party platforms and 1st-party platforms.</p>
+            <div class="features"><ul class="small" style="margin:12px 0 0;padding-left:18px"><li>Everything in <strong>Starter</strong></li><li>Collaborate with social media teams for content</li><li>Weekly KPI updates</li><li>Monthly strategy call</li></ul><div class="small" style="margin-top:8px;opacity:.85">+ More</div></div>
+            <div style="height:12px"></div><a class="btn btn-primary" style="width:100%;text-align:center;display:block" href="https://form.jotform.com/261082345751051" target="_blank" rel="noopener">Request a call</a>
           </div>
-
           <div class="card">
-            <div class="pill">Multi-Location</div>
-            <h3>Custom</h3>
-            <p class="small">For 3+ locations / franchises.</p>
-            <div class="features">
-              <ul class="small" style="margin:12px 0 0;padding-left:18px">
-                <li>Everything in Growth</li>
-                <li>Centralized promo governance</li>
-                <li>Ops + menu launch support</li>
-                <li>Ad-hoc support</li>
-              </ul>
-            </div>
-            <div style="height:12px"></div>
-            <a class="btn btn-primary" style="width:100%;text-align:center;display:block" href="https://calendly.com/hassan-blenderdigital/30min" target="_blank" rel="noopener">Schedule Discovery Call</a>
+            <div class="pill">Multi-Location</div><h3>Custom</h3><p class="small">For 3+ locations / franchises.</p>
+            <div class="features"><ul class="small" style="margin:12px 0 0;padding-left:18px"><li>Everything in Growth</li><li>Centralized promo governance</li><li>Ops + menu launch support</li><li>Ad-hoc support</li></ul></div>
+            <div style="height:12px"></div><a class="btn btn-primary" style="width:100%;text-align:center;display:block" href="https://calendly.com/hassan-blenderdigital/30min" target="_blank" rel="noopener">Schedule Discovery Call</a>
           </div>
         </div>
+      </div>
+    </section>
+
+    <!-- HOMEPAGE FAQ -->
+    <section id="faq" class="section" style="background:var(--blush)">
+      <div class="container">
+        <div class="faq-header">
+          <h2>Frequently Asked Questions</h2>
+          <p class="lead">Straight answers about growing restaurant sales through DoorDash, Uber Eats, Grubhub, Toast, and direct online ordering.</p>
+        </div>
+        <div class="faq-list">
+          <details class="faq-item" open>
+            <summary class="faq-question">What exactly does Blender Digital do?</summary>
+            <div class="faq-answer"><p>We manage and grow your restaurant’s online ordering channels. That can include DoorDash, Uber Eats, Grubhub, Toast, direct ordering, promotional campaigns, Sponsored Listings, menu and storefront optimization, review strategy, reporting, and ongoing performance improvements.</p></div>
+          </details>
+          <details class="faq-item">
+            <summary class="faq-question">Which restaurant delivery platforms do you manage?</summary>
+            <div class="faq-answer"><p>We primarily manage DoorDash, Uber Eats, Grubhub, Toast, direct online ordering systems, and catering platforms such as ezCater when applicable. The exact strategy depends on where your restaurant currently sells and where the strongest growth opportunities exist.</p></div>
+          </details>
+          <details class="faq-item">
+            <summary class="faq-question">How quickly can we expect to see results?</summary>
+            <div class="faq-answer"><p>Many restaurants begin seeing measurable changes within 30 to 60 days, especially when there are clear opportunities involving promotions, menu organization, Sponsored Listings, or storefront quality. More substantial growth usually requires consistent optimization over several months.</p></div>
+          </details>
+          <details class="faq-item">
+            <summary class="faq-question">Will we need to hire another employee?</summary>
+            <div class="faq-answer"><p>No. Blender Digital acts as an extension of your team. We handle strategy, platform management, campaign planning, performance reviews, and ongoing recommendations so you do not need a full-time employee dedicated to managing the delivery apps.</p></div>
+          </details>
+          <details class="faq-item">
+            <summary class="faq-question">Do you guarantee results?</summary>
+            <div class="faq-answer"><p>No responsible agency should guarantee a specific sales number. We commit to active management, clear recommendations, ongoing testing, and decisions based on actual performance data—not guesswork.</p></div>
+          </details>
+          <details class="faq-item">
+            <summary class="faq-question">Who is Blender Digital a good fit for?</summary>
+            <div class="faq-answer"><p>We are a strong fit for restaurant owners and operators who already sell through online ordering platforms, want more consistent management, care about both sales and profitability, and are willing to test and improve their offers.</p></div>
+          </details>
+        </div>
+        <div class="faq-more"><a class="btn btn-primary" href="/faq.html">View all frequently asked questions</a></div>
       </div>
     </section>
 
@@ -598,122 +339,41 @@
     <section id="contact" class="section">
       <div class="container">
         <div class="contact-calendly-wrap">
-          <div class="contact-calendly-header">
-            <h2>Schedule a Discovery Call</h2>
-            <p class="lead">Pick a time that works for you and we’ll talk through your restaurant, your current online ordering setup, and where there may be room to grow.</p>
-          </div>
-
+          <div class="contact-calendly-header"><h2>Schedule a Discovery Call</h2><p class="lead">Pick a time that works for you and we’ll talk through your restaurant, your current online ordering setup, and where there may be room to grow.</p></div>
           <div class="contact-calendly-card">
-            <!-- Calendly inline widget begin -->
             <div class="calendly-inline-widget" data-url="https://calendly.com/hassan-blenderdigital/30min?hide_event_type_details=1&primary_color=a7d51e" style="min-width:320px;height:700px;"></div>
             <script type="text/javascript" src="https://assets.calendly.com/assets/external/widget.js" async></script>
-            <!-- Calendly inline widget end -->
           </div>
-
-          <p class="contact-email small">
-            Or email: <a href="mailto:hello@blenderdigital.co">hello@blenderdigital.co</a>
-          </p>
+          <p class="contact-email small">Or email: <a href="mailto:hello@blenderdigital.co">hello@blenderdigital.co</a></p>
         </div>
       </div>
     </section>
-
   </main>
 
   <footer class="footer">
-  <div class="footer-main">
-    <div class="container footer-grid">
-      <div class="footer-brand">
-        <div style="display:flex;align-items:center;gap:10px;margin-bottom:10px">
-          <span class="brand-badge"><img src="/Blender%20Digital%20Full%20Logo.svg" alt="Blender Digital logo" /></span>
-        </div>
-        <p class="small">Fractional growth team for restaurants selling on DoorDash, Uber Eats, Grubhub, and Toast. We focus on disciplined execution—not fluff.</p>
-        
-      </div>
-
-      <div>
-        <h4>How It Works</h4>
-        <ul class="small">
-          <li><a href="#services">Access &amp; plan</a></li>
-          <li><a href="#services">Launch campaigns</a></li>
-          <li><a href="#services">Manage &amp; improve</a></li>
-          <li><a href="#services">Report &amp; grow</a></li>
-        </ul>
-      </div>
-
-      <div>
-        <h4>Resources</h4>
-        <ul class="small">
-          <li><a href="/blog.html">Blog</a></li>
-          <li><a href="/blog/why-your-uber-eats-promotions-are-destroying-your-margins.html">Uber Eats promo margins</a></li>
-          <li><a href="/blog/restaurant-delivery-platform-image-size-requirements.html">Image size requirements</a></li>
-        </ul>
-      </div>
-
-      <div>
-        <h4>Company</h4>
-        <ul class="small">
-          <li><a href="/results.html">Results</a></li>
-          <li><a href="#pricing">Pricing</a></li>
-          <li><a href="#contact">Contact</a></li>
-          <li><a href="#top">Back to top</a></li>
-        </ul>
+    <div class="footer-main">
+      <div class="container footer-grid">
+        <div class="footer-brand"><div style="display:flex;align-items:center;gap:10px;margin-bottom:10px"><span class="brand-badge"><img src="/Blender%20Digital%20Full%20Logo.svg" alt="Blender Digital logo" /></span></div><p class="small">Fractional growth team for restaurants selling on DoorDash, Uber Eats, Grubhub, and Toast. We focus on disciplined execution—not fluff.</p></div>
+        <div><h4>How It Works</h4><ul class="small"><li><a href="#services">Access &amp; plan</a></li><li><a href="#services">Launch campaigns</a></li><li><a href="#services">Manage &amp; improve</a></li><li><a href="#services">Report &amp; grow</a></li></ul></div>
+        <div><h4>Resources</h4><ul class="small"><li><a href="/blog.html">Blog</a></li><li><a href="/faq.html">Frequently asked questions</a></li><li><a href="/blog/why-your-uber-eats-promotions-are-destroying-your-margins.html">Uber Eats promo margins</a></li><li><a href="/blog/restaurant-delivery-platform-image-size-requirements.html">Image size requirements</a></li></ul></div>
+        <div><h4>Company</h4><ul class="small"><li><a href="/results.html">Results</a></li><li><a href="#pricing">Pricing</a></li><li><a href="#contact">Contact</a></li><li><a href="#top">Back to top</a></li></ul></div>
       </div>
     </div>
-  </div>
+    <div class="footer-bottom"><div class="container" style="display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap"><div class="small" style="text-align:center;width:100%">© 2026 Blender Digital</div></div></div>
+  </footer>
 
-  <div class="footer-bottom">
-    <div class="container" style="display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap">
-      <div class="small" style="text-align:center;width:100%">© 2026 Blender Digital</div>
-      
-    </div>
-  </div>
-</footer>
   <script>
-    // Mobile nav toggle
     (function(){
-      const nav = document.querySelector('.nav');
-      const btn = document.getElementById('navToggle');
-      const menu = document.getElementById('navMenu');
-      if(!nav || !btn || !menu) return;
-
-      const close = () => {
-        nav.classList.remove('is-open');
-        btn.setAttribute('aria-expanded','false');
-      };
-
-      btn.addEventListener('click', () => {
-        const open = nav.classList.toggle('is-open');
-        btn.setAttribute('aria-expanded', open ? 'true' : 'false');
-      });
-
-      // Close after clicking a link
-      menu.addEventListener('click', (e) => {
-        const t = e.target;
-        if(t && t.tagName === 'A') close();
-      });
-
-      // Close on Escape
-      document.addEventListener('keydown', (e) => {
-        if(e.key === 'Escape') close();
-      });
-
-      // Close if resized to desktop
-      window.addEventListener('resize', () => {
-        if(window.innerWidth > 820) close();
-      });
+      const nav=document.querySelector('.nav');
+      const btn=document.getElementById('navToggle');
+      const menu=document.getElementById('navMenu');
+      if(!nav||!btn||!menu)return;
+      const close=()=>{nav.classList.remove('is-open');btn.setAttribute('aria-expanded','false')};
+      btn.addEventListener('click',()=>{const open=nav.classList.toggle('is-open');btn.setAttribute('aria-expanded',open?'true':'false')});
+      menu.addEventListener('click',e=>{if(e.target&&e.target.tagName==='A')close()});
+      document.addEventListener('keydown',e=>{if(e.key==='Escape')close()});
+      window.addEventListener('resize',()=>{if(window.innerWidth>820)close()});
     })();
-// Comma formatting for Avg Annual Revenue
-    (function(){
-      const input = document.getElementById('avgRevenue');
-      if(!input) return;
-
-      input.addEventListener('input', () => {
-        const raw = input.value.replace(/[^0-9]/g,'');
-        if(!raw){ input.value = ''; return; }
-        input.value = '$' + Number(raw).toLocaleString();
-      });
-    })();
-
-</script>
+  </script>
 </body>
 </html>
