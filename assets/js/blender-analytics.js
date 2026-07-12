@@ -11,7 +11,7 @@
 
   function getPageType() {
     const path = window.location.pathname;
-    if (path === '/' || path.endsWith('/')) return 'home';
+    if (path === '/') return 'home';
     if (path === '/blog') return 'resources';
     if (path.startsWith('/blog/')) return 'blog';
     if (path.startsWith('/results')) return 'results';
