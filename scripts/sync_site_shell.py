@@ -45,34 +45,38 @@ DROPDOWN_SCRIPT = '''<script id="shared-nav-dropdown-script">
 })();
 </script>'''
 
-FOOTER_RE = re.compile(r'<footer\b[^>]*class=["\'][^"\']*\bfooter\b[^"\']*["\'][^>]*>.*?</footer>', re.IGNORECASE | re.DOTALL)
+FOOTER_RE = re.compile(r'<footer\b[^>]*>.*?</footer>', re.IGNORECASE | re.DOTALL)
 STYLE_RE = re.compile(r'<style\s+id=["\']shared-site-shell["\']>.*?</style>', re.IGNORECASE | re.DOTALL)
 SCRIPT_RE = re.compile(r'<script\s+id=["\']shared-nav-dropdown-script["\']>.*?</script>', re.IGNORECASE | re.DOTALL)
 BRAND_RE = re.compile(r'(<a\b[^>]*class=["\'][^"\']*\bbrand\b[^"\']*["\'][^>]*href=)["\'][^"\']*["\']', re.IGNORECASE)
-NAV_START_RE = re.compile(r'<div\b(?=[^>]*\bclass=["\'][^"\']*\bnav-links\b[^"\']*["\'])(?=[^>]*\bid=["\']navMenu["\'])[^>]*>', re.IGNORECASE)
+NAV_DIV_START_RE = re.compile(r'<div\b(?=[^>]*\bclass=["\'][^"\']*\bnav-links\b[^"\']*["\'])(?=[^>]*\bid=["\']navMenu["\'])[^>]*>', re.IGNORECASE)
+NAV_TAG_RE = re.compile(r'<nav\b(?=[^>]*\bclass=["\'][^"\']*\bnav-links\b[^"\']*["\'])(?=[^>]*\bid=["\']navMenu["\'])[^>]*>.*?</nav\s*>', re.IGNORECASE | re.DOTALL)
 DIV_TOKEN_RE = re.compile(r'<div\b[^>]*>|</div\s*>', re.IGNORECASE)
 
 
 def replace_nav_block(html: str) -> tuple[str, bool]:
-    match = NAV_START_RE.search(html)
-    if not match:
-        return html, False
+    match = NAV_DIV_START_RE.search(html)
+    if match:
+        depth = 0
+        end = None
+        for token in DIV_TOKEN_RE.finditer(html, match.start()):
+            if token.group(0).lower().startswith('</div'):
+                depth -= 1
+                if depth == 0:
+                    end = token.end()
+                    break
+            else:
+                depth += 1
 
-    depth = 0
-    end = None
-    for token in DIV_TOKEN_RE.finditer(html, match.start()):
-        if token.group(0).lower().startswith('</div'):
-            depth -= 1
-            if depth == 0:
-                end = token.end()
-                break
-        else:
-            depth += 1
+        if end is None:
+            raise RuntimeError('Could not find closing div for #navMenu')
 
-    if end is None:
-        raise RuntimeError('Could not find closing div for #navMenu')
+        return html[: match.start()] + NAV_HTML + html[end:], True
 
-    return html[: match.start()] + NAV_HTML + html[end:], True
+    if NAV_TAG_RE.search(html):
+        return NAV_TAG_RE.sub(NAV_HTML, html, count=1), True
+
+    return html, False
 
 
 def upsert_before_closing(html: str, pattern: re.Pattern[str], replacement: str, closing_tag: str) -> str:
