@@ -4,6 +4,13 @@ on:
   push:
     branches:
       - agent/remove-html-urls
+  pull_request:
+    branches:
+      - main
+    types:
+      - opened
+      - synchronize
+      - reopened
 
 permissions:
   contents: write
@@ -31,6 +38,7 @@ jobs:
 
           ROOT = Path('.')
           WORKFLOW = Path('.github/workflows/apply-clean-urls.yml')
+          TRIGGER = Path('.github/clean-url-trigger.txt')
           INTERNAL_HOSTS = {'blenderdigital.co', 'www.blenderdigital.co'}
           TEXT_SUFFIXES = {'.html', '.xml', '.js', '.json'}
 
@@ -142,7 +150,6 @@ jobs:
               if str(vercel_path) not in changed:
                   changed.append(str(vercel_path))
 
-          # Confirm no internal .html URLs remain in site files.
           remaining = []
           for path in sorted(ROOT.rglob('*')):
               if not path.is_file() or path.suffix.lower() not in TEXT_SUFFIXES:
@@ -165,7 +172,6 @@ jobs:
               print('\n'.join(remaining[:100]), file=sys.stderr)
               sys.exit(1)
 
-          # Validate extensionless internal page links against the existing static files.
           html_files = sorted(ROOT.rglob('*.html'))
           href_pattern = re.compile(r'\bhref\s*=\s*(["\'])(.*?)\1', re.IGNORECASE)
           broken = []
@@ -218,6 +224,8 @@ jobs:
               print('\n'.join(broken[:100]), file=sys.stderr)
               sys.exit(1)
 
+          if TRIGGER.exists():
+              TRIGGER.unlink()
           if WORKFLOW.exists():
               WORKFLOW.unlink()
 
