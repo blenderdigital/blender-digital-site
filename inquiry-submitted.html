@@ -49,28 +49,29 @@
     .nav-toggle-lines span{position:absolute;left:0;right:0;height:2px;background:rgba(43,43,43,.85);border-radius:999px}
     .nav-toggle-lines span:nth-child(1){top:0}.nav-toggle-lines span:nth-child(2){top:5px}.nav-toggle-lines span:nth-child(3){bottom:0}
 
-    .btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;font-weight:700;padding:12px 18px;border-radius:14px}
+    .btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;font-weight:700;padding:11px 17px;border-radius:14px}
     .btn-primary{background:var(--lime)}
-    .btn-ghost{background:rgba(255,255,255,.75)}
+    .btn-ghost{background:rgba(255,255,255,.72);border:1px solid rgba(43,43,43,.06)}
 
-    .thank-hero{padding:76px 0 70px}
-    .thank-card{max-width:860px;margin:0 auto;text-align:center;background:rgba(255,255,255,.76);border:1px solid rgba(43,43,43,.07);border-radius:28px;padding:clamp(34px,6vw,64px);box-shadow:var(--shadow)}
-    .checkmark{width:72px;height:72px;margin:0 auto 22px;border-radius:50%;background:var(--lime);display:grid;place-items:center;font-size:2rem;font-weight:800}
-    h1{font-size:clamp(2.4rem,5vw,4rem);line-height:1.04;letter-spacing:-.04em;margin:0 0 18px}
-    h2{font-size:clamp(1.65rem,3vw,2.25rem);line-height:1.15;letter-spacing:-.025em;margin:0 0 14px}
-    h3{font-size:1.12rem;margin:0 0 8px}
-    .lead{max-width:680px;margin:0 auto 26px;font-size:clamp(1.02rem,1.5vw,1.16rem);line-height:1.7}
-    .hero-actions{display:flex;justify-content:center;gap:12px;flex-wrap:wrap}
+    .thank-hero{padding:70px 0 62px}
+    .thank-content{max-width:740px;margin:0 auto;text-align:center}
+    .confirmation-label{display:inline-flex;align-items:center;gap:8px;padding:7px 11px;border-radius:999px;background:rgba(255,255,255,.68);font-size:.82rem;font-weight:700;margin-bottom:20px}
+    .confirmation-dot{width:9px;height:9px;border-radius:50%;background:var(--lime)}
+    h1{font-size:clamp(2.15rem,4.6vw,3.45rem);line-height:1.08;letter-spacing:-.035em;margin:0 0 16px}
+    h2{font-size:clamp(1.55rem,2.7vw,2.05rem);line-height:1.2;letter-spacing:-.02em;margin:0 0 12px}
+    h3{font-size:1.08rem;margin:0 0 8px}
+    .lead{max-width:650px;margin:0 auto 24px;font-size:clamp(1rem,1.4vw,1.1rem);line-height:1.68;color:rgba(43,43,43,.86)}
+    .hero-actions{display:flex;justify-content:center;gap:10px;flex-wrap:wrap}
 
-    .explore{padding:62px 0;background:var(--cream)}
-    .explore-header{text-align:center;max-width:720px;margin:0 auto 34px}
-    .explore-header p{margin:0;font-size:1.03rem}
-    .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
-    .card{display:flex;flex-direction:column;background:var(--white);border-radius:var(--radius);padding:24px;box-shadow:var(--shadow);border:1px solid rgba(43,43,43,.06);transition:transform .2s ease,box-shadow .2s ease}
-    .card:hover{transform:translateY(-4px);box-shadow:0 14px 34px rgba(0,0,0,.10)}
-    .pill{align-self:flex-start;display:inline-block;padding:6px 10px;border-radius:999px;background:rgba(167,213,30,.18);font-weight:700;font-size:.83rem;margin-bottom:14px}
-    .card p{margin:0 0 18px;opacity:.86}
-    .card-link{margin-top:auto;font-weight:800;font-size:.92rem}
+    .explore{padding:56px 0;background:var(--cream);border-top:1px solid rgba(43,43,43,.05)}
+    .explore-header{text-align:center;max-width:690px;margin:0 auto 30px}
+    .explore-header p{margin:0;font-size:1rem;color:rgba(43,43,43,.82)}
+    .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+    .card{display:flex;flex-direction:column;background:rgba(255,255,255,.82);border-radius:var(--radius);padding:22px;border:1px solid rgba(43,43,43,.07);transition:transform .2s ease,background .2s ease}
+    .card:hover{transform:translateY(-3px);background:var(--white)}
+    .pill{align-self:flex-start;display:inline-block;padding:5px 9px;border-radius:999px;background:rgba(167,213,30,.17);font-weight:700;font-size:.8rem;margin-bottom:12px}
+    .card p{margin:0 0 16px;opacity:.82;font-size:.95rem}
+    .card-link{margin-top:auto;font-weight:750;font-size:.9rem}
 
     footer.footer{background:rgba(255,255,255,.92);border-top:1px solid rgba(43,43,43,.10)}
     .footer-main{padding:40px 0}
@@ -91,7 +92,7 @@
       .grid{grid-template-columns:1fr}
       .footer-grid{grid-template-columns:1fr 1fr}
     }
-    @media (max-width:560px){.footer-grid{grid-template-columns:1fr}.thank-hero{padding:52px 0}.thank-card{border-radius:22px}.hero-actions .btn{width:100%}}
+    @media (max-width:560px){.footer-grid{grid-template-columns:1fr}.thank-hero{padding:50px 0 48px}.hero-actions .btn{width:100%}}
   </style>
 </head>
 
@@ -118,10 +119,10 @@
   <main>
     <section class="thank-hero">
       <div class="container">
-        <div class="thank-card">
-          <div class="checkmark" aria-hidden="true">✓</div>
+        <div class="thank-content">
+          <div class="confirmation-label"><span class="confirmation-dot"></span> Inquiry received</div>
           <h1>Thank you for reaching out.</h1>
-          <p class="lead">Your inquiry has been received. We’ll review the details and follow up shortly. In the meantime, you can explore our client results, practical resources, and free tools for restaurant operators.</p>
+          <p class="lead">We’ve received your information and will review it shortly. You can expect to hear from us soon.</p>
           <div class="hero-actions">
             <a class="btn btn-primary" href="/results">View Client Results <span aria-hidden="true">→</span></a>
             <a class="btn btn-ghost" href="/">Return to Homepage</a>
@@ -133,26 +134,26 @@
     <section class="explore">
       <div class="container">
         <div class="explore-header">
-          <h2>Explore while you’re here</h2>
-          <p>See how restaurants are growing online ordering sales—and find practical ways to improve your own delivery channels.</p>
+          <h2>In the meantime</h2>
+          <p>Explore a few useful places to learn more about our work and restaurant delivery growth.</p>
         </div>
         <div class="grid">
           <a class="card" href="/results">
             <span class="pill">Results</span>
-            <h3>See real before-and-after growth</h3>
-            <p>Review documented DoorDash and Uber Eats performance across restaurants we’ve supported.</p>
+            <h3>See client growth examples</h3>
+            <p>Review documented DoorDash and Uber Eats results from restaurants we’ve supported.</p>
             <span class="card-link">View client results →</span>
           </a>
           <a class="card" href="/blog">
             <span class="pill">Resources</span>
-            <h3>Practical guides for operators</h3>
-            <p>Learn about promotions, margins, menus, platform requirements, and the issues that affect delivery sales.</p>
+            <h3>Read practical operator guides</h3>
+            <p>Browse guidance on promotions, margins, menus, platform requirements, and delivery sales.</p>
             <span class="card-link">Browse the blog →</span>
           </a>
           <a class="card" href="/tools">
             <span class="pill">Free Tools</span>
-            <h3>Evaluate your online ordering setup</h3>
-            <p>Use our free restaurant tools to identify opportunities and make smarter platform decisions.</p>
+            <h3>Explore restaurant tools</h3>
+            <p>Use free tools built to help restaurant operators evaluate and improve online ordering performance.</p>
             <span class="card-link">Explore free tools →</span>
           </a>
         </div>
