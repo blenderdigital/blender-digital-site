@@ -1,0 +1,83 @@
+name: Complete Google Ads tag sitewide
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - '.github/workflows/complete-google-ads-tag-sitewide.yml'
+
+permissions:
+  contents: write
+
+jobs:
+  update-html:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Add Ads destination after any existing GA4 config variant
+        shell: python
+        run: |
+          from pathlib import Path
+          import re
+
+          ads_id = 'AW-18345428557'
+          ga_id = 'G-JEJPG0H4HC'
+          pattern = re.compile(
+              r"^(?P<indent>[ \t]*)gtag\(\s*(['\"])config\2\s*,\s*(['\"])G-JEJPG0H4HC\3\s*\)\s*;?\s*$",
+              re.MULTILINE,
+          )
+
+          updated = []
+          already_present = []
+          no_existing_ga4_config = []
+
+          for path in sorted(Path('.').rglob('*.html')):
+              if any(part in {'.git', 'node_modules'} for part in path.parts):
+                  continue
+
+              text = path.read_text(encoding='utf-8')
+              if ads_id in text:
+                  already_present.append(str(path))
+                  continue
+
+              match = pattern.search(text)
+              if not match:
+                  no_existing_ga4_config.append(str(path))
+                  continue
+
+              indent = match.group('indent')
+              insertion = match.group(0) + f"\n{indent}gtag('config', '{ads_id}');"
+              text = text[:match.start()] + insertion + text[match.end():]
+              path.write_text(text, encoding='utf-8')
+              updated.append(str(path))
+
+          report = Path('google-ads-tag-rollout-report.txt')
+          report.write_text(
+              'UPDATED\n' + '\n'.join(updated) +
+              '\n\nALREADY PRESENT\n' + '\n'.join(already_present) +
+              '\n\nNO EXISTING GA4 CONFIG FOUND\n' + '\n'.join(no_existing_ga4_config) + '\n',
+              encoding='utf-8'
+          )
+
+          print(report.read_text(encoding='utf-8'))
+
+      - name: Remove temporary files
+        run: |
+          rm -f .github/workflows/complete-google-ads-tag-sitewide.yml
+          rm -f google-ads-tag-rollout-report.txt
+
+      - name: Commit completed rollout
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -A
+          if git diff --cached --quiet; then
+            echo "No changes to commit."
+            exit 0
+          fi
+          git commit -m "Complete Google Ads destination rollout across HTML pages"
+          git push origin main
