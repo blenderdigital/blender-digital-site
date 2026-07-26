@@ -1,0 +1,101 @@
+name: Ensure Google tags on every HTML page
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - '.github/workflows/ensure-google-tags-all-html.yml'
+
+permissions:
+  contents: write
+
+jobs:
+  update-html:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Ensure GA4 and Google Ads destinations on every HTML page
+        shell: python
+        run: |
+          from pathlib import Path
+          import re
+
+          ga_id = 'G-JEJPG0H4HC'
+          ads_id = 'AW-18345428557'
+          ga_config_pattern = re.compile(
+              r"^(?P<indent>[ \t]*)gtag\(\s*(['\"])config\2\s*,\s*(['\"])G-JEJPG0H4HC\3\s*\)\s*;?\s*$",
+              re.MULTILINE,
+          )
+
+          full_tag = f'''  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id={ga_id}"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){{dataLayer.push(arguments);}}
+    gtag('js', new Date());
+    gtag('config', '{ga_id}');
+    gtag('config', '{ads_id}');
+  </script>
+'''
+
+          added_full_tag = []
+          added_ads_destination = []
+          already_complete = []
+
+          for path in sorted(Path('.').rglob('*.html')):
+              if any(part in {'.git', 'node_modules'} for part in path.parts):
+                  continue
+
+              text = path.read_text(encoding='utf-8')
+              has_ga = ga_id in text
+              has_ads = ads_id in text
+
+              if has_ga and has_ads:
+                  already_complete.append(str(path))
+                  continue
+
+              if has_ga and not has_ads:
+                  match = ga_config_pattern.search(text)
+                  if not match:
+                      raise RuntimeError(f'GA4 ID exists but config line could not be located in {path}')
+                  indent = match.group('indent')
+                  replacement = match.group(0) + f"\n{indent}gtag('config', '{ads_id}');"
+                  text = text[:match.start()] + replacement + text[match.end():]
+                  path.write_text(text, encoding='utf-8')
+                  added_ads_destination.append(str(path))
+                  continue
+
+              head_match = re.search(r'<head(?:\s[^>]*)?>', text, flags=re.IGNORECASE)
+              if not head_match:
+                  raise RuntimeError(f'No <head> tag found in {path}')
+              insertion_point = head_match.end()
+              text = text[:insertion_point] + '\n' + full_tag + text[insertion_point:]
+              path.write_text(text, encoding='utf-8')
+              added_full_tag.append(str(path))
+
+          print(f'Added complete GA4 + Ads tag to {len(added_full_tag)} pages:')
+          for item in added_full_tag:
+              print(f'  + {item}')
+          print(f'Added Ads destination to {len(added_ads_destination)} pages:')
+          for item in added_ads_destination:
+              print(f'  + {item}')
+          print(f'Already complete: {len(already_complete)} pages')
+
+      - name: Remove temporary workflow
+        run: rm -f .github/workflows/ensure-google-tags-all-html.yml
+
+      - name: Commit complete sitewide tag coverage
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -A
+          if git diff --cached --quiet; then
+            echo "No changes to commit."
+            exit 0
+          fi
+          git commit -m "Ensure Google Analytics and Ads tags on every HTML page"
+          git push origin main
