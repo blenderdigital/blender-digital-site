@@ -10,6 +10,7 @@
     function gtag(){dataLayer.push(arguments);}
     gtag('js', new Date());
     gtag('config', 'G-JEJPG0H4HC');
+    gtag('config', 'AW-18345428557');
   </script>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -402,6 +403,24 @@
   });
   document.addEventListener('click',event=>{
     if(event.target && event.target.closest('.nav-dropdown-menu a')) dropdowns.forEach(dropdown=>dropdown.removeAttribute('open'));
+  });
+})();
+</script>
+<script id="calendly-google-ads-conversion">
+(function(){
+  let conversionSent = false;
+  window.addEventListener('message', function(event){
+    if (
+      event.origin === 'https://calendly.com' &&
+      event.data &&
+      event.data.event === 'calendly.event_scheduled' &&
+      !conversionSent
+    ) {
+      conversionSent = true;
+      gtag('event', 'conversion', {
+        send_to: 'AW-18345428557/v4k2CP_6xtYcEM2M5KtE'
+      });
+    }
   });
 })();
 </script>
