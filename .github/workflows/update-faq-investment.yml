@@ -1,0 +1,63 @@
+name: Update FAQ investment details
+
+on:
+  push:
+    paths:
+      - '.github/workflows/update-faq-investment.yml'
+
+permissions:
+  contents: write
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Update homepage FAQ
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+          p = Path('index.html')
+          s = p.read_text()
+
+          old_schema = '''      {"@type":"Question","name":"Do you guarantee results?","acceptedAnswer":{"@type":"Answer","text":"No responsible agency can guarantee a specific sales result. Blender Digital commits to active management, clear recommendations, ongoing testing, and decisions based on actual performance data."}},
+      {"@type":"Question","name":"Who is Blender Digital a good fit for?","acceptedAnswer":{"@type":"Answer","text":"Blender Digital is a strong fit for restaurant owners and operators who know their delivery channels could perform better but do not have the time or a dedicated team member to manage promotions, menus, Sponsored Listings, reviews, and ongoing optimization. We work best with restaurants that already receive online orders, are open to testing, and care about both sales and profitability."}}'''
+          new_schema = '''      {"@type":"Question","name":"What level of investment should I expect?","acceptedAnswer":{"@type":"Answer","text":"For a single-location restaurant, the total investment typically ranges from $4,120 to $8,640 across a 4- or 6-month program, depending on the package selected. Blender Digital does not offer programs beyond six months because the goal is to help clients grow, build a strong operating system, and then confidently self-manage their channels."}},
+      {"@type":"Question","name":"Do you guarantee results?","acceptedAnswer":{"@type":"Answer","text":"No responsible agency should guarantee a specific result. Blender Digital commits to active management, clear recommendations, ongoing testing, and decisions based on actual performance data."}},
+      {"@type":"Question","name":"Who is Blender Digital a good fit for?","acceptedAnswer":{"@type":"Answer","text":"Blender Digital is a strong fit for restaurant owners and operators who know their delivery channels could perform better but do not have the time or a dedicated team member to manage promotions, menus, sponsored listings, reviews, and ongoing optimization. We work best with restaurants that already receive online orders, are open to testing, and care about both sales and profitability."}}'''
+          if old_schema not in s:
+              raise SystemExit('Schema target not found')
+          s = s.replace(old_schema, new_schema, 1)
+
+          old_html = '''          <details class="faq-item">
+            <summary class="faq-question">Do you guarantee results?</summary>
+            <div class="faq-answer"><p>No responsible agency should guarantee a specific sales number. We commit to active management, clear recommendations, ongoing testing, and decisions based on actual performance data, not guesswork.</p></div>
+          </details>
+          <details class="faq-item">
+            <summary class="faq-question">Who is Blender Digital a good fit for?</summary>
+            <div class="faq-answer"><p>We are a strong fit for restaurant owners and operators who know their delivery channels could perform better but do not have the time or a dedicated team member to manage promotions, menus, Sponsored Listings, reviews, and ongoing optimization. We work best with restaurants that already receive online orders, are open to testing, and care about growing sales without losing sight of profitability.</p></div>
+          </details>'''
+          new_html = '''          <details class="faq-item">
+            <summary class="faq-question">What level of investment should I expect?</summary>
+            <div class="faq-answer"><p>For a single-location restaurant, the total investment typically ranges from <strong>$4,120 to $8,640</strong> across a <strong>4- or 6-month program</strong>, depending on the package selected. We do not offer programs beyond six months because our goal is to help clients grow, build a strong operating system, and then confidently self-manage their channels.</p></div>
+          </details>
+          <details class="faq-item">
+            <summary class="faq-question">Do you guarantee results?</summary>
+            <div class="faq-answer"><p>No responsible agency should guarantee a specific result. We commit to active management, clear recommendations, ongoing testing, and decisions based on actual performance data, not guesswork.</p></div>
+          </details>
+          <details class="faq-item">
+            <summary class="faq-question">Who is Blender Digital a good fit for?</summary>
+            <div class="faq-answer"><p>We are a strong fit for restaurant owners and operators who know their delivery channels could perform better but do not have the time or a dedicated team member to manage promotions, menus, sponsored listings, reviews, and ongoing optimization.</p><p style="margin-top:14px">We work best with restaurants that already receive online orders, are open to testing, and care about growing sales without losing sight of profitability.</p></div>
+          </details>'''
+          if old_html not in s:
+              raise SystemExit('HTML target not found')
+          s = s.replace(old_html, new_html, 1)
+          p.write_text(s)
+          PY
+      - name: Commit changes
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add index.html
+          git commit -m "Update FAQ investment and final answers"
+          git push
