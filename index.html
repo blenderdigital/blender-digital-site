@@ -39,12 +39,12 @@
     .nav-links a{text-decoration:none;padding:10px 12px;border-radius:12px}
     .nav-links a:hover{background:rgba(255,255,255,.7)}
     .nav-dropdown{position:relative}
-    .nav-dropdown summary{list-style:none;display:flex;align-items:center;gap:7px;padding:10px 12px;border-radius:12px;cursor:pointer}
+    .nav-dropdown summary{list-style:none;display:flex;align-items:center;gap:7px;padding:10px 12px;border-radius:12px;cursor:pointer;font:inherit;color:inherit}
     .nav-dropdown summary::-webkit-details-marker{display:none}
     .nav-dropdown summary::after{content:'';width:7px;height:7px;border-right:1.5px solid currentColor;border-bottom:1.5px solid currentColor;transform:rotate(45deg);margin:-3px 1px 0 2px;transition:transform .18s ease,margin .18s ease}
     .nav-dropdown[open] summary::after{transform:rotate(225deg);margin:3px 1px 0 2px}
     .nav-dropdown summary:hover,.nav-dropdown[open] summary{background:rgba(255,255,255,.7)}
-    .nav-dropdown-menu{position:absolute;top:calc(100% + 8px);left:0;min-width:170px;padding:8px;background:var(--white);border:1px solid rgba(43,43,43,.09);border-radius:14px;box-shadow:var(--shadow)}
+    .nav-dropdown-menu{position:absolute;z-index:30;top:calc(100% + 8px);left:0;min-width:170px;padding:8px;background:var(--white);border:1px solid rgba(43,43,43,.09);border-radius:14px;box-shadow:var(--shadow)}
     .nav-dropdown-menu a{display:block;white-space:nowrap;padding:10px 12px}
 
     /* Buttons */
@@ -196,32 +196,16 @@
     "@context":"https://schema.org",
     "@type":"FAQPage",
     "mainEntity":[
-      {"@type":"Question","name":"What exactly does Blender Digital do?","acceptedAnswer":{"@type":"Answer","text":"Blender Digital manages and grows restaurant online ordering channels, including DoorDash, Uber Eats, Grubhub, and Toast. This includes promotional campaign management, Sponsored Listings, menu and storefront optimization, responding to reviews, handling errors and refund requests, monthly reporting, and ongoing performance improvements based on findings."}},
+      {"@type":"Question","name":"What exactly does Blender Digital do?","acceptedAnswer":{"@type":"Answer","text":"Blender Digital manages and grows restaurant online ordering channels, including DoorDash, Uber Eats, Grubhub, and Toast. This includes promotional campaign management, sponsored listings, menu and storefront optimization, responding to reviews, handling errors and refund requests, monthly reporting, and ongoing performance improvements based on findings."}},
       {"@type":"Question","name":"Which restaurant delivery platforms do you manage?","acceptedAnswer":{"@type":"Answer","text":"Blender Digital primarily manages DoorDash, Uber Eats, Grubhub, Toast, direct online ordering systems such as Square and Clover, and catering platforms such as ezCater when applicable."}},
       {"@type":"Question","name":"How quickly can we expect to see results?","acceptedAnswer":{"@type":"Answer","text":"Many restaurants begin seeing measurable changes within 30 to 60 days, especially when there are clear opportunities involving promotions, menu organization, sponsored listings, or storefront quality. More substantial growth usually requires consistent optimization over several months."}},
       {"@type":"Question","name":"How much do you typically increase online ordering sales?","acceptedAnswer":{"@type":"Answer","text":"For approximately a dozen of our clients, monthly platform sales increased by about 3x on average within 3 to 6 months. Several of these client outcomes are shown on Blender Digital's Results page. Individual results vary based on starting sales, market demand, ratings, operations, pricing, and promotional budget. This is our documented track record, not a guarantee."}},
-      {"@type":"Question","name":"Do you guarantee results?","acceptedAnswer":{"@type":"Answer","text":"No responsible agency can guarantee a specific sales result. Blender Digital commits to active management, clear recommendations, ongoing testing, and decisions based on actual performance data."}},
-      {"@type":"Question","name":"Who is Blender Digital a good fit for?","acceptedAnswer":{"@type":"Answer","text":"Blender Digital is a strong fit for restaurant owners and operators who know their delivery channels could perform better but do not have the time or a dedicated team member to manage promotions, menus, Sponsored Listings, reviews, and ongoing optimization. We work best with restaurants that already receive online orders, are open to testing, and care about both sales and profitability."}}
+      {"@type":"Question","name":"What level of investment should I expect?","acceptedAnswer":{"@type":"Answer","text":"For a single-location restaurant, the total investment typically ranges from $4,120 to $8,640 across a 4- or 6-month program, depending on the package selected. Blender Digital does not offer programs beyond six months because the goal is to help clients grow, build a strong operating system, and then confidently self-manage their channels."}},
+      {"@type":"Question","name":"Do you guarantee results?","acceptedAnswer":{"@type":"Answer","text":"No responsible agency should guarantee a specific result. Blender Digital commits to active management, clear recommendations, ongoing testing, and decisions based on actual performance data."}},
+      {"@type":"Question","name":"Who is Blender Digital a good fit for?","acceptedAnswer":{"@type":"Answer","text":"Blender Digital is a strong fit for restaurant owners and operators who know their delivery channels could perform better but do not have the time or a dedicated team member to manage promotions, menus, sponsored listings, reviews, and ongoing optimization. We work best with restaurants that already receive online orders, are open to testing, and care about growing sales without losing sight of profitability."}}
     ]
   }
   </script>
-<style id="shared-site-shell">
-.nav-dropdown{position:relative}
-.nav-dropdown summary{list-style:none;display:flex;align-items:center;gap:7px;padding:10px 12px;border-radius:12px;cursor:pointer;font:inherit;color:inherit}
-.nav-dropdown summary::-webkit-details-marker{display:none}
-.nav-dropdown summary::after{content:'';width:7px;height:7px;border-right:1.5px solid currentColor;border-bottom:1.5px solid currentColor;transform:rotate(45deg);margin:-3px 1px 0 2px;transition:transform .18s ease,margin .18s ease}
-.nav-dropdown[open] summary::after{transform:rotate(225deg);margin:3px 1px 0 2px}
-.nav-dropdown summary:hover,.nav-dropdown[open] summary{background:rgba(255,255,255,.7)}
-.nav-dropdown-menu{position:absolute;z-index:30;top:calc(100% + 8px);left:0;min-width:170px;padding:8px;background:var(--white,#fff);border:1px solid rgba(43,43,43,.09);border-radius:14px;box-shadow:var(--shadow,0 10px 30px rgba(0,0,0,.08))}
-.nav-dropdown-menu a{display:block;white-space:nowrap;padding:10px 12px}
-@media(max-width:820px){
-  .nav-links{align-items:stretch}
-  .nav-dropdown{width:100%}
-  .nav-dropdown summary{width:100%;justify-content:space-between;padding:12px}
-  .nav-dropdown-menu{position:static;min-width:0;margin-top:4px;padding:4px 0 0;background:transparent;border:0;border-radius:0;box-shadow:none}
-  .nav-dropdown-menu a{padding:10px 12px 10px 28px}
-}
-</style>
 </head>
 
 <body id="top">
@@ -345,7 +329,7 @@
         <div class="faq-list">
           <details class="faq-item" open>
             <summary class="faq-question">What exactly does Blender Digital do?</summary>
-            <div class="faq-answer"><p>We manage and grow your restaurant’s online ordering channels, including DoorDash, Uber Eats, Grubhub, and Toast. Managing these channels includes, but is not limited to, promotional campaign management, Sponsored Listings, menu and storefront optimization, responding to reviews, and handling errors and refund requests. We don’t stop there. We provide thorough monthly reporting and make ongoing performance improvements based on what we find.</p></div>
+            <div class="faq-answer"><p>We manage and grow your restaurant’s online ordering channels, including DoorDash, Uber Eats, Grubhub, and Toast. Managing these channels includes, but is not limited to, promotional campaign management, sponsored listings, menu and storefront optimization, responding to reviews, and handling errors and refund requests. We don’t stop there. We provide thorough monthly reporting and make ongoing performance improvements based on what we find.</p></div>
           </details>
           <details class="faq-item">
             <summary class="faq-question">Which restaurant delivery platforms do you manage?</summary>
@@ -360,12 +344,16 @@
             <div class="faq-answer"><p>For approximately a dozen of our clients, monthly platform sales increased by about <strong>3x on average</strong> within <strong>3 to 6 months</strong>. You can see several of these client outcomes on our <a href="/results" style="font-weight:700;text-decoration:underline;text-underline-offset:3px">Results page</a>. Individual results vary based on starting sales, market demand, ratings, operations, pricing, and promotional budget. This is our documented track record, not a guarantee.</p></div>
           </details>
           <details class="faq-item">
+            <summary class="faq-question">What level of investment should I expect?</summary>
+            <div class="faq-answer"><p>For a single-location restaurant, the total investment typically ranges from <strong>$4,120 to $8,640</strong> across a <strong>4- or 6-month program</strong>, depending on the package selected. We do not offer programs beyond six months because our goal is to help clients grow, build a strong operating system, and then confidently self-manage their channels.</p></div>
+          </details>
+          <details class="faq-item">
             <summary class="faq-question">Do you guarantee results?</summary>
-            <div class="faq-answer"><p>No responsible agency should guarantee a specific sales number. We commit to active management, clear recommendations, ongoing testing, and decisions based on actual performance data, not guesswork.</p></div>
+            <div class="faq-answer"><p>No responsible agency should guarantee a specific result. We commit to active management, clear recommendations, ongoing testing, and decisions based on actual performance data, not guesswork.</p></div>
           </details>
           <details class="faq-item">
             <summary class="faq-question">Who is Blender Digital a good fit for?</summary>
-            <div class="faq-answer"><p>We are a strong fit for restaurant owners and operators who know their delivery channels could perform better but do not have the time or a dedicated team member to manage promotions, menus, Sponsored Listings, reviews, and ongoing optimization. We work best with restaurants that already receive online orders, are open to testing, and care about growing sales without losing sight of profitability.</p></div>
+            <div class="faq-answer"><p>We are a strong fit for restaurant owners and operators who know their delivery channels could perform better but do not have the time or a dedicated team member to manage promotions, menus, sponsored listings, reviews, and ongoing optimization.</p><p style="margin-top:14px">We work best with restaurants that already receive online orders, are open to testing, and care about growing sales without losing sight of profitability.</p></div>
           </details>
         </div>
         <div class="faq-more"><a class="btn btn-primary" href="/faq">View all frequently asked questions</a></div>
@@ -389,40 +377,40 @@
       window.addEventListener('resize',()=>{if(window.innerWidth>820)close()});
     })();
   </script>
-<script id="shared-nav-dropdown-script">
-(function(){
-  const dropdowns=[...document.querySelectorAll('.nav-dropdown')];
-  dropdowns.forEach(dropdown=>dropdown.addEventListener('toggle',()=>{
-    if(dropdown.open) dropdowns.forEach(other=>{if(other!==dropdown) other.removeAttribute('open')});
-  }));
-  document.addEventListener('click',event=>{
-    dropdowns.forEach(dropdown=>{if(!dropdown.contains(event.target)) dropdown.removeAttribute('open')});
-  });
-  document.addEventListener('keydown',event=>{
-    if(event.key==='Escape') dropdowns.forEach(dropdown=>dropdown.removeAttribute('open'));
-  });
-  document.addEventListener('click',event=>{
-    if(event.target && event.target.closest('.nav-dropdown-menu a')) dropdowns.forEach(dropdown=>dropdown.removeAttribute('open'));
-  });
-})();
-</script>
-<script id="calendly-google-ads-conversion">
-(function(){
-  let conversionSent = false;
-  window.addEventListener('message', function(event){
-    if (
-      event.origin === 'https://calendly.com' &&
-      event.data &&
-      event.data.event === 'calendly.event_scheduled' &&
-      !conversionSent
-    ) {
-      conversionSent = true;
-      gtag('event', 'conversion', {
-        send_to: 'AW-18345428557/v4k2CP_6xtYcEM2M5KtE'
+  <script id="shared-nav-dropdown-script">
+    (function(){
+      const dropdowns=[...document.querySelectorAll('.nav-dropdown')];
+      dropdowns.forEach(dropdown=>dropdown.addEventListener('toggle',()=>{
+        if(dropdown.open) dropdowns.forEach(other=>{if(other!==dropdown) other.removeAttribute('open')});
+      }));
+      document.addEventListener('click',event=>{
+        dropdowns.forEach(dropdown=>{if(!dropdown.contains(event.target)) dropdown.removeAttribute('open')});
       });
-    }
-  });
-})();
-</script>
+      document.addEventListener('keydown',event=>{
+        if(event.key==='Escape') dropdowns.forEach(dropdown=>dropdown.removeAttribute('open'));
+      });
+      document.addEventListener('click',event=>{
+        if(event.target && event.target.closest('.nav-dropdown-menu a')) dropdowns.forEach(dropdown=>dropdown.removeAttribute('open'));
+      });
+    })();
+  </script>
+  <script id="calendly-google-ads-conversion">
+    (function(){
+      let conversionSent = false;
+      window.addEventListener('message', function(event){
+        if (
+          event.origin === 'https://calendly.com' &&
+          event.data &&
+          event.data.event === 'calendly.event_scheduled' &&
+          !conversionSent
+        ) {
+          conversionSent = true;
+          gtag('event', 'conversion', {
+            send_to: 'AW-18345428557/v4k2CP_6xtYcEM2M5KtE'
+          });
+        }
+      });
+    })();
+  </script>
 </body>
 </html>
