@@ -1,0 +1,46 @@
+name: Update first FAQ answer
+
+on:
+  push:
+    paths:
+      - '.github/workflows/update-first-faq-answer.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  update-copy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Update homepage FAQ and schema
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+
+          path = Path('index.html')
+          text = path.read_text()
+
+          old_html = "We manage and grow your restaurant’s online ordering channels. That can include DoorDash, Uber Eats, Grubhub, Toast, direct ordering, promotional campaigns, Sponsored Listings, menu and storefront optimization, review strategy, reporting, and ongoing performance improvements."
+          new_html = "We manage and grow your restaurant’s online ordering channels, including DoorDash, Uber Eats, Grubhub, and Toast. Managing these channels includes, but is not limited to, promotional campaign management, Sponsored Listings, menu and storefront optimization, responding to reviews, and handling errors and refund requests. We don’t stop there—we provide thorough monthly reporting and make ongoing performance improvements based on what we find."
+
+          old_schema = "Blender Digital manages and grows restaurant online ordering channels, including DoorDash, Uber Eats, Grubhub, Toast, promotions, Sponsored Listings, menu and storefront optimization, review strategy, reporting, and ongoing performance improvements."
+          new_schema = "Blender Digital manages and grows restaurant online ordering channels, including DoorDash, Uber Eats, Grubhub, and Toast. This includes promotional campaign management, Sponsored Listings, menu and storefront optimization, responding to reviews, handling errors and refund requests, monthly reporting, and ongoing performance improvements based on findings."
+
+          if old_html not in text:
+              raise SystemExit('Homepage FAQ answer not found')
+          if old_schema not in text:
+              raise SystemExit('FAQ schema answer not found')
+
+          text = text.replace(old_html, new_html, 1)
+          text = text.replace(old_schema, new_schema, 1)
+          path.write_text(text)
+          PY
+      - name: Commit update
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add index.html
+          git commit -m "Improve first homepage FAQ answer"
+          git push
