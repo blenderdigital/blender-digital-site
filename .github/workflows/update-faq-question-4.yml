@@ -1,0 +1,53 @@
+name: Update FAQ question 4
+
+on:
+  push:
+    paths:
+      - '.github/workflows/update-faq-question-4.yml'
+
+permissions:
+  contents: write
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Update FAQ copy
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+
+          path = Path('index.html')
+          text = path.read_text(encoding='utf-8')
+
+          old_answer = '''<div class="faq-answer"><p>Across the eight before-and-after examples currently shown on our <a href="/results" style="font-weight:700;text-decoration:underline;text-underline-offset:3px">Results page</a>, monthly platform sales increased by about <strong>3x on average</strong> within 3 to 6 months. Individual results vary based on starting sales, market demand, ratings, operations, pricing, and promotional budget, so this is our documented track record—not a guarantee.</p></div>'''
+          new_answer = '''<div class="faq-answer"><p>For approximately a dozen of our clients, monthly platform sales increased by about <strong>3x on average</strong> within <strong>3 to 6 months</strong>. You can see several of these client outcomes on our <a href="/results" style="font-weight:700;text-decoration:underline;text-underline-offset:3px">Results page</a>. Individual results vary based on starting sales, market demand, ratings, operations, pricing, and promotional budget. This is our documented track record, not a guarantee.</p></div>'''
+          if old_answer not in text:
+              raise SystemExit('Current FAQ question 4 answer was not found')
+          text = text.replace(old_answer, new_answer, 1)
+
+          old_schema = '''{"@type":"Question","name":"How much do you typically increase online ordering sales?","acceptedAnswer":{"@type":"Answer","text":"Across the eight before-and-after examples currently shown on Blender Digital's Results page, monthly platform sales increased by about 3x on average within 3 to 6 months. Individual results vary based on starting sales, market demand, ratings, operations, pricing, and promotional budget."}}'''
+          new_schema = '''{"@type":"Question","name":"How much do you typically increase online ordering sales?","acceptedAnswer":{"@type":"Answer","text":"For approximately a dozen of our clients, monthly platform sales increased by about 3x on average within 3 to 6 months. Several of these client outcomes are shown on Blender Digital's Results page. Individual results vary based on starting sales, market demand, ratings, operations, pricing, and promotional budget. This is our documented track record, not a guarantee."}}'''
+          if old_schema not in text:
+              raise SystemExit('Current FAQ question 4 schema was not found')
+          text = text.replace(old_schema, new_schema, 1)
+
+          replacements = {
+              'We don’t stop there—we provide': 'We don’t stop there. We provide',
+              'performance data—not guesswork': 'performance data, not guesswork',
+              'the time—or a dedicated team member—to manage': 'the time or a dedicated team member to manage',
+          }
+          for old, new in replacements.items():
+              text = text.replace(old, new)
+
+          path.write_text(text, encoding='utf-8')
+          PY
+      - name: Commit changes and remove workflow
+        run: |
+          rm .github/workflows/update-faq-question-4.yml
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add index.html .github/workflows/update-faq-question-4.yml
+          git commit -m "Update FAQ question 4 and remove long dashes"
+          git push
