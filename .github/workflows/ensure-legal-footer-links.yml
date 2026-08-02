@@ -1,0 +1,74 @@
+name: Ensure legal links are in every footer
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  add-legal-links:
+    if: github.actor != 'github-actions[bot]'
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Add legal links to HTML footers
+        run: |
+          python3 - <<'PY'
+          from pathlib import Path
+
+          marker = 'sitewide-legal-links'
+          required = (
+              'href="/terms-of-service"',
+              'href="/privacy-policy"',
+              'href="/privacy-policy?tab=fulfillment"',
+          )
+          block = '''
+          <div id="sitewide-legal-links" style="border-top:1px solid rgba(43,43,43,.08);padding:14px 20px;text-align:center;font-size:.82rem;line-height:1.6">
+            <a href="/terms-of-service" style="margin:0 9px">Terms of Service</a>
+            <a href="/privacy-policy" style="margin:0 9px">Privacy Policy</a>
+            <a href="/privacy-policy?tab=fulfillment" style="margin:0 9px">Fulfillment Policy</a>
+          </div>
+          '''
+
+          changed = []
+          skipped = []
+          for path in sorted(Path('.').rglob('*.html')):
+              text = path.read_text(encoding='utf-8')
+
+              if marker in text or all(link in text for link in required):
+                  skipped.append(str(path))
+                  continue
+
+              closing = text.lower().rfind('</footer>')
+              if closing == -1:
+                  print(f'Skipping {path}: no </footer> tag')
+                  continue
+
+              text = text[:closing] + block + text[closing:]
+              path.write_text(text, encoding='utf-8')
+              changed.append(str(path))
+
+          print(f'Updated {len(changed)} HTML pages')
+          for path in changed:
+              print(path)
+          print(f'Already compliant: {len(skipped)} pages')
+          PY
+
+      - name: Commit updated pages
+        run: |
+          if git diff --quiet; then
+            echo "Every HTML footer already contains the legal links."
+            exit 0
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add '*.html' '**/*.html'
+          git commit -m "Add legal links to every site footer"
+          git push
