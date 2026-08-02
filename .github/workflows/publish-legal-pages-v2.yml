@@ -1,0 +1,122 @@
+name: Publish Blender legal pages v2
+
+on:
+  push:
+    paths:
+      - '.github/workflows/publish-legal-pages-v2.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+      - name: Publish legal pages and homepage links
+        shell: python
+        run: |
+          from pathlib import Path
+
+          clarity = '''<script type="text/javascript">
+          (function(c,l,a,r,i,t,y){c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);})(window,document,"clarity","script","xw6minc8wz");
+          </script>'''
+
+          styles = '''
+          :root{--lime:#A7D51E;--mint:#E6F7DB;--cream:#FFF7D6;--text:#2B2B2B;--white:#fff;--max:1120px}
+          *{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;color:var(--text);background:var(--cream);line-height:1.7}a{color:inherit}.container{max-width:var(--max);margin:0 auto;padding:0 clamp(24px,6vw,72px)}
+          .nav{background:rgba(230,247,219,.96);border-bottom:1px solid rgba(43,43,43,.08)}.nav-inner{min-height:80px;display:flex;align-items:center;justify-content:space-between;gap:24px}.logo{width:170px;height:auto;display:block}.back{font-weight:700;text-decoration:none}
+          main{padding:72px 0 90px}.hero{max-width:820px;margin-bottom:36px}.eyebrow{font-size:.82rem;font-weight:800;letter-spacing:.14em;text-transform:uppercase;color:#174D3A;margin-bottom:12px}.hero h1{font-size:clamp(2.6rem,6vw,4.7rem);line-height:1.02;letter-spacing:-.045em;margin:0 0 18px;color:#102219}.hero p{font-size:1.08rem;color:#5d675f;margin:0}.updated{display:inline-block;margin-top:16px;font-size:.9rem;font-weight:700}
+          .policy{max-width:860px;background:var(--white);border:1px solid rgba(43,43,43,.08);border-radius:24px;padding:clamp(28px,5vw,56px);box-shadow:0 18px 50px rgba(29,42,34,.07)}.policy h2{font-size:1.42rem;line-height:1.3;margin:38px 0 10px;color:#143d30}.policy h2:first-child{margin-top:0}.policy p,.policy li{color:#4d5851}.policy ul{padding-left:22px}.policy a{font-weight:700;text-underline-offset:3px}
+          .tabs{display:flex;gap:8px;flex-wrap:wrap;margin:0 0 28px}.tab{border:1px solid rgba(43,43,43,.12);background:#fff;padding:11px 16px;border-radius:999px;font:inherit;font-weight:800;cursor:pointer}.tab.active{background:var(--lime);border-color:var(--lime)}.panel[hidden]{display:none}
+          footer{background:#fff;border-top:1px solid rgba(43,43,43,.08);padding:24px 0}.footer-row{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap;font-size:.9rem}.footer-links{display:flex;gap:18px;flex-wrap:wrap}
+          @media(max-width:600px){main{padding-top:48px}.nav-inner{min-height:70px}.logo{width:150px}.policy{border-radius:18px}.footer-row{flex-direction:column}}
+          '''
+
+          def page(title, description, body, extra_script=''):
+              return f'''<!doctype html>
+          <html lang="en"><head>{clarity}
+          <link rel="icon" href="/Blender%20Digital%20Logo%20Mark%20Favicon.svg">
+          <script async src="https://www.googletagmanager.com/gtag/js?id=G-JEJPG0H4HC"></script><script>window.dataLayer=window.dataLayer||[];function gtag(){{dataLayer.push(arguments)}}gtag('js',new Date());gtag('config','G-JEJPG0H4HC');gtag('config','AW-18345428557');</script>
+          <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>{title} | Blender Digital</title><meta name="description" content="{description}">
+          <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet"><style>{styles}</style></head>
+          <body id="top"><header class="nav"><div class="container nav-inner"><a href="/" aria-label="Blender Digital home"><img class="logo" src="/Blender%20Digital%20Full%20Logo.svg" alt="Blender Digital"></a><a class="back" href="/">Back to website</a></div></header>
+          {body}
+          <footer><div class="container footer-row"><span>© 2026 Blender Digital LLC</span><div class="footer-links"><a href="/terms-of-service">Terms of Service</a><a href="/privacy-policy">Privacy Policy</a><a href="/privacy-policy?tab=fulfillment">Fulfillment Policy</a></div></div></footer>{extra_script}</body></html>'''
+
+          terms_body = '''<main><div class="container"><div class="hero"><div class="eyebrow">Legal</div><h1>Terms of Service</h1><p>These Terms govern your use of Blender Digital's website, free tools, and professional services.</p><span class="updated">Effective August 2, 2026</span></div><article class="policy">
+          <h2>1. Agreement to these Terms</h2><p>These Terms of Service are an agreement between you and Blender Digital LLC ("Blender Digital," "we," "us," or "our"). By accessing our website, using our tools, submitting information, booking a call, or purchasing services, you agree to these Terms. You must be at least 18 years old to use the website or services.</p>
+          <h2>2. Our services</h2><p>Blender Digital provides restaurant marketing, advisory, analytics, and online-ordering platform management. Services may involve DoorDash, Uber Eats, Grubhub, Toast, direct ordering systems, catering platforms, advertising accounts, promotions, menu and storefront optimization, review management, reporting, and related work. The exact scope, timing, price, and responsibilities for paid services are set out in the applicable proposal, statement of work, invoice, or signed client agreement.</p>
+          <h2>3. Client agreements control</h2><p>If these Terms conflict with a separately signed agreement between Blender Digital and a client, the signed agreement controls for that engagement.</p>
+          <h2>4. Accounts, access, and client responsibilities</h2><p>Clients are responsible for providing timely, accurate information and authorized access to relevant restaurant, ordering, advertising, analytics, and communication accounts. Clients retain ownership of their accounts and remain responsible for restaurant operations, pricing, food quality, fulfillment, staffing, regulatory compliance, and approval of material business decisions.</p>
+          <h2>5. Third-party platforms</h2><p>Blender Digital is independent from DoorDash, Uber Eats, Grubhub, Toast, Stripe, Google, Microsoft, Calendly, Jotform, and other third-party providers. We do not control their algorithms, fees, policies, outages, account suspensions, reporting accuracy, feature availability, or business decisions. Platform changes may affect timing and results.</p>
+          <h2>6. Fees and payment</h2><p>Payments may be made through Stripe, ACH, invoice, or another agreed method. Fees and payment schedules are described in the applicable client agreement or invoice. Unless a written agreement states otherwise, invoices are due when stated and the client is responsible for authorized charges and applicable taxes.</p>
+          <h2>7. Cancellations and refunds</h2><p>Because Blender Digital provides time-based professional services and begins allocating strategy, labor, and account-management resources after engagement, fees are non-refundable once the applicable service period or work has begun, except where a written client agreement expressly states otherwise. Cancellation and renewal terms are governed by the applicable client agreement.</p>
+          <h2>8. Results and estimates</h2><p>We do not guarantee a specific revenue, profit, order-volume, ranking, advertising, or platform outcome. Examples, projections, calculators, benchmarks, case studies, and audit findings are informational estimates based on assumptions and past performance. Actual results depend on market demand, operations, pricing, ratings, competition, platform behavior, budgets, implementation, and other factors outside our control.</p>
+          <h2>9. Website tools</h2><p>Our calculators, audits, templates, and educational materials are provided for general informational purposes. They are not legal, tax, accounting, or financial advice. You are responsible for validating inputs and making your own business decisions.</p>
+          <h2>10. Intellectual property</h2><p>The website, tools, methodology, designs, written materials, and other Blender Digital content are owned by or licensed to Blender Digital and may not be copied, republished, sold, reverse engineered, or used to create a competing product without written permission. Clients retain ownership of materials they provide. Deliverable ownership, licenses, and usage rights may be further addressed in a client agreement.</p>
+          <h2>11. Acceptable use</h2><p>You may not misuse the website, interfere with its operation, attempt unauthorized access, submit unlawful or deceptive information, scrape or reproduce substantial portions of our content, or use our services to violate platform rules or applicable law.</p>
+          <h2>12. Confidentiality and data</h2><p>We may access and retain operational and performance data as reasonably necessary to provide services, prepare analysis, improve our methods, maintain business records, and create aggregated or anonymized benchmarks. We will not publicly identify a client through names, logos, account screenshots, or identifiable case studies without authorization or a right granted in the applicable client agreement.</p>
+          <h2>13. Disclaimers and limitation of liability</h2><p>The website and free tools are provided on an "as is" and "as available" basis. To the fullest extent permitted by law, Blender Digital disclaims implied warranties and is not liable for indirect, incidental, special, consequential, exemplary, or lost-profit damages arising from the website, tools, third-party platforms, or services. To the fullest extent permitted by law, Blender Digital's aggregate liability relating to paid services will not exceed the amount paid by the client to Blender Digital for the affected service during the three months preceding the event giving rise to the claim.</p>
+          <h2>14. Indemnification</h2><p>You agree to indemnify and hold Blender Digital harmless from claims arising from information or materials you provide, your restaurant operations, your violation of law or third-party rights, or your misuse of the website or services, except to the extent caused by Blender Digital's willful misconduct.</p>
+          <h2>15. Governing law</h2><p>These Terms are governed by the laws of the State of New Jersey, without regard to conflict-of-law principles. Unless a separate written agreement provides otherwise, disputes must be brought in the applicable state courts located in Monmouth County, New Jersey, or the federal courts serving the District of New Jersey. Mandatory rights that cannot legally be waived remain unaffected.</p>
+          <h2>16. Changes and contact</h2><p>We may update these Terms from time to time by posting a revised effective date. Questions may be sent to <a href="mailto:hello@blenderdigital.co">hello@blenderdigital.co</a>.</p>
+          </article></div></main>'''
+
+          privacy_body = '''<main><div class="container"><div class="hero"><div class="eyebrow">Legal</div><h1>Privacy & Fulfillment</h1><p>Review how Blender Digital handles information and fulfills digital professional services.</p><span class="updated">Effective August 2, 2026</span></div><div class="tabs" role="tablist"><button class="tab active" data-tab="privacy">Privacy Policy</button><button class="tab" data-tab="fulfillment">Fulfillment Policy</button></div>
+          <article class="policy panel" id="privacy-panel">
+          <h2>1. Scope</h2><p>This Privacy Policy explains how Blender Digital LLC collects, uses, retains, and shares information through our website, forms, scheduling tools, free tools, communications, and client services.</p>
+          <h2>2. Information we collect</h2><p>We may collect names, business names, email addresses, phone numbers, restaurant and location details, inquiry content, scheduling information, payment and billing information, and information submitted through forms or tools. When providing services, we may also access restaurant account information, menus, sales, orders, payouts, promotions, advertising performance, reviews, storefront data, analytics, and related operational records.</p>
+          <h2>3. Automatically collected information</h2><p>We use technologies such as cookies, Google Analytics, Google Ads measurement, and Microsoft Clarity to understand visits, interactions, device information, referring pages, approximate location, and website performance. Microsoft Clarity may capture session interactions such as clicks, scrolling, and page navigation. Sensitive form fields are expected to be masked according to the provider's controls.</p>
+          <h2>4. How we use information</h2><ul><li>Respond to inquiries and schedule calls.</li><li>Provide, manage, analyze, and improve client services.</li><li>Prepare reports, recommendations, audits, and performance analysis.</li><li>Process payments and maintain financial and business records.</li><li>Protect the website, detect misuse, and troubleshoot technical issues.</li><li>Measure marketing performance and improve our website and services.</li><li>Create aggregated or anonymized research, benchmarks, educational content, and marketing insights.</li></ul>
+          <h2>5. Client data and marketing use</h2><p>We may retain client performance and operational data for service delivery, analysis, reporting, method improvement, recordkeeping, and aggregated or anonymized marketing and benchmarking. We do not publicly identify a client through its name, logo, recognizable account screenshots, or identifiable results without authorization or rights granted by the applicable client agreement.</p>
+          <h2>6. How we share information</h2><p>We may share information with service providers that support hosting, analytics, scheduling, forms, communications, payment processing, file storage, reporting, and business operations. These providers may include Vercel, GitHub, Google, Microsoft, Calendly, Jotform, Stripe, and similar vendors. We may also disclose information when required by law, to protect rights or safety, in connection with a business transaction, or with your direction or consent. We do not sell personal information for money.</p>
+          <h2>7. Data retention</h2><p>We retain information for as long as reasonably necessary for the purposes described in this Policy, to provide services, maintain records, resolve disputes, enforce agreements, and meet legal obligations. Retention periods vary based on the type of information, the client relationship, and operational or legal needs. Aggregated or anonymized information may be retained longer because it does not reasonably identify an individual or client.</p>
+          <h2>8. Security</h2><p>We use reasonable administrative, technical, and organizational safeguards. No internet transmission or storage system is completely secure, and we cannot guarantee absolute security.</p>
+          <h2>9. Your choices and rights</h2><p>You may request access to, correction of, or deletion of personal information we control, subject to legal, contractual, security, and recordkeeping exceptions. You may also manage cookies through your browser and opt out of certain analytics where provider controls are available. Requests may be sent to <a href="mailto:hello@blenderdigital.co">hello@blenderdigital.co</a>. Depending on where you live, additional privacy rights may apply.</p>
+          <h2>10. Children</h2><p>Our website and services are intended for people aged 18 or older. We do not knowingly collect personal information from children.</p>
+          <h2>11. External sites and updates</h2><p>Our website may link to third-party sites whose privacy practices we do not control. We may update this Policy from time to time by posting a revised effective date.</p>
+          <h2>12. Contact</h2><p>Questions or privacy requests may be sent to <a href="mailto:hello@blenderdigital.co">hello@blenderdigital.co</a>.</p>
+          </article>
+          <article class="policy panel" id="fulfillment-panel" hidden>
+          <h2>1. Digital professional services</h2><p>Blender Digital provides digital marketing, advisory, analytics, and restaurant online-ordering platform management. We do not ship physical goods. Services are delivered electronically through account work, reports, meetings, email, shared documents, dashboards, and other agreed channels.</p>
+          <h2>2. Engagement and start of work</h2><p>A paid engagement begins according to the applicable proposal, invoice, statement of work, or signed client agreement. Work may begin after required payment, account access, information, approvals, and onboarding materials are received. Delays in client access, responses, approvals, platform permissions, or third-party systems may affect delivery timing.</p>
+          <h2>3. Service delivery</h2><p>Deliverables and cadence vary by engagement and may include account setup, audits, strategy, promotions, sponsored listings, menu and storefront updates, review management, issue monitoring, performance analysis, reports, recommendations, and meetings. Unless a written agreement states otherwise, services are fulfilled throughout the purchased service period rather than delivered as a single completed item.</p>
+          <h2>4. Client cooperation</h2><p>Clients must provide accurate information, authorized account access, timely approvals, and reasonable cooperation. Blender Digital is not responsible for delays or incomplete work caused by missing access, unavailable data, delayed decisions, platform outages, account restrictions, or circumstances outside our reasonable control.</p>
+          <h2>5. Payments</h2><p>Payments may be accepted through Stripe, ACH, invoice, or another agreed method. Billing frequency, due dates, minimum terms, renewals, and late-payment terms are stated in the applicable client agreement or invoice.</p>
+          <h2>6. Cancellations and refunds</h2><p>Fees are non-refundable once the applicable service period or work has begun, unless a written client agreement expressly states otherwise. This reflects the strategy, labor, account-management capacity, and other resources allocated when service starts. Cancellation notice and any remaining payment obligations are governed by the applicable client agreement.</p>
+          <h2>7. No guaranteed outcomes</h2><p>Fulfillment means providing the agreed professional services; it does not mean guaranteeing a particular sales, profit, order-volume, advertising, ranking, or platform result. Outcomes depend on client operations, implementation, market conditions, budgets, and third-party platforms.</p>
+          <h2>8. Questions and disputes</h2><p>Questions about an invoice, service status, or fulfillment should be sent promptly to <a href="mailto:hello@blenderdigital.co">hello@blenderdigital.co</a>. We will review the applicable agreement, work completed, service period, and relevant records.</p>
+          </article></div></main>'''
+
+          tab_script = '''<script>(function(){const buttons=[...document.querySelectorAll('[data-tab]')];const panels={privacy:document.getElementById('privacy-panel'),fulfillment:document.getElementById('fulfillment-panel')};function show(name){name=name==='fulfillment'?'fulfillment':'privacy';buttons.forEach(b=>b.classList.toggle('active',b.dataset.tab===name));Object.entries(panels).forEach(([key,p])=>p.hidden=key!==name);const u=new URL(location.href);if(name==='fulfillment')u.searchParams.set('tab','fulfillment');else u.searchParams.delete('tab');history.replaceState(null,'',u)}buttons.forEach(b=>b.addEventListener('click',()=>show(b.dataset.tab)));show(new URLSearchParams(location.search).get('tab'));})();</script>'''
+
+          Path('terms-of-service.html').write_text(page('Terms of Service','Terms governing use of the Blender Digital website, tools, and professional services.',terms_body),encoding='utf-8')
+          Path('privacy-policy.html').write_text(page('Privacy & Fulfillment Policies','Privacy and fulfillment policies for Blender Digital LLC.',privacy_body,tab_script),encoding='utf-8')
+
+          index = Path('index.html')
+          text = index.read_text(encoding='utf-8')
+          old = '<li><a href="/#contact">Contact</a></li><li><a href="#top">Back to top</a></li>'
+          new = '<li><a href="/#contact">Contact</a></li><li><a href="/terms-of-service">Terms of Service</a></li><li><a href="/privacy-policy">Privacy Policy</a></li><li><a href="/privacy-policy?tab=fulfillment">Fulfillment Policy</a></li><li><a href="#top">Back to top</a></li>'
+          if '/terms-of-service' not in text:
+              if old not in text: raise SystemExit('Homepage footer target not found')
+              text = text.replace(old,new,1)
+              index.write_text(text,encoding='utf-8')
+
+          sitemap = Path('sitemap.xml')
+          sm = sitemap.read_text(encoding='utf-8')
+          if 'https://www.blenderdigital.co/terms-of-service' not in sm:
+              sm = sm.replace('</urlset>','  <url><loc>https://www.blenderdigital.co/terms-of-service</loc></url>\n  <url><loc>https://www.blenderdigital.co/privacy-policy</loc></url>\n\n</urlset>')
+              sitemap.write_text(sm,encoding='utf-8')
+
+          Path('.github/workflows/publish-legal-pages-v2.yml').unlink()
+      - name: Commit changes
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add index.html sitemap.xml terms-of-service.html privacy-policy.html .github/workflows/publish-legal-pages-v2.yml
+          git commit -m "Publish Blender legal policies and homepage links"
+          git push
