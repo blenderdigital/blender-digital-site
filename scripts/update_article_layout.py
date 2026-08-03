@@ -15,19 +15,21 @@ STYLE_BLOCK = r'''
     .blog-body>.section-block>ul,
     .blog-body>.section-block>ol{max-width:780px}
     .related-resources-card{
-      margin-top:32px;
+      margin-top:48px;
       padding:clamp(26px,3.5vw,42px);
       background:var(--white,#fff);
       border:1px solid rgba(43,43,43,.08);
       border-radius:var(--radius,18px);
       box-shadow:var(--shadow,0 10px 30px rgba(0,0,0,.08));
     }
+    .related-resources-card .section-block{margin:0;padding:0;border:0}
     .related-resources-card .section-head{margin-bottom:12px}
-    .related-resources-card>p{max-width:760px;margin-bottom:20px}
+    .related-resources-card>p,
+    .related-resources-card .section-block>p{max-width:760px;margin-bottom:20px}
     .related-resources-card .related-carousel-wrap{margin-top:18px}
     @media(max-width:560px){
       .blog-body{padding:22px}
-      .related-resources-card{margin-top:22px;padding:22px}
+      .related-resources-card{margin-top:30px;padding:22px}
     }
 '''
 
@@ -48,7 +50,13 @@ def find_balanced_block(text: str, start: int, tag: str) -> tuple[int, int] | No
 
 def inject_styles(html: str) -> str:
     if STYLE_MARKER in html:
+        start = html.find(STYLE_MARKER)
+        style_end = html.find('</style>', start)
+        if style_end != -1:
+            block_start = html.rfind('\n', 0, start) + 1
+            return html[:block_start] + STYLE_BLOCK + html[style_end:]
         return html
+
     style_close = html.rfind("</style>")
     if style_close == -1:
         return html
@@ -56,9 +64,6 @@ def inject_styles(html: str) -> str:
 
 
 def move_related_resources(html: str) -> str:
-    if 'class="related-resources-card"' in html:
-        return html
-
     article_match = re.search(r'<article\b[^>]*class=["\'][^"\']*\bblog-body\b[^"\']*["\'][^>]*>', html, re.I)
     if not article_match:
         return html
@@ -73,11 +78,17 @@ def move_related_resources(html: str) -> str:
     if not heading_match:
         return html
 
-    candidate_starts = [m.start() for m in re.finditer(r'<div\b[^>]*class=["\'][^"\']*\bsection-block\b[^"\']*["\'][^>]*>', article_html[:heading_match.start()], re.I)]
-    if not candidate_starts:
+    opening_re = re.compile(
+        r'<(?P<tag>section|div)\b[^>]*class=["\'][^"\']*\bsection-block\b[^"\']*["\'][^>]*>',
+        re.I,
+    )
+    candidates = list(opening_re.finditer(article_html[:heading_match.start()]))
+    if not candidates:
         return html
-    block_start = candidate_starts[-1]
-    block_bounds = find_balanced_block(article_html, block_start, "div")
+
+    opening = candidates[-1]
+    tag = opening.group('tag').lower()
+    block_bounds = find_balanced_block(article_html, opening.start(), tag)
     if not block_bounds:
         return html
     rel_start, rel_end = block_bounds
@@ -90,6 +101,7 @@ def move_related_resources(html: str) -> str:
         count=1,
         flags=re.I,
     )
+
     article_without_related = article_html[:rel_start] + article_html[rel_end:]
     standalone = (
         '\n      <section class="related-resources-card" aria-labelledby="more-resources-heading">\n'
@@ -115,7 +127,7 @@ def update(path: Path) -> bool:
 
 changed = []
 for path in BLOG_DIR.rglob("*.html"):
-    if path.name == "index.html" or path.name == "blog.html":
+    if path.name in {"index.html", "blog.html"}:
         continue
     if update(path):
         changed.append(str(path.relative_to(ROOT)))
