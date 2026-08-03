@@ -1,0 +1,33 @@
+name: Sync legal footer row
+
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - '.github/workflows/sync-footer-legal.yml'
+      - 'scripts/sync_footer_legal.py'
+
+permissions:
+  contents: write
+
+jobs:
+  sync-footer:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Apply footer updates
+        run: python scripts/sync_footer_legal.py
+
+      - name: Commit updated pages
+        run: |
+          if git diff --quiet; then
+            echo "No footer changes needed."
+            exit 0
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add '*.html'
+          git commit -m "Align legal footer links across marketing site"
+          git push
