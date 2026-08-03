@@ -41,6 +41,10 @@ def replace_balanced_div(html: str, marker: str, replacement: str) -> tuple[str,
     return html, False
 
 
+def remove_balanced_div(html: str, marker: str) -> tuple[str, bool]:
+    return replace_balanced_div(html, marker, '')
+
+
 def update_file(path: Path) -> bool:
     html = path.read_text(encoding='utf-8')
     if '<footer' not in html or 'footer-bottom' not in html:
@@ -50,6 +54,15 @@ def update_file(path: Path) -> bool:
 
     for pattern in LEGAL_LIST_PATTERNS:
         html = re.sub(pattern, '', html, flags=re.I)
+
+    # Remove the older standalone legal strip so there is only one legal row.
+    while 'id="sitewide-legal-links"' in html:
+        start = html.find('<div id="sitewide-legal-links"')
+        marker_end = html.find('>', start)
+        marker = html[start:marker_end + 1]
+        html, removed = remove_balanced_div(html, marker)
+        if not removed:
+            break
 
     html, replaced = replace_balanced_div(html, '<div class="footer-bottom">', FOOTER_BOTTOM)
     if not replaced:
