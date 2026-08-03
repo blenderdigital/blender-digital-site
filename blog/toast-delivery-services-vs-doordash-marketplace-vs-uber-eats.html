@@ -32,6 +32,30 @@
     .footer-legal-links a{padding:0;text-decoration:none}
     .footer-legal-links a:hover{text-decoration:underline;text-underline-offset:4px}
     @media (max-width:680px){.footer-bottom-inner{flex-direction:column;align-items:flex-start;gap:12px}.footer-legal-links{justify-content:flex-start;flex-wrap:wrap;gap:10px 18px;margin-left:0}}
+
+    /* Wider editorial shell and standalone related resources */
+    .blog-shell{max-width:1040px!important}
+    .hero .blog-shell .lead{max-width:860px}
+    .blog-body{padding:clamp(28px,4vw,50px)}
+    .blog-body>.intro{max-width:780px}
+    .blog-body>.section-block>p,
+    .blog-body>.section-block>ul,
+    .blog-body>.section-block>ol{max-width:780px}
+    .related-resources-card{
+      margin-top:32px;
+      padding:clamp(26px,3.5vw,42px);
+      background:var(--white,#fff);
+      border:1px solid rgba(43,43,43,.08);
+      border-radius:var(--radius,18px);
+      box-shadow:var(--shadow,0 10px 30px rgba(0,0,0,.08));
+    }
+    .related-resources-card .section-head{margin-bottom:12px}
+    .related-resources-card>p{max-width:760px;margin-bottom:20px}
+    .related-resources-card .related-carousel-wrap{margin-top:18px}
+    @media(max-width:560px){
+      .blog-body{padding:22px}
+      .related-resources-card{margin-top:22px;padding:22px}
+    }
 </style>
 </head>
 <body id="top"><nav class="nav"><div class="container nav-inner"><a class="brand" href="/"><span class="brand-badge"><img src="/Blender%20Digital%20Full%20Logo.svg" alt="Blender Digital logo"/></span></a><button class="nav-toggle" id="navToggle" aria-label="Open menu" aria-expanded="false" aria-controls="navMenu"><span class="nav-toggle-lines" aria-hidden="true"><span></span><span></span><span></span></span></button><div class="nav-links" id="navMenu"><a href="/#services">How It Works</a><a href="/results">Results</a><details class="nav-dropdown"><summary>Resources</summary><div class="nav-dropdown-menu"><a href="/blog">Blogs (22)</a><a href="/tools">Tools (3)</a></div></details><a href="/#pricing">Pricing</a><a href="/#faq">FAQs</a><a class="btn btn-ghost" href="/#contact">Contact</a></div></div></nav>
