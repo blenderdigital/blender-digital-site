@@ -159,6 +159,7 @@
     .footer-legal-links a:hover{text-decoration:underline;text-underline-offset:4px}
     @media (max-width:680px){.footer-bottom-inner{flex-direction:column;align-items:flex-start;gap:12px}.footer-legal-links{justify-content:flex-start;flex-wrap:wrap;gap:10px 18px;margin-left:0}}
 
+
     /* Wider editorial shell and standalone related resources */
     .blog-shell{max-width:1040px!important}
     .hero .blog-shell .lead{max-width:860px}
@@ -168,19 +169,21 @@
     .blog-body>.section-block>ul,
     .blog-body>.section-block>ol{max-width:780px}
     .related-resources-card{
-      margin-top:32px;
+      margin-top:48px;
       padding:clamp(26px,3.5vw,42px);
       background:var(--white,#fff);
       border:1px solid rgba(43,43,43,.08);
       border-radius:var(--radius,18px);
       box-shadow:var(--shadow,0 10px 30px rgba(0,0,0,.08));
     }
+    .related-resources-card .section-block{margin:0;padding:0;border:0}
     .related-resources-card .section-head{margin-bottom:12px}
-    .related-resources-card>p{max-width:760px;margin-bottom:20px}
+    .related-resources-card>p,
+    .related-resources-card .section-block>p{max-width:760px;margin-bottom:20px}
     .related-resources-card .related-carousel-wrap{margin-top:18px}
     @media(max-width:560px){
       .blog-body{padding:22px}
-      .related-resources-card{margin-top:22px;padding:22px}
+      .related-resources-card{margin-top:30px;padding:22px}
     }
 </style>
 </head>
@@ -281,8 +284,11 @@
           </div>
         </section>
 
-        <section class="section-block">
-          <div class="section-head"><div class="icon-badge">→</div><h2>More Resources</h2></div>
+        
+      </article>
+      <section class="related-resources-card" aria-labelledby="more-resources-heading">
+<section class="section-block">
+          <div class="section-head"><div class="icon-badge">→</div><h2 id="more-resources-heading">More Resources</h2></div>
           <p>Keep exploring practical ways to improve delivery platform performance, margin, and visibility.</p>
           <div class="related-carousel-wrap">
             <div class="related-carousel">
@@ -320,7 +326,7 @@
             </div>
           </div>
         </section>
-      </article>
+      </section>
     </div>
   </main>
 

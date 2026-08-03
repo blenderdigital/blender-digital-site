@@ -58,6 +58,7 @@
     .footer-legal-links a:hover{text-decoration:underline;text-underline-offset:4px}
     @media (max-width:680px){.footer-bottom-inner{flex-direction:column;align-items:flex-start;gap:12px}.footer-legal-links{justify-content:flex-start;flex-wrap:wrap;gap:10px 18px;margin-left:0}}
 
+
     /* Wider editorial shell and standalone related resources */
     .blog-shell{max-width:1040px!important}
     .hero .blog-shell .lead{max-width:860px}
@@ -67,19 +68,21 @@
     .blog-body>.section-block>ul,
     .blog-body>.section-block>ol{max-width:780px}
     .related-resources-card{
-      margin-top:32px;
+      margin-top:48px;
       padding:clamp(26px,3.5vw,42px);
       background:var(--white,#fff);
       border:1px solid rgba(43,43,43,.08);
       border-radius:var(--radius,18px);
       box-shadow:var(--shadow,0 10px 30px rgba(0,0,0,.08));
     }
+    .related-resources-card .section-block{margin:0;padding:0;border:0}
     .related-resources-card .section-head{margin-bottom:12px}
-    .related-resources-card>p{max-width:760px;margin-bottom:20px}
+    .related-resources-card>p,
+    .related-resources-card .section-block>p{max-width:760px;margin-bottom:20px}
     .related-resources-card .related-carousel-wrap{margin-top:18px}
     @media(max-width:560px){
       .blog-body{padding:22px}
-      .related-resources-card{margin-top:22px;padding:22px}
+      .related-resources-card{margin-top:30px;padding:22px}
     }
 </style>
 </head>
@@ -105,7 +108,10 @@
 
     <section class="section-block"><div class="section-head"><div class="icon-badge">$</div><h2>Need help launching the right way?</h2></div><div class="warning"><h3>Blender Digital helps restaurants grow third-party delivery revenue without treating the apps like an afterthought.</h3><p>We help restaurants manage DoorDash, Uber Eats, Grubhub, and Toast through menu optimization, storefront cleanup, promotions, sponsored listings, review strategy, and reporting.</p><p><a href="https://form.jotform.com/261082345751051" target="_blank" rel="noopener noreferrer" class="btn btn-primary">Request a delivery platform audit</a></p></div></section>
 
-    <section class="section-block"><div class="section-head"><div class="icon-badge">→</div><h2>More Resources</h2></div><p>Keep exploring practical ways to improve delivery platform performance, margin, and visibility.</p><div class="related-carousel-wrap"><div class="related-carousel">
+    
+  </article>
+      <section class="related-resources-card" aria-labelledby="more-resources-heading">
+<section class="section-block"><div class="section-head"><div class="icon-badge">→</div><h2 id="more-resources-heading">More Resources</h2></div><p>Keep exploring practical ways to improve delivery platform performance, margin, and visibility.</p><div class="related-carousel-wrap"><div class="related-carousel">
       <a class="related-card" href="/blog/why-30-percent-menu-markup-does-not-offset-30-percent-commission"><span class="pill">Margins</span><h3>Why a 30% Menu Markup Does Not Offset a 30% Commission</h3><p>Understand the actual math behind marketplace pricing and payout.</p></a>
       <a class="related-card" href="/blog/delivery-app-menu-not-copy-paste-in-store-menu"><span class="pill">Menu Strategy</span><h3>Why Your Delivery Menu Should Not Copy Your In-Store Menu</h3><p>Build a menu that works for marketplace customers and kitchen operations.</p></a>
       <a class="related-card" href="/blog/fix-marketplace-basics-before-delivery-ads"><span class="pill">Ads</span><h3>Before You Spend on Ads, Fix These Basics</h3><p>Make sure your storefront can convert before you pay for more traffic.</p></a>
@@ -113,7 +119,7 @@
       <a class="related-card" href="/blog/when-to-add-second-delivery-platform"><span class="pill">Platform Strategy</span><h3>When Should You Add a Second Delivery Platform?</h3><p>Use a decision framework instead of expanding blindly.</p></a>
       <a class="related-card related-card-cta" href="/blog"><span class="pill">All Resources</span><h3>See other resources</h3><p>Browse the full Blender Digital resource library.</p><span class="related-link-text">View all blogs →</span></a>
     </div></div></section>
-  </article></div></main>
+      </section></div></main>
   <footer class="footer"><div class="footer-main"><div class="container footer-grid"><div class="footer-brand"><div style="display:flex;align-items:center;gap:10px;margin-bottom:10px"><span class="brand-badge"><img src="/Blender%20Digital%20Full%20Logo.svg" alt="Blender Digital logo" /></span></div><p class="small">We grow restaurant sales across 3rd Party Platforms like DoorDash, Uber Eats, Grubhub, and Toast.</p></div><div><h4>How It Works</h4><ul class="small"><li><a href="/#services">Access &amp; plan</a></li><li><a href="/#services">Launch campaigns</a></li><li><a href="/#services">Manage &amp; improve</a></li><li><a href="/#services">Report &amp; grow</a></li></ul></div><div><h4>Resources</h4><ul class="small"><li><a href="/blog">Blogs (22)</a></li><li><a href="/tools">Tools (3)</a></li><li><a href="/faq">Frequently asked questions</a></li><li><a href="/blog/why-your-uber-eats-promotions-are-destroying-your-margins">Uber Eats promo margins</a></li><li><a href="/blog/restaurant-delivery-platform-image-size-requirements">Image size requirements</a></li></ul></div><div><h4>Company</h4><ul class="small"><li><a href="/results">Results</a></li><li><a href="/#pricing">Pricing</a></li><li><a href="/#contact">Contact</a></li><li><a href="#top">Back to top</a></li></ul></div></div></div><div class="footer-bottom"><div class="container footer-bottom-inner"><div class="small footer-copyright">© 2026 Blender Digital</div><nav class="footer-legal-links" aria-label="Legal"><a href="/terms-of-service">Terms of Service</a><a href="/privacy-policy">Privacy Policy</a></nav></div></div>
 
 

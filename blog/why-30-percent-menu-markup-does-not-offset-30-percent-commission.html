@@ -43,6 +43,7 @@
     .footer-legal-links a:hover{text-decoration:underline;text-underline-offset:4px}
     @media (max-width:680px){.footer-bottom-inner{flex-direction:column;align-items:flex-start;gap:12px}.footer-legal-links{justify-content:flex-start;flex-wrap:wrap;gap:10px 18px;margin-left:0}}
 
+
     /* Wider editorial shell and standalone related resources */
     .blog-shell{max-width:1040px!important}
     .hero .blog-shell .lead{max-width:860px}
@@ -52,19 +53,21 @@
     .blog-body>.section-block>ul,
     .blog-body>.section-block>ol{max-width:780px}
     .related-resources-card{
-      margin-top:32px;
+      margin-top:48px;
       padding:clamp(26px,3.5vw,42px);
       background:var(--white,#fff);
       border:1px solid rgba(43,43,43,.08);
       border-radius:var(--radius,18px);
       box-shadow:var(--shadow,0 10px 30px rgba(0,0,0,.08));
     }
+    .related-resources-card .section-block{margin:0;padding:0;border:0}
     .related-resources-card .section-head{margin-bottom:12px}
-    .related-resources-card>p{max-width:760px;margin-bottom:20px}
+    .related-resources-card>p,
+    .related-resources-card .section-block>p{max-width:760px;margin-bottom:20px}
     .related-resources-card .related-carousel-wrap{margin-top:18px}
     @media(max-width:560px){
       .blog-body{padding:22px}
-      .related-resources-card{margin-top:22px;padding:22px}
+      .related-resources-card{margin-top:30px;padding:22px}
     }
 </style>
 </head>
@@ -80,8 +83,11 @@
 <section class="section-block"><div class="section-head"><div class="icon-badge">2</div><h2>Use app pricing to shape behavior, not just offset fees</h2></div><p>The healthiest delivery menus are not just marked-up copies of the in-store menu. They use pricing to encourage the right orders.</p><ul><li>Make high-margin add-ons easy to select.</li><li>Build bundles that increase average order value.</li><li>Keep price-sensitive hero items competitive when they influence discovery.</li><li>Raise weak-margin or operationally annoying items more aggressively.</li><li>Remove items that cannot survive the delivery economics.</li></ul><p>This connects directly to menu structure. Read <a href="/blog/delivery-app-menu-not-copy-paste-in-store-menu">why your DoorDash and Uber Eats menu should not be a copy-paste of your in-store menu</a>.</p></section>
 <section class="section-block"><div class="section-head"><div class="icon-badge">✓</div><h2>Final takeaway</h2></div><p>A 30% menu markup does not automatically offset a 30% commission because the commission applies to the marked-up app price. And even if the markup gets close, the final answer still depends on packaging, labor, refunds, promotions, ad spend, and conversion.</p><p>The goal is not to find one magic markup. The goal is to build a delivery pricing system that protects margin while still letting customers buy.</p></section>
 <section class="section-block"><div class="section-head"><div class="icon-badge">$</div><h2>Need help pressure-testing your delivery menu?</h2></div><div class="warning"><h3>Blender Digital helps restaurants find revenue leakage across DoorDash, Uber Eats, Grubhub, and Toast.</h3><p>We review pricing, promotions, item mix, storefront quality, sponsored listings, and reporting so operators can grow third-party revenue with cleaner economics.</p><p><a href="https://form.jotform.com/261082345751051" target="_blank" rel="noopener noreferrer" class="btn btn-primary">Request a marketplace audit</a></p></div></section>
-<section class="section-block"><div class="section-head"><div class="icon-badge">→</div><h2>More Resources</h2></div><p>Keep exploring practical ways to improve delivery platform performance, margin, and visibility.</p><div class="related-carousel-wrap"><div class="related-carousel"><a class="related-card" href="/blog/how-much-delivery-revenue-are-you-actually-keeping"><span class="pill">Margins</span><h3>How Much Delivery Revenue Are You Keeping?</h3><p>Break down commissions, fees, promo costs, and delivery economics.</p></a><a class="related-card" href="/blog/why-your-uber-eats-promotions-are-destroying-your-margins"><span class="pill">Promotions</span><h3>Why Uber Eats Promotions Destroy Margins</h3><p>See how overlapping offers can reduce payout.</p></a><a class="related-card" href="/blog/fix-marketplace-basics-before-delivery-ads"><span class="pill">Ads</span><h3>Before You Spend on Ads, Fix These Basics</h3><p>Make sure paid traffic has a storefront worth converting on.</p></a><a class="related-card" href="/blog/delivery-metrics-what-they-mean-how-to-read-them"><span class="pill">Reporting</span><h3>What Your Delivery Metrics Are Telling You</h3><p>Read sales, orders, payout, AOV, and platform performance clearly.</p></a><a class="related-card" href="/blog/you-opened-a-restaurant-now-what-about-delivery-apps"><span class="pill">Launch Strategy</span><h3>You Opened a Restaurant. Now What About Delivery Apps?</h3><p>A practical starting point for new operators.</p></a><a class="related-card related-card-cta" href="/blog"><span class="pill">All Resources</span><h3>See other resources</h3><p>Browse the full Blender Digital resource library.</p><span class="related-link-text">View all blogs →</span></a></div></div></section>
-</article></div></main>
+
+</article>
+      <section class="related-resources-card" aria-labelledby="more-resources-heading">
+<section class="section-block"><div class="section-head"><div class="icon-badge">→</div><h2 id="more-resources-heading">More Resources</h2></div><p>Keep exploring practical ways to improve delivery platform performance, margin, and visibility.</p><div class="related-carousel-wrap"><div class="related-carousel"><a class="related-card" href="/blog/how-much-delivery-revenue-are-you-actually-keeping"><span class="pill">Margins</span><h3>How Much Delivery Revenue Are You Keeping?</h3><p>Break down commissions, fees, promo costs, and delivery economics.</p></a><a class="related-card" href="/blog/why-your-uber-eats-promotions-are-destroying-your-margins"><span class="pill">Promotions</span><h3>Why Uber Eats Promotions Destroy Margins</h3><p>See how overlapping offers can reduce payout.</p></a><a class="related-card" href="/blog/fix-marketplace-basics-before-delivery-ads"><span class="pill">Ads</span><h3>Before You Spend on Ads, Fix These Basics</h3><p>Make sure paid traffic has a storefront worth converting on.</p></a><a class="related-card" href="/blog/delivery-metrics-what-they-mean-how-to-read-them"><span class="pill">Reporting</span><h3>What Your Delivery Metrics Are Telling You</h3><p>Read sales, orders, payout, AOV, and platform performance clearly.</p></a><a class="related-card" href="/blog/you-opened-a-restaurant-now-what-about-delivery-apps"><span class="pill">Launch Strategy</span><h3>You Opened a Restaurant. Now What About Delivery Apps?</h3><p>A practical starting point for new operators.</p></a><a class="related-card related-card-cta" href="/blog"><span class="pill">All Resources</span><h3>See other resources</h3><p>Browse the full Blender Digital resource library.</p><span class="related-link-text">View all blogs →</span></a></div></div></section>
+      </section></div></main>
 <footer class="footer"><div class="footer-main"><div class="container footer-grid"><div class="footer-brand"><div style="display:flex;align-items:center;gap:10px;margin-bottom:10px"><span class="brand-badge"><img src="/Blender%20Digital%20Full%20Logo.svg" alt="Blender Digital logo" /></span></div><p class="small">We grow restaurant sales across 3rd Party Platforms like DoorDash, Uber Eats, Grubhub, and Toast.</p></div><div><h4>How It Works</h4><ul class="small"><li><a href="/#services">Access &amp; plan</a></li><li><a href="/#services">Launch campaigns</a></li><li><a href="/#services">Manage &amp; improve</a></li><li><a href="/#services">Report &amp; grow</a></li></ul></div><div><h4>Resources</h4><ul class="small"><li><a href="/blog">Blogs (22)</a></li><li><a href="/tools">Tools (3)</a></li><li><a href="/faq">Frequently asked questions</a></li><li><a href="/blog/why-your-uber-eats-promotions-are-destroying-your-margins">Uber Eats promo margins</a></li><li><a href="/blog/restaurant-delivery-platform-image-size-requirements">Image size requirements</a></li></ul></div><div><h4>Company</h4><ul class="small"><li><a href="/results">Results</a></li><li><a href="/#pricing">Pricing</a></li><li><a href="/#contact">Contact</a></li><li><a href="#top">Back to top</a></li></ul></div></div></div><div class="footer-bottom"><div class="container footer-bottom-inner"><div class="small footer-copyright">© 2026 Blender Digital</div><nav class="footer-legal-links" aria-label="Legal"><a href="/terms-of-service">Terms of Service</a><a href="/privacy-policy">Privacy Policy</a></nav></div></div>
 
 
