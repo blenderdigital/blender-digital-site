@@ -1,0 +1,30 @@
+name: Sync resource counts
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'scripts/sync_resource_counts.py'
+      - '.github/workflows/sync-resource-counts.yml'
+
+permissions:
+  contents: write
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Update resource counts
+        run: python scripts/sync_resource_counts.py
+      - name: Commit generated updates
+        run: |
+          if git diff --quiet; then
+            echo "No resource count changes needed."
+            exit 0
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add '*.html'
+          git commit -m "Show blog and tool counts in navigation"
+          git push
