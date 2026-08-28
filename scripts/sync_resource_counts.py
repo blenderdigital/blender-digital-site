@@ -2,7 +2,7 @@ from pathlib import Path
 import re
 
 ROOT = Path(__file__).resolve().parents[1]
-BLOG_COUNT = 22
+BLOG_COUNT = 23
 TOOL_COUNT = 3
 
 BLOG_PATTERN = re.compile(
