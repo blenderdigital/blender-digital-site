@@ -64,7 +64,7 @@
     .legal-links{display:flex;gap:18px;flex-wrap:wrap}
     @media (max-width:820px){.nav-toggle{display:inline-flex}.nav-links{display:none;position:absolute;left:0;right:0;top:100%;padding:14px clamp(24px,6vw,72px);background:rgba(230,247,219,.97);backdrop-filter:blur(10px);border-bottom:1px solid rgba(43,43,43,.08);flex-direction:column;align-items:stretch;gap:10px}.nav-links a{padding:12px}.nav-links .btn{width:100%;text-align:center}.nav.is-open .nav-links{display:flex}.footer-grid{grid-template-columns:1fr 1fr}}
     @media (max-width:560px){main{padding-top:48px}.card{border-radius:16px}.footer-grid{grid-template-columns:1fr}.footer-bottom-inner{align-items:flex-start;flex-direction:column}.brand-badge,.brand-badge img,.footer-brand img{width:145px}}
-  
+
     /* Shared legal footer row */
     .footer-bottom-inner{display:flex;align-items:center;justify-content:space-between;gap:24px;flex-wrap:nowrap}
     .footer-copyright{width:auto!important;flex:0 0 auto;text-align:left!important}
@@ -103,27 +103,30 @@
 
         <article class="card">
           <h2>What the extension does</h2>
-          <p>The extension adds a payout-ratio column to supported DoorDash Merchant Portal and Uber Eats Manager monthly statement tables.</p>
-          <p>It reads the gross sales or earnings value and the net total value already visible in each statement row, then calculates the payout ratio by dividing net total by gross sales.</p>
+          <p>The extension adds payout-ratio metrics to supported financial pages in the DoorDash Merchant Portal, Uber Eats Manager, and Grubhub for Restaurants.</p>
+          <p>Depending on the supported page, it reads financial values already visible in the page, such as sales, earnings, restaurant total, net total, net payout, or estimated payout, and uses those visible values to calculate and display a payout ratio.</p>
+          <p>The extension may display payout ratios in statement tables, payout tables, transaction tables, payout summaries, daily payout cards, and other supported financial views. It also includes a manual refresh control that re-runs the same local calculation on the current supported page.</p>
 
           <h2>How information is processed</h2>
-          <p>All calculations occur locally within your browser and are used only to display the payout ratio on the same webpage.</p>
+          <p>All calculations occur locally within your browser. The extension uses the financial values already displayed on the supported page only to calculate and show the payout ratio on that same page.</p>
+          <p>The extension does not send restaurant financial information to Blender Digital or to any third-party server.</p>
 
           <h2>Information we do not collect</h2>
           <p>The extension does not collect, store, transmit, sell, share, or retain:</p>
           <ul>
-            <li>Restaurant statement or financial data</li>
+            <li>Restaurant statement, payout, transaction, or other financial data</li>
             <li>Personally identifiable information</li>
             <li>Login credentials or authentication information</li>
-            <li>Browsing history or activity outside the supported statement pages</li>
+            <li>Browsing history or activity outside the supported financial pages</li>
             <li>Cookies or location information</li>
           </ul>
 
           <h2>Analytics, advertising, and remote code</h2>
-          <p>The extension does not use analytics, advertising trackers, or third-party data-processing services. It does not download or execute remotely hosted code.</p>
+          <p>The extension itself does not use analytics, advertising trackers, or third-party data-processing services. It does not download or execute remotely hosted code.</p>
 
           <h2>Website access</h2>
-          <p>The extension is designed to operate only on the supported DoorDash Merchant Portal and Uber Eats Manager statement pages declared in its Chrome extension package. It does not require access to unrelated websites.</p>
+          <p>The extension is designed to operate only on supported financial pages within the DoorDash Merchant Portal, Uber Eats Manager, and Grubhub for Restaurants that are declared in the Chrome extension package.</p>
+          <p>Supported areas include DoorDash statements, payouts, and transactions; Uber Eats statements, payments overview, and payouts by order; and Grubhub financial transactions. The extension does not require access to unrelated websites.</p>
 
           <h2>Data sharing and sale</h2>
           <p>Because the extension does not collect or transmit user data, Blender Digital does not sell or share extension user data with third parties.</p>
@@ -134,7 +137,7 @@
           <h2>Contact</h2>
           <p>Questions about this privacy policy may be sent to <a href="mailto:hello@blenderdigital.co"><strong>hello@blenderdigital.co</strong></a>.</p>
 
-          <p class="date"><strong>Effective date:</strong> August 2, 2026</p>
+          <p class="date"><strong>Last updated:</strong> August 29, 2026</p>
         </article>
       </div>
     </div>
@@ -173,7 +176,7 @@
       </div>
     </div>
     <div class="footer-bottom"><div class="container footer-bottom-inner"><div class="small footer-copyright">© 2026 Blender Digital</div><nav class="footer-legal-links" aria-label="Legal"><a href="/terms-of-service">Terms of Service</a><a href="/privacy-policy">Privacy Policy</a></nav></div></div>
-  
+
 <div id="sitewide-legal-links" style="border-top:1px solid rgba(43,43,43,.08);padding:14px 20px;text-align:center;font-size:.82rem;line-height:1.6">
   <a href="/terms-of-service" style="margin:0 9px">Terms of Service</a>
   <a href="/privacy-policy" style="margin:0 9px">Privacy Policy</a>
