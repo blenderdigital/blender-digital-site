@@ -100,8 +100,9 @@
     .metric-lift span{display:block;margin-top:3px;font-size:.72rem;font-weight:700;text-transform:uppercase;letter-spacing:.05em;opacity:.7}
     .screenshot-pair{display:grid;grid-template-columns:1fr 1fr;gap:18px;padding:18px}
     .screenshot-wrap{border-radius:14px;overflow:hidden;border:1px solid rgba(43,43,43,.08);background:rgba(43,43,43,.04)}
-    .screenshot-label{display:inline-block;margin:10px 10px 0;padding:5px 10px;border-radius:999px;font-size:.7rem;font-weight:800;letter-spacing:.08em;text-transform:uppercase;color:#fff}
+    .screenshot-label{display:inline-block;margin:10px 10px 10px;padding:5px 10px;border-radius:6px;font-size:.7rem;font-weight:800;letter-spacing:.08em;text-transform:uppercase;color:#fff}
     .screenshot-label.before{background:#C94A4A}.screenshot-label.after{background:#278B55}
+    .title-accent{position:relative;display:inline-block;isolation:isolate}.title-accent::after{content:'';position:absolute;z-index:-1;left:-.04em;right:-.04em;bottom:.06em;height:.27em;border-radius:2px;opacity:.78}.title-accent.before::after{background:#E85A5A}.title-accent.after::after{background:#4AB978}
     .screenshot-wrap img{display:block;width:100%;height:auto}
     @media (max-width:760px){
       .screenshot-pair{grid-template-columns:1fr;gap:14px;padding:14px}
@@ -167,7 +168,7 @@
     <section class="results-hero">
       <div class="container">
         <div class="results-hero-inner">
-          <h1 class="results-title">Client Results <strong>Before</strong> vs. <strong>After</strong></h1>
+          <h1 class="results-title">Client Results <strong class="title-accent before">Before</strong> vs. <strong class="title-accent after">After</strong></h1>
 
         </div>
       </div>
