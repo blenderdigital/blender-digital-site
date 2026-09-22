@@ -91,15 +91,22 @@
     .gallery-header{max-width:760px;margin:0 auto 34px;text-align:center}
     .client-results{display:grid;grid-template-columns:1fr;gap:28px}
     .client-card{background:var(--white);border-radius:var(--radius);box-shadow:var(--shadow);border:1px solid rgba(43,43,43,.06);overflow:hidden}
-    .client-card-header{display:flex;flex-direction:column;justify-content:center;align-items:center;padding:20px 18px 10px;text-align:center}
+    .client-card-header{display:flex;flex-direction:column;justify-content:center;align-items:center;padding:22px 18px 8px;text-align:center}
     .client-card-header h3{font-size:clamp(1.25rem,2vw,1.65rem)}
-    .client-card-header p{margin:6px 0 0;font-size:.95rem;font-weight:500;opacity:.78}.client-card-header p strong{font-weight:800;opacity:1}
+    .comparison-period{margin:5px 0 0;font-size:.82rem;font-weight:600;opacity:.68}
+    .metric-lifts{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px;width:100%;max-width:660px;margin:16px auto 0}
+    .metric-lift{padding:11px 10px;border-radius:12px;background:rgba(167,213,30,.12);border:1px solid rgba(167,213,30,.32)}
+    .metric-lift strong{display:block;font-size:1.2rem;line-height:1.15;letter-spacing:-.02em}
+    .metric-lift span{display:block;margin-top:3px;font-size:.72rem;font-weight:700;text-transform:uppercase;letter-spacing:.05em;opacity:.7}
     .screenshot-pair{display:grid;grid-template-columns:1fr 1fr;gap:18px;padding:18px}
     .screenshot-wrap{border-radius:14px;overflow:hidden;border:1px solid rgba(43,43,43,.08);background:rgba(43,43,43,.04)}
+    .screenshot-label{display:inline-block;margin:10px 10px 0;padding:5px 10px;border-radius:999px;font-size:.7rem;font-weight:800;letter-spacing:.08em;text-transform:uppercase;color:#fff}
+    .screenshot-label.before{background:#C94A4A}.screenshot-label.after{background:#278B55}
     .screenshot-wrap img{display:block;width:100%;height:auto}
     @media (max-width:760px){
       .screenshot-pair{grid-template-columns:1fr;gap:14px;padding:14px}
       .client-card-header{padding-top:18px}
+      .metric-lifts{gap:7px}.metric-lift{padding:9px 6px}.metric-lift strong{font-size:1.05rem}.metric-lift span{font-size:.64rem}
     }
 
     .cta-section{background:var(--cream);text-align:center}
@@ -170,67 +177,48 @@
       <div class="container">
         <div class="client-results">
           <div class="client-card">
-            <div class="client-card-header"><h3>Client 1</h3><p><strong>2.6x</strong> sales growth on Uber Eats in <strong>4</strong> months</p></div>
-            <div class="screenshot-pair">
-              <div class="screenshot-wrap"><img src="/assets/results/public/client-1-before.png" alt="Client 1 restaurant delivery-platform before screenshot showing $2,594 in sales, 119 booked orders, and a $21.80 average ticket size"></div>
-              <div class="screenshot-wrap"><img src="/assets/results/public/client-1-after.png" alt="Client 1 restaurant delivery-platform after screenshot showing sales increased from $2,594 to $6,693, booked orders increased from 119 to 291, and average ticket size increased to $23.00"></div>
-            </div>
+            <div class="client-card-header"><h3>Chicken &amp; Waffle Restaurant</h3><p class="comparison-period">DoorDash · May → August</p><div class="metric-lifts"><div class="metric-lift"><strong>3.63x</strong><span>Sales</span></div><div class="metric-lift"><strong>+187%</strong><span>Orders</span></div><div class="metric-lift"><strong>+23%</strong><span>Avg. ticket</span></div></div></div>
+            <div class="screenshot-pair"><div class="screenshot-wrap"><span class="screenshot-label before">Before</span><img src="/assets/results/cases/result-04-before.png" alt="Chicken and waffle restaurant before: $3,355.47 in sales, 191 orders, and a $17.38 average ticket"></div><div class="screenshot-wrap"><span class="screenshot-label after">After</span><img src="/assets/results/cases/result-04-after.png" alt="Chicken and waffle restaurant after: $12,181.73 in sales, 548 orders, and a $21.37 average ticket"></div></div>
           </div>
 
           <div class="client-card">
-            <div class="client-card-header"><h3>Client 2</h3><p><strong>2.9x</strong> sales growth on Uber Eats in <strong>5</strong> months</p></div>
-            <div class="screenshot-pair">
-              <div class="screenshot-wrap"><img src="/assets/results/public/client-2-before.png" alt="Client 2 restaurant delivery-platform before screenshot showing $1,045 in sales, 63 booked orders, and a $16.58 average ticket size"></div>
-              <div class="screenshot-wrap"><img src="/assets/results/public/client-2-after.png" alt="Client 2 restaurant delivery-platform after screenshot showing sales increased from $1,045 to $3,005, booked orders increased from 63 to 132, and average ticket size increased to $22.76"></div>
-            </div>
+            <div class="client-card-header"><h3>Neighborhood Coffeehouse</h3><p class="comparison-period">Uber Eats · February → May</p><div class="metric-lifts"><div class="metric-lift"><strong>3.09x</strong><span>Sales</span></div><div class="metric-lift"><strong>+133%</strong><span>Orders</span></div><div class="metric-lift"><strong>+33%</strong><span>Avg. ticket</span></div></div></div>
+            <div class="screenshot-pair"><div class="screenshot-wrap"><span class="screenshot-label before">Before</span><img src="/assets/results/cases/result-03-before.png" alt="Neighborhood coffeehouse before: $2,331 in sales, 102 orders, and a $22.85 average ticket"></div><div class="screenshot-wrap"><span class="screenshot-label after">After</span><img src="/assets/results/cases/result-03-after.png" alt="Neighborhood coffeehouse after: $7,208 in sales, 238 orders, and a $30.29 average ticket"></div></div>
           </div>
 
           <div class="client-card">
-            <div class="client-card-header"><h3>Client 3</h3><p><strong>2.7x</strong> sales growth on Uber Eats in <strong>5</strong> months</p></div>
-            <div class="screenshot-pair">
-              <div class="screenshot-wrap"><img src="/assets/results/public/client-3-before.png" alt="Client 3 restaurant delivery-platform before screenshot showing $1,868 in sales, 76 booked orders, and a $24.58 average ticket size"></div>
-              <div class="screenshot-wrap"><img src="/assets/results/public/client-3-after.png" alt="Client 3 restaurant delivery-platform after screenshot showing sales increased from $1,868 to $5,046, booked orders increased from 76 to 194, and average ticket size increased to $26.01"></div>
-            </div>
+            <div class="client-card-header"><h3>Artisan Bakery &amp; Cafe</h3><p class="comparison-period">Uber Eats · January → June</p><div class="metric-lifts"><div class="metric-lift"><strong>2.93x</strong><span>Sales</span></div><div class="metric-lift"><strong>+153%</strong><span>Orders</span></div><div class="metric-lift"><strong>+16%</strong><span>Avg. ticket</span></div></div></div>
+            <div class="screenshot-pair"><div class="screenshot-wrap"><span class="screenshot-label before">Before</span><img src="/assets/results/cases/result-01-before.png" alt="Artisan bakery and cafe before: $1,868 in sales, 76 orders, and a $24.58 average ticket"></div><div class="screenshot-wrap"><span class="screenshot-label after">After</span><img src="/assets/results/cases/result-01-after.png" alt="Artisan bakery and cafe after: $5,465 in sales, 192 orders, and a $28.46 average ticket"></div></div>
           </div>
 
           <div class="client-card">
-            <div class="client-card-header"><h3>Client 4</h3><p><strong>3.5x</strong> sales growth on Uber Eats in <strong>6</strong> months</p></div>
-            <div class="screenshot-pair">
-              <div class="screenshot-wrap"><img src="/assets/results/public/client-4-before.png" alt="Client 4 restaurant delivery-platform before screenshot showing $2,083 in sales, 81 booked orders, and a $25.72 average ticket size"></div>
-              <div class="screenshot-wrap"><img src="/assets/results/public/client-4-after.png" alt="Client 4 restaurant delivery-platform after screenshot showing sales increased from $2,083 to $7,208, booked orders increased from 81 to 238, and average ticket size increased to $30.29"></div>
-            </div>
+            <div class="client-card-header"><h3>Yemeni Coffee Shop</h3><p class="comparison-period">Uber Eats · January → May</p><div class="metric-lifts"><div class="metric-lift"><strong>2.88x</strong><span>Sales</span></div><div class="metric-lift"><strong>+110%</strong><span>Orders</span></div><div class="metric-lift"><strong>+37%</strong><span>Avg. ticket</span></div></div></div>
+            <div class="screenshot-pair"><div class="screenshot-wrap"><span class="screenshot-label before">Before</span><img src="/assets/results/cases/result-02-before.png" alt="Yemeni coffee shop before: $1,045 in sales, 63 orders, and a $16.58 average ticket"></div><div class="screenshot-wrap"><span class="screenshot-label after">After</span><img src="/assets/results/cases/result-02-after.png" alt="Yemeni coffee shop after: $3,005 in sales, 132 orders, and a $22.76 average ticket"></div></div>
           </div>
 
           <div class="client-card">
-            <div class="client-card-header"><h3>Client 5</h3><p><strong>4.4x</strong> sales growth on Uber Eats in <strong>3</strong> months</p></div>
-            <div class="screenshot-pair">
-              <div class="screenshot-wrap"><img src="/assets/results/public/client-5-before.png" alt="Client 5 restaurant delivery-platform before screenshot showing $2,951 in sales, 128 booked orders, and a $23.06 average ticket size"></div>
-              <div class="screenshot-wrap"><img src="/assets/results/public/client-5-after.png" alt="Client 5 restaurant delivery-platform after screenshot showing sales increased from $2,951 to $13,075, booked orders increased from 128 to 498, and average ticket size increased to $26.25"></div>
-            </div>
+            <div class="client-card-header"><h3>Modern Cafe &amp; Bakery</h3><p class="comparison-period">Uber Eats · February → April</p><div class="metric-lifts"><div class="metric-lift"><strong>2.02x</strong><span>Sales</span></div><div class="metric-lift"><strong>+66%</strong><span>Orders</span></div><div class="metric-lift"><strong>+22%</strong><span>Avg. ticket</span></div></div></div>
+            <div class="screenshot-pair"><div class="screenshot-wrap"><span class="screenshot-label before">Before</span><img src="/assets/results/cases/result-05-before.png" alt="Modern cafe and bakery before: $5,998 in sales, 241 orders, and a $24.89 average ticket"></div><div class="screenshot-wrap"><span class="screenshot-label after">After</span><img src="/assets/results/cases/result-05-after.png" alt="Modern cafe and bakery after: $12,086 in sales, 399 orders, and a $30.29 average ticket"></div></div>
           </div>
 
           <div class="client-card">
-            <div class="client-card-header"><h3>Client 6</h3><p><strong>3.6x</strong> sales growth on DoorDash in <strong>4</strong> months</p></div>
-            <div class="screenshot-pair">
-              <div class="screenshot-wrap"><img src="/assets/results/public/client-6-before.png" alt="Client 6 restaurant delivery-platform before screenshot showing $3,355.47 in gross sales, 191 total orders, and a $17.38 average ticket size"></div>
-              <div class="screenshot-wrap"><img src="/assets/results/public/client-6-after.png" alt="Client 6 restaurant delivery-platform after screenshot showing gross sales increased from $3,355.47 to $12,181.73, total orders increased from 191 to 548, and average ticket size increased to $21.37"></div>
-            </div>
+            <div class="client-card-header"><h3>Fast-Casual Restaurant</h3><p class="comparison-period">DoorDash · January → March</p><div class="metric-lifts"><div class="metric-lift"><strong>1.90x</strong><span>Sales</span></div><div class="metric-lift"><strong>+65%</strong><span>Orders</span></div><div class="metric-lift"><strong>+15%</strong><span>Avg. ticket</span></div></div></div>
+            <div class="screenshot-pair"><div class="screenshot-wrap"><span class="screenshot-label before">Before</span><img src="/assets/results/cases/result-07-before.png" alt="Fast-casual restaurant before: $5,292.51 in sales, 235 orders, and a $22.33 average ticket"></div><div class="screenshot-wrap"><span class="screenshot-label after">After</span><img src="/assets/results/cases/result-07-after.png" alt="Fast-casual restaurant after: $10,047.43 in sales, 388 orders, and a $25.76 average ticket"></div></div>
           </div>
 
           <div class="client-card">
-            <div class="client-card-header"><h3>Client 7</h3><p><strong>2x</strong> sales growth on Uber Eats in <strong>3</strong> months</p></div>
-            <div class="screenshot-pair">
-              <div class="screenshot-wrap"><img src="/assets/results/public/client-7-before.png" alt="Client 7 restaurant delivery-platform before screenshot showing $5,998 in sales, 241 booked orders, and a $24.89 average ticket size"></div>
-              <div class="screenshot-wrap"><img src="/assets/results/public/client-7-after.png" alt="Client 7 restaurant delivery-platform after screenshot showing sales increased from $5,998 to $12,086, booked orders increased from 241 to 399, and average ticket size increased to $30.29"></div>
-            </div>
+            <div class="client-card-header"><h3>Specialty Coffee Shop</h3><p class="comparison-period">Uber Eats · March → June</p><div class="metric-lifts"><div class="metric-lift"><strong>1.59x</strong><span>Sales</span></div><div class="metric-lift"><strong>+32%</strong><span>Orders</span></div><div class="metric-lift"><strong>+20%</strong><span>Avg. ticket</span></div></div></div>
+            <div class="screenshot-pair"><div class="screenshot-wrap"><span class="screenshot-label before">Before</span><img src="/assets/results/cases/result-06-before.png" alt="Specialty coffee shop before: $4,469 in sales, 234 orders, and a $19.10 average ticket"></div><div class="screenshot-wrap"><span class="screenshot-label after">After</span><img src="/assets/results/cases/result-06-after.png" alt="Specialty coffee shop after: $7,086 in sales, 309 orders, and a $22.93 average ticket"></div></div>
           </div>
 
           <div class="client-card">
-            <div class="client-card-header"><h3>Client 8</h3><p><strong>3x</strong> sales growth on DoorDash in <strong>6</strong> months</p></div>
-            <div class="screenshot-pair">
-              <div class="screenshot-wrap"><img src="/assets/results/public/client-8-before.png" alt="Client 8 restaurant delivery-platform before screenshot showing $2,504.08 in gross sales, 113 total orders, and a $22.16 average ticket size"></div>
-              <div class="screenshot-wrap"><img src="/assets/results/public/client-8-after.png" alt="Client 8 restaurant delivery-platform after screenshot showing gross sales increased from $2,504.08 to $7,483.29, total orders increased from 113 to 286, and average ticket size increased to $26.16"></div>
-            </div>
+            <div class="client-card-header"><h3>Chicken Taco Bowl Restaurant</h3><p class="comparison-period">Uber Eats · December → February</p><div class="metric-lifts"><div class="metric-lift"><strong>1.25x</strong><span>Sales</span></div><div class="metric-lift"><strong>+23%</strong><span>Orders</span></div><div class="metric-lift"><strong>+1%</strong><span>Avg. ticket</span></div></div></div>
+            <div class="screenshot-pair"><div class="screenshot-wrap"><span class="screenshot-label before">Before</span><img src="/assets/results/cases/result-08-before.png" alt="Chicken taco bowl restaurant before: $74,183 in sales, 1,958 orders, and a $37.89 average ticket"></div><div class="screenshot-wrap"><span class="screenshot-label after">After</span><img src="/assets/results/cases/result-08-after.png" alt="Chicken taco bowl restaurant after: $92,512 in sales, 2,409 orders, and a $38.40 average ticket"></div></div>
+          </div>
+
+          <div class="client-card">
+            <div class="client-card-header"><h3>Neighborhood Mexican Grill</h3><p class="comparison-period">Uber Eats · April → June</p><div class="metric-lifts"><div class="metric-lift"><strong>1.25x</strong><span>Sales</span></div><div class="metric-lift"><strong>+21%</strong><span>Orders</span></div><div class="metric-lift"><strong>+3%</strong><span>Avg. ticket</span></div></div></div>
+            <div class="screenshot-pair"><div class="screenshot-wrap"><span class="screenshot-label before">Before</span><img src="/assets/results/cases/result-09-before.png" alt="Neighborhood Mexican grill before: $66,955 in sales, 1,714 orders, and a $39.06 average ticket"></div><div class="screenshot-wrap"><span class="screenshot-label after">After</span><img src="/assets/results/cases/result-09-after.png" alt="Neighborhood Mexican grill after: $83,708 in sales, 2,075 orders, and a $40.34 average ticket"></div></div>
           </div>
         </div>
       </div>
